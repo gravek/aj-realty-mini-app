@@ -3,7 +3,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.26.2",
-    "@yandex/ymaps3-reactify": "^0.0.1",
+    "@yandex/ymaps3-types": "^0.0.1",
     "tailwindcss": "^3.4.10",
     "zustand": "^5.0.0-rc.2"
   },
