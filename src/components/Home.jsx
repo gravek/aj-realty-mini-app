@@ -3,35 +3,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../store';
 
-const Home = () => {
+export default function Home() {
   const { data } = useStore();
 
-  // Топ-5 горячих объектов для главной
-  const hotEstates = Object.values(data?.districts || {})
-    .flatMap(d => Object.entries(d.estates || {}))
-    .map(([slug, estate]) => ({ ...estate, slug, district: d.name }))
-    .slice(0, 5);
+  const hot = Object.values(data?.districts || {})
+    .flatMap(d => Object.values(d.estates || {}).map(e => ({ ...e, district: d.name })))
+    .slice(0, 6);
 
   return (
     <div className="mt-6">
-      <h1 className="text-2xl font-bold mb-4">Горячие предложения в Аджарии</h1>
+      <h1 className="text-2xl font-bold mb-4">Горячие предложения</h1>
       <div className="grid gap-4">
-        {hotEstates.map(estate => (
+        {hot.map(estate => (
           <Link
-            key={estate.slug}
-            to={`/estate/${estate.district}/${estate.slug}`}
-            className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition"
+            key={estate.name}
+            to={`/estate/${estate.district}/${estate.name}`}
+            className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition"
           >
-            <h3 className="font-semibold text-lg">{estate.name}</h3>
-            <p className="text-gray-600">{estate.district} • от ${Math.min(...Object.values(estate.blocks || {})
-              .flatMap(b => Object.values(b.apartment_types || {}))
-              .flatMap(t => t.apartments.map(a => a.price_usd))
-            )} </p>
+            <h3 className="text-lg font-semibold">{estate.name}</h3>
+            <p className="text-sm text-gray-600 mt-1">{estate.district}</p>
           </Link>
         ))}
       </div>
     </div>
   );
-};
-
-export default Home;
+}
