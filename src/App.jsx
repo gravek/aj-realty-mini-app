@@ -17,7 +17,7 @@ const MapWithContext = () => {
   const { district: districtParam, estate: estateParam } = useParams()
   const location = useLocation()
 
-  // 1. Главная страница — все комплексы
+  // Главная — все комплексы
   if (location.pathname === '/') {
     const allEstates = Object.values(data?.districts || {}).flatMap(d =>
       Object.values(d.estates || {}).map(e => ({ ...e, district: d.name }))
@@ -25,7 +25,7 @@ const MapWithContext = () => {
     return <Map estates={allEstates} center={[41.65, 41.63]} zoom={10} />
   }
 
-  // 2. Страница района — только его комплексы
+  // Район
   if (districtParam && !estateParam) {
     const district = data?.districts?.[districtParam]
     if (!district) return <div className="h-64 bg-gray-100 rounded-lg" />
@@ -33,19 +33,17 @@ const MapWithContext = () => {
       ...e,
       district: district.name
     }))
-    return <Map estates={estatesInDistrict} center={district.coords} zoom={13} />
+    return <Map estates={estatesInDistrict} center={district.coords || [41.65, 41.63]} zoom={13} />
   }
 
-  }
-
-  // 3. Страница конкретного комплекса — одна метка
+  // Конкретный комплекс
   if (districtParam && estateParam) {
     const estate = data?.districts?.[districtParam]?.estates?.[estateParam]
     if (!estate || !estate.coords) return <div className="h-64 bg-gray-100 rounded-lg" />
-    return <Map estates={[{ ...estate, district: districtParam }]} center={estate.coords} zoom={15} />
+    return <Map estates={[{ ...estate, district: districtParam }]} center={estate.coords} zoom={16} />
   }
 
-  // По умолчанию — просто карта Батуми
+  // По умолчанию (на всякий случай)
   return <Map estates={[]} center={[41.65, 41.63]} zoom={11} />
 }
 
