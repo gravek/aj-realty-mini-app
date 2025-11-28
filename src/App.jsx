@@ -32,7 +32,7 @@ const BottomNav = () => {
 };
 
 const App = () => {
-  const { loadData } = () => {} } = useStore();
+  const { loadData } = useStore();
   const navigate = useNavigate();
   const location = useLocation();
 
