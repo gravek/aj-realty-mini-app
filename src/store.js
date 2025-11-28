@@ -6,7 +6,8 @@ export const useStore = create((set) => ({
   favorites: [],
   setTheme: (theme) => set({ theme }),
   fetchData: async () => {
-    const res = await fetch('https://elaj-bot-backend-new.vercel.app/api/objects.json')
+    // const res = await fetch('https://elaj-bot-backend-new.vercel.app/api/objects.json')
+    const res = await fetch('/data/objects.json');  // Локальный файл
     const data = await res.json()
     set({ data })
   },
