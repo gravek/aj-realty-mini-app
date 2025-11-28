@@ -1,19 +1,20 @@
-import { create } from 'zustand'
+// src/store.js
+import { create } from 'zustand';
 
-export const useStore = create((set) => ({
-  theme: {},
-  data: {},
-  favorites: [],
-  setTheme: (theme) => set({ theme }),
-  fetchData: async () => {
-    // const res = await fetch('https://elaj-bot-backend-new.vercel.app/api/objects.json')
-    const res = await fetch('/data/objects.json');  // Локальный файл
-    const data = await res.json()
-    set({ data })
+export const useStore = create((set, get) => ({
+  data: null,
+  loadData: async () => {
+    try {
+      console.log('Loading data...');  // Для дебага в консоли
+      const res = await fetch('/data/objects.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      const data = await res.json();
+      console.log('Data loaded:', data);  // Проверим, что data пришла
+      set({ data });
+    } catch (error) {
+      console.error('Error loading data:', error);  // Ошибка в консоли
+      set({ data: null });
+    }
   },
-  addToFavorites: (id) => set((state) => ({ favorites: [...state.favorites, id] })),
-  syncWithUpstash: async (userId) => {
-    // Fetch/save to Upstash via fetch('/api/upstash', { method: 'POST', body: JSON.stringify({ userId, favorites }) })
-    // Логика: POST на backend, который пишет в Redis
-  },
-}))
+  // Другие методы (favorites и т.д.) позже
+}));
