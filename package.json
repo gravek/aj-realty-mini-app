@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.26.2",
+    "@yandex/ymaps3-reactify": "^0.0.1",
+    "tailwindcss": "^3.4.10",
+    "zustand": "^5.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  }
+}

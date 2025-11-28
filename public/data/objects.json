@@ -1,0 +1,671 @@
+{
+  "districts": {
+    "Chakvi": {
+      "name": "Chakvi",
+      "coords": [41.723, 41.735],
+      "photos": {
+        "sketch": [],
+        "example": [],
+        "specific": [
+          {
+            "new_filename": "Chakvi-Dreamland_Oasis-----Chakv_атуми.jpg",
+            "old_path": "Chakvi/specific/Chakvi-Dreamland_Oasis-----Chakv_атуми.jpg",
+            "url": "https://i.ibb.co/Kc1XB4Xn/Chakvi-Dreamland-Oasis-Chakv.jpg",
+            "description": "Карта Батуми, аэропорт, Chakvi, Dreamland Oasis:  \n- **Курортная зона** на побережье Черного моря.  \n- **Современные здания** и комплексы.  \n- **Пляжи** и **зелёные зоны** поблизости.  \n- Развитая **инфраструктура** для отдыха.  \n- Удобный доступ к дороге **Е70**.  \n- Рядом с **Батуми**, ключевое туристическое направление.  \n- Идеально для **инвестиций** в недвижимость."
+          }
+        ]
+      },
+      "estates": {
+        "Dreamland Oasis": {
+          "name": "Dreamland Oasis",
+          "developer_name": "Dreamland Oasis",
+          "coords": [41.725, 41.738],
+          "photos": {
+            "sketch": [
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_05d37.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_05d37.jpg",
+                "url": "https://i.ibb.co/Q7Zbc1sK/Chakvi-Dreamland-Oasis-sketch-05d37.jpg",
+                "description": "Chakvi, Dreamland Oasis. Роскошный вид на море с высоты, закат над спокойной водой, отражение солнца на поверхности. Внизу — просторный бассейн с шезлонгами и зонтами, пальмы и ухоженная аллея к пляжу. Уютная территория с кафе и зонами отдыха. Атмосфера уединения и премиального курорта у моря.\n"
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_08c0b.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_08c0b.jpg",
+                "url": "https://i.ibb.co/Tx70NYYN/Chakvi-Dreamland-Oasis-sketch-08c0b.jpg",
+                "description": "Dreamland Oasis Chakvi. Современный боулинг. Яркая подсветка дорожек. Цифровые табло для подсчета очков. Просторное помещение. Приятная атмосфера для отдыха."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_12fe0.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_12fe0.jpg",
+                "url": "https://i.ibb.co/dw3TD2r2/Chakvi-Dreamland-Oasis-sketch-12fe0.jpg",
+                "description": "Dreamland Oasis, Чакви:\n\n1. **Панорамный вид на море** – бескрайние водные просторы подчеркивают уникальное расположение.\n2. **Современный курортный комплекс** – окружен зеленью, предоставляет комфорт и уединение.\n3. **Ухоженные бассейны** – плавно изогнутые формы и островки с пальмами создают атмосферу расслабления.\n4. **Шезлонги у бассейна** – идеально подходят для отдыха и загара.\n5. **Ландшафтный дизайн** – аккуратные дорожки и буйная растительность обеспечивают гармонию с природой.\n6. **Вид на город вдалеке** – добавляет динамику и контраст к природным элементам.\n7. **Пляж в шаговой доступности** – привлекает любителей морского отдыха."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_18cb0.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_18cb0.jpg",
+                "url": "https://i.ibb.co/XkZZw1jy/Chakvi-Dreamland-Oasis-sketch-18cb0.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n1. Яркий бассейн с голубыми шатрами.\n2. Уютные шезлонги по периметру.\n3. Зеленые пальмы создают тропическую атмосферу.\n4. Зона отдыха с деревянным павильоном.\n5. Близость к золотому песчаному пляжу."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
+                "url": "https://i.ibb.co/PfmZsxt/Chakvi-Dreamland-Oasis-sketch-232f5.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\nСовременные жилые здания.  \nПросторные бассейны.  \nУхоженные зелёные зоны.  \nПляжная набережная.  \nРазнообразие зон отдыха.  \nПанорамный вид на море.  \nУтончённый дизайн комплекса."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_28ba4.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_28ba4.jpg",
+                "url": "https://i.ibb.co/xq6L01n1/Chakvi-Dreamland-Oasis-sketch-28ba4.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Современные высотные здания.\n- Прямой доступ к морю.\n- Песчаный пляж с шезлонгами.\n- Зеленые насаждения и парковые зоны.\n- Бассейны и спа-области.\n- Развлекательные и спортивные площадки.\n- Рестораны и кафе на территории.\n- Панорамный вид на природу и море."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_30587.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_30587.jpg",
+                "url": "https://i.ibb.co/FbV845n9/Chakvi-Dreamland-Oasis-sketch-30587.jpg",
+                "description": "Chakvi, Dreamland Oasis.\n\nРоскошная зона отдыха на открытом воздухе.\nСовременные плетеные диваны с яркими подушками.\nСпокойный бассейн зеркального типа.\nЗелень и деревья, создающие уютную атмосферу.\nЗонты от солнца рядом с лежаками.\nЭстетичное соединение природы и комфорта."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_37c58.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_37c58.jpg",
+                "url": "https://i.ibb.co/0pgc4frt/Chakvi-Dreamland-Oasis-sketch-37c58.jpg",
+                "description": "Chakvi, Dreamland Oasis: современный жилой комплекс на фоне моря. \n\n- Великолепный вид на просторный пляж и море.\n- Светлое здание с просторными балконами, окруженное зеленью.\n- Большой плавательный бассейн оригинальной формы с лежаками и зонтиками.\n- Элегантная белая беседка у моря.\n- Ухоженные пальмы и зелёные насаждения по всей территории.\n- Идеальное место для отдыха и релаксации."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_4d129.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_4d129.jpg",
+                "url": "https://i.ibb.co/zWS08QQ5/Chakvi-Dreamland-Oasis-sketch-86c8d.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\n- Панорамный вид на море.\n- Просторная терраса с балконом.\n- Благоустроенные сады и деревья.\n- Современная архитектура зданий.\n- Чистое и спокойное окружение.\n- Прозрачные стеклянные ограждения.\n- Уютная обстановка на свежем воздухе."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_582c7.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_582c7.jpg",
+                "url": "https://i.ibb.co/1JpBxRpC/Chakvi-Dreamland-Oasis-sketch-582c7.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\n- Современные многоквартирные здания.\n- Просторная бассейновая зона.\n- Удобные шезлонги для отдыха.\n- Зеленые ландшафтные насаждения.\n- Уютная и ухоженная территория.\n- Гостеприимная атмосфера для отдыха."
+              },
+              {
+                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_62328.jpg",
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_62328.jpg",
+                "url": "https://i.ibb.co/1tWhVML5/Chakvi-Dreamland-Oasis-sketch-62328.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Уютное и стильное кафе с деревян...(truncated for brevity)"
+              }
+            ],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "8427a419",
+                      "floor": 7,
+                      "m2": 50,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "specifications": "Семейный апартамент",
+                      "address": "",
+                      "price_usd": 110000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "c3f31191",
+                      "floor": 9,
+                      "m2": 52,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "specifications": "Просторные апартаменты",
+                      "address": "",
+                      "price_usd": 115000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Trinity": {
+          "name": "Trinity",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "bb32fc69",
+                      "floor": 5,
+                      "m2": 46,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "specifications": "Тихий район",
+                      "address": "",
+                      "price_usd": 50000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "a24ef572",
+                      "floor": 8,
+                      "m2": 46,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "specifications": "Близко к морю",
+                      "address": "",
+                      "price_usd": 53000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "-": {
+          "name": "-",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "0dccb48a",
+                      "floor": 3,
+                      "m2": 48,
+                      "finishing": "С ремонтом",
+                      "furnished": true,
+                      "specifications": "Вторичный рынок, тихо",
+                      "address": "",
+                      "price_usd": 68000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "дом": {
+                  "name": "дом",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "3fbedd39",
+                      "floor": 2,
+                      "m2": 120,
+                      "finishing": "С ремонтом",
+                      "furnished": true,
+                      "specifications": "Вторичный рынок, участок",
+                      "address": "",
+                      "price_usd": 150000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Kobuleti": {
+      "name": "Kobuleti",
+      "coords": [41.564, 41.783],
+      "photos": {
+        "sketch": [],
+        "example": [],
+        "specific": []
+      },
+      "estates": {
+        "Coastline Kobuleti[10]": {
+          "name": "Coastline Kobuleti[10]",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "9d5046e7",
+                      "floor": 7,
+                      "m2": 48,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "specifications": "Первая линия, вид на море",
+                      "address": "",
+                      "price_usd": 58000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Green Town": {
+          "name": "Green Town",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "b9ebc857",
+                      "floor": 3,
+                      "m2": 60,
+                      "finishing": "Черный каркас",
+                      "furnished": false,
+                      "specifications": "Экологически чистый район",
+                      "address": "",
+                      "price_usd": 45000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "da574c36",
+                      "floor": 1,
+                      "m2": 62,
+                      "finishing": "Черный каркас",
+                      "furnished": false,
+                      "specifications": "Тихий район",
+                      "address": "",
+                      "price_usd": 46500,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Petra Palace": {
+          "name": "Petra Palace",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "5a156af5",
+                      "floor": 5,
+                      "m2": 45,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "specifications": "100м до моря",
+                      "address": "",
+                      "price_usd": 49500,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Coastline Kobuleti": {
+          "name": "Coastline Kobuleti",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "608290bc",
+                      "floor": 10,
+                      "m2": 35,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "specifications": "Первая линия",
+                      "address": "",
+                      "price_usd": 42000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "f2a78204",
+                      "floor": 9,
+                      "m2": 50,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "specifications": "Первая линия",
+                      "address": "",
+                      "price_usd": 60000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "-": {
+          "name": "-",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "8b256d37",
+                      "floor": 2,
+                      "m2": 65,
+                      "finishing": "С ремонтом",
+                      "furnished": true,
+                      "specifications": "Вторичный рынок",
+                      "address": "",
+                      "price_usd": 55000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "f0be9ae0",
+                      "floor": 6,
+                      "m2": 58,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "specifications": "Центр города",
+                      "address": "",
+                      "price_usd": 52000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "d0912593",
+                      "floor": 4,
+                      "m2": 33,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "specifications": "Недалеко от моря",
+                      "address": "",
+                      "price_usd": 33000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "53dcf3ef",
+                      "floor": 5,
+                      "m2": 44,
+                      "finishing": "С ремонтом",
+                      "furnished": true,
+                      "specifications": "Вторичка, центр",
+                      "address": "",
+                      "price_usd": 48000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Mahinjauri": {
+      "name": "Mahinjauri",
+      "coords": [41.593, 41.760],
+      "photos": {
+        "sketch": [],
+        "example": [],
+        "specific": []
+      },
+      "estates": {
+        "Mziuri Gardens": {
+          "name": "Mziuri Gardens",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "73b60d8e",
+                      "floor": 4,
+                      "m2": 70,
+                      "finishing": "Зеленый каркас",
+                      "furnished": false,
+                      "specifications": "Санаторная зона, природа",
+                      "address": "",
+                      "price_usd": 105000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "fe791317",
+                      "floor": 6,
+                      "m2": 72,
+                      "finishing": "Зеленый каркас",
+                      "furnished": false,
+                      "specifications": "Для здоровья и отдыха",
+                      "address": "",
+                      "price_usd": 115000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Green Cape Botanico": {
+          "name": "Green Cape Botanico",
+          "developer_name": "-",
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "-": {
+              "name": "-",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "adc45380",
+                      "floor": 2,
+                      "m2": 50,
+                      "finishing": "Зеленый каркас",
+                      "furnished": false,
+                      "specifications": "Рядом с бот. садом",
+                      "address": "",
+                      "price_usd": 75000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

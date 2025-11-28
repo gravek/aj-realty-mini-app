@@ -1,0 +1,20 @@
+aj-realty-mini-app/
+├── src/
+│   ├── App.jsx
+│   ├── components/
+│   │   ├── District.jsx
+│   │   ├── Estate.jsx
+│   │   ├── Apartment.jsx
+│   │   ├── Map.jsx  # С Яндекс.Картами
+│   │   ├── Calculator.jsx  # Калькулятор доходности
+│   │   ├── Filters.jsx  # Swipeable Drawer
+│   │   └── PersonalOfferStub.jsx  # Заглушка для персональных предложений
+│   ├── index.css  # Tailwind
+│   └── main.jsx
+├── public/
+│   ├── manifest.json  # Для PWA
+│   └── service-worker.js
+├── vite.config.js
+├── tailwind.config.js
+├── package.json
+└── vercel.json  # Простой
