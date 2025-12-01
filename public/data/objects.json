@@ -146,12 +146,7 @@
           "name": "Trinity",
           "developer_name": "-",
           "photos": {
-            "sketch": [
-              {
-                "url": "https://i.ibb.co/JWv6z7yZ/Chakvi-Sh.jpg",
-                "description": "Chakvi sketch"
-              }
-            ],
+            "sketch": [],
             "example": [],
             "specific": []
           },
@@ -204,11 +199,7 @@
           "name": "-",
           "developer_name": "-",
           "photos": {
-            "sketch":               {
-                "url": "https://i.ibb.co/JWv6z7yZ/Chakvi-Sh.jpg",
-                "description": "Chakvi sketch"
-              }
-            ],
+            "sketch": [],
             "example": [],
             "specific": []
           },
