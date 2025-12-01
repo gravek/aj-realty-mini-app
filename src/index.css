@@ -1,4 +1,4 @@
-/* src/index.css — премиум золотая тема (100% рабочая) */
+/* src/index.css — премиум золотая тема */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,25 +8,23 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* Заголовки и цены — золото */
-h1, h2, h3, h4, h5, h6 {
-  @apply text-amber-900 font-bold;
+/* Акцентные заголовки и цены — настоящее золото */
+h */
+h1, h2, h3, .text-bold {
+  @apply text-amber-900;
 }
-
-/* Цены и акценты */
-.text-blue-600 { @apply text-amber-700; }
+.text-blue-600 { @apply text-amber-700; }           /* цены */
 .text-gray-600 { @apply text-amber-800; }
-.text-gray-900 { @apply text-amber-950; }
 
-/* Карточки */
+/* Карточки и кнопки */
 .bg-white {
-  @apply bg-white/90 backdrop-blur-sm border border-amber-200 shadow-amber-100/50;
+  @apply bg-white/90 backdrop-blur-sm border border-amber-200;
+}
+.shadow, .shadow-lg {
+  @apply shadow-amber-200/50;
 }
 
-/* Хедер и нижняя панель */
+/* Нижняя панель и хедер */
 header, .bottom-0 {
   @apply bg-white/95 backdrop-blur-md border-amber-100;
 }
-
-/* Кнопка назад */
-.bg-amber-100:hover { @apply bg-amber-200; }
