@@ -4,7 +4,12 @@
       "name": "Chakvi",
       "coords": [41.723, 41.735],
       "photos": {
-        "sketch": [],
+        "sketch": [
+          {
+            "url": "https://i.ibb.co/JWv6z7yZ/Chakvi-Sh.jpg",
+            "description": "Chakvi sketch"
+          }
+        ],
         "example": [],
         "specific": [
           {
@@ -259,7 +264,12 @@
       "name": "Kobuleti",
       "coords": [41.564, 41.783],
       "photos": {
-        "sketch": [],
+        "sketch": [
+          {
+            "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
+            "description": "Kobuleti sketch"
+          }
+        ],
         "example": [],
         "specific": []
       },
@@ -268,7 +278,12 @@
           "name": "Coastline Kobuleti[10]",
           "developer_name": "-",
           "photos": {
-            "sketch": [],
+            "sketch": [
+              {
+                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
+                "description": "Kobuleti sketch"
+              }
+            ],
             "example": [],
             "specific": []
           },
@@ -310,7 +325,12 @@
           "name": "Green Town",
           "developer_name": "-",
           "photos": {
-            "sketch": [],
+            "sketch": [
+              {
+                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
+                "description": "Kobuleti sketch"
+              }
+            ],
             "example": [],
             "specific": []
           },
@@ -363,7 +383,12 @@
           "name": "Petra Palace",
           "developer_name": "-",
           "photos": {
-            "sketch": [],
+            "sketch": [
+              {
+                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
+                "description": "Kobuleti sketch"
+              }
+            ],
             "example": [],
             "specific": []
           },
@@ -405,7 +430,12 @@
           "name": "Coastline Kobuleti",
           "developer_name": "-",
           "photos": {
-            "sketch": [],
+            "sketch": [
+              {
+                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
+                "description": "Kobuleti sketch"
+              }
+            ],
             "example": [],
             "specific": []
           },
@@ -468,7 +498,12 @@
           "name": "-",
           "developer_name": "-",
           "photos": {
-            "sketch": [],
+            "sketch": [
+              {
+                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
+                "description": "Kobuleti sketch"
+              }
+            ],
             "example": [],
             "specific": []
           },
@@ -565,7 +600,12 @@
       "name": "Mahinjauri",
       "coords": [41.593, 41.760],
       "photos": {
-        "sketch": [],
+        "sketch": [
+          {
+            "url": "https://i.ibb.co/twfBkmcW/Mahinjauri-Sh.jpg",
+            "description": "Kobuleti sketch"
+          }
+        ],
         "example": [],
         "specific": []
       },
@@ -574,7 +614,12 @@
           "name": "Mziuri Gardens",
           "developer_name": "-",
           "photos": {
-            "sketch": [],
+            "sketch": [
+              {
+                "url": "https://i.ibb.co/twfBkmcW/Mahinjauri-Sh.jpg",
+                "description": "Kobuleti sketch"
+              }
+            ],
             "example": [],
             "specific": []
           },
@@ -627,7 +672,12 @@
           "name": "Green Cape Botanico",
           "developer_name": "-",
           "photos": {
-            "sketch": [],
+            "sketch": [
+              {
+                "url": "https://i.ibb.co/twfBkmcW/Mahinjauri-Sh.jpg",
+                "description": "Kobuleti sketch"
+              }
+            ],
             "example": [],
             "specific": []
           },

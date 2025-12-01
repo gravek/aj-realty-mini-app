@@ -1,0 +1,32 @@
+Directory structure:
+└── aj-realty-mini-app/
+    ├── aj-realty-mini-app structure.txt
+    ├── index.html
+    ├── package.json
+    ├── postcss.config.js
+    ├── public/
+    │   ├── data/
+    │   │   └── objects.json
+    │   ├── index.html
+    │   ├── manifest.json
+    │   └── service-worker.js
+    ├── src/
+    │   ├── App.jsx
+    │   ├── components/
+    │   │   ├── Apartment.jsx
+    │   │   ├── Calculator.jsx
+    │   │   ├── District.jsx
+    │   │   ├── Estate.jsx
+    │   │   ├── Filters.jsx
+    │   │   ├── Home.jsx
+    │   │   ├── Map.jsx
+    │   │   ├── MapWithContext.jsx
+    │   │   └── PersonalOfferStub.jsx
+    │   ├── icon.png
+    │   ├── index.css
+    │   ├── main.jsx
+    │   └── store.js
+    ├── tailwind.config.js
+    ├── vercel.json
+    ├── vercel.json.bak
+    └── vite.config.js

@@ -13,6 +13,21 @@ export default function District() {
   return (
     <div className="mt-6">
       <h1 className="text-2xl font-bold mb-4">{current.name}</h1>
+      
+      {/* Новый код: изображение или градиентный блок */}
+      {current.photos?.specific?.[0]?.url ? (
+        <img 
+          src={current.photos.specific[0].url} 
+          className="w-full h-48 object-cover rounded-2xl mt-4" 
+        />
+      ) : (
+        <div 
+          className="w-full h-48 bg-gradient-to-br from-green-400 to-blue-600 rounded-2xl mt-4 flex items-center justify-center"
+        >
+          <span className="text-white text-2xl font-bold">{current.name}</span>
+        </div>
+      )}
+
       <div className="grid gap-4">
         {Object.entries(current.estates || {}).map(([slug, estate]) => (
           <Link
