@@ -64,15 +64,14 @@ const Layout = () => {
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm">
         <div className="max-w-3xl mx-auto flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-4">
-            {/* КНОПКА НАЗАД (всегда, кроме главной) */}
+            {/* ← КНОПКА НАЗАД (всегда, кроме главной) */}
             {location.pathname !== '/' && (
               <button
                 onClick={() => navigate(-1)}
                 className="p-2 rounded-full bg-amber-100 hover:bg-amber-200 transition"
-                aria-label="Вернуться назад"
               >
                 <svg className="w-6 h-6 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
             )}
@@ -80,13 +79,12 @@ const Layout = () => {
           </div>
           <span className="text-sm text-amber-700">Аджария • 2025</span>
         </div>
-      </header>  {/* ← ЭТОТ ТЕГ БЫЛ ПРОПУЩЕН! */}
+      </header>
 
       {/* Карта */}
       <div className="h-64 -mx-6 -mt-4 mb-6">
         <MapWithContext />
       </div>
-
 
       {/* Контент */}
       <main className="px-4 pb-8">
