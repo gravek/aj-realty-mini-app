@@ -35,9 +35,7 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    loadData(); // ← САМОЕ ГЛАВНОЕ
-
-    ← ВЫЗЫВАЕМ ДАННЫЕ
+    loadData(); 
 
     if (window.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
