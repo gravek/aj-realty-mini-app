@@ -1,4 +1,4 @@
-// src/App.jsx — 100% рабочая финальная версия
+// src/App.jsx — ФИНАЛЬНАЯ ВЕРСИЯ
 import React, { useEffect } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from './store';
@@ -13,15 +13,15 @@ import PersonalOfferStub from './components/PersonalOfferStub';
 const BottomNav = () => {
   const location = useLocation();
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-amber-100 z-50">
-      <div className="flex justify-around items-center max-w-md mx-auto py-safe py-3">
-        <Link to="/" className={`px-6 py-2 font-medium rounded-lg ${location.pathname === '/' ? 'text-amber-700' : 'text-amber-600'}`}>
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 z-50">
+      <div className="flex justify-around items-center max-w-md mx-auto">
+        <Link to="/" className={`py-3 px-6 rounded-lg font-medium ${location.pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}>
           Главная
         </Link>
-        <Link to="/district/Chakvi" className={`px-6 py-2 font-medium rounded-lg ${location.pathname.startsWith('/district') ? 'text-amber-700' : 'text-amber-600'}`}>
+        <Link to="/district/Chakvi" className={`py-3 px-6 rounded-lg font-medium ${location.pathname.startsWith('/district') ? 'text-blue-600' : 'text-gray-600'}`}>
           Районы
         </Link>
-        <Link to="/calculator" className={`px-6 py-2 font-medium rounded-lg ${location.pathname === '/calculator' ? 'text-amber-700' : 'text-amber-600'}`}>
+        <Link to="/calculator" className={`py-3 px-6 rounded-lg font-medium ${location.pathname === '/calculator' ? 'text-blue-600' : 'text-gray-600'}`}>
           Калькулятор
         </Link>
       </div>
@@ -44,45 +44,51 @@ const Layout = () => {
 
       tg.MainButton.setText('Написать Андрею');
       tg.MainButton.show();
-      tg.MainButton.color = '#f59e0b'; // золотой
+      tg.MainButton.color = '#229ED9';
       tg.MainButton.onClick(() => tg.openTelegramLink('https://t.me/a4k5o6'));
 
-      location.pathname !== '/' ? tg.BackButton.show() : tg.BackButton.hide();
-      tg.BackButton.onClick(() => navigate(-1));
+      if (location.pathname !== '/') {
+        tg.BackButton.show();
+        tg.BackButton.onClick(() => navigate(-1));
+      } else {
+        tg.BackButton.hide();
+      }
 
       return () => tg.BackButton.offClick();
     }
   }, [loadData, location.pathname, navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 pb-20">
-      {/* ХЕДЕР С КНОПКОЙ НАЗАД */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-amber-100">
-        <div className="max-w-3xl mx-auto flex items-center justify-between px-4 py-4">
-          <div className="flex items-center gap-3">
+    <div className="min-h-screen bg-gray-50 pb-20">
+      {/* Хедер */}
+      // Внутри Layout, сразу после header
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm">
+        <div className="max-w-3xl mx-auto flex items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-4">
+            {/* ← КНОПКА НАЗАД (всегда, кроме главной) */}
             {location.pathname !== '/' && (
               <button
                 onClick={() => navigate(-1)}
-                className="p-2.5 rounded-full bg-amber-100 hover:bg-amber-200 transition"
+                className="p-2 rounded-full bg-amber-100 hover:bg-amber-200 transition"
               >
-                <svg className="w-5 h-5 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                <svg className="w-6 h-6 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
             )}
             <h1 className="text-2xl font-bold text-amber-900">Elaj Realty</h1>
           </div>
-          <span className="text-sm font-medium text-amber-700">Аджария • 2025</span>
+          <span className="text-sm text-amber-700">Аджария • 2025</span>
         </div>
       </header>
 
-      {/* КАРТА */}
-      <div className="h-64 -mx-4 mb-6">
+      {/* Карта */}
+      <div className="h-64 -mx-6 -mt-4 mb-6">
         <MapWithContext />
       </div>
 
-      {/* КОНТЕНТ */}
-      <main className="px-4 pb-24">
+      {/* Контент */}
+      <main className="px-4 pb-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/district/:district" element={<District />} />
