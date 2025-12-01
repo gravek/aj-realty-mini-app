@@ -17,6 +17,8 @@ export default function Calculator() {
           onChange={e => setPrice(+e.target.value)}
           className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
         />
+, {e => setPrice(+e.target.value)}
+        />
         <div className="text-center text-3xl font-bold text-blue-600 mt-6">
           ${price.toLocaleString()}
         </div>
