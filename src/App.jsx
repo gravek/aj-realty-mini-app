@@ -30,7 +30,7 @@ const BottomNav = () => {
 };
 
 const Layout = () => {
-  const { loadData } = useStore();
+  const { loadData } = useStore();  // оставляем только loadData
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -42,9 +42,9 @@ const Layout = () => {
       tg.ready();
       tg.expand();
 
-      tg.MainButton.setText('Написать Андрею');
+      tg.MainButton.setText('Написать Менеджеру');
       tg.MainButton.show();
-      tg.MainButton.color = '#f59e0b'; // золотой
+      tg.MainButton.color = '#f59e0b';
       tg.MainButton.onClick(() => tg.openTelegramLink('https://t.me/a4k5o6'));
 
       location.pathname !== '/' ? tg.BackButton.show() : tg.BackButton.hide();
