@@ -1,4 +1,4 @@
-// src/App.jsx — 100% рабочая финальная версия
+// src/App.jsx — рабочая версия
 import React, { useEffect } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from './store';
@@ -30,7 +30,7 @@ const BottomNav = () => {
 };
 
 const Layout = () => {
-  const { loadData } = useStore();  // оставляем только loadData
+  const { loadData } = useStore();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -42,9 +42,9 @@ const Layout = () => {
       tg.ready();
       tg.expand();
 
-      tg.MainButton.setText('Написать Менеджеру');
+      tg.MainButton.setText('Написать Андрею');
       tg.MainButton.show();
-      tg.MainButton.color = '#f59e0b';
+      tg.MainButton.color = '#f59e0b'; // золотой
       tg.MainButton.onClick(() => tg.openTelegramLink('https://t.me/a4k5o6'));
 
       location.pathname !== '/' ? tg.BackButton.show() : tg.BackButton.hide();
@@ -56,7 +56,6 @@ const Layout = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 pb-20">
-      {/* ХЕДЕР С КНОПКОЙ НАЗАД */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-amber-100">
         <div className="max-w-3xl mx-auto flex items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
@@ -76,12 +75,10 @@ const Layout = () => {
         </div>
       </header>
 
-      {/* КАРТА */}
       <div className="h-64 -mx-4 mb-6">
         <MapWithContext />
       </div>
 
-      {/* КОНТЕНТ */}
       <main className="px-4 pb-24">
         <Routes>
           <Route path="/" element={<Home />} />
