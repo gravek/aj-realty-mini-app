@@ -1,6 +1,6 @@
-// src/App.jsx — ФИНАЛЬНАЯ ВЕРСИЯ
+// src/App.jsx — ВЕРНИ РАБОЧУЮ ВЕРСИЮ + ДОБАВЬ ТОЛЬКО КНОПКУ НАЗАД
 import React, { useEffect } from 'react';
-import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from './store';
 import MapWithContext from './components/MapWithContext';
 import Home from './components/Home';
@@ -12,82 +12,78 @@ import PersonalOfferStub from './components/PersonalOfferStub';
 
 const BottomNav = () => {
   const location = useLocation();
- return (
-   <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 z-50">
-     <div className="flex justify-around items-center max-w-md mx-auto">
-       <Link to="/" className={`py-3 px-6 rounded-lg font-medium ${location.pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}>
-         Главная
-       </Link>
-       <Link to="/district/Chakvi" className={`py-3 px-6 rounded-lg font-medium ${location.pathname.startsWith('/district') ? 'text-blue-600' : 'text-gray-600'}`}>
-         Районы
-       </Link>
-       <Link to="/calculator" className={`py-3 px-6 rounded-lg font-medium ${location.pathname === '/calculator' ? 'text-blue-600' : 'text-gray-600'}`}>
-         Калькулятор
-       </Link>
-     </div>
-   </div>
- );
+  return (
+    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-amber-100 z-50">
+      <div className="flex justify-around items-center max-w-md mx-auto py-3">
+        <Link to="/" className={`px-6 py-2 font-medium ${location.pathname === '/' ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>Главная</Link>
+        <Link to="/district/Chakvi" className={`px-6 py-2 font-medium ${location.pathname.startsWith('/district') ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>Районы</Link>
+        <Link to="/calculator" className={`px-6 py-2 font-medium ${location.pathname === '/calculator' ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>Калькулятор</Link>
+      </div>
+    </div>
+  );
 };
 
-const Layout = () => {
- const { loadData } = useStore();
- const navigate = useNavigate();
- const location = useLocation();
+export default function App() {
+  const { loadData } = useStore();
+  const navigate = useNavigate();
+  const location = useLocation();
 
- useEffect(() => {
-   loadData();
+  useEffect(() => {
+    loadData();  // ← ЭТО САМОЕ ГЛАВНОЕ — ДОЛЖНО БЫТЬ!
 
-   if (window.Telegram?.WebApp) {
-     const tg = window.Telegram.WebApp;
-     tg.ready();
-     tg.expand();
+    if (window.Telegram?.WebApp) {
+      const tg = window.Telegram.WebApp;
+      tg.ready();
+      tg.expand();
+      tg.MainButton.setText('Написать Андрею');
+      tg.MainButton.show();
+      tg.MainButton.color = '#f59e0b';
+      tg.MainButton.onClick(() => tg.openTelegramLink('https://t.me/a4k5o6'));
 
-     tg.MainButton.setText('Написать Андрею');
-     tg.MainButton.show();
-     tg.MainButton.color = '#229ED9';
-     tg.MainButton.onClick(() => tg.openTelegramLink('https://t.me/a4k5o6'));
+      if (location.pathname !== '/') {
+        tg.BackButton.show();
+        tg.BackButton.onClick(() => navigate(-1));
+      } else {
+        tg.BackButton.hide();
+      }
+    }
+  }, [loadData, location.pathname]);
 
-     if (location.pathname !== '/') {
-       tg.BackButton.show();
-       tg.BackButton.onClick(() => navigate(-1));
-     } else {
-       tg.BackButton.hide();
-     }
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 text-amber-950 pb-20">
+      {/* ХЕДЕР С КНОПКОЙ НАЗАД */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100">
+        <div className="max-w-3xl mx-auto flex items-center justify-between px-4 py-4">
+          <div className="flex items-center gap-3">
+            {location.pathname !== '/' && (
+              <button onClick={() => navigate(-1)} className="p-2.5 rounded-full bg-amber-100 hover:bg-amber-200 transition">
+                <svg className="w-5 h-5 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+            )}
+            <h1 className="text-2xl font-bold text-amber-900">Elaj Realty</h1>
+          </div>
+          <span className="text-sm font-medium text-amber-700">Аджария • 2025</span>
+        </div>
+      </header>
 
-     return () => tg.BackButton.offClick();
-   }
- }, [loadData, location.pathname, navigate]);
+      <div className="h-64 -mx-4 mb-6">
+        <MapWithContext />
+      </div>
 
- return (
-   <div className="min-h-screen bg-gray-50 pb-20">
-     {/* Хедер */}
-     <header className="sticky top-0 z-40 bg-white shadow-sm px-6 py-4 border-b">
-       <div className="max-w-3xl mx-auto flex justify-between items-center">
-         <h1 className="text-2xl font-bold text-blue-600">Elaj Realty</h1>
-         <span className="text-sm text-gray-500">Аджария • 2025</span>
-       </div>
-     </header>
+      <main className="px-4 pb-24">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/district/:district" element={<District />} />
+          <Route path="/estate/:district/:estate" element={<Estate />} />
+          <Route path="/apartment/:id" element={<Apartment />} />
+          <Route path="/calculator" element={<Calculator />} />
+          <Route path="/offer/:user_id" element={<PersonalOfferStub />} />
+        </Routes>
+      </main>
 
-     {/* Карта */}
-     <div className="h-64 -mx-6 -mt-4 mb-6">
-       <MapWithContext />
-     </div>
-
-     {/* Контент */}
-     <main className="px-4 pb-8">
-       <Routes>
-         <Route path="/" element={<Home />} />
-         <Route path="/district/:district" element={<District />} />
-         <Route path="/estate/:district/:estate" element={<Estate />} />
-         <Route path="/apartment/:id" element={<Apartment />} />
-         <Route path="/calculator" element={<Calculator />} />
-         <Route path="/offer/:user_id" element={<PersonalOfferStub />} />
-       </Routes>
-     </main>
-
-     <BottomNav />
-   </div>
- );
-};
-
-export default Layout;
+      <BottomNav />
+    </div>
+  );
+}
