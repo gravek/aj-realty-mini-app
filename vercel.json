@@ -3,8 +3,5 @@
     "env": {
       "NODE_VERSION": "20"
     }
-  },
-  "env": {
-    "VITE_YANDEX_MAPS_KEY": "@vite_yandex_maps_key"
   }
 }
