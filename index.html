@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Премиум недвижимость Аджарии</title>
-  <!-- <script src="https://api-maps.yandex.ru/v3/?apikey=${import.meta.env.VITE_YANDEX_MAPS_KEY}&lang=ru_RU"></script> -->
-  <script src="https://api-maps.yandex.ru/v3/?apikey=b826cc09-769d-4b9e-adc5-a1b5b92daa69&lang=ru_RU"></script>
-  <link rel="manifest" href="/manifest.json" />
-</head>
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elaj Realty</title>
+    <!-- Подключение Яндекс Карт с переменной окружения -->
+    <script>
+      // Функция для безопасной загрузки ключа
+      window.getYandexMapsKey = function() {
+        try {
+          // В production используем переменную окружения из Vercel
+          if (import.meta.env && import.meta.env.VITE_YANDEX_MAPS_KEY) {
+            return import.meta.env.VITE_YANDEX_MAPS_KEY;
+          }
+          // Fallback для development
+          return '';
+        } catch (e) {
+          return '';
+        }
+      };
+    </script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=&lang=ru_RU"></script>
+    <script src="https://unpkg.com/@yandex/ymaps3-types@0.0.1"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

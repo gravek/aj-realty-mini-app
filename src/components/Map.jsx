@@ -1,21 +1,49 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const Map = () => {
+const Map = ({ estates = [], center = [41.6536, 41.6416], zoom = 12 }) => {
   const mapRef = useRef(null);
   const [mapInstance, setMapInstance] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Проверяем, загружена ли библиотека
-    if (!window.ymaps3) {
-      setError('Библиотека Яндекс Карт не загружена');
-      setIsLoading(false);
-      return;
-    }
+    // Функция для динамической загрузки API с правильным ключом
+    const loadYandexMaps = () => {
+      return new Promise((resolve, reject) => {
+        // Получаем ключ из переменных окружения
+        const apiKey = import.meta.env.VITE_YANDEX_MAPS_KEY || '';
+        
+        if (!apiKey) {
+          reject(new Error('API ключ Яндекс Карт не настроен'));
+          return;
+        }
+
+        // Динамически загружаем API с правильным ключом
+        const script = document.createElement('script');
+        script.src = `https://api-maps.yandex.ru/v3/?apikey=${apiKey}&lang=ru_RU`;
+        script.onload = () => {
+          // Загружаем ymaps3 отдельно
+          const ymaps3Script = document.createElement('script');
+          ymaps3Script.src = 'https://unpkg.com/@yandex/ymaps3-types@0.0.1';
+          ymaps3Script.onload = resolve;
+          ymaps3Script.onerror = reject;
+          document.head.appendChild(ymaps3Script);
+        };
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    };
 
     const initMap = async () => {
       try {
+        // Загружаем API
+        await loadYandexMaps();
+        
+        // Проверяем, загружена ли библиотека
+        if (!window.ymaps3) {
+          throw new Error('Библиотека Яндекс Карт не загружена');
+        }
+
         // Ждем готовности API
         await window.ymaps3.ready;
         
@@ -26,14 +54,30 @@ const Map = () => {
           mapRef.current,
           {
             location: {
-              center: [41.6536, 41.6416], // Пример: Батуми
-              zoom: 12
+              center: center,
+              zoom: zoom
             }
           }
         );
         
         // Добавляем слой
         map.addChild(new YMapDefaultSchemeLayer());
+        
+        // Добавляем маркеры для объектов недвижимости
+        if (estates.length > 0) {
+          const { YMapDefaultMarker } = window.ymaps3;
+          
+          estates.forEach(estate => {
+            if (estate.coords) {
+              const marker = new YMapDefaultMarker({
+                coordinates: estate.coords,
+                title: estate.name,
+                subtitle: estate.district || '',
+              });
+              map.addChild(marker);
+            }
+          });
+        }
         
         setMapInstance(map);
         setIsLoading(false);
@@ -49,14 +93,13 @@ const Map = () => {
     // Очистка при размонтировании
     return () => {
       if (mapInstance) {
-        // Если в API есть метод destroy
         if (mapInstance.destroy) {
           mapInstance.destroy();
         }
         setMapInstance(null);
       }
     };
-  }, []);
+  }, [center, zoom, estates]);
 
   if (error) {
     return (
@@ -65,9 +108,8 @@ const Map = () => {
         <br />
         Проверьте:
         <ul>
-          <li>Подключен ли скрипт в index.html</li>
-          <li>Корректность API-ключа</li>
-          <li>Настройки ограничений для домена</li>
+          <li>Переменную окружения VITE_YANDEX_MAPS_KEY в Vercel</li>
+          <li>Настройки ограничений для домена в Яндекс.Кабинете разработчика</li>
         </ul>
       </div>
     );
