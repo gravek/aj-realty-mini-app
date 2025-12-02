@@ -8,9 +8,6 @@ const Map = ({ center = [41.65, 41.63], zoom = 12, estates = [] }) => {  // esta
   useEffect(() => {
     const initMap = async () => {
       await window.ymaps3.ready;  // Ждём загрузки SDK
-      if (window.YMAPS_KEY) {
-        await window.ymaps3.import('@yandex/ymaps3', { apikey: window.YMAPS_KEY });
-      }
 
       const { YMap: YMapComp, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = window.ymaps3;
       setYMap({ YMapComp, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker });
