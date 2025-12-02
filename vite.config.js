@@ -14,5 +14,7 @@ export default defineConfig({
   },
   define: {
     global: 'globalThis',
+    // Прямая поддержка VITE_ переменных
+    'import.meta.env.VITE_YANDEX_MAPS_KEY': JSON.stringify(process.env.VITE_YANDEX_MAPS_KEY || ''),
   },
 })
