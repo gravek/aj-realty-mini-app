@@ -1,4 +1,4 @@
-// src/App.jsx — ВЕРНИ РАБОЧУЮ ВЕРСИЮ + ДОБАВЬ ТОЛЬКО КНОПКУ НАЗАД
+// src/App.jsx
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from './store';
@@ -12,12 +12,20 @@ import PersonalOfferStub from './components/PersonalOfferStub';
 
 const BottomNav = () => {
   const location = useLocation();
+  const isActive = (path) => location.pathname === path || location.pathname.startsWith(path);
+
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-amber-100 z-50">
       <div className="flex justify-around items-center max-w-md mx-auto py-3">
-        <Link to="/" className={`px-6 py-2 font-medium ${location.pathname === '/' ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>Главная</Link>
-        <Link to="/district/Chakvi" className={`px-6 py-2 font-medium ${location.pathname.startsWith('/district') ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>Районы</Link>
-        <Link to="/calculator" className={`px-6 py-2 font-medium ${location.pathname === '/calculator' ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>Калькулятор</Link>
+        <Link to="/" className={`px-6 py-2 font-medium transition ${isActive('/') ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>
+          Главная
+        </Link>
+        <Link to="/district/Chakvi" className={`px-6 py-2 font-medium transition ${isActive('/district') ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>
+          Районы
+        </Link>
+        <Link to="/calculator" className={`px-6 py-2 font-medium transition ${isActive('/calculator') ? 'text-amber-700 font-bold' : 'text-amber-600'}`}>
+          Калькулятор
+        </Link>
       </div>
     </div>
   );
@@ -29,17 +37,20 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    loadData();  // ← ЭТО САМОЕ ГЛАВНОЕ — ДОЛЖНО БЫТЬ!
+    loadData();
 
     if (window.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
       tg.ready();
       tg.expand();
-      tg.MainButton.setText('Написать Андрею');
+
+      // MainButton — всегда виден
+      tg.MainButton.setText('Написать Андрею →');
       tg.MainButton.show();
       tg.MainButton.color = '#f59e0b';
       tg.MainButton.onClick(() => tg.openTelegramLink('https://t.me/a4k5o6'));
 
+      // BackButton — только если не на главной
       if (location.pathname !== '/') {
         tg.BackButton.show();
         tg.BackButton.onClick(() => navigate(-1));
@@ -47,17 +58,20 @@ export default function App() {
         tg.BackButton.hide();
       }
     }
-  }, [loadData, location.pathname]);
+  }, [loadData, location.pathname, navigate]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 text-amber-950 pb-20">
-      {/* ХЕДЕР С КНОПКОЙ НАЗАД */}
+      {/* Хедер с кнопкой назад */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100">
         <div className="max-w-3xl mx-auto flex items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
             {location.pathname !== '/' && (
-              <button onClick={() => navigate(-1)} className="p-2.5 rounded-full bg-amber-100 hover:bg-amber-200 transition">
-                <svg className="w-5 h-5 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button
+                onClick={() => navigate(-1)}
+                className="p-2.5 rounded-full bg-amber-100 hover:bg-amber-200 transition active:scale-95"
+              >
+                <svg className="w-6 h-6 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -68,6 +82,7 @@ export default function App() {
         </div>
       </header>
 
+      {/* Карта — всегда сверху */}
       <div className="h-64 -mx-4 mb-6">
         <MapWithContext />
       </div>

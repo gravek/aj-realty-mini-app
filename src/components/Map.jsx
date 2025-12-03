@@ -1,55 +1,130 @@
-import React, { useEffect, useState } from 'react';
-import { useStore } from '../store';  // Твои данные с coords
+// src/components/Map.jsx
+import React, { useEffect, useRef, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Map = ({ center = [41.65, 41.63], zoom = 12, estates = [] }) => {  // estates — метки из data
-  const [map, setMap] = useState(null);
-  const [YMap, setYMap] = useState(null);  // Динамически импортируем компоненты
+const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
+  const mapRef = useRef(null);
+  const [mapInstance, setMapInstance] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showHint, setShowHint] = useState(true);
+  const markersRef = useRef([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Yandex: [lng, lat], наши данные: [lat, lng]
+  const toYandex = (coords) => coords ? [coords[1], coords[0]] : null;
 
   useEffect(() => {
-    const initMap = async () => {
-      await window.ymaps3.ready;  // Ждём загрузки SDK
+    if (!window.ymaps3) return;
 
-      const { YMap: YMapComp, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = window.ymaps3;
-      setYMap({ YMapComp, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker });
+    const init = async () => {
+      await window.ymaps3.ready;
+      const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = window.ymaps3;
 
-      // Создаём карту
-      const mapInstance = new YMapComp(document.getElementById('map'), {
-        location: { center, zoom },
+      const map = new YMap(mapRef.current, {
+        location: { center: toYandex(center), zoom },
       });
-      mapInstance.addChild(new YMapDefaultSchemeLayer({}));
-      mapInstance.addChild(new YMapDefaultFeaturesLayer({}));
 
-      // Добавляем метки для estates (из objects.json)
-      estates.forEach(estate => {
-        if (estate.coords) {
-          const marker = new YMapMarker(
-            { coordinates: estate.coords },
-            new ymaps3.YMapMarkerDefaultAppearance({ coordinates: estate.coords })  // Или кастомный пин
-          );
-          marker.events.add('click', () => {
-            // Deep-link на estate, например: window.location.href = `/estate/${estate.district}/${estate.name}`;
-            alert(`Открываем ${estate.name}`);  // Заглушка для роутинга
-          });
-          mapInstance.addChild(marker);
+      map.addChild(new YMapDefaultSchemeLayer());
+      map.addChild(new YMapDefaultFeaturesLayer()); // ← ВАЖНО: включает POI (ТЦ, магазины и т.д.)
+
+      setMapInstance(map);
+      setIsLoading(false);
+
+      // Подсказка исчезает через 4 сек
+      const timer = setTimeout(() => setShowHint(false), 4000);
+      return () => clearTimeout(timer);
+    };
+
+    init();
+  }, []);
+
+  // Обновление центра и зума
+  useEffect(() => {
+    if (mapInstance) {
+      mapInstance.setLocation({
+        center: toYandex(center),
+        zoom,
+        duration: 600,
+      });
+    }
+  }, [mapInstance, center, zoom]);
+
+  // Маркеры комплексов
+  useEffect(() => {
+    if (!mapInstance) return;
+
+    // Очистка старых
+    markersRef.current.forEach(m => mapInstance.removeChild(m));
+    markersRef.current = [];
+
+    estates.forEach(estate => {
+      const coords = toYandex(estate.coords);
+      if (!coords) return;
+
+      const el = document.createElement('div');
+      el.className = 'shadow-lg rounded-full bg-white px-3 py-2 text-xs font-bold text-amber-900 border-2 border-amber-500 whitespace-nowrap';
+      el.innerHTML = estate.name.length > 18 ? estate.name.slice(0, 15) + '...' : estate.name;
+
+      const marker = new window.ymaps3.YMapMarker(
+        { coordinates: coords, draggable: false },
+        el
+      );
+
+      el.onclick = () => {
+        if (estate.district && estate.name) {
+          navigate(`/estate/${estate.district}/${encodeURIComponent(estate.name)}`);
         }
+      };
+
+      mapInstance.addChild(marker);
+      markersRef.current.push(marker);
+    });
+  }, [mapInstance, estates, navigate]);
+
+  // Кнопка "Вернуться к объекту"
+  const handleRecenter = () => {
+    if (mapInstance) {
+      mapInstance.setLocation({
+        center: toYandex(center),
+        zoom: location.pathname.includes('/estate') ? 17 : 14,
+        duration: 800,
       });
+    }
+  };
 
-      setMap(mapInstance);
-    };
-
-    initMap();
-
-    return () => {
-      if (map) map.destroy();
-    };
-  }, [center, zoom, estates]);
-
-  if (!YMap) return <div className="h-64 bg-gray-200 flex items-center justify-center">Загрузка карты...</div>;
-
-  const { YMapComp, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = YMap;
+  if (!window.ymaps3) {
+    return <div className="h-64 bg-gray-200 flex items-center justify-center text-red-600">Карта недоступна</div>;
+  }
 
   return (
-    <div id="map" className="h-64 w-full rounded-lg overflow-hidden" />  // Контейнер для карты
+    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-xl">
+      {isLoading && (
+        <div className="absolute inset-0 bg-amber-50/90 flex items-center justify-center z-10">
+          <span className="text-amber-800 font-medium">Загрузка карты Аджарии...</span>
+        </div>
+      )}
+
+      {/* Подсказка */}
+      {showHint && !isLoading && (
+        <div className="absolute top-3 left-3 right-3 bg-black/70 text-white text-sm px-4 py-2 rounded-lg z-10 animate-pulse">
+          Тапните на карту или маркер комплекса
+        </div>
+      )}
+
+      {/* Кнопка "Вернуться к объекту" */}
+      <button
+        onClick={handleRecenter}
+        className="absolute bottom-4 right-4 bg-white/95 backdrop-blur shadow-xl rounded-full p-3 z-10 hover:scale-110 transition"
+        title="Вернуться к объекту"
+      >
+        <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeWidth={2.5} d="M4 12h16m-8-8v16" />
+        </svg>
+      </button>
+
+      <div ref={mapRef} className="w-full h-full" />
+    </div>
   );
 };
 
