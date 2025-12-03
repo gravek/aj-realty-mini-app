@@ -144,15 +144,15 @@
         },
         "Trinity": {
           "name": "Trinity",
-          "developer_name": "-",
+          "developer_name": "B.Invest Development",
           "photos": {
             "sketch": [],
             "example": [],
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -195,17 +195,17 @@
             }
           }
         },
-        "-": {
-          "name": "-",
-          "developer_name": "-",
+        "Госстрой": {
+          "name": "Госстрой",
+          "developer_name": "Правительство Аджарии",
           "photos": {
             "sketch": [],
             "example": [],
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -275,7 +275,7 @@
       },
       "estates": {
         "Coastline Kobuleti[10]": {
-          "name": "Coastline Kobuleti[10]",
+          "name": "Coastline Kobuleti",
           "developer_name": "-",
           "photos": {
             "sketch": [
@@ -335,8 +335,8 @@
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -393,8 +393,8 @@
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -428,7 +428,7 @@
         },
         "Coastline Kobuleti": {
           "name": "Coastline Kobuleti",
-          "developer_name": "-",
+          "developer_name": "Рене Групп",
           "photos": {
             "sketch": [
               {
@@ -440,8 +440,8 @@
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -494,9 +494,9 @@
             }
           }
         },
-        "-": {
+        "Госстрой": {
           "name": "-",
-          "developer_name": "-",
+          "developer_name": "Правительство Аджарии",
           "photos": {
             "sketch": [
               {
