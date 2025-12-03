@@ -1,100 +1,55 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useStore } from '../store';  // Твои данные с coords
 
-const Map = () => {
-  const mapRef = useRef(null);
-  const [mapInstance, setMapInstance] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+const Map = ({ center = [41.65, 41.63], zoom = 12, estates = [] }) => {  // estates — метки из data
+  const [map, setMap] = useState(null);
+  const [YMap, setYMap] = useState(null);  // Динамически импортируем компоненты
 
   useEffect(() => {
-    // Проверяем, загружена ли библиотека
-    if (!window.ymaps3) {
-      setError('Библиотека Яндекс Карт не загружена');
-      setIsLoading(false);
-      return;
-    }
-
     const initMap = async () => {
-      try {
-        // Ждем готовности API
-        await window.ymaps3.ready;
-        
-        const { YMap, YMapDefaultSchemeLayer } = window.ymaps3;
-        
-        // Создаем карту
-        const map = new YMap(
-          mapRef.current,
-          {
-            location: {
-              center: [41.6536, 41.6416], // Пример: Батуми
-              zoom: 12
-            }
-          }
-        );
-        
-        // Добавляем слой
-        map.addChild(new YMapDefaultSchemeLayer());
-        
-        setMapInstance(map);
-        setIsLoading(false);
-      } catch (err) {
-        console.error('Ошибка инициализации карты:', err);
-        setError(err.message);
-        setIsLoading(false);
-      }
+      await window.ymaps3.ready;  // Ждём загрузки SDK
+
+      const { YMap: YMapComp, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = window.ymaps3;
+      setYMap({ YMapComp, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker });
+
+      // Создаём карту
+      const mapInstance = new YMapComp(document.getElementById('map'), {
+        location: { center, zoom },
+      });
+      mapInstance.addChild(new YMapDefaultSchemeLayer({}));
+      mapInstance.addChild(new YMapDefaultFeaturesLayer({}));
+
+      // Добавляем метки для estates (из objects.json)
+      estates.forEach(estate => {
+        if (estate.coords) {
+          const marker = new YMapMarker(
+            { coordinates: estate.coords },
+            new ymaps3.YMapMarkerDefaultAppearance({ coordinates: estate.coords })  // Или кастомный пин
+          );
+          marker.events.add('click', () => {
+            // Deep-link на estate, например: window.location.href = `/estate/${estate.district}/${estate.name}`;
+            alert(`Открываем ${estate.name}`);  // Заглушка для роутинга
+          });
+          mapInstance.addChild(marker);
+        }
+      });
+
+      setMap(mapInstance);
     };
 
     initMap();
 
-    // Очистка при размонтировании
     return () => {
-      if (mapInstance) {
-        // Если в API есть метод destroy
-        if (mapInstance.destroy) {
-          mapInstance.destroy();
-        }
-        setMapInstance(null);
-      }
+      if (map) map.destroy();
     };
-  }, []);
+  }, [center, zoom, estates]);
 
-  if (error) {
-    return (
-      <div style={{ padding: '20px', color: 'red' }}>
-        Ошибка загрузки карты: {error}
-        <br />
-        Проверьте:
-        <ul>
-          <li>Подключен ли скрипт в index.html</li>
-          <li>Корректность API-ключа</li>
-          <li>Настройки ограничений для домена</li>
-        </ul>
-      </div>
-    );
-  }
+  if (!YMap) return <div className="h-64 bg-gray-200 flex items-center justify-center">Загрузка карты...</div>;
+
+  const { YMapComp, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = YMap;
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '500px' }}>
-      {isLoading && (
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: '#f5f5f5'
-        }}>
-          Загрузка карты...
-        </div>
-      )}
-      <div 
-        ref={mapRef} 
-        style={{ width: '100%', height: '100%' }}
-      />
-    </div>
+    <div id="map" className="h-64 w-full rounded-lg overflow-hidden" />  // Контейнер для карты
   );
 };
 
