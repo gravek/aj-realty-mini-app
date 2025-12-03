@@ -262,7 +262,7 @@
     },
     "Kobuleti": {
       "name": "Kobuleti",
-      "coords": [41.564, 41.783],
+      "coords": [41.820574, 41.775281],
       "photos": {
         "sketch": [
           {
@@ -274,9 +274,10 @@
         "specific": []
       },
       "estates": {
-        "Coastline Kobuleti[10]": {
+        "Coastline Kobuleti": {
           "name": "Coastline Kobuleti",
           "developer_name": "-",
+          "coords": [41.796971, 41.770499],
           "photos": {
             "sketch": [
               {
@@ -324,6 +325,7 @@
         "Green Town": {
           "name": "Green Town",
           "developer_name": "-",
+          "coords": [41.778570, 41.764698],
           "photos": {
             "sketch": [
               {
@@ -381,7 +383,8 @@
         },
         "Petra Palace": {
           "name": "Petra Palace",
-          "developer_name": "-",
+          "developer_name": "Petra Group",
+          "coords": [41.798299, 41.787617],
           "photos": {
             "sketch": [
               {
@@ -429,6 +432,7 @@
         "Coastline Kobuleti": {
           "name": "Coastline Kobuleti",
           "developer_name": "Рене Групп",
+          "coords": [41.813068, 41.773143],
           "photos": {
             "sketch": [
               {
@@ -598,7 +602,7 @@
     },
     "Mahinjauri": {
       "name": "Mahinjauri",
-      "coords": [41.593, 41.760],
+      "coords": [41.676608, 41.698684],
       "photos": {
         "sketch": [
           {
@@ -670,7 +674,8 @@
         },
         "Green Cape Botanico": {
           "name": "Green Cape Botanico",
-          "developer_name": "-",
+          "developer_name": "Green Cape",
+          "coords": [41.693392, 41.705824],
           "photos": {
             "sketch": [
               {
