@@ -1,4 +1,4 @@
-// src/components/Map.jsx
+// src/components/Map.jsx — ФИНАЛЬНАЯ РАБОЧАЯ ВЕРСИЯ
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -11,31 +11,30 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // КОНВЕРТАЦИЯ: [lat, lng] → [lng, lat] для Яндекса
-  const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : null;
+  // Конвертация [lat, lng] → [lng, lat]
+  const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
 
-  // === ИНИЦИАЛИЗАЦИЯ КАРТЫ (только один раз) ===
+  // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
   useEffect(() => {
-    if (!window.ymaps3) return;
+    if (!window.ymaps3 || !mapRef.current) return;
 
     const init = async () => {
       await window.ymaps3.ready;
       const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = window.ymaps3;
 
+      // Создаём карту БЕЗ начальных координат — они будут установлены позже
       const map = new YMap(mapRef.current, {
-        location: {
-          center: toYandex(center),
-          zoom,
-        },
+        location: { center: [41.64, 41.65], zoom: 10 } // нейтральная точка
       });
 
       map.addChild(new YMapDefaultSchemeLayer());
-      map.addChild(new YMapDefaultFeaturesLayer()); // ← POI кликабельны!
+      map.addChild(new YMapDefaultFeaturesLayer()); // ← ВКЛЮЧАЕТ POI (Carrefour, ТЦ и т.д.)
 
       setMapInstance(map);
       setIsLoading(false);
 
-      setTimeout(() => setShowHint(false), 4000);
+      // Подсказка
+      setTimeout(() => setShowHint(false), 5000);
     };
 
     init();
@@ -43,24 +42,26 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
     return () => {
       if (mapInstance) mapInstance.destroy();
     };
-  }, []); // ← Только один раз
+  }, []); // ← Только один раз!
 
-  // === ОБНОВЛЕНИЕ ЦЕНТРА И ЗУМА ПРИ СМЕНЕ ПРОПСОВ ===
+  // === ВСЕГДА ОБНОВЛЯЕМ ЦЕНТР И ЗУМ ===
   useEffect(() => {
     if (!mapInstance) return;
 
+    const yCenter = toYandex(center);
+    const targetZoom = location.pathname.includes('/estate') ? 17 : location.pathname.includes('/district') ? 14 : zoom;
+
     mapInstance.setLocation({
-      center: toYandex(center),
-      zoom,
-      duration: 800,
+      center: yCenter,
+      zoom: targetZoom,
+      duration: 900
     });
-  }, [mapInstance, center, zoom]); // ← ВОТ ЭТО ГЛАВНОЕ!
+  }, [mapInstance, center, zoom, location.pathname]);
 
   // === ОБНОВЛЕНИЕ МАРКЕРОВ ===
   useEffect(() => {
     if (!mapInstance) return;
 
-    // Удаляем старые
     markersRef.current.forEach(m => mapInstance.removeChild(m));
     markersRef.current = [];
 
@@ -69,14 +70,10 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'shadow-lg rounded-full bg-white px-2 py-1 text-xs font-bold text-amber-800 border border-rose-500 whitespace-nowrap';
-      el.innerHTML = estate.name.length > 18 ? estate.name.slice(0, 15) + '...' : estate.name;
-      el.style.cursor = 'pointer';
+      el.className = 'shadow-xl rounded-full bg-white/95 backdrop-blur px-3 py-2 text-sm font-bold text-orange-800 border-2 border-rose-400 whitespace-nowrap hover:scale-110 transition';
+      el.innerHTML = estate.name.length > 16 ? estate.name.slice(0, 13) + '...' : estate.name;
 
-      const marker = new window.ymaps3.YMapMarker(
-        { coordinates: coords },
-        el
-      );
+      const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
 
       el.onclick = () => {
         navigate(`/estate/${estate.district}/${encodeURIComponent(estate.name)}`);
@@ -87,34 +84,34 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
     });
   }, [mapInstance, estates, navigate]);
 
-  // Кнопка центрирования
+  // Центрирование по кнопке
   const handleRecenter = () => {
-    if (mapInstance) {
-      mapInstance.setLocation({
-        center: toYandex(center),
-        zoom: location.pathname.includes('/estate') ? 17 : 14,
-        duration: 800,
-      });
-    }
+    if (!mapInstance) return;
+    const targetZoom = location.pathname.includes('/estate') ? 17 : 14;
+    mapInstance.setLocation({
+      center: toYandex(center),
+      zoom: targetZoom,
+      duration: 800
+    });
   };
 
   return (
-    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-2xl border-2 border-orange-100">
+    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-orange-200">
       {isLoading && (
-        <div className="absolute inset-0 bg-orange-50/90 flex items-center justify-center z-10">
-          <span className="text-orange-800 font-semibold">Загрузка карты...</span>
+        <div className="absolute inset-0 bg-orange-50/95 flex items-center justify-center z-20">
+          <span className="text-orange-800 font-bold text-lg">Загрузка карты Аджарии...</span>
         </div>
       )}
 
       {showHint && !isLoading && (
-        <div className="absolute top-3 left-3 right-3 bg-rose-600/75 text-white text-sm px-4 py-2 rounded-lg z-10 animate-pulse">
-          💡 Двигайте карту и нажимайте на объекты
+        <div className="absolute top-4 left-4 right-4 bg-rose-700/90 text-white text-sm px-4 py-3 rounded-xl z-20 animate-pulse shadow-lg">
+          Карта интерактивна — кликайте на объекты и маркеры!
         </div>
       )}
 
       <button
         onClick={handleRecenter}
-        className="absolute bottom-4 right-4 bg-rose-100/0 border backdrop-blur-sm shadow-xl rounded-full p-3 z-10 hover:scale-110 transition active:scale-95"
+        className="absolute bottom-4 right-4 bg-rose-100/50 border backdrop-blur-sm shadow-xl rounded-full p-3 z-10 hover:scale-110 transition active:scale-95"
         title="Вернуться к объекту"
       >
         <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth={2.5} viewBox="0 0 24 24">
