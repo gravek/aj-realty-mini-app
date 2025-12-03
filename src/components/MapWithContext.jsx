@@ -12,7 +12,7 @@ const MapWithContext = () => {
   // КОНВЕРТАЦИЯ [lat, lng] → [lng, lat] — ЭТО ГЛАВНОЕ!
   const toYandexCoords = (coords) => {
     if (!coords || coords.length !== 2) return null;
-    return [coords[1], coords[0]]; // ← ВОТ ЭТО КЛЮЧЕВОЕ!
+    return [coords[0], coords[1]]; // ← ВОТ ЭТО КЛЮЧЕВОЕ!
   };
 
   // Главная страница — весь регион
@@ -44,7 +44,7 @@ const MapWithContext = () => {
     return (
       <Map
         estates={estatesInDistrict}
-        center={toYandexCoords(district.coords)}   // ← ИСПРАВЛЕНО!
+        center={toYandexCoords(district.coords)}
         zoom={14}
       />
     );
@@ -60,7 +60,7 @@ const MapWithContext = () => {
     return (
       <Map
         estates={[{ ...estate, district: districtParam }]}
-        center={toYandexCoords(estate.coords)}     // ← ИСПРАВЛЕНО!
+        center={toYandexCoords(estate.coords)}
         zoom={17}
       />
     );
