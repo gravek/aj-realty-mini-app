@@ -63,7 +63,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'shadow-lg rounded-full bg-white px-3 py-2 text-xs font-bold text-amber-900 border-2 border-amber-500 whitespace-nowrap';
+      el.className = 'shadow-lg rounded-full bg-white/80 px-2 py-1 text-xs font-bold text-orange-800 border-1 border-amber-800 whitespace-nowrap';
       el.innerHTML = estate.name.length > 18 ? estate.name.slice(0, 15) + '...' : estate.name;
 
       const marker = new window.ymaps3.YMapMarker(
@@ -101,13 +101,13 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
     <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-xl">
       {isLoading && (
         <div className="absolute inset-0 bg-amber-50/90 flex items-center justify-center z-10">
-          <span className="text-amber-800 font-medium">Загрузка карты Аджарии...</span>
+          <span className="text-red-500 font-medium">Загрузка карты Аджарии...</span>
         </div>
       )}
 
       {/* Подсказка */}
       {showHint && !isLoading && (
-        <div className="absolute top-3 left-3 right-3 bg-black/70 text-white text-sm px-4 py-2 rounded-lg z-10 animate-pulse">
+        <div className="absolute top-3 left-3 right-3 bg-red-500/70 text-white text-sm px-4 py-2 rounded-b-lg z-10 animate-pulse">
           Тапните на карту или маркер комплекса
         </div>
       )}
@@ -115,12 +115,15 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       {/* Кнопка "Вернуться к объекту" */}
       <button
         onClick={handleRecenter}
-        className="absolute bottom-4 right-4 bg-white/95 backdrop-blur shadow-xl rounded-full p-3 z-10 hover:scale-110 transition"
+        className="absolute bottom-4 right-4 bg-white/85 backdrop-blur shadow-xl rounded-full p-3 z-10 hover:scale-110 transition"
         title="Вернуться к объекту"
       >
-        <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeWidth={2.5} d="M4 12h16m-8-8v16" />
+        <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth={2.5} viewBox="0 0 24 24">
+          <path d="M4 12h16" />
+          <path d="M12 4v16" />
+          <circle cx="12" cy="12" r="3" fill="none" strokeWidth="2.5" />
         </svg>
+
       </button>
 
       <div ref={mapRef} className="w-full h-full" />
