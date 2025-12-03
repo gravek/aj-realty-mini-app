@@ -99,7 +99,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   };
 
   return (
-    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-orange-100">
+    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-2xl border-2 border-orange-100">
       {isLoading && (
         <div className="absolute inset-0 bg-orange-50/90 flex items-center justify-center z-10">
           <span className="text-orange-800 font-semibold">Загрузка карты...</span>
@@ -114,13 +114,13 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
 
       <button
         onClick={handleRecenter}
-        className="absolute bottom-4 right-4 bg-rose-100/78 backdrop-blur-lg shadow-xl rounded-full p-3 z-10 hover:scale-110 transition active:scale-95"
-        title="Центрировать"
+        className="absolute bottom-4 right-4 bg-rose-100/0 border backdrop-blur-sm shadow-xl rounded-full p-3 z-10 hover:scale-110 transition active:scale-95"
+        title="Вернуться к объекту"
       >
         <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth={2.5} viewBox="0 0 24 24">
           <path d="M4 12h16" />
           <path d="M12 4v16" />
-          <circle cx="12" cy="12" r="3" fill="none" strokeWidth="2.5" />
+          <circle cx="12" cy="12" r="2" fill="none" strokeWidth="2" />
         </svg>
 
       </button>
