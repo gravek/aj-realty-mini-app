@@ -28,7 +28,10 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       });
 
       map.addChild(new YMapDefaultSchemeLayer());
-      map.addChild(new YMapDefaultFeaturesLayer()); // ← ВКЛЮЧАЕТ POI (Carrefour, ТЦ и т.д.)
+      map.addChild(new window.ymaps3.YMapDefaultFeaturesLayer({
+        zIndex: 180,
+        featureEvents: ['click', 'mouseenter', 'mouseleave'] // ← ЭТО ВКЛЮЧАЕТ КЛИКИ ПО POI!
+      }));
 
       setMapInstance(map);
       setIsLoading(false);
@@ -70,7 +73,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'shadow-xl rounded-full bg-white/95 backdrop-blur px-3 py-2 text-sm font-bold text-orange-800 border-2 border-rose-400 whitespace-nowrap hover:scale-110 transition';
+      el.className = 'shadow-xl rounded-full bg-white/95 backdrop-blur px-3 py-2 text-sm font-bold text-orange-800 border-1 border-rose-400 whitespace-nowrap hover:scale-110 transition';
       el.innerHTML = estate.name.length > 16 ? estate.name.slice(0, 13) + '...' : estate.name;
 
       const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
