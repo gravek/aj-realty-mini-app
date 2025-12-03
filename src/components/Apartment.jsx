@@ -41,15 +41,15 @@ export default function Apartment() {
         <img src={apartment.estatePhoto} alt={apartment.estateName} className="w-full h-64 object-cover rounded-2xl" />
       )}
       <div className="bg-white p-6 rounded-2xl shadow">
-        <p className="text-4xl font-bold text-blue-600">${apartment.price_usd.toLocaleString()}</p>
+        <p className="text-4xl font-bold text-cyan-600">${apartment.price_usd.toLocaleString()}</p>
         <p className="text-xl mt-2">{apartment.m2} м² • {apartment.finishing}</p>
         <p className="text-gray-600 mt-4">Этаж: {apartment.floor} • {apartment.specifications || '—'}</p>
       </div>
       <button 
         onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
-        className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg"
+        className="w-full bg-cyan-600 text-white py-4 rounded-xl font-bold text-lg"
       >
-        Написать Андрею
+        Написать менеджеру
       </button>
     </div>
   );

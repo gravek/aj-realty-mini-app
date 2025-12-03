@@ -22,7 +22,7 @@ export default function District() {
         />
       ) : (
         <div 
-          className="w-full h-48 bg-gradient-to-br from-green-400 to-blue-600 rounded-2xl mt-4 flex items-center justify-center"
+          className="w-full h-48 bg-gradient-to-br from-green-400 to-cyan-600 rounded-2xl mt-4 flex items-center justify-center"
         >
           <span className="text-white text-2xl font-bold">{current.name}</span>
         </div>

@@ -29,7 +29,7 @@ export default function Estate() {
             <div className="flex justify-between items-center">
               <div>
                 <p className="font-semibold">{ap.m2} м² • {ap.finishing || '—'}</p>
-                <p className="text-2xl font-bold text-blue-600">${ap.price_usd.toLocaleString()}</p>
+                <p className="text-2xl font-bold text-cyan-600">${ap.price_usd.toLocaleString()}</p>
               </div>
               <span className="text-sm text-gray-500">→</span>
             </div>

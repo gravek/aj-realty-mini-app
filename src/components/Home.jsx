@@ -40,7 +40,7 @@ export default function Home() {
               </div>
             </div>
             <div className="p-5">
-              <p className="text-2xl font-bold text-blue-600">
+              <p className="text-2xl font-bold text-cyan-600">
                 от ${estate.minPrice.toLocaleString()}
               </p>
             </div>

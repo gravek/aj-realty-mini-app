@@ -15,15 +15,15 @@ export default function Calculator() {
           step="5000"
           value={price}
           onChange={e => setPrice(+e.target.value)}
-          className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+          className="w-full h-3 bg-orange-100 rounded-lg appearance-none cursor-pointer"
         />
-        <div className="text-center text-3xl font-bold text-blue-600 mt-6">
+        <div className="text-center text-3xl font-bold text-cyan-600 mt-6">
           ${price.toLocaleString()}
         </div>
         <div className="mt-8 space-y-3 text-lg">
-          <p>Годовая аренда (10%): <strong className="text-green-600">${(price * 0.1).toLocaleString()}</strong></p>
-          <p>Годовая аренда (12%): <strong className="text-green-600">${(price * 0.12).toLocaleString()}</strong></p>
-          <p className="text-sm text-gray-500">Средняя загрузка 70%, сезон май-октябрь</p>
+          <p>Годовая аренда (10%): <strong className="text-teal-600">${(price * 0.1).toLocaleString()}</strong></p>
+          <p>Годовая аренда (12%): <strong className="text-teal-600">${(price * 0.12).toLocaleString()}</strong></p>
+          <p className="text-sm text-orange-400">Средняя загрузка 70%, сезон май-октябрь</p>
         </div>
       </div>
     </div>
