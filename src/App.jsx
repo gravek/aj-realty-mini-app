@@ -84,7 +84,7 @@ export default function App() {
 
       {/* Карта — всегда сверху */}
       <div className="h-64 -mx-4 mb-6">
-        <MapWithContext key={location.pathname} />
+        <MapWithContext />
       </div>
 
       <main className="px-4 pb-24">
