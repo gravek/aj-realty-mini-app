@@ -1,4 +1,4 @@
-// src/components/Map.jsx — ФИНАЛЬНАЯ ВЕРСИЯ (всё работает!)
+// src/components/Map.jsx
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -69,7 +69,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'shadow-lg rounded-full bg-white px-2 py-1 text-xs font-bold text-amber-800 border-2 border-orange-500 whitespace-nowrap';
+      el.className = 'shadow-lg rounded-full bg-white px-2 py-1 text-xs font-bold text-amber-800 border border-rose-500 whitespace-nowrap';
       el.innerHTML = estate.name.length > 18 ? estate.name.slice(0, 15) + '...' : estate.name;
       el.style.cursor = 'pointer';
 
@@ -107,19 +107,22 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       )}
 
       {showHint && !isLoading && (
-        <div className="absolute top-3 left-3 right-3 bg-black/75 text-white text-sm px-4 py-2 rounded-lg z-10 animate-pulse">
-          Тапните на маркер или объект на карте
+        <div className="absolute top-3 left-3 right-3 bg-rose-600/75 text-white text-sm px-4 py-2 rounded-lg z-10 animate-pulse">
+          💡 Двигайте карту и нажимайте на объекты
         </div>
       )}
 
       <button
         onClick={handleRecenter}
-        className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-lg shadow-xl rounded-full p-3 z-10 hover:scale-110 transition active:scale-95"
+        className="absolute bottom-4 right-4 bg-rose-100/78 backdrop-blur-lg shadow-xl rounded-full p-3 z-10 hover:scale-110 transition active:scale-95"
         title="Центрировать"
       >
-        <svg className="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
+        <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth={2.5} viewBox="0 0 24 24">
+          <path d="M4 12h16" />
+          <path d="M12 4v16" />
+          <circle cx="12" cy="12" r="3" fill="none" strokeWidth="2.5" />
         </svg>
+
       </button>
 
       <div ref={mapRef} className="w-full h-full" />
