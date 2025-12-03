@@ -63,7 +63,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'shadow-lg rounded-full bg-white/80 px-2 py-1 text-xs font-bold text-orange-800 border-2 border-amber-800 whitespace-nowrap';
+      el.className = 'shadow-lg rounded-full bg-white/80 px-2 py-1 text-xs font-bold text-orange-800 border border-orange-800 whitespace-nowrap';
       el.innerHTML = estate.name.length > 18 ? estate.name.slice(0, 15) + '...' : estate.name;
 
       const marker = new window.ymaps3.YMapMarker(
