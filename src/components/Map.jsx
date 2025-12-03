@@ -12,7 +12,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const location = useLocation();
 
   // Конвертация [lat, lng] → [lng, lat]
-  const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
+  const toYandex = (coords) => coords && coords.length === 2 ? [coords[0], coords[1]] : [41.64, 41.65];
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
   useEffect(() => {
@@ -70,7 +70,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'shadow-xl rounded-full bg-white/95 backdrop-blur px-3 py-2 text-sm font-bold text-orange-800 border-2 border-rose-400 whitespace-nowrap hover:scale-110 transition';
+      el.className = 'shadow-xl rounded-full bg-rose-50/80 backdrop-blur px-3 py-2 text-sm font-bold text-rose-900 border-2 border-rose-400 whitespace-nowrap hover:scale-110 transition';
       el.innerHTML = estate.name.length > 16 ? estate.name.slice(0, 13) + '...' : estate.name;
 
       const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
@@ -104,7 +104,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       )}
 
       {showHint && !isLoading && (
-        <div className="absolute top-4 left-4 right-4 bg-rose-700/90 text-white text-sm px-4 py-3 rounded-xl z-20 animate-pulse shadow-lg">
+        <div className="absolute top-4 left-4 right-4 bg-rose-700/62 text-white text-sm px-4 py-3 rounded-xl z-20 animate-pulse shadow-lg">
           Карта интерактивна — кликайте на объекты и маркеры!
         </div>
       )}
