@@ -1,4 +1,4 @@
-// src/components/MapWithContext.jsx
+// src/components/MapWithContext.jsx — РАБОЧАЯ ВЕРСИЯ
 import React from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import Map from './Map';
@@ -9,34 +9,65 @@ const MapWithContext = () => {
   const { district: districtParam, estate: estateParam } = useParams();
   const location = useLocation();
 
-  // Главная — все комплексы
+  // КОНВЕРТАЦИЯ [lat, lng] → [lng, lat] — ЭТО ГЛАВНОЕ!
+  const toYandexCoords = (coords) => {
+    if (!coords || coords.length !== 2) return null;
+    return [coords[1], coords[0]]; // ← ВОТ ЭТО КЛЮЧЕВОЕ!
+  };
+
+  // Главная страница — весь регион
   if (location.pathname === '/') {
     const allEstates = Object.values(data?.districts || {}).flatMap(d =>
       Object.values(d.estates || {}).map(e => ({ ...e, district: d.name }))
     );
-    return <Map estates={allEstates} center={[41.65, 41.63]} zoom={10} />;
+    return (
+      <Map
+        estates={allEstates}
+        center={toYandexCoords([41.70, 41.72])} // центр Аджарии
+        zoom={10}
+      />
+    );
   }
 
   // Район
   if (districtParam && !estateParam) {
     const district = data?.districts?.[districtParam];
-    if (!district) return <div className="h-64 bg-gray-100 rounded-lg" />;
+    if (!district || !district.coords) {
+      return <Map estates={[]} center={toYandexCoords([41.65, 41.63])} zoom={11} />;
+    }
+
     const estatesInDistrict = Object.values(district.estates || {}).map(e => ({
       ...e,
       district: district.name
     }));
-    return <Map estates={estatesInDistrict} center={district.coords || [41.65, 41.63]} zoom={13} />;
+
+    return (
+      <Map
+        estates={estatesInDistrict}
+        center={toYandexCoords(district.coords)}   // ← ИСПРАВЛЕНО!
+        zoom={14}
+      />
+    );
   }
 
   // Конкретный комплекс
   if (districtParam && estateParam) {
     const estate = data?.districts?.[districtParam]?.estates?.[estateParam];
-    if (!estate || !estate.coords) return <div className="h-64 bg-gray-100 rounded-lg" />;
-    return <Map estates={[{ ...estate, district: districtParam }]} center={estate.coords} zoom={16} />;
+    if (!estate || !estate.coords) {
+      return <Map estates={[]} center={toYandexCoords([41.65, 41.63])} zoom={11} />;
+    }
+
+    return (
+      <Map
+        estates={[{ ...estate, district: districtParam }]}
+        center={toYandexCoords(estate.coords)}     // ← ИСПРАВЛЕНО!
+        zoom={17}
+      />
+    );
   }
 
   // По умолчанию
-  return <Map estates={[]} center={[41.65, 41.63]} zoom={11} />;
+  return <Map estates={[]} center={toYandexCoords([41.65, 41.63])} zoom={11} />;
 };
 
 export default MapWithContext;

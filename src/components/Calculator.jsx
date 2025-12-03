@@ -15,7 +15,7 @@ export default function Calculator() {
           step="5000"
           value={price}
           onChange={e => setPrice(+e.target.value)}
-          className="w-full h-3 bg-orange-100 rounded-lg appearance-none cursor-pointer"
+          className="w-full h-3 bg-orange-100 rounded-lg appearance-none cursor-pointer-cyan-600"
         />
         <div className="text-center text-3xl font-bold text-cyan-600 mt-6">
           ${price.toLocaleString()}
