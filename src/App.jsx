@@ -45,9 +45,9 @@ export default function App() {
       tg.expand();
 
       // MainButton — всегда виден
-      tg.MainButton.setText('Написать Андрею →');
+      tg.MainButton.setText('Написать менеджеру →');
       tg.MainButton.show();
-      tg.MainButton.color = '#f59e0b';
+      tg.MainButton.color = '#f5740bff';
       tg.MainButton.onClick(() => tg.openTelegramLink('https://t.me/a4k5o6'));
 
       // BackButton — только если не на главной
@@ -61,7 +61,7 @@ export default function App() {
   }, [loadData, location.pathname, navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-100 to-amber-100 text-orange-900 pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-100 to-amber-800 text-orange-900 pb-20">
       {/* Хедер с кнопкой назад */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-orange-950">
         <div className="max-w-3xl mx-auto flex items-center justify-between px-4 py-4">
@@ -71,14 +71,14 @@ export default function App() {
                 onClick={() => navigate(-1)}
                 className="p-2.5 rounded-full bg-orange-100 hover:bg-orange-200 transition active:scale-95"
               >
-                <svg className="w-6 h-6 text-orange-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-orange-800" fill="none" stroke="currentColor" viewBox="0 0 18 18">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
             )}
             <h1 className="text-2xl font-bold text-orange-800">Elaj Realty</h1>
           </div>
-          <span className="text-sm font-medium text-amber-700">Аджария • 2025</span>
+          <span className="text-sm font-medium text-amber-800">Аджария • 2026</span>
         </div>
       </header>
 
