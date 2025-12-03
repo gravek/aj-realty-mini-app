@@ -61,7 +61,7 @@ export default function App() {
   }, [loadData, location.pathname, navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-750 to-orange-800 text-orange-900 pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-75 to-red-900 text-orange-900 pb-20">
       {/* Хедер с кнопкой назад */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-orange-950">
         <div className="max-w-3xl mx-auto flex items-center justify-between px-4 py-4">
