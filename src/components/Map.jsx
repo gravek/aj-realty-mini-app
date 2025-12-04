@@ -12,7 +12,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const location = useLocation();
 
   // Конвертация [lat, lng] → [lng, lat]
-  const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
+  // const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
 
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
@@ -73,34 +73,53 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'relative cursor-pointer';
+      el.className = 'relative group cursor-pointer';
+      
+      // Адаптивный размер в зависимости от зума
+      const sizeClass = zoom >= 16 ? 'w-7 h-7' : 
+                        zoom >= 14 ? 'w-6 h-6' : 
+                        'w-5 h-5';
+      
+      const dotSizeClass = zoom >= 16 ? 'w-2.5 h-2.5' : 
+                          zoom >= 14 ? 'w-2 h-2' : 
+                          'w-1.5 h-1.5';
+      
+      // Определяем, показывать ли подсказку
+      const showTooltip = zoom >= 15;
       
       el.innerHTML = `
         <style>
-          @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
-            100% { transform: scale(1); opacity: 1; }
-          }
-          .pulse-animation {
-            animation: pulse 2s ease-in-out infinite;
+          @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 0.9; }
           }
         </style>
-        <div class="relative">
-          <!-- Внешнее пульсирующее кольцо -->
-          <div class="absolute -inset-2 bg-cyan-400 rounded-full opacity-30 pulse-animation"></div>
-          <!-- Основной маркер -->
-          <div class="relative w-10 h-10 bg-gradient-to-br from-cyan-600 to-blue-700 rounded-full border-3 border-white shadow-xl flex items-center justify-center transform transition-transform hover:scale-125">
-            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-            </svg>
+        
+        <div class="relative flex flex-col items-center">
+          <!-- Пульсирующее кольцо -->
+          <div class="absolute ${sizeClass} bg-cyan-400/30 rounded-full"
+              style="animation: gentle-pulse 2s ease-in-out infinite">
           </div>
+          
+          <!-- Основная точка -->
+          <div class="relative ${sizeClass} bg-gradient-to-b from-cyan-400 to-cyan-800 rounded-full border-2 border-white shadow-lg flex items-center justify-center transition-all duration-200 group-hover:scale-125 group-hover:shadow-xl z-10">
+            <div class="${dotSizeClass} bg-white/90 rounded-full"></div>
+          </div>
+          
+          <!-- Подсказка -->
+          ${showTooltip ? `
+            <div class="absolute bottom-full mb-2 px-2 py-1.5 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg text-xs font-semibold text-cyan-900 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none border border-cyan-100 max-w-[140px] truncate">
+              <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-cyan-100"></div>
+              ${estate.name}
+            </div>
+          ` : ''}
         </div>
       `;
       
       const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
 
-      el.onclick = () => {
+      el.onclick = (e) => {
+        e.stopPropagation();
         navigate(`/estate/${estate.district}/${encodeURIComponent(estate.name)}`);
       };
 
