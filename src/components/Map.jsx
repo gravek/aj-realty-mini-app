@@ -51,7 +51,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
 
     const yCenter = toYandex(center);
     const targetZoom = location.pathname.includes('/estate') ? 17 : location.pathname.includes('/district') ? 14 : zoom;
-    // console.log('useEffect location.pathname:', location.pathname, 'yCenter:', yCenter, 'targetZoom:', targetZoom);
+    console.log('useEffect location.pathname:', location.pathname, 'yCenter:', yCenter, 'targetZoom:', targetZoom);
 
     mapInstance.setLocation({
       center: yCenter,
@@ -67,40 +67,14 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
     markersRef.current.forEach(m => mapInstance.removeChild(m));
     markersRef.current = [];
 
-    // Добавляем метки
     estates.forEach(estate => {
       const coords = toYandex(estate.coords);
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'relative group cursor-pointer';
-      
-      // Основная точка
-      const dot = document.createElement('div');
-      dot.className = 'w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-full border-3 border-white shadow-xl flex items-center justify-center transform transition-transform group-hover:scale-110';
-      
-      // Иконка внутри
-      const icon = document.createElement('div');
-      icon.innerHTML = `
-        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-        </svg>
-      `;
-      
-      dot.appendChild(icon);
-      el.appendChild(dot);
-      
-      // Тень под точкой
-      const shadow = document.createElement('div');
-      shadow.className = 'absolute inset-0 bg-orange-300 blur-md rounded-full opacity-50 -z-10';
-      el.appendChild(shadow);
-      
-      // Всплывающая подсказка
-      const tooltip = document.createElement('div');
-      tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl text-sm font-semibold text-rose-900 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none';
-      tooltip.textContent = estate.name.length > 20 ? estate.name.slice(0, 18) + '...' : estate.name;
-      el.appendChild(tooltip);
-      
+      el.className = 'shadow-xl rounded-full bg-rose-50/60 backdrop-blur px-3 py-2 text-sm font-bold text-rose-900 border-2 border-rose-400 whitespace-nowrap hover:scale-110 transition';
+      el.innerHTML = estate.name.length > 16 ? estate.name.slice(0, 13) + '...' : estate.name;
+
       const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
 
       el.onclick = () => {
