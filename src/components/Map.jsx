@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const Map = ({ estates = [], center = [41.64, 41.65], zoom = 11 }) => {
+const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const mapRef = useRef(null);
   const [mapInstance, setMapInstance] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -11,24 +11,25 @@ const Map = ({ estates = [], center = [41.64, 41.65], zoom = 11 }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Функции для преобразования координат
-  // Маркеры: если estate.coords в формате [lng, lat] (как в логах), то преобразовываем в [lat, lng]
-  // Центр: center уже в правильном формате [lng, lat]
-  
+  // Функция для преобразования координат объектов
+  // Из логов: estate.coords = [41.77857, 41.764698] 
+  // Это уже [lng, lat], но возможно нужно [lat, lng]
+  // Яндекс Карты 3.0 используют [долгота, широта] = [lng, lat]
   const toYandexCoords = (coords) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
-    // Из логов: estate.coords = [41.77857, 41.764698] что уже [lng, lat]
-    // Для маркеров в YMap нужно [lng, lat], так что оставляем как есть
-    return [coords[0], coords[1]]; // [lng, lat]
+    // Для отладки: посмотрим, что лучше работает
+    // Попробуем оба варианта - отключите один из них
+    return [coords[0], coords[1]]; // Вариант 1: как есть [lng, lat]
+    // return [coords[1], coords[0]]; // Вариант 2: поменять местами [lat, lng]
   };
 
+  // Центр уже в правильном формате [lng, lat]
   const toYandexCenter = (coords) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
-    // center уже в правильном формате [lng, lat]
     return [coords[0], coords[1]]; // [lng, lat]
   };
 
-  // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
+  // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ===
   useEffect(() => {
     if (!window.ymaps3 || !mapRef.current) return;
 
@@ -45,7 +46,6 @@ const Map = ({ estates = [], center = [41.64, 41.65], zoom = 11 }) => {
 
       setMapInstance(map);
       setIsLoading(false);
-
       setTimeout(() => setShowHint(false), 5000);
     };
 
@@ -56,7 +56,7 @@ const Map = ({ estates = [], center = [41.64, 41.65], zoom = 11 }) => {
     };
   }, []);
 
-  // === ОСНОВНОЙ ЭФФЕКТ ДЛЯ ОБНОВЛЕНИЯ КАРТЫ И МАРКЕРОВ ===
+  // === ОСНОВНОЙ ЭФФЕКТ ===
   useEffect(() => {
     if (!mapInstance) return;
 
@@ -69,6 +69,7 @@ const Map = ({ estates = [], center = [41.64, 41.65], zoom = 11 }) => {
     const targetZoom = location.pathname.includes('/estate') ? 17 : location.pathname.includes('/district') ? 14 : zoom;
     
     console.log('Setting center to:', yCenter, 'zoom:', targetZoom);
+    console.log('Expected object location (from center):', center);
 
     // Устанавливаем центр и зум
     mapInstance.setLocation({
@@ -92,14 +93,40 @@ const Map = ({ estates = [], center = [41.64, 41.65], zoom = 11 }) => {
             return;
           }
           
-          const coords = toYandexCoords(estate.coords);
-          console.log(`Estate "${estate.name}":`, estate.coords, '->', coords);
+          // Пробуем разные варианты координат
+          const coordsOption1 = [estate.coords[0], estate.coords[1]]; // как есть
+          const coordsOption2 = [estate.coords[1], estate.coords[0]]; // поменять местами
+          
+          console.log(`Estate "${estate.name}":`, {
+            original: estate.coords,
+            option1: coordsOption1,
+            option2: coordsOption2,
+            center: center,
+            matchOption1: JSON.stringify(estate.coords) === JSON.stringify(center),
+            matchOption2: JSON.stringify([estate.coords[1], estate.coords[0]]) === JSON.stringify(center)
+          });
+          
+          // Выбираем вариант, который совпадает с центром
+          let coords;
+          if (JSON.stringify([estate.coords[1], estate.coords[0]]) === JSON.stringify(center)) {
+            // Если перевернутые координаты совпадают с центром
+            coords = coordsOption2; // [lat, lng]
+            console.log(`Using option2 for "${estate.name}" - matches center`);
+          } else if (JSON.stringify(estate.coords) === JSON.stringify(center)) {
+            // Если оригинальные координаты совпадают с центром
+            coords = coordsOption1; // [lng, lat]
+            console.log(`Using option1 for "${estate.name}" - matches center`);
+          } else {
+            // По умолчанию пробуем оба варианта
+            coords = coordsOption2; // Начинаем с перевернутых
+            console.log(`Defaulting to option2 for "${estate.name}"`);
+          }
 
           const el = document.createElement('div');
           el.className = 'relative cursor-pointer transform transition-transform hover:scale-125';
           
-          // ВСЕГДА показываем название для отладки
-          const shouldShowName = true; // временно всегда показываем
+          // Вернем логику показа подсказок
+          const shouldShowName = targetZoom >= 12 || estates.length === 1;
           
           const isSingleEstatePage = location.pathname.includes('/estate/') && estates.length === 1;
           
@@ -217,8 +244,8 @@ const Map = ({ estates = [], center = [41.64, 41.65], zoom = 11 }) => {
       )}
 
       {showHint && !isLoading && (
-        <div className="absolute top-2 left-4 right-4 bg-rose-700/80 text-white text-sm px-4 py-3 rounded-b-xl z-20 animate-pulse shadow-lg">
-          Карта интерактивна — двигайте, удерживайте маркеры, кликайте!
+        <div className="absolute top-4 left-4 right-4 bg-rose-700/62 text-white text-sm px-4 py-3 rounded-xl z-20 animate-pulse shadow-lg">
+          Карта интерактивна — кликайте на объекты и маркеры!
         </div>
       )}
 
