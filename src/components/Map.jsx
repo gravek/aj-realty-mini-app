@@ -1,8 +1,8 @@
-// src/components/Map.jsx — ФИНАЛЬНАЯ РАБОЧАЯ ВЕРСИЯ
+// src/components/Map.jsx — ИСПРАВЛЕННАЯ ВЕРСИЯ
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
+const Map = ({ estates = [], center = [41.64, 41.65], zoom = 11 }) => {
   const mapRef = useRef(null);
   const [mapInstance, setMapInstance] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,18 +12,20 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const location = useLocation();
 
   // Функции для преобразования координат
-  // Яндекс Карты 3.0 использует [долгота, широта] = [lng, lat]
-  // Если ваши координаты из веб-версии - это [широта, долгота] = [lat, lng]
+  // Маркеры: если estate.coords в формате [lng, lat] (как в логах), то преобразовываем в [lat, lng]
+  // Центр: center уже в правильном формате [lng, lat]
+  
   const toYandexCoords = (coords) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
-    // Если пришли [lat, lng] -> преобразуем в [lng, lat]
-    return [coords[1], coords[0]];
+    // Из логов: estate.coords = [41.77857, 41.764698] что уже [lng, lat]
+    // Для маркеров в YMap нужно [lng, lat], так что оставляем как есть
+    return [coords[0], coords[1]]; // [lng, lat]
   };
 
   const toYandexCenter = (coords) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
-    // Для center используем тот же порядок, что и в координатах объектов
-    return [coords[1], coords[0]];
+    // center уже в правильном формате [lng, lat]
+    return [coords[0], coords[1]]; // [lng, lat]
   };
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
@@ -34,7 +36,6 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       await window.ymaps3.ready;
       const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = window.ymaps3;
 
-      // Создаём карту с начальными координатами Аджарии [lng, lat]
       const map = new YMap(mapRef.current, {
         location: { center: [41.64, 41.65], zoom: 10 }
       });
@@ -84,7 +85,6 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
     if (estates.length > 0) {
       console.log('Creating markers for', estates.length, 'estates');
       
-      // Небольшая задержка для анимации
       setTimeout(() => {
         estates.forEach((estate, index) => {
           if (!estate.coords) {
@@ -98,14 +98,11 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
           const el = document.createElement('div');
           el.className = 'relative cursor-pointer transform transition-transform hover:scale-125';
           
-          // Определяем, показывать ли название
-          // Для отладки: всегда показывать название
-          const shouldShowName = targetZoom >= 12; // Уменьшил порог с 14 до 12
+          // ВСЕГДА показываем название для отладки
+          const shouldShowName = true; // временно всегда показываем
           
-          // Для страницы объекта (один объект) всегда показываем название
           const isSingleEstatePage = location.pathname.includes('/estate/') && estates.length === 1;
           
-          // Разные стили маркеров в зависимости от контекста
           if (isSingleEstatePage) {
             // Увеличенный маркер для страницы объекта
             el.innerHTML = `
@@ -125,7 +122,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg text-sm font-semibold text-gray-900 whitespace-nowrap pointer-events-none z-50 border border-gray-200">
+                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg text-sm font-semibold text-gray-900 whitespace-nowrap pointer-events-none z-50 border border-gray-200 min-w-max">
                   ${estate.name}
                   <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white/95 rotate-45 border-l border-t border-gray-200"></div>
                 </div>
@@ -150,7 +147,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
                 </div>
                 
                 ${shouldShowName ? `
-                  <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-50 border border-gray-200">
+                  <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-50 border border-gray-200 min-w-max">
                     ${estate.name.length > 16 ? estate.name.slice(0, 14) + '...' : estate.name}
                     <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white/95 rotate-45 border-l border-t border-gray-200"></div>
                   </div>
@@ -178,22 +175,6 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
               navigate(`/estate/${estate.district}/${encodeURIComponent(estate.name)}`);
             }
           };
-
-          // Hover эффект только при малом зуме и не для одиночной страницы
-          if (targetZoom < 12 && !isSingleEstatePage) {
-            el.addEventListener('mouseenter', () => {
-              const tooltip = document.createElement('div');
-              tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-50 border border-gray-200';
-              tooltip.textContent = estate.name.length > 20 ? estate.name.slice(0, 18) + '...' : estate.name;
-              tooltip.id = `tooltip-${estate.name.replace(/\s+/g, '-')}`;
-              el.appendChild(tooltip);
-            });
-            
-            el.addEventListener('mouseleave', () => {
-              const tooltip = el.querySelector(`#tooltip-${estate.name.replace(/\s+/g, '-')}`);
-              if (tooltip) tooltip.remove();
-            });
-          }
 
           mapInstance.addChild(marker);
           markersRef.current.push(marker);
