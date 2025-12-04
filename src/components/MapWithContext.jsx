@@ -24,7 +24,7 @@ const MapWithContext = () => {
   }
 
   else if (districtParam && !estateParam) {
-    const district = data?.districts?.[districtParam];
+    const district = data?.districts?.[decodeURIComponent(districtParam)]; // Декодируем
     if (district) {
       estates = Object.values(district.estates || {}).map(e => ({ ...e, district: district.name }));
       center = district.coords || center;
@@ -33,9 +33,9 @@ const MapWithContext = () => {
   }
 
   else if (districtParam && estateParam) {
-    const estate = data?.districts?.[districtParam]?.estates?.[estateParam];
+    const estate = data?.districts?.[decodeURIComponent(districtParam)]?.estates?.[decodeURIComponent(estateParam)]; // Декодируем
     if (estate?.coords) {
-      estates = [{ ...estate, district: districtParam }];
+      estates = [{ ...estate, district: decodeURIComponent(districtParam) }];
       center = estate.coords;
       zoom = 17;
     }
