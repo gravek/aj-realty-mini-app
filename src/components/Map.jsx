@@ -13,7 +13,6 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
 
   // Конвертация [lat, lng] → [lng, lat]
   const toYandex = (coords) => coords && coords.length === 2 ? [coords[0], coords[1]] : [41.64, 41.65];
-  console.log('toYandex:', toYandex);
 
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
