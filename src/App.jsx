@@ -10,6 +10,9 @@ import Apartment from './components/Apartment';
 import Calculator from './components/Calculator';
 import PersonalOfferStub from './components/PersonalOfferStub';
 
+// AppRoutes
+import AppRoutes from './components/AppRoutes';
+
 const BottomNav = () => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path || location.pathname.startsWith(path);
@@ -87,7 +90,12 @@ export default function App() {
         <MapWithContext />
       </div>
 
+      // Вместо старых Routes:
       <main className="px-4 pb-24">
+        <AppRoutes />
+      </main>
+
+      {/* <main className="px-4 pb-24">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/district/:district" element={<District />} />
@@ -96,7 +104,7 @@ export default function App() {
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/offer/:user_id" element={<PersonalOfferStub />} />
         </Routes>
-      </main>
+      </main> */}
 
       <BottomNav />
     </div>
