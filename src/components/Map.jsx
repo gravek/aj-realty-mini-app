@@ -11,8 +11,20 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Конвертация [lat, lng] → [lng, lat]
-  const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
+  // Функции для преобразования координат
+  // Яндекс Карты 3.0 использует [долгота, широта] = [lng, lat]
+  // Если ваши координаты из веб-версии - это [широта, долгота] = [lat, lng]
+  const toYandexCoords = (coords) => {
+    if (!coords || coords.length !== 2) return [41.64, 41.65];
+    // Если пришли [lat, lng] -> преобразуем в [lng, lat]
+    return [coords[1], coords[0]];
+  };
+
+  const toYandexCenter = (coords) => {
+    if (!coords || coords.length !== 2) return [41.64, 41.65];
+    // Для center используем тот же порядок, что и в координатах объектов
+    return [coords[1], coords[0]];
+  };
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
   useEffect(() => {
@@ -22,18 +34,17 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       await window.ymaps3.ready;
       const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = window.ymaps3;
 
-      // Создаём карту БЕЗ начальных координат — они будут установлены позже
+      // Создаём карту с начальными координатами Аджарии [lng, lat]
       const map = new YMap(mapRef.current, {
-        location: { center: [41.64, 41.65], zoom: 10 } // нейтральная точка
+        location: { center: [41.64, 41.65], zoom: 10 }
       });
 
       map.addChild(new YMapDefaultSchemeLayer());
-      map.addChild(new YMapDefaultFeaturesLayer()); // ← ВКЛЮЧАЕТ POI (Carrefour, ТЦ и т.д.)
+      map.addChild(new YMapDefaultFeaturesLayer());
 
       setMapInstance(map);
       setIsLoading(false);
 
-      // Подсказка
       setTimeout(() => setShowHint(false), 5000);
     };
 
@@ -42,98 +53,119 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
     return () => {
       if (mapInstance) mapInstance.destroy();
     };
-  }, []); // ← Только один раз!
+  }, []);
 
-  // === ВСЕГДА ОБНОВЛЯЕМ ЦЕНТР И ЗУМ И МАРКЕРЫ ===
+  // === ОСНОВНОЙ ЭФФЕКТ ДЛЯ ОБНОВЛЕНИЯ КАРТЫ И МАРКЕРОВ ===
   useEffect(() => {
     if (!mapInstance) return;
 
-    const yCenter = toYandex(center);
+    console.log('=== ОБНОВЛЕНИЕ КАРТЫ ===');
+    console.log('estates:', estates.length, 'items');
+    console.log('center from props:', center);
+    console.log('location.pathname:', location.pathname);
+
+    const yCenter = toYandexCenter(center);
     const targetZoom = location.pathname.includes('/estate') ? 17 : location.pathname.includes('/district') ? 14 : zoom;
     
-    console.log('useEffect location.pathname:', location.pathname, 'yCenter:', yCenter, 'targetZoom:', targetZoom);
+    console.log('Setting center to:', yCenter, 'zoom:', targetZoom);
 
-    // Устанавливаем новое местоположение карты
+    // Устанавливаем центр и зум
     mapInstance.setLocation({
       center: yCenter,
       zoom: targetZoom,
       duration: 900
     });
     
-    // Удаляем старые маркеры
+    // Очищаем старые маркеры
     markersRef.current.forEach(m => mapInstance.removeChild(m));
     markersRef.current = [];
     
     // Создаем новые маркеры
     if (estates.length > 0) {
-      // Небольшая задержка для плавности
+      console.log('Creating markers for', estates.length, 'estates');
+      
+      // Небольшая задержка для анимации
       setTimeout(() => {
-        estates.forEach(estate => {
-          const coords = toYandex(estate.coords);
-          if (!coords) return;
+        estates.forEach((estate, index) => {
+          if (!estate.coords) {
+            console.log('No coordinates for estate:', estate.name);
+            return;
+          }
+          
+          const coords = toYandexCoords(estate.coords);
+          console.log(`Estate "${estate.name}":`, estate.coords, '->', coords);
 
           const el = document.createElement('div');
-          el.className = 'relative cursor-pointer';
+          el.className = 'relative cursor-pointer transform transition-transform hover:scale-125';
           
           // Определяем, показывать ли название
-          const shouldShowName = targetZoom >= 14;
+          // Для отладки: всегда показывать название
+          const shouldShowName = targetZoom >= 12; // Уменьшил порог с 14 до 12
           
-          // Для страницы объекта (один объект) всегда показываем название и делаем маркер больше
+          // Для страницы объекта (один объект) всегда показываем название
           const isSingleEstatePage = location.pathname.includes('/estate/') && estates.length === 1;
           
-          el.innerHTML = `
-            <style>
-              @keyframes gentle-pulse {
-                0% { transform: scale(1); opacity: 0.9; }
-                50% { transform: scale(1.15); opacity: 1; }
-                100% { transform: scale(1); opacity: 0.9; }
-              }
-              @keyframes estate-pulse {
-                0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7); }
-                70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(6, 182, 212, 0); }
-                100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
-              }
-              .gentle-pulse {
-                animation: gentle-pulse 2s ease-in-out infinite;
-              }
-              .estate-pulse {
-                animation: estate-pulse 2s infinite;
-              }
-            </style>
-            <div class="relative">
-              ${isSingleEstatePage ? `
-                <!-- Увеличенный маркер для страницы объекта -->
+          // Разные стили маркеров в зависимости от контекста
+          if (isSingleEstatePage) {
+            // Увеличенный маркер для страницы объекта
+            el.innerHTML = `
+              <style>
+                @keyframes estate-pulse {
+                  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7); }
+                  70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(6, 182, 212, 0); }
+                  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+                }
+                .estate-pulse {
+                  animation: estate-pulse 2s infinite;
+                }
+              </style>
+              <div class="relative">
                 <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-900 rounded-full border-3 border-white shadow-2xl flex items-center justify-center estate-pulse">
                   <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-                <!-- Всегда показываем название для текущего объекта -->
-                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg text-sm font-semibold text-gray-900 whitespace-nowrap pointer-events-none z-50">
+                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg text-sm font-semibold text-gray-900 whitespace-nowrap pointer-events-none z-50 border border-gray-200">
                   ${estate.name}
-                  <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white/95 rotate-45"></div>
+                  <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white/95 rotate-45 border-l border-t border-gray-200"></div>
                 </div>
-              ` : `
-                <!-- Обычный маркер для списка объектов -->
+              </div>
+            `;
+          } else {
+            // Обычный маркер для списка объектов
+            el.innerHTML = `
+              <style>
+                @keyframes gentle-pulse {
+                  0% { transform: scale(1); opacity: 0.9; }
+                  50% { transform: scale(1.15); opacity: 1; }
+                  100% { transform: scale(1); opacity: 0.9; }
+                }
+                .gentle-pulse {
+                  animation: gentle-pulse 2s ease-in-out infinite;
+                }
+              </style>
+              <div class="relative">
                 <div class="w-6 h-6 bg-gradient-to-br from-cyan-400 to-cyan-800 rounded-full border-2 border-white shadow-lg flex items-center justify-center gentle-pulse">
                   <div class="w-2 h-2 bg-white rounded-full opacity-90"></div>
                 </div>
                 
                 ${shouldShowName ? `
-                  <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none">
+                  <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-50 border border-gray-200">
                     ${estate.name.length > 16 ? estate.name.slice(0, 14) + '...' : estate.name}
-                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white/95 rotate-45"></div>
+                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white/95 rotate-45 border-l border-t border-gray-200"></div>
                   </div>
                 ` : ''}
-              `}
-              
-              <div class="absolute -inset-2 bg-cyan-300/20 rounded-full opacity-0 transition-opacity duration-200 pointer-events-none click-effect"></div>
-            </div>
-          `;
+                
+                <div class="absolute -inset-2 bg-cyan-300/20 rounded-full opacity-0 transition-opacity duration-200 pointer-events-none click-effect"></div>
+              </div>
+            `;
+          }
           
           const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
+          console.log(`Created marker for "${estate.name}" at`, coords);
 
           el.onclick = (e) => {
+            e.stopPropagation();
             const clickEffect = el.querySelector('.click-effect');
             if (clickEffect) {
               clickEffect.style.opacity = '1';
@@ -148,10 +180,10 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
           };
 
           // Hover эффект только при малом зуме и не для одиночной страницы
-          if (targetZoom < 14 && !isSingleEstatePage) {
+          if (targetZoom < 12 && !isSingleEstatePage) {
             el.addEventListener('mouseenter', () => {
               const tooltip = document.createElement('div');
-              tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-50';
+              tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-50 border border-gray-200';
               tooltip.textContent = estate.name.length > 20 ? estate.name.slice(0, 18) + '...' : estate.name;
               tooltip.id = `tooltip-${estate.name.replace(/\s+/g, '-')}`;
               el.appendChild(tooltip);
@@ -166,7 +198,9 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
           mapInstance.addChild(marker);
           markersRef.current.push(marker);
         });
-      }, 100);
+        
+        console.log('Total markers created:', markersRef.current.length);
+      }, 150);
     }
   }, [mapInstance, center, zoom, location.pathname, estates, navigate]);
 
@@ -183,7 +217,9 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       targetZoom = 11;
     }
     
-    const yCenter = toYandex(center);
+    const yCenter = toYandexCenter(center);
+    console.log('Recenter to:', yCenter, 'zoom:', targetZoom);
+    
     mapInstance.setLocation({
       center: yCenter,
       zoom: targetZoom,
@@ -200,8 +236,8 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       )}
 
       {showHint && !isLoading && (
-        <div className="absolute top-4 left-4 right-4 bg-rose-700/80 text-white text-sm px-4 py-3 rounded-b-md z-20 animate-pulse shadow-lg">
-          Карта интерактивна — двигайте, удерживайте маркеры для подсказок, кликайте!
+        <div className="absolute top-2 left-4 right-4 bg-rose-700/80 text-white text-sm px-4 py-3 rounded-b-xl z-20 animate-pulse shadow-lg">
+          Карта интерактивна — двигайте, удерживайте маркеры, кликайте!
         </div>
       )}
 
