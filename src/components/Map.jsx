@@ -12,7 +12,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const location = useLocation();
 
   // Конвертация [lat, lng] → [lng, lat]
-  // const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
+  const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
 
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
