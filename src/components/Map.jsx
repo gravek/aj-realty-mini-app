@@ -51,6 +51,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
 
     const yCenter = toYandex(center);
     const targetZoom = location.pathname.includes('/estate') ? 17 : location.pathname.includes('/district') ? 14 : zoom;
+    
     console.log('useEffect location.pathname:', location.pathname, 'yCenter:', yCenter, 'targetZoom:', targetZoom);
 
     mapInstance.setLocation({
@@ -58,44 +59,133 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       zoom: targetZoom,
       duration: 900
     });
-  }, [mapInstance, center, zoom, location.pathname]);
+    
+    // Форсируем обновление маркеров при изменении зума
+    if (mapInstance && estates.length > 0) {
+      // Удаляем и пересоздаем маркеры с новым состоянием подсказок
+      setTimeout(() => {
+        markersRef.current.forEach(m => mapInstance.removeChild(m));
+        markersRef.current = [];
+        
+        estates.forEach(estate => {
+          const coords = toYandex(estate.coords);
+          if (!coords) return;
 
-  // === ОБНОВЛЕНИЕ МАРКЕРОВ ===
+          const el = document.createElement('div');
+          el.className = 'relative cursor-pointer';
+          
+          // Обновляем условие показа названия
+          const shouldShowName = targetZoom >= 14;
+          
+          el.innerHTML = `
+            <style>
+              @keyframes gentle-pulse {
+                0% { transform: scale(1); opacity: 0.9; }
+                50% { transform: scale(1.15); opacity: 1; }
+                100% { transform: scale(1); opacity: 0.9; }
+              }
+              .gentle-pulse {
+                animation: gentle-pulse 2s ease-in-out infinite;
+              }
+            </style>
+            <div class="relative">
+              <div class="w-6 h-6 bg-gradient-to-br from-cyan-400 to-cyan-800 rounded-full border-2 border-white shadow-lg flex items-center justify-center gentle-pulse">
+                <div class="w-2 h-2 bg-white rounded-full opacity-90"></div>
+              </div>
+              
+              ${shouldShowName ? `
+                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none">
+                  ${estate.name.length > 16 ? estate.name.slice(0, 14) + '...' : estate.name}
+                  <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white/95 rotate-45"></div>
+                </div>
+              ` : ''}
+              
+              <div class="absolute -inset-2 bg-cyan-300/20 rounded-full opacity-0 transition-opacity duration-200 pointer-events-none click-effect"></div>
+            </div>
+          `;
+          
+          const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
+
+          el.onclick = (e) => {
+            const clickEffect = el.querySelector('.click-effect');
+            clickEffect.style.opacity = '1';
+            setTimeout(() => {
+              clickEffect.style.opacity = '0';
+            }, 300);
+            
+            navigate(`/estate/${estate.district}/${encodeURIComponent(estate.name)}`);
+          };
+
+          // Hover эффект только при малом зуме
+          if (targetZoom < 14) {
+            el.addEventListener('mouseenter', () => {
+              const tooltip = document.createElement('div');
+              tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-50';
+              tooltip.textContent = estate.name.length > 20 ? estate.name.slice(0, 18) + '...' : estate.name;
+              tooltip.id = `tooltip-${estate.name.replace(/\s+/g, '-')}`;
+              el.appendChild(tooltip);
+            });
+            
+            el.addEventListener('mouseleave', () => {
+              const tooltip = el.querySelector(`#tooltip-${estate.name.replace(/\s+/g, '-')}`);
+              if (tooltip) tooltip.remove();
+            });
+          }
+
+          mapInstance.addChild(marker);
+          markersRef.current.push(marker);
+        });
+      }, 100); // Небольшая задержка для плавности
+    }
+  }, [mapInstance, center, zoom, location.pathname, estates, navigate]);
+
+  // === ОБНОВЛЕНИЕ МАРКЕРОВ === (было)
+
+
+
+  // Добавьте состояние для текущего зума
+  const [currentZoom, setCurrentZoom] = useState(zoom);
+  
+  // Добавьте обработчик изменения зума
   useEffect(() => {
     if (!mapInstance) return;
+    
+    const updateZoom = () => {
+      const location = mapInstance.getLocation();
+      setCurrentZoom(location.zoom);
+    };
+    
+    // Обновляем зум при изменении карты
+    mapInstance.on('update', updateZoom);
+    
+    return () => {
+      mapInstance.off('update', updateZoom);
+    };
+  }, [mapInstance]);
 
-    markersRef.current.forEach(m => mapInstance.removeChild(m));
-    markersRef.current = [];
 
-    estates.forEach(estate => {
-      const coords = toYandex(estate.coords);
-      if (!coords) return;
 
-      const el = document.createElement('div');
-      el.className = 'shadow-xl rounded-full bg-rose-50/60 backdrop-blur px-3 py-2 text-sm font-bold text-rose-900 border-2 border-rose-400 whitespace-nowrap hover:scale-110 transition';
-      el.innerHTML = estate.name.length > 16 ? estate.name.slice(0, 13) + '...' : estate.name;
-
-      const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
-
-      el.onclick = () => {
-        navigate(`/estate/${estate.district}/${encodeURIComponent(estate.name)}`);
-      };
-
-      mapInstance.addChild(marker);
-      markersRef.current.push(marker);
-    });
-  }, [mapInstance, estates, navigate]);
 
   // Центрирование по кнопке
   const handleRecenter = () => {
     if (!mapInstance) return;
-    const targetZoom = location.pathname.includes('/estate') ? 17 : 14;
+    
+    let targetZoom;
+    if (location.pathname.includes('/estate')) {
+      targetZoom = 17;
+    } else if (location.pathname.includes('/district')) {
+      targetZoom = 14;
+    } else {
+      targetZoom = 11;
+    }
+    
     mapInstance.setLocation({
       center: toYandex(center),
       zoom: targetZoom,
       duration: 800
     });
   };
+  
 
   return (
     <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-orange-200">
@@ -127,6 +217,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       <div ref={mapRef} className="w-full h-full" />
     </div>
   );
+
 };
 
 export default Map;
