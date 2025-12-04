@@ -90,7 +90,7 @@ export default function App() {
         <MapWithContext />
       </div>
 
-      // Вместо старых Routes:
+
       <main className="px-4 pb-24">
         <AppRoutes />
       </main>
