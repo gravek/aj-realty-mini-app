@@ -12,7 +12,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const location = useLocation();
 
   // Конвертация [lat, lng] → [lng, lat]
-  const toYandex = (coords) => coords && coords.length === 2 ? [coords[0], coords[1]] : [41.64, 41.65];
+  const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
 
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
@@ -73,33 +73,30 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       if (!coords) return;
 
       const el = document.createElement('div');
-      el.className = 'relative group cursor-pointer';
+      el.className = 'relative cursor-pointer';
       
-      // Основная точка
-      const dot = document.createElement('div');
-      dot.className = 'w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-full border-3 border-white shadow-xl flex items-center justify-center transform transition-transform group-hover:scale-110';
-      
-      // Иконка внутри
-      const icon = document.createElement('div');
-      icon.innerHTML = `
-        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-        </svg>
+      el.innerHTML = `
+        <style>
+          @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+          }
+          .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+          }
+        </style>
+        <div class="relative">
+          <!-- Внешнее пульсирующее кольцо -->
+          <div class="absolute -inset-2 bg-cyan-400 rounded-full opacity-30 pulse-animation"></div>
+          <!-- Основной маркер -->
+          <div class="relative w-10 h-10 bg-gradient-to-br from-cyan-600 to-blue-700 rounded-full border-3 border-white shadow-xl flex items-center justify-center transform transition-transform hover:scale-125">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+        </div>
       `;
-      
-      dot.appendChild(icon);
-      el.appendChild(dot);
-      
-      // Тень под точкой
-      const shadow = document.createElement('div');
-      shadow.className = 'absolute inset-0 bg-orange-300 blur-md rounded-full opacity-50 -z-10';
-      el.appendChild(shadow);
-      
-      // Всплывающая подсказка
-      const tooltip = document.createElement('div');
-      tooltip.className = 'absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl text-sm font-semibold text-rose-900 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none';
-      tooltip.textContent = estate.name.length > 20 ? estate.name.slice(0, 18) + '...' : estate.name;
-      el.appendChild(tooltip);
       
       const marker = new window.ymaps3.YMapMarker({ coordinates: coords }, el);
 
