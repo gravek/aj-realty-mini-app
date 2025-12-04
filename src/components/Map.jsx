@@ -19,8 +19,8 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
     // Для отладки: посмотрим, что лучше работает
     // Попробуем оба варианта - отключите один из них
-    // return [coords[0], coords[1]]; // Вариант 1: как есть [lng, lat]
-    return [coords[1], coords[0]]; // Вариант 2: поменять местами [lat, lng]
+    return [coords[0], coords[1]]; // Вариант 1: как есть [lng, lat]
+    // return [coords[1], coords[0]]; // Вариант 2: поменять местами [lat, lng]
   };
 
   // Центр уже в правильном формате [lng, lat]
