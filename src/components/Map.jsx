@@ -19,14 +19,15 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
     // Для отладки: посмотрим, что лучше работает
     // Попробуем оба варианта - отключите один из них
-    return [coords[0], coords[1]]; // Вариант 1: как есть [lng, lat]
-    // return [coords[1], coords[0]]; // Вариант 2: поменять местами [lat, lng]
+    // return [coords[0], coords[1]]; // Вариант 1: как есть [lng, lat]
+    return [coords[1], coords[0]]; // Вариант 2: поменять местами [lat, lng]
   };
 
   // Центр уже в правильном формате [lng, lat]
   const toYandexCenter = (coords) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
-    return [coords[0], coords[1]]; // [lng, lat]
+    // return [coords[0], coords[1]]; // [lng, lat]
+    return [coords[1], coords[0]]; // [lng, lat]
   };
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ===
@@ -244,8 +245,8 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       )}
 
       {showHint && !isLoading && (
-        <div className="absolute top-4 left-4 right-4 bg-rose-700/62 text-white text-sm px-4 py-3 rounded-xl z-20 animate-pulse shadow-lg">
-          Карта интерактивна — кликайте на объекты и маркеры!
+        <div className="absolute top-2 left-4 right-4 bg-rose-700/80 text-white text-sm px-4 py-3 rounded-b-xl z-20 animate-pulse shadow-lg">
+          Карта интерактивна — двигайте, удерживайте маркеры, кликайте!
         </div>
       )}
 
