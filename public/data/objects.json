@@ -3,6 +3,7 @@
     "Chakvi": {
       "name": "Chakvi",
       "coords": [41.723, 41.735],
+      "description": "Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. Расположен в 15 км от Батуми. ",
       "photos": {
         "sketch": [
           {
@@ -25,6 +26,7 @@
           "name": "Dreamland Oasis",
           "developer_name": "Dreamland Oasis",
           "coords": [41.725, 41.738],
+          "description": "Современный жилой комплекс на берегу Черного моря в Чакви, предлагающий комфортные апартаменты с видом на море, бассейны, зоны отдыха и развитую инфраструктуру для полноценного курортного образа жизни.",
           "photos": {
             "sketch": [
               {
@@ -98,8 +100,9 @@
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Block 7": {
+              "name": "Block 7",
+              "specifications": "10 этажей",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -145,6 +148,8 @@
         "Trinity": {
           "name": "Trinity",
           "developer_name": "B.Invest Development",
+          "coords": [41.679842, 41.702123],
+          "description": "Жилой комплекс у моря в Чакви с современными апартаментами, бассейнами и развитой инфраструктурой для комфортного проживания и отдыха.",
           "photos": {
             "sketch": [],
             "example": [],
@@ -276,8 +281,9 @@
       "estates": {
         "Coastline Kobuleti": {
           "name": "Coastline Kobuleti",
-          "developer_name": "-",
+          "developer_name": "Sea Baby",
           "coords": [41.796971, 41.770499],
+          "description": "200 метров до моря",
           "photos": {
             "sketch": [
               {
@@ -289,8 +295,10 @@
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
+              "specifications": "8 этажей",
+              "year": "2018",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -324,8 +332,9 @@
         },
         "Green Town": {
           "name": "Green Town",
-          "developer_name": "-",
+          "developer_name": "Nature Fields",
           "coords": [41.778570, 41.764698],
+          "description": "100м над уровнем моря",
           "photos": {
             "sketch": [
               {
@@ -339,6 +348,8 @@
           "blocks": {
             "Один блок": {
               "name": "Один блок",
+              "specifications": "3 этажа",
+              "year": "2025",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -385,6 +396,7 @@
           "name": "Petra Palace",
           "developer_name": "Petra Group",
           "coords": [41.798299, 41.787617],
+          "description": "100м до моря",
           "photos": {
             "sketch": [
               {
@@ -398,6 +410,8 @@
           "blocks": {
             "Один блок": {
               "name": "Один блок",
+              "specifications": "4 высоких этажа",
+              "year": "2020",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -418,7 +432,7 @@
                       "m2": 45,
                       "finishing": "Белый каркас",
                       "furnished": false,
-                      "specifications": "100м до моря",
+                      "specifications": "Свежий ремонт",
                       "address": "",
                       "price_usd": 49500,
                       "photos": []
@@ -433,6 +447,7 @@
           "name": "Coastline Kobuleti",
           "developer_name": "Рене Групп",
           "coords": [41.813068, 41.773143],
+          "description": "20м до моря!",
           "photos": {
             "sketch": [
               {
@@ -446,6 +461,8 @@
           "blocks": {
             "Один блок": {
               "name": "Один блок",
+              "specifications": "7 этажей",
+              "year": "2027",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -501,6 +518,7 @@
         "Госстрой": {
           "name": "Госстрой",
           "developer_name": "Правительство Аджарии",
+          "description": "Не хрущевка, новый дом",
           "photos": {
             "sketch": [
               {
@@ -512,8 +530,10 @@
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
+              "specifications": "12 этажей",
+              "year": "2015",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -616,7 +636,9 @@
       "estates": {
         "Mziuri Gardens": {
           "name": "Mziuri Gardens",
-          "developer_name": "-",
+          "developer_name": "Mziuri Invest",
+          "coords": [41.679842, 41.702123],
+          "description": "Хрущевка на выезде",
           "photos": {
             "sketch": [
               {
@@ -628,8 +650,9 @@
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
+              "specifications": "5 этажей",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -676,6 +699,7 @@
           "name": "Green Cape Botanico",
           "developer_name": "Green Cape",
           "coords": [41.693392, 41.705824],
+          "description": "В центре",
           "photos": {
             "sketch": [
               {
@@ -687,8 +711,9 @@
             "specific": []
           },
           "blocks": {
-            "-": {
-              "name": "-",
+            "Один блок": {
+              "name": "Один блок",
+              "specifications": "4 этажа",
               "photos": {
                 "sketch": [],
                 "example": [],

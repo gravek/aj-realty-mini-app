@@ -90,21 +90,10 @@ export default function App() {
         <MapWithContext />
       </div>
 
-      // Вместо старых Routes:
+
       <main className="px-4 pb-24">
         <AppRoutes />
       </main>
-
-      {/* <main className="px-4 pb-24">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/district/:district" element={<District />} />
-          <Route path="/estate/:district/:estate" element={<Estate />} />
-          <Route path="/apartment/:id" element={<Apartment />} />
-          <Route path="/calculator" element={<Calculator />} />
-          <Route path="/offer/:user_id" element={<PersonalOfferStub />} />
-        </Routes>
-      </main> */}
 
       <BottomNav />
     </div>
