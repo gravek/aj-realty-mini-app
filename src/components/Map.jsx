@@ -12,7 +12,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const location = useLocation();
 
   // Конвертация [lat, lng] → [lng, lat]
-  const toYandex = (coords) => coords && coords.length === 2 ? [coords[0], coords[1]] : [41.64, 41.65];
+  const toYandex = (coords) => coords && coords.length === 2 ? [coords[1], coords[0]] : [41.64, 41.65];
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ОДИН РАЗ ===
   useEffect(() => {
@@ -201,7 +201,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
 
       {showHint && !isLoading && (
         <div className="absolute top-4 left-4 right-4 bg-rose-700/80 text-white text-sm px-4 py-3 rounded-b-md z-20 animate-pulse shadow-lg">
-          Карта интерактивна — двигайте, приближайте и кликайте!
+          Карта интерактивна — двигайте, удерживайте маркеры для подсказок, кликайте!
         </div>
       )}
 
