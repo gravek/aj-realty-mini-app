@@ -27,7 +27,6 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const toYandexCenter = (coords) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
     return [coords[0], coords[1]]; // [lng, lat]
-    // return [coords[1], coords[0]]; // [lng, lat]
   };
 
   // === ИНИЦИАЛИЗАЦИЯ КАРТЫ ===
@@ -245,7 +244,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       )}
 
       {showHint && !isLoading && (
-        <div className="absolute top-2 left-4 right-4 bg-rose-700/80 text-white text-sm px-2 py-1 rounded-b-xl z-20 animate-pulse shadow-lg">
+        <div className="absolute top-1 left-4 right-4 bg-rose-700/80 text-white text-sm text-center px-2 py-1 rounded-b-xl z-20 animate-pulse shadow-lg">
           Карта интерактивна — двигайте, удерживайте маркеры, кликайте!
         </div>
       )}
