@@ -14,6 +14,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
 
 
   console.log('Map component MOUNTING', Date.now());
+  // console.log('Map PROPS:', { center, zoom, estates: estates.length });
   useEffect(() => {
     console.log('Map mounted');
     return () => console.log('Map UNMOUNTING');
@@ -79,7 +80,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
 
   const toYandexCenter = (coords) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
-    return [coords[0], coords[1]];
+    return [coords[1], coords[0]];
   };
 
   // Сохраняем, что подсказка была показана
@@ -123,12 +124,20 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   useEffect(() => {
     if (!mapInstance) return;
 
+    // Если estates пустые - ждем данные
+    // if (estates.length === 0 && location.pathname.includes('/apartment/')) {
+    //   console.log('Waiting for apartment data...');
+    //   return;
+    // }
+
+
     const yCenter = toYandexCenter(center);
     const targetZoom = location.pathname.includes('/apartment/') ? 18 : 
                        location.pathname.includes('/estate/') ? 17 : 
                        location.pathname.includes('/district/') ? 14 : 
                        zoom;
 
+    // console.log('Map updating with:', { yCenter, targetZoom, center });
     mapInstance.setLocation({
       center: yCenter,
       zoom: targetZoom,

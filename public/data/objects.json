@@ -520,6 +520,7 @@
           "name": "Госстройка",
           "developer_name": "Правительство Аджарии",
           "description": "Не хрущевка, новый дом",
+          "coords": [41.811106, 41.788001],
           "photos": {
             "sketch": [
               {
@@ -551,6 +552,7 @@
                   "apartments": [
                     {
                       "apartment_id": "8b256d37",
+                      "coords": [41.811106, 41.788001],
                       "floor": 2,
                       "m2": 65,
                       "finishing": "С ремонтом",
@@ -562,6 +564,7 @@
                     },
                     {
                       "apartment_id": "f0be9ae0",
+                      "coords": [41.809882, 41.779296],
                       "floor": 6,
                       "m2": 58,
                       "finishing": "Белый каркас",
@@ -583,6 +586,7 @@
                   "apartments": [
                     {
                       "apartment_id": "d0912593",
+                      "coords": [41.808639, 41.773628],
                       "floor": 4,
                       "m2": 33,
                       "finishing": "Белый каркас",
@@ -604,6 +608,7 @@
                   "apartments": [
                     {
                       "apartment_id": "53dcf3ef",
+                      "coords": [41.810525, 41.779361],
                       "floor": 5,
                       "m2": 44,
                       "finishing": "С ремонтом",
