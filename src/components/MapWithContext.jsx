@@ -51,7 +51,9 @@ const MapWithContext = () => {
 
   return (
     <Map
-      key={location.pathname}
+      // key={location.pathname}
+      // key={`${estates.length}-${zoom}`}
+      key="main-map"
       estates={estates}
       center={toYandex(center)}
       zoom={zoom}

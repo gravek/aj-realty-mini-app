@@ -12,6 +12,13 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+
+  console.log('Map component MOUNTING', Date.now());
+  useEffect(() => {
+    console.log('Map mounted');
+    return () => console.log('Map UNMOUNTING');
+  }, []);
+
   // Ценовые диапазоны для Аджарии (в долларах)
   const PRICE_LEVELS = [
     { label: 'Бюджетные', min: 30000, max: 80000, color: 'from-green-400 to-emerald-600', text: 'text-green-600' },
@@ -291,7 +298,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   };
   
   return (
-    <div className="relative w-full h-64 rounded-none shadow-2xl border-4 border-rose-200 overflow-hidden">
+    <div className="relative w-full h-64 rounded-none shadow-2xl border-1 border-rose-200">
       {isLoading && (
         <div className="absolute inset-0 bg-orange-50/95 flex items-center justify-center z-20">
           <span className="text-orange-800 font-bold text-lg">Загрузка карты Аджарии...</span>

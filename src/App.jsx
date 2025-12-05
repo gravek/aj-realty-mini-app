@@ -85,8 +85,8 @@ export default function App() {
         </div>
       </header>
 
-      {/* Карта — всегда сверху */}
-      <div className="h-64 -mx-4 mb-6">
+      {/* Карта — всегда сверху  overflow-hidden*/}
+      <div className="h-64 -mx-0 mb-6 overflow-hidden">
         <MapWithContext />
       </div>
 
