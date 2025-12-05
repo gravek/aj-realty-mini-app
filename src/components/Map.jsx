@@ -67,7 +67,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   // Функции для преобразования координат
   const toYandexCoords = (coords) => {
     if (!coords || coords.length !== 2) return [41.64, 41.65];
-    return [coords[0], coords[1]];
+    return [coords[1], coords[0]];
   };
 
   const toYandexCenter = (coords) => {
@@ -175,7 +175,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl text-sm font-bold text-gray-900 whitespace-nowrap pointer-events-none z-50 border border-gray-200 min-w-max">
+                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl text-sm font-bold text-gray-900 whitespace-nowrap pointer-events-none z-50 border border-rose-200 min-w-max">
                   <div class="font-bold">${displayName}</div>
                   <div class="text-xs text-purple-600 font-semibold">${formattedPrice}</div>
                   <div class="text-xs text-gray-500">Ваш апартамент</div>
@@ -196,12 +196,12 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
                 }
               </style>
               <div class="relative">
-                <div class="w-10 h-10 bg-gradient-to-br ${markerColor} rounded-full border-3 border-white shadow-2xl flex items-center justify-center estate-pulse">
-                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <div class="w-8 h-8 bg-gradient-to-br ${markerColor} rounded-full border-3 border-white shadow-2xl flex items-center justify-center estate-pulse">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg text-sm font-semibold text-gray-900 whitespace-nowrap pointer-events-none z-50 border border-gray-200 min-w-max">
+                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg text-sm font-semibold text-gray-900 whitespace-nowrap pointer-events-none z-50 border border-rose-200 min-w-max">
                   <div class="font-bold">${displayName}</div>
                   <div class="text-xs ${priceTextColor} font-semibold">от ${formattedPrice}</div>
                   <div class="text-xs text-gray-500">${priceLabel}</div>
@@ -222,14 +222,14 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
                 }
               </style>
               <div class="relative">
-                <div class="w-8 h-8 bg-gradient-to-br ${markerColor} rounded-full border-2 border-white shadow-lg flex items-center justify-center gentle-pulse">
-                  <div class="w-3 h-3 bg-white rounded-full opacity-90"></div>
+                <div class="w-6 h-6 bg-gradient-to-br ${markerColor} rounded-full border-2 border-white shadow-lg flex items-center justify-center gentle-pulse">
+                  <div class="w-2 h-2 bg-white rounded-full opacity-90"></div>
                 </div>
                 
-                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-40 border border-gray-200 min-w-max">
+                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-white/95 backdrop-blur-sm rounded-md shadow-md text-xs font-medium text-gray-800 whitespace-nowrap pointer-events-none z-40 border border-rose-200 min-w-max">
                   <div class="font-semibold">${displayName.length > 20 ? displayName.slice(0, 18) + '...' : displayName}</div>
                   <div class="text-xs ${priceTextColor} font-semibold">${formattedPrice}</div>
-                  <div class="text-xs text-gray-500">${priceLabel}</div>
+                  <!-- <div class="text-xs text-gray-500">${priceLabel}</div> -->
                   <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white/95 rotate-45 border-l border-t border-gray-200"></div>
                 </div>
                 
@@ -291,7 +291,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
   };
   
   return (
-    <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-orange-200">
+    <div className="relative w-full h-64 rounded-none shadow-2xl border-4 border-rose-200 overflow-hidden">
       {isLoading && (
         <div className="absolute inset-0 bg-orange-50/95 flex items-center justify-center z-20">
           <span className="text-orange-800 font-bold text-lg">Загрузка карты Аджарии...</span>
@@ -305,10 +305,10 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
       )}
 
       {/* Легенда/подсказка по цветам */}
-      <div className="absolute top-4 left-4 z-10">
+      <div className="absolute top-2 left-5 z-10">
         <button
           onClick={() => setShowLegend(!showLegend)}
-          className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg px-3 py-2 text-sm font-medium text-gray-800 hover:bg-white transition-all flex items-center gap-2"
+          className="bg-white/90 backdrop-blur-sm rounded-b-md shadow-lg px-2 py-1 text-xs font-medium text-orange-800 border-rose-300 hover:bg-white transition-all flex items-center gap-1"
           title="Показать легенду"
         >
           <svg className={`w-4 h-4 transition-transform ${showLegend ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -318,40 +318,43 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
         </button>
         
         {showLegend && (
-          <div className="mt-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 w-64 border border-gray-200 animate-slideDown">
-            <h3 className="font-bold text-gray-900 mb-3 text-sm">Цвета объектов по цене:</h3>
-            
-            <div className="space-y-2">
-              {PRICE_LEVELS.map((level, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${level.color} border border-white shadow-sm`}></div>
-                  <div className="flex-1">
-                    <div className="text-sm font-medium text-gray-800">{level.label}</div>
-                    <div className="text-xs text-gray-600">
-                      {level.max === Infinity 
-                        ? `от $${level.min.toLocaleString()}+` 
-                        : `$${level.min.toLocaleString()} – $${level.max.toLocaleString()}`}
+          // <div className="absolute left-12 top-0 z-50">
+          <div className="map-legend">
+            <div className="mt-1 bg-white/80 backdrop-blur-sm rounded-md shadow-xl p-4 w-56 border border-rose-300 animate-slideDown">
+              <h3 className="font-bold text-gray-800 mb-3 text-xs">Цвета объектов по цене:</h3>
+              
+              <div className="space-y-2">
+                {PRICE_LEVELS.map((level, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <div className={`w-4 h-4 rounded-full bg-gradient-to-br ${level.color} border border-white shadow-sm`}></div>
+                    <div className="flex-1">
+                      <div className="text-xs font-medium text-gray-800">{level.label}</div>
+                      <div className="text-xs text-cyan-600">
+                        {level.max === Infinity 
+                          ? `от $${level.min.toLocaleString()}+` 
+                          : `$${level.min.toLocaleString()} – $${level.max.toLocaleString()}`}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-4 pt-3 border-t border-gray-200">
-              <div className="text-xs text-gray-600 space-y-1">
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 border border-white"></div>
-                  <span>Апартамент — ваш выбор</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 border border-white animate-gentle-pulse"></div>
-                  <span>Пульсация — объекты активны</span>
+                ))}
+              </div>
+              
+              <div className="mt-4 pt-3 border-t border-rose-200">
+                <div className="text-xs text-gray-600 space-y-1">
+                  <div className="flex items-center gap-1">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 border border-white"></div>
+                    <span>Апартамент — ваш выбор</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 border border-white animate-gentle-pulse"></div>
+                    <span>Пульсация — объекты активны</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="mt-4 text-xs text-gray-500">
-              <p>💡 <strong>Совет:</strong> Кликайте на маркеры для перехода к объектам</p>
+              
+              <div className="mt-2 text-xs text-gray-500">
+                <p>💡 <strong>Совет:</strong> кликайте на маркеры для перехода к объектам</p>
+              </div>
             </div>
           </div>
         )}
