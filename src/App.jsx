@@ -79,14 +79,14 @@ export default function App() {
                 </svg>
               </button>
             )}
-            <h1 className="text-2xl font-bold text-orange-800">Elaj Realty</h1>
+            <h1 className="text-2xl font-bold text-orange-800">Elad Realty</h1>
           </div>
-          <span className="text-sm font-medium text-amber-800">Аджария • 2026</span>
+          <span className="text-sm font-medium text-amber-800">Грузия • 2026</span>
         </div>
       </header>
 
-      {/* Карта — всегда сверху  overflow-hidden*/}
-      <div className="h-64 -mx-0 mb-6">
+      {/* Карта — overflow-hidden*/}
+      <div className="h-64 -mx-0 mb-6 overflow-hidden">
         <MapWithContext />
       </div>
 
