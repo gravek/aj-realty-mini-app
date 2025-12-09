@@ -214,7 +214,7 @@ export default function Districts() {
         className="fixed bottom-24 right-6 z-50 bg-white/80 backdrop-blur-md border border-rose-400 rounded-full p-3 shadow-2xl hover:shadow-orange-500 hover:scale-110 transition-all opacity-0 invisible translate-y-10"
         id="scrollTopBtn"
       >
-        <svg className="w-6 h-6 text-orange-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6 text-orange-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </button>

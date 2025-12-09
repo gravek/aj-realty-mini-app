@@ -26,7 +26,7 @@ const BottomNav = () => {
           to="/"
           className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${
             isActive(['/'])
-              ? 'text-orange-900 font-bold border-y-2 border-rose-600 -mb-1'
+              ? 'text-orange-800 font-bold border-y-2 border-rose-600 -mb-1'
               : 'text-amber-600 font-medium'
           }`}
         >
@@ -38,7 +38,7 @@ const BottomNav = () => {
           to="/districts"
           className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${
             isActive(['/districts', '/estate', '/apartment'])
-              ? 'text-orange-900 font-bold border-y-2 border-cyan-600 -mb-1'
+              ? 'text-orange-800 font-bold border-y-2 border-cyan-600 -mb-1'
               : 'text-amber-600 font-medium'
           }`}
         >
@@ -50,7 +50,7 @@ const BottomNav = () => {
           to="/calculator"
           className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${
             isActive('/calculator')
-              ? 'text-orange-900 font-bold border-y-2 border-cyan-600 -mb-1'
+              ? 'text-orange-800 font-bold border-y-2 border-cyan-600 -mb-1'
               : 'text-amber-600 font-medium'
           }`}
         >
@@ -118,9 +118,9 @@ export default function App() {
   }, [loadData, location.pathname, navigate, prevName]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 via-amber-70 via-orange-80 to-orange-200 text-orange-900 pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 via-amber-70 via-orange-80 to-orange-200 text-orange-800 pb-20">
       {/* Хедер с кнопкой назад */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-orange-950">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-orange-800">
         <div className="max-w-3xl mx-auto relative px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             {location.pathname !== '/' && (
