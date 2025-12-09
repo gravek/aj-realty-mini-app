@@ -73,7 +73,7 @@ export default function Districts() {
   return (
     <div className="mt-6 pb-20 relative">
       {/* Вертикальная шкала-оглавление */}
-      <div className="fixed left-2 top-1/2 -translate-y-1/2 z-40 pointer-events-none">
+      <div className="fixed left-3 top-1/2 -translate-y-1/2 z-40 pointer-events-none">
         <div className="relative">
           {/* Вертикальная линия-шкала */}
           <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-transparent via-orange-500 to-transparent opacity-60" />
@@ -117,7 +117,7 @@ export default function Districts() {
       </div>
 
       {/* Основной контент */}
-      <div className="max-w-5xl mx-auto ml-4"> {/* отступ под боковую панель */}
+      <div className="max-w-5xl mx-auto ml-6"> {/* отступ под боковую панель */}
         <div className="text-center mb-12 px-8">
           <h1 className="text-4xl font-bold text-orange-900 mb-3">Районы Аджарии</h1>
           <p className="text-amber-700 text-lg">выберите свой идеальный уголок у моря</p>
@@ -148,8 +148,9 @@ export default function Districts() {
 
           return (
             <section key={districtKey} id={`district-${districtKey}`} className="mb-16 scroll-mt-32">
+              
               {/* Разделитель */}
-              <div className="my-12 h-px bg-gradient-to-r from-transparent via-orange-400 to-transparent" />
+              <div className="my-12 h-px bg-gradient-to-r from-rose-200 via-orange-300 to-rose-200" />
 
               {/* Заголовок района */}
               <div className="my-12 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-3xl p-8 text-white shadow-2xl">

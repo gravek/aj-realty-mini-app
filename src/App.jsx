@@ -80,9 +80,9 @@ export default function App() {
   const getRouteName = (path) => {
     if (!path) return null;
     if (path === '/') return 'Главная';
-    if (path.startsWith('/districts')) return 'Объекты';
-    if (path.startsWith('/estate')) return 'Объект';
-    if (path.startsWith('/apartment')) return 'Квартира';
+    if (path.startsWith('/districts')) return 'Районы';
+    if (path.startsWith('/estate')) return 'ЖК';
+    if (path.startsWith('/apartment')) return 'Апартаменты';
     if (path.startsWith('/calculator')) return 'Расчёты';
     return path;
   };
@@ -129,7 +129,7 @@ export default function App() {
                 className="p-2.5 rounded-full bg-orange-100 hover:bg-orange-200 transition active:scale-95 flex items-center"
                 aria-label="Назад"
               >
-                <svg className="w-4 h-4 text-orange-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
 
