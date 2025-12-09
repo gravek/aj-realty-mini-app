@@ -91,7 +91,7 @@ export default function Districts() {
                   className={`w-1 h-6 rounded-full border-2 transition-all duration-1000 ${
                     activeDistrict === key
                       ? 'bg-orange-600 border-rose-600 scale-250 shadow-lg shadow-orange-500/50'
-                      : 'bg-white border-amber-400 group-hover:border-orange-500 group-hover:scale-110'
+                      : 'bg-white border-amber-500 group-hover:border-orange-500 group-hover:scale-110'
                   }`}
                 />
 
@@ -153,7 +153,7 @@ export default function Districts() {
               <div className="my-12 h-px bg-gradient-to-r from-rose-200 via-orange-300 to-rose-200" />
 
               {/* Заголовок района */}
-              <div className="my-12 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-3xl p-8 text-white shadow-2xl">
+              <div className="my-12 bg-gradient-to-r from-cyan-600 to-sky-600 rounded-3xl p-8 text-white shadow-2xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">{district.name}</h2>
                 {district.description && (
                   <p className="text-white/95 text-lg leading-relaxed max-w-3xl">
