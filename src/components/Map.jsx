@@ -336,7 +336,7 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
         {showLegend && (
           // <div className="absolute left-12 top-0 z-50">
           <div className="map-legend">
-            <div className="mt-1 bg-white/80 backdrop-blur-sm rounded-md shadow-xl p-4 w-64 border border-rose-300 animate-slideDown">
+            <div className="mt-8 bg-white/80 backdrop-blur-sm rounded-md shadow-xl p-4 w-64 border border-rose-300 animate-slideDown">
               <h3 className="font-bold text-gray-800 mb-3 text-sm">Цвета объектов по цене:</h3>
               
               <div className="space-y-2">
@@ -357,10 +357,10 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
               
               <div className="mt-4 pt-3 border-t border-rose-200">
                 <div className="text-sm text-gray-600 space-y-1">
-                  <div className="flex items-center gap-1">
+                  {/* <div className="flex items-center gap-1">
                     <div className="w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 border border-white"></div>
                     <span>Апартамент — ваш выбор</span>
-                  </div>
+                  </div> */}
                   <div className="flex items-center gap-1">
                     <div className="w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 border border-white animate-gentle-pulse"></div>
                     <span>Пульсация — объекты активны</span>

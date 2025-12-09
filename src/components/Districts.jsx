@@ -9,6 +9,15 @@ export default function Districts() {
 
   const districts = Object.entries(data?.districts || {});
 
+  const districts_about_text = (
+    <div>
+      <p className="font-mono mt-2 mb-2">Представьте утро на первой линии Чёрного моря 🌊: панорамный вид на закат 🌅, свежий бриз 🌬️, кофе на балконе вашего апартамента ☕...</p>
+      <p className="font-normal mb-2">Это не просто дом — это стиль жизни, где природа 🏞️ и инфраструктура 🏙️ дарят гармонию 💚 и удобство ✨!</p>
+    </div>
+  );
+
+
+
   // Эффект для кнопки прокрутки наверх
   useEffect(() => {
     const btn = document.getElementById('scrollTopBtn');
@@ -112,6 +121,10 @@ export default function Districts() {
         <div className="text-center mb-12 px-8">
           <h1 className="text-4xl font-bold text-orange-900 mb-3">Районы Аджарии</h1>
           <p className="text-amber-700 text-lg">выберите свой идеальный уголок у моря</p>
+        </div>
+
+        <div className="max-w-2xl mx-auto px-4 mb-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl tracking-tighter text-left font-bold border border-rose-300 text-orange-900">
+          {districts_about_text}
         </div>
 
         {districts.map(([districtKey, district], index) => {

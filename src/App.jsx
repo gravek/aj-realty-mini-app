@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from './store';
 import MapWithContext from './components/MapWithContext';
@@ -30,7 +30,7 @@ const BottomNav = () => {
               : 'text-amber-600 font-medium'
           }`}
         >
-          <span className="text-lg">Главная</span>
+          <span className="text-md">Главная</span>
         </Link>
 
         {/* ОБЪЕКТЫ / Районы */}
@@ -42,7 +42,7 @@ const BottomNav = () => {
               : 'text-amber-600 font-medium'
           }`}
         >
-          <span className="text-lg">Объекты</span>
+          <span className="text-md">Объекты</span>
         </Link>
 
         {/* Калькулятор */}
@@ -54,7 +54,7 @@ const BottomNav = () => {
               : 'text-amber-600 font-medium'
           }`}
         >
-          <span className="text-lg">Расчеты</span>
+          <span className="text-md">Расчеты</span>
         </Link>
       </div>
     </div>
@@ -65,6 +65,29 @@ export default function App() {
   const { loadData } = useStore();
   const navigate = useNavigate();
   const location = useLocation();
+
+  // фиксация предыдущего пути
+  const prevPathRef = useRef(null);
+  const [prevPath, setPrevPath] = useState(null);
+
+  useEffect(() => {
+    // при изменении location сохраняем предыдущее значение в состояние,
+    // затем обновляем ref текущим значением
+    setPrevPath(prevPathRef.current);
+    prevPathRef.current = location.pathname;
+  }, [location.pathname]);
+
+  const getRouteName = (path) => {
+    if (!path) return null;
+    if (path === '/') return 'Главная';
+    if (path.startsWith('/districts')) return 'Объекты';
+    if (path.startsWith('/estate')) return 'Объект';
+    if (path.startsWith('/apartment')) return 'Квартира';
+    if (path.startsWith('/calculator')) return 'Расчёты';
+    return path;
+  };
+
+  const prevName = getRouteName(prevPath);
 
   useEffect(() => {
     loadData();
@@ -84,31 +107,47 @@ export default function App() {
       if (location.pathname !== '/') {
         tg.BackButton.show();
         tg.BackButton.onClick(() => navigate(-1));
+        // если доступно — подписываем текст кнопки в телеграме
+        if (typeof tg.BackButton.setText === 'function') {
+          tg.BackButton.setText(prevName || 'Назад');
+        }
       } else {
         tg.BackButton.hide();
       }
     }
-  }, [loadData, location.pathname, navigate]);
+  }, [loadData, location.pathname, navigate, prevName]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 via-amber-70 via-orange-80 to-orange-200 text-orange-900 pb-20">
       {/* Хедер с кнопкой назад */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-orange-950">
-        <div className="max-w-3xl mx-auto flex items-center justify-between px-4 py-4">
+        <div className="max-w-3xl mx-auto relative px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             {location.pathname !== '/' && (
               <button
                 onClick={() => navigate(-1)}
-                className="p-2.5 rounded-full bg-orange-100 hover:bg-orange-200 transition active:scale-95"
+                className="p-2.5 rounded-full bg-orange-100 hover:bg-orange-200 transition active:scale-95 flex items-center"
+                aria-label="Назад"
               >
-                <svg className="w-6 h-6 text-orange-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                <svg className="w-4 h-4 text-orange-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
+
+                {prevName && (
+                  <span className="ml-0 text-xs font-medium text-orange-800">
+                    {prevName}
+                  </span>
+                )}
               </button>
             )}
-            <h1 className="text-2xl font-bold text-orange-800">Elad Realty</h1>
           </div>
-          <span className="text-sm font-medium text-amber-800">Грузия • 2026</span>
+
+          {/* Центрируем заголовок абсолютно */}
+          <h1 className="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold text-orange-800 pointer-events-none">
+            • Elad Realty •
+          </h1>
+
+          <span className="text-sm font-medium text-amber-800">Грузия</span>
         </div>
       </header>
 
