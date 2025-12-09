@@ -3,31 +3,58 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useStore } from './store';
 import MapWithContext from './components/MapWithContext';
-import Home from './components/Home';
-import District from './components/District';
-import Estate from './components/Estate';
-import Apartment from './components/Apartment';
-import Calculator from './components/Calculator';
-import PersonalOfferStub from './components/PersonalOfferStub';
+
 
 // AppRoutes
 import AppRoutes from './components/AppRoutes';
 
 const BottomNav = () => {
   const location = useLocation();
-  const isActive = (path) => location.pathname === path || location.pathname.startsWith(path);
+
+  const isActive = (paths) => {
+    if (Array.isArray(paths)) {
+      return paths.some(p => location.pathname === p || location.pathname.startsWith(p));
+    }
+    return location.pathname === paths || location.pathname.startsWith(paths);
+  };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-amber-100 z-50">
-      <div className="flex justify-around items-center max-w-md mx-auto py-3">
-        <Link to="/" className={`px-6 py-2 font-medium transition ${isActive('/') ? 'text-orange-900 font-bold' : 'text-amber-600'}`}>
-          Главная
+    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-amber-200 z-50 shadow-2xl">
+      <div className="flex justify-around items-center max-w-md mx-auto py-4">
+        {/* Главная */}
+        <Link
+          to="/"
+          className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${
+            isActive(['/'])
+              ? 'text-orange-900 font-bold border-y-2 border-rose-600 -mb-1'
+              : 'text-amber-600 font-medium'
+          }`}
+        >
+          <span className="text-lg">Главная</span>
         </Link>
-        <Link to="/district/Chakvi" className={`px-6 py-2 font-medium transition ${isActive('/district') ? 'text-orange-900 font-bold' : 'text-amber-600'}`}>
-          Районы
+
+        {/* ОБЪЕКТЫ / Районы */}
+        <Link
+          to="/districts"
+          className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${
+            isActive(['/districts', '/estate', '/apartment'])
+              ? 'text-orange-900 font-bold border-y-2 border-cyan-600 -mb-1'
+              : 'text-amber-600 font-medium'
+          }`}
+        >
+          <span className="text-lg">Объекты</span>
         </Link>
-        <Link to="/calculator" className={`px-6 py-2 font-medium transition ${isActive('/calculator') ? 'text-orange-900 font-bold' : 'text-amber-600'}`}>
-          Калькулятор
+
+        {/* Калькулятор */}
+        <Link
+          to="/calculator"
+          className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${
+            isActive('/calculator')
+              ? 'text-orange-900 font-bold border-y-2 border-cyan-600 -mb-1'
+              : 'text-amber-600 font-medium'
+          }`}
+        >
+          <span className="text-lg">Расчеты</span>
         </Link>
       </div>
     </div>
@@ -94,17 +121,6 @@ export default function App() {
       <main className="px-4 pb-24">
         <AppRoutes />
       </main>
-
-      {/* <main className="px-4 pb-24">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/district/:district" element={<District />} />
-          <Route path="/estate/:district/:estate" element={<Estate />} />
-          <Route path="/apartment/:id" element={<Apartment />} />
-          <Route path="/calculator" element={<Calculator />} />
-          <Route path="/offer/:user_id" element={<PersonalOfferStub />} />
-        </Routes>
-      </main> */}
 
       <BottomNav />
     </div>
