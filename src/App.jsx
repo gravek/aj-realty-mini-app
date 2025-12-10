@@ -97,25 +97,37 @@ export default function App() {
       tg.ready();
       tg.expand();
 
-      // MainButton — всегда виден
-      tg.MainButton.setText('Написать менеджеру →');
-      tg.MainButton.show();
-      tg.MainButton.color = '#f5740bff';
-      tg.MainButton.onClick(() => tg.openTelegramLink('https://t.me/a4k5o6'));
+      // ГЛАВНАЯ КНОПКА — ВСЕГДА ВИДНА И РАБОТАЕТ НА ВСЕХ СТРАНИЦАХ
+      tg.MainButton.setText('Написать менеджеру');
+      tg.MainButton.color = '#f5740b'; // оранжевый, как у тебя
+      tg.MainButton.textColor = '#ffffff';
+      tg.MainButton.show(); // ВСЕГДА ПОКАЗЫВАЕМ
 
-      // BackButton — только если не на главной
-      if (location.pathname !== '/') {
-        tg.BackButton.show();
-        tg.BackButton.onClick(() => navigate(-1));
-        // если доступно — подписываем текст кнопки в телеграме
-        if (typeof tg.BackButton.setText === 'function') {
-          tg.BackButton.setText(prevName || 'Назад');
+      const openManagerChat = () => {
+        tg.openTelegramLink('https://t.me/a4k5o6');
+        tg.close(); // опционально: закрыть WebApp после перехода в чат
+      };
+
+      tg.MainButton.onClick(openManagerChat);
+
+      // BackButton — только если НЕ на главной
+      const handleRouteChange = () => {
+        if (location.pathname === '/') {
+          tg.BackButton.hide();
+        } else {
+          tg.BackButton.show();
+          tg.BackButton.onClick(() => navigate(-1));
         }
-      } else {
-        tg.BackButton.hide();
-      }
+      };
+
+      handleRouteChange(); // при загрузке
+
+      // При смене маршрута — обновляем BackButton
+      return () => {
+        tg.MainButton.offClick(openManagerChat);
+      };
     }
-  }, [loadData, location.pathname, navigate, prevName]);
+  }, [loadData, location.pathname, navigate]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 via-amber-70 via-orange-80 to-orange-200 text-orange-800 pb-20">

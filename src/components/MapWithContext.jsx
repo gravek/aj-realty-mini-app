@@ -15,7 +15,8 @@ const MapWithContext = () => {
   let center = [41.70, 41.72]; // центр Аджарии
   let zoom = 11;
 
-  if (location.pathname === '/' && location.pathname === '/districts') {
+  if (location.pathname === '/' || location.pathname === '/districts') {
+  // if (location.pathname === '/') {
     // Главная страница
     estates = Object.values(data?.districts || {}).flatMap(d =>
       Object.values(d.estates || {}).map(e => ({ 

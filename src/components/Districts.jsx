@@ -123,7 +123,7 @@ export default function Districts() {
           <p className="text-amber-700 text-lg">выберите свой идеальный уголок у моря</p>
         </div>
 
-        <div className="max-w-2xl mx-auto px-4 mb-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl tracking-tighter text-left font-bold border border-rose-300 text-orange-900">
+        <div className="max-w-2xl mx-auto px-4 mb-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl tracking-tighter text-left font-bold border border-rose-300 text-orange-800">
           {districts_about_text}
         </div>
 
@@ -164,7 +164,7 @@ export default function Districts() {
                   <img
                     src={district.photos.specific[0].url}
                     alt={district.name}
-                    className="w-full h-64 object-cover rounded-2xl mt-6 shadow-xl"
+                    className="w-full h-48 object-cover rounded-2xl mt-6 shadow-xl"
                   />
                 )}
               </div>
@@ -177,7 +177,7 @@ export default function Districts() {
                     to={`/estate/${district.name}/${estate.name}`}
                     className="group block bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
                   >
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
                       <div className="grid grid-cols-2 h-full">
                         <img src={estate.photos2[0]} alt="" className="object-cover group-hover:scale-110 transition" />
                         <img src={estate.photos2[1]} alt="" className="object-cover group-hover:scale-110 transition" />

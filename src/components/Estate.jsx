@@ -19,6 +19,10 @@ export default function Estate() {
       <h1 className="text-3xl font-bold mb-2">{current.name}</h1>
       {current.developer_name && <p className="text-lg text-gray-600 mb-6">{current.developer_name}</p>}
 
+      <div className="max-w-2xl font-normal tracking-tighter text-left mx-auto px-4 mb-8  bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-rose-300 text-orange-800">
+        {current.description || 'estate_about_text'}
+      </div>
+
       <div className="grid gap-4">
         {apartments.map(ap => (
           <Link
