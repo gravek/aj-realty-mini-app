@@ -20,26 +20,26 @@ export default function Districts() {
 
   // Эффект для кнопки прокрутки наверх
   useEffect(() => {
-    const btn = document.getElementById('scrollTopBtn');
-
     const toggleBtn = () => {
-      if (window.scrollY > 1000) {
-        btn?.classList.remove('opacity-0', 'invisible', 'translate-y-10');
-        btn?.classList.add('opacity-100', 'visible', 'translate-y-0');
+      const btn = document.getElementById('scrollTopBtn'); // Ищем кнопку каждый раз
+      if (!btn) return; // Если вдруг нет — выходим
+
+      // console.log('Scroll Y:', window.scrollY);
+
+      if (window.scrollY > 800) {  // Можно 400-600, чтобы появлялась раньше
+        btn.classList.remove('opacity-0', 'invisible', 'translate-y-10');
+        btn.classList.add('opacity-100', 'visible', 'translate-y-0');
       } else {
-        btn?.classList.add('opacity-0', 'invisible', 'translate-y-10');
-        btn?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        btn.classList.add('opacity-0', 'invisible', 'translate-y-10');
+        btn.classList.remove('opacity-100', 'visible', 'translate-y-0');
       }
     };
 
-    // Добавляем обработчик скролла
     window.addEventListener('scroll', toggleBtn);
-    // Вызываем сразу для установки начального состояния
-    toggleBtn();
+    toggleBtn(); // Проверка при загрузке
 
-    // Очистка
     return () => window.removeEventListener('scroll', toggleBtn);
-  }, []);
+  }, []); // Зависимостей нет — эффект один раз
 
   // Отслеживаем, какой район сейчас вверху экрана
   useEffect(() => {
@@ -190,7 +190,7 @@ export default function Districts() {
                         )}
                       </div>
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 relative">
                       {estate.description && (
                         <p className="text-gray-700 text-sm line-clamp-3 mb-4">{estate.description}</p>
                       )}
@@ -199,6 +199,17 @@ export default function Districts() {
                           от ${estate.minPrice.toLocaleString()}
                         </p>
                       )}
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.openGallery(estate, district.name);
+                        }}
+                        className="absolute bottom-4 right-4 bg-white/80 backdrop-blur px-2 py-1 border border-rose-400 rounded-full shadow-lg transition flex items-center gap-1 animate-pulse opacity-95"
+                      >
+                        <span className="text-2xl">📸</span>
+                        {/* <span className="text-xs font-medium text-orange-700">📸 Галерея</span> */}
+                      </button>
                     </div>
                   </Link>
                 ))}

@@ -19,9 +19,21 @@ export default function Estate() {
       <h1 className="text-3xl font-bold mb-2">{current.name}</h1>
       {current.developer_name && <p className="text-lg text-gray-600 mb-6">{current.developer_name}</p>}
 
-      <div className="max-w-2xl font-normal tracking-tighter text-left mx-auto px-4 mb-8  bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-rose-300 text-orange-800">
+      <div className="max-w-2xl font-normal tracking-tighter text-left mx-auto px-4 mb-2  bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-rose-300 text-orange-800">
         {current.description || 'estate_about_text'}
       </div>
+
+      <div className="flex justify-center items-center">
+        <button
+          onClick={() => openGallery(current, district)}
+          className="w-1/2 mb-8 mx-auto bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition mt-8"
+        >
+          ОТКРЫТЬ ФОТО
+        </button>
+      </div>
+
+
+
 
       <div className="grid gap-4">
         {apartments.map(ap => (

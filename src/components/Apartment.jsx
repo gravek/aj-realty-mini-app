@@ -45,12 +45,12 @@ export default function Apartment() {
         <p className="text-xl mt-2">{apartment.m2} м² • {apartment.finishing}</p>
         <p className="text-gray-600 mt-4">Этаж: {apartment.floor} • {apartment.specifications || '—'}</p>
       </div>
-      <button 
+      {/* <button 
         onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
         className="w-full bg-cyan-600 text-white py-4 rounded-xl font-bold text-lg"
       >
         Написать менеджеру
-      </button>
+      </button> */}
     </div>
   );
 }
