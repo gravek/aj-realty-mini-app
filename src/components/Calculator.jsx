@@ -21,9 +21,9 @@ export default function Calculator() {
           ${price.toLocaleString()}
         </div>
         <div className="mt-8 space-y-3 text-lg">
-          <p>Годовая аренда (10%): <strong className="text-teal-600">${(price * 0.1).toLocaleString()}</strong></p>
-          <p>Годовая аренда (12%): <strong className="text-teal-600">${(price * 0.12).toLocaleString()}</strong></p>
-          <p className="text-sm text-orange-400">Средняя загрузка 70%, сезон май-октябрь</p>
+          <p>Годовая аренда (10%): <strong className="text-cyan-600">${(price * 0.1).toLocaleString()}</strong></p>
+          <p>Годовая аренда (12%): <strong className="text-cyan-600">${(price * 0.12).toLocaleString()}</strong></p>
+          <p className="text-sm text-orange-600">Средняя загрузка 70%, сезон май-октябрь</p>
         </div>
       </div>
     </div>

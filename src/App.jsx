@@ -99,7 +99,7 @@ export default function App() {
 
       // ГЛАВНАЯ КНОПКА — ВСЕГДА ВИДНА И РАБОТАЕТ НА ВСЕХ СТРАНИЦАХ
       tg.MainButton.setText('Написать менеджеру');
-      tg.MainButton.color = '#ff6054'; // оранжевый
+      tg.MainButton.color = '#007595'; // персиковый #ff6054, cyan-600 #007595, teal-600 #009689
       tg.MainButton.textColor = '#ffffff';
       tg.MainButton.show(); // ВСЕГДА ПОКАЗЫВАЕМ
 
