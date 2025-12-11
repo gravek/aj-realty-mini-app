@@ -34,7 +34,7 @@ const BottomNav = () => {
   );
 };
 
-export default function Layout() {
+export default function App() {
   const { loadData } = useStore();
   const navigate = useNavigate();
   const location = useLocation();
