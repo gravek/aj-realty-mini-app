@@ -1,31 +1,37 @@
 Directory structure:
 └── aj-realty-mini-app/
-    ├── aj-realty-mini-app structure.txt
+    ├── aj-realty-mini-app folder structure.txt
     ├── index.html
+    ├── package-lock.json
     ├── package.json
     ├── postcss.config.js
     ├── public/
     │   ├── data/
     │   │   └── objects.json
-    │   ├── index.html
+    │   ├── icon.png
     │   ├── manifest.json
+    │   ├── placeholder.jpg
     │   └── service-worker.js
     ├── src/
     │   ├── App.jsx
     │   ├── components/
     │   │   ├── Apartment.jsx
+    │   │   ├── AppRoutes.jsx
     │   │   ├── Calculator.jsx
     │   │   ├── District.jsx
+    │   │   ├── Districts.jsx
     │   │   ├── Estate.jsx
     │   │   ├── Filters.jsx
     │   │   ├── Home.jsx
     │   │   ├── Map.jsx
     │   │   ├── MapWithContext.jsx
-    │   │   └── PersonalOfferStub.jsx
-    │   ├── icon.png
+    │   │   ├── PersonalOfferStub.jsx
+    │   │   └── PhotoGalleryModal.jsx
     │   ├── index.css
     │   ├── main.jsx
-    │   └── store.js
+    │   ├── store.js
+    │   └── utils/
+    │       └── hasPhotos.js
     ├── tailwind.config.js
     ├── vercel.json
     ├── vercel.json.bak

@@ -119,7 +119,26 @@
                   "name": "1+1",
                   "photos": {
                     "sketch": [],
-                    "example": [],
+                    "example": [
+                          {
+                            "new_filename": "Chakvi-Dreamland_Oasis-sketch-Example-Изобр_3d90c.jpg",
+                            "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_3d90c.jpg",
+                            "url": "https:\\i.ibb.co\\qF4NFDTL\\Chakvi-Dreamland-Oasis-sketch-Example-3d90c.jpg",
+                            "description": "Chakvi, Dreamland Oasis:\n\n1. Уютная спальня с двуспальной кроватью.\n2. Стильное постельное белье и декоративные подушки.\n3. Деревянная отделка на стене за изголовьем.\n4. Современное освещение с встраиваемыми светильниками.\n5. Элегантные картины с природными мотивами.\n6. Плотные темные шторы для затемнения.\n7. Прозрачные шторы пропускают мягкий свет.\n8. Комфортное кресло возле окна.\n9. Простор, комфорт и стиль."
+                          },
+                          {
+                            "new_filename": "Chakvi-Dreamland_Oasis-sketch-Example-Изобр_49d2c.jpg",
+                            "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_49d2c.jpg",
+                            "url": "https:\\i.ibb.co\\ymgPgMjh\\Chakvi-Dreamland-Oasis-sketch-Example-49d2c.jpg",
+                            "description": "Chakvi, Dreamland Oasis. Современная ванная комната. Светлый интерьер. Комфортабельная раковина и унитаз. Биде для удобства. Большое зеркало. Стиральная машина интегрирована. Полотенцесушитель на стене. Стильная напольная плитка. Мягкое освещение."
+                          },
+                          {
+                            "new_filename": "Chakvi-Dreamland_Oasis-sketch-Example-Изобр_918e2.jpg",
+                            "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_918e2.jpg",
+                            "url": "https:\\i.ibb.co\\1fr345Yw\\Chakvi-Dreamland-Oasis-sketch-Example-918e2.jpg",
+                            "description": "```  \nChakvi, Dreamland Oasis: Современная спальня с двуспальной кроватью. Дизайнерские картины украшают стены. Телевизор на стене. Просторные окна с плотными шторами. Комфортная мебель и уютная обстановка.\n```"
+                          }
+                        ],
                     "specific": []
                   },
                   "apartments": [
@@ -132,7 +151,18 @@
                       "specifications": "Семейный апартамент",
                       "address": "",
                       "price_usd": 110000,
-                      "photos": []
+                      "photos": {
+                        "sketch": [],
+                        "example": [],
+                        "specific": [
+                              {
+                                "new_filename": "",
+                                "old_path": "",
+                                "url": "https://avatars.mds.yandex.net/i?id=540fd4896638fde2ae690af52afb2d321e1f772e-5596602-images-thumbs&n=13",
+                                "description": "Пора брать!"
+                              }
+                            ]
+                      }
                     },
                     {
                       "apartment_id": "c3f31191",

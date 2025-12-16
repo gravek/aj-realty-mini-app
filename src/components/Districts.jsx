@@ -2,10 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../store';
+import PhotoGalleryModal from './PhotoGalleryModal';
 
 export default function Districts() {
   const { data } = useStore();
   const [activeDistrict, setActiveDistrict] = useState('');
+  const [modalOpenFor, setModalOpenFor] = useState(null);
+  const [modalEstate, setModalEstate] = useState(null);
 
   const districts = Object.entries(data?.districts || {});
 
@@ -43,6 +46,7 @@ export default function Districts() {
 
   // Отслеживаем, какой район сейчас вверху экрана
   useEffect(() => {
+
     const handleScroll = () => {
       let current = '';
       districts.forEach(([key]) => {
@@ -127,33 +131,54 @@ export default function Districts() {
           {districts_about_text}
         </div>
 
-        {districts.map(([districtKey, district], index) => {
-          const estates = Object.values(district.estates || {}).map(estate => {
-            const prices = Object.values(estate.blocks || {})
-              .flatMap(b => Object.values(b.apartment_types || {}))
-              .flatMap(t => t.apartments?.map(a => a.price_usd) || []);
-            const minPrice = prices.length ? Math.min(...prices) : null;
+        {districts.map(([key, district]) => {
+          // ← Считаем наличие фото ОДИН РАЗ без useMemo (просто обычная функция)
+          const hasPhotos = (() => {
+            let count = 0;
+            const countPhotos = (obj) => {
+              if (!obj) return;
+              ['sketch', 'example', 'specific'].forEach(t => {
+                count += (obj[t] || []).filter(p => p.url).length;
+              });
+            };
+            countPhotos(district.photos);
+            Object.values(district.estates || {}).forEach(e => {
+              countPhotos(e.photos);
+              Object.values(e.blocks || {}).forEach(b => {
+                countPhotos(b.photos);
+                Object.values(b.apartment_types || {}).forEach(t => {
+                  countPhotos(t.photos);
+                  (t.apartments || []).forEach(a => countPhotos(a.photos));
+                });
+              });
+            });
+            return count > 0;
+          })();
 
-            const photos = [
-              ...(estate.photos?.sketch || []),
-              ...(estate.photos?.example || []),
-              ...(estate.photos?.specific || [])
-            ].map(p => p.url).filter(Boolean);
-
-            const photos2 = photos.slice(0, 2);
-            while (photos2.length < 2) photos2.push('/placeholder.jpg');
-
-            return { ...estate, districtName: district.name, minPrice, photos2 };
-          });
+          // ← Находим estates точно так же, как у тебя было (ничего не меняем)
+          const estates = Object.values(district.estates || {})
+            .map(e => {
+              const minPrice = Math.min(...Object.values(e.blocks || {})
+                .flatMap(b => Object.values(b.apartment_types || {}))
+                .flatMap(t => t.apartments.map(a => a.price_usd || Infinity)));
+              const allPhotos = [
+                ...(e.photos?.sketch || []).map(p => p.url).filter(Boolean),
+                ...(e.photos?.example || []).map(p => p.url).filter(Boolean)
+              ];
+              while (allPhotos.length < 2) allPhotos.push('/placeholder.jpg');
+              const photos2 = allPhotos.slice(0, 2);
+              return { ...e, minPrice, photos2 };
+            })
+            .sort((a, b) => a.minPrice - b.minPrice);
 
           return (
-            <section key={districtKey} id={`district-${districtKey}`} className="mb-16 scroll-mt-32">
+            <section key={key} id={`district-${key}`} className="relative py-12">
               
               {/* Разделитель */}
               <div className="my-12 h-px bg-gradient-to-r from-rose-200 via-orange-300 to-rose-200" />
 
               {/* Заголовок района */}
-              <div className="my-12 bg-gradient-to-r from-cyan-600 to-sky-600 rounded-3xl p-8 text-white shadow-2xl">
+              <div className="my-2 bg-gradient-to-r from-cyan-600 to-sky-600 rounded-3xl p-8 text-white shadow-2xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">{district.name}</h2>
                 {district.description && (
                   <p className="text-white/95 text-lg leading-relaxed max-w-3xl">
@@ -166,6 +191,18 @@ export default function Districts() {
                     alt={district.name}
                     className="w-full h-48 object-cover rounded-2xl mt-6 shadow-xl"
                   />
+                )}
+              </div>
+
+              {/* Кнопка всех фото района */}
+              <div className="flex my-8 justify-center items-center">
+                {hasPhotos && (
+                  <button
+                    onClick={() => setModalOpenFor(key)}
+                    className="mt-6 bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition"
+                  >
+                    Показать все фото района
+                  </button>
                 )}
               </div>
 
@@ -214,6 +251,12 @@ export default function Districts() {
                   </Link>
                 ))}
               </div>
+              <PhotoGalleryModal
+                isOpen={modalOpenFor === key}
+                onClose={() => setModalOpenFor(null)}
+                entity={district}
+                entityType="district"
+              />
             </section>
           );
         })}

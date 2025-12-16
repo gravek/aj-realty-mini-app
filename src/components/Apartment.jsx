@@ -1,17 +1,20 @@
-// src/components/Apartment.jsx — автономная версия
-import React, { useEffect, useState } from 'react';
+// src/components/Apartment.jsx
+import React, { useEffect, useState } from 'react';  // useMemo НЕ нужен
 import { useParams } from 'react-router-dom';
 import { useStore } from '../store';
+import PhotoGalleryModal from './PhotoGalleryModal';  // ← добавь импорт
 
 export default function Apartment() {
   const { id } = useParams();
   const { data } = useStore();
   const [apartment, setApartment] = useState(null);
+  const [parentEstate, setParentEstate] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (!data) return;
 
-    // Ищем по всему дереву objects.json
+    // ← твой оригинальный поиск апартамента — полностью без изменений
     for (const district of Object.values(data.districts || {})) {
       for (const estate of Object.values(district.estates || {})) {
         for (const block of Object.values(estate.blocks || {})) {
@@ -24,6 +27,7 @@ export default function Apartment() {
                 districtName: district.name,
                 estatePhoto: estate.photos?.sketch?.[0]?.url || estate.photos?.specific?.[0]?.url
               });
+              setParentEstate(estate); // ← сохраняем весь estate
               return;
             }
           }
@@ -33,6 +37,23 @@ export default function Apartment() {
   }, [data, id]);
 
   if (!apartment) return <div className="p-8 text-center">Апартамент не найден</div>;
+
+  // ← Считаем наличие фото без хуков (обычная функция)
+  const hasApartmentPhotos = (() => {
+    let count = 0;
+    const countPhotos = (obj) => {
+      if (!obj) return;
+      ['sketch', 'example', 'specific'].forEach(t => {
+        count += (obj[t] || []).filter(p => p.url).length;
+      });
+    };
+    countPhotos(apartment.photos);  // фото самого апартамента
+
+    // Если нужно учитывать фото типа/блока/ЖК — модалка и так их подтянет через data,
+    // но для показа кнопки достаточно хотя бы одного фото на уровне apartment
+    return count > 0;
+  })();
+
 
   return (
     <div className="space-y-6">
@@ -45,12 +66,40 @@ export default function Apartment() {
         <p className="text-xl mt-2">{apartment.m2} м² • {apartment.finishing}</p>
         <p className="text-gray-600 mt-4">Этаж: {apartment.floor} • {apartment.specifications || '—'}</p>
       </div>
-      {/* <button 
+
+      {/* ← Кнопка галереи — только если есть фото */}
+      {/* Кнопка всегда видна, если апартамент найден */}
+      {apartment && (
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="w-full bg-orange-600 bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg transition"
+        >
+          📸 Показать фото для апартамента
+        </button>
+      )}
+
+      {/* Модалка — передаём найденный estate, если он есть */}
+      <PhotoGalleryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        entity={parentEstate || apartment}   // приоритет — estate, если найден
+        entityType="estate"                  // всегда как estate — надёжно собирает всё
+      />
+
+      <button 
         onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
         className="w-full bg-cyan-600 text-white py-4 rounded-xl font-bold text-lg"
       >
         Написать менеджеру
-      </button> */}
+      </button>
+
+      {/* ← Модалка */}
+      {/* <PhotoGalleryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        entity={apartment}
+        entityType="estate"  // ← estate, block, apartment (на выбор)
+      /> */}
     </div>
   );
 }
