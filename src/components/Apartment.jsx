@@ -64,7 +64,7 @@ export default function Apartment() {
       <div className="bg-white p-6 rounded-2xl shadow">
         <p className="text-4xl font-bold text-cyan-600">${apartment.price_usd.toLocaleString()}</p>
         <p className="text-xl mt-2">{apartment.m2} м² • {apartment.finishing}</p>
-        <p className="text-gray-600 mt-4">Этаж: {apartment.floor} • {apartment.specifications || '—'}</p>
+        <p className="text-gray-600 mt-4">Этаж: {apartment.floor} • {apartment.specifications || ''}</p>
       </div>
 
       {/* ← Кнопка галереи — только если есть фото */}

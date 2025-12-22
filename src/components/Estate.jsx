@@ -25,7 +25,7 @@ export default function Estate() {
       {current.developer_name && <p className="text-lg text-gray-600 mb-6">{current.developer_name}</p>}
 
       <div className="max-w-2xl font-normal tracking-tighter text-left mx-auto px-3 py-2 mb-2  bg-white/90 backdrop-blur-sm rounded-lg shadow-xl border border-rose-300 text-orange-800">
-        {current.description || 'estate_about_text'}
+        {current.description || 'estate_description'}
       </div>
 
       {/* Кнопка фото, если есть */}
