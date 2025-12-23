@@ -1,207 +1,54 @@
 {
   "districts": {
-    "Chakvi": {
-      "name": "Chakvi",
-      "coords": [41.723, 41.735],
-      "description": "Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. Расположен в 15 км от Батуми. ",
+    "Batumi": {
+      "name": "Batumi",
+      "coords": [41.651685, 41.637411],
+      "description": "🌊 Батуми — динамичный курортный город Грузии, столица Аджарии на побережье Черного моря. Сочетает современную архитектуру, ухоженные пляжи и богатую историю. Идеальное место для жизни и инвестиций с высоким туристическим потоком и доходностью.",
       "photos": {
-        "sketch": [
-          {
-            "url": "https://i.ibb.co/JWv6z7yZ/Chakvi-Sh.jpg",
-            "description": "Chakvi sketch"
-          }
+        "sketch": [],
+        "example": [
+              {
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766514389/jbq69geubsaesghjyajz.jpg",
+                "description": "Батуми: поздний закат"
+              }
         ],
-        "example": [],
         "specific": [
-          {
-            "new_filename": "Chakvi-Dreamland_Oasis-----Chakv_атуми.jpg",
-            "old_path": "Chakvi/specific/Chakvi-Dreamland_Oasis-----Chakv_атуми.jpg",
-            "url": "https://i.ibb.co/Kc1XB4Xn/Chakvi-Dreamland-Oasis-Chakv.jpg",
-            "description": "Карта Батуми, аэропорт, Chakvi, Dreamland Oasis:  \n- **Курортная зона** на побережье Черного моря.  \n- **Современные здания** и комплексы.  \n- **Пляжи** и **зелёные зоны** поблизости.  \n- Развитая **инфраструктура** для отдыха.  \n- Удобный доступ к дороге **Е70**.  \n- Рядом с **Батуми**, ключевое туристическое направление.  \n- Идеально для **инвестиций** в недвижимость."
-          }
+              {
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766511805/oomc63zhlhmtzfydqhpy.jpg",
+                "description": "Батуми вечером: набережная, китайские фонарики"
+              }
         ]
       },
       "estates": {
-        "Dreamland Oasis": {
-          "name": "Dreamland Oasis",
-          "developer_name": "Dreamland Oasis",
-          "coords": [41.720530, 41.726417],
-          "description": "Современный жилой комплекс на берегу Черного моря в Чакви, предлагающий комфортные апартаменты с видом на море, бассейны, зоны отдыха и развитую инфраструктуру для полноценного курортного образа жизни.",
-          "photos": {
-            "sketch": [
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_8cba0.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_8cba0.jpg",
-                "url": "https://i.ibb.co/23rPJTsj/Chakvi-Dreamland-Oasis-sketch-8cba0.jpg",
-                "description": "Chakvi, Dreamland Oasis:\n\n1. Курортная недвижимость у моря.\n2. Современные многоэтажные здания.\n3. Просторные бассейны на территории.\n4. Прямой выход к песчаному пляжу.\n5. Широкий выбор апартаментов.\n6. Удобная инфраструктура для отдыха.\n7. Зелёные насаждения и ландшафтный дизайн.\n8. Доступ к разнообразным развлечениям.\n9. Живописные виды из окон.\n10. Уникальная архитектура в окружении природы."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
-                "url": "https://i.ibb.co/PfmZsxt/Chakvi-Dreamland-Oasis-sketch-232f5.jpg",
-                "description": "Chakvi, Dreamland Oasis: \n\nСовременные жилые здания.  \nПросторные бассейны.  \nУхоженные зелёные зоны.  \nПляжная набережная.  \nРазнообразие зон отдыха.  \nПанорамный вид на море.  \nУтончённый дизайн комплекса."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_05d37.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_05d37.jpg",
-                "url": "https://i.ibb.co/Q7Zbc1sK/Chakvi-Dreamland-Oasis-sketch-05d37.jpg",
-                "description": "Chakvi, Dreamland Oasis. Роскошный вид на море с высоты, закат над спокойной водой, отражение солнца на поверхности. Внизу — просторный бассейн с шезлонгами и зонтами, пальмы и ухоженная аллея к пляжу. Уютная территория с кафе и зонами отдыха. Атмосфера уединения и премиального курорта у моря.\n"
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_08c0b.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_08c0b.jpg",
-                "url": "https://i.ibb.co/Tx70NYYN/Chakvi-Dreamland-Oasis-sketch-08c0b.jpg",
-                "description": "Dreamland Oasis Chakvi. Современный боулинг. Яркая подсветка дорожек. Цифровые табло для подсчета очков. Просторное помещение. Приятная атмосфера для отдыха."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_12fe0.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_12fe0.jpg",
-                "url": "https://i.ibb.co/dw3TD2r2/Chakvi-Dreamland-Oasis-sketch-12fe0.jpg",
-                "description": "Dreamland Oasis, Чакви:\n\n1. **Панорамный вид на море** – бескрайние водные просторы подчеркивают уникальное расположение.\n2. **Современный курортный комплекс** – окружен зеленью, предоставляет комфорт и уединение.\n3. **Ухоженные бассейны** – плавно изогнутые формы и островки с пальмами создают атмосферу расслабления.\n4. **Шезлонги у бассейна** – идеально подходят для отдыха и загара.\n5. **Ландшафтный дизайн** – аккуратные дорожки и буйная растительность обеспечивают гармонию с природой.\n6. **Вид на город вдалеке** – добавляет динамику и контраст к природным элементам.\n7. **Пляж в шаговой доступности** – привлекает любителей морского отдыха."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_18cb0.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_18cb0.jpg",
-                "url": "https://i.ibb.co/XkZZw1jy/Chakvi-Dreamland-Oasis-sketch-18cb0.jpg",
-                "description": "Chakvi, Dreamland Oasis:\n\n1. Яркий бассейн с голубыми шатрами.\n2. Уютные шезлонги по периметру.\n3. Зеленые пальмы создают тропическую атмосферу.\n4. Зона отдыха с деревянным павильоном.\n5. Близость к золотому песчаному пляжу."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_28ba4.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_28ba4.jpg",
-                "url": "https://i.ibb.co/xq6L01n1/Chakvi-Dreamland-Oasis-sketch-28ba4.jpg",
-                "description": "Chakvi, Dreamland Oasis:\n\n- Современные высотные здания.\n- Прямой доступ к морю.\n- Песчаный пляж с шезлонгами.\n- Зеленые насаждения и парковые зоны.\n- Бассейны и спа-области.\n- Развлекательные и спортивные площадки.\n- Рестораны и кафе на территории.\n- Панорамный вид на природу и море."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_30587.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_30587.jpg",
-                "url": "https://i.ibb.co/FbV845n9/Chakvi-Dreamland-Oasis-sketch-30587.jpg",
-                "description": "Chakvi, Dreamland Oasis.\n\nРоскошная зона отдыха на открытом воздухе.\nСовременные плетеные диваны с яркими подушками.\nСпокойный бассейн зеркального типа.\nЗелень и деревья, создающие уютную атмосферу.\nЗонты от солнца рядом с лежаками.\nЭстетичное соединение природы и комфорта."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_37c58.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_37c58.jpg",
-                "url": "https://i.ibb.co/0pgc4frt/Chakvi-Dreamland-Oasis-sketch-37c58.jpg",
-                "description": "Chakvi, Dreamland Oasis: современный жилой комплекс на фоне моря. \n\n- Великолепный вид на просторный пляж и море.\n- Светлое здание с просторными балконами, окруженное зеленью.\n- Большой плавательный бассейн оригинальной формы с лежаками и зонтиками.\n- Элегантная белая беседка у моря.\n- Ухоженные пальмы и зелёные насаждения по всей территории.\n- Идеальное место для отдыха и релаксации."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_4d129.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_4d129.jpg",
-                "url": "https://i.ibb.co/zWS08QQ5/Chakvi-Dreamland-Oasis-sketch-86c8d.jpg",
-                "description": "Chakvi, Dreamland Oasis: \n\n- Панорамный вид на море.\n- Просторная терраса с балконом.\n- Благоустроенные сады и деревья.\n- Современная архитектура зданий.\n- Чистое и спокойное окружение.\n- Прозрачные стеклянные ограждения.\n- Уютная обстановка на свежем воздухе."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_582c7.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_582c7.jpg",
-                "url": "https://i.ibb.co/1JpBxRpC/Chakvi-Dreamland-Oasis-sketch-582c7.jpg",
-                "description": "Chakvi, Dreamland Oasis: \n\n- Современные многоквартирные здания.\n- Просторная бассейновая зона.\n- Удобные шезлонги для отдыха.\n- Зеленые ландшафтные насаждения.\n- Уютная и ухоженная территория.\n- Гостеприимная атмосфера для отдыха."
-              },
-              {
-                "new_filename": "Chakvi-Dreamland_Oasis-sketch---Изобр_62328.jpg",
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_62328.jpg",
-                "url": "https://i.ibb.co/1tWhVML5/Chakvi-Dreamland-Oasis-sketch-62328.jpg",
-                "description": "Chakvi, Dreamland Oasis:\n\n- Уютное и стильное кафе с деревян...(truncated for brevity)"
-              }
-            ],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "Block 7": {
-              "name": "Block 7",
-              "specifications": "10 этажей",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [
-                          {
-                            "new_filename": "Chakvi-Dreamland_Oasis-sketch-Example-Изобр_3d90c.jpg",
-                            "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_3d90c.jpg",
-                            "url": "https:\\i.ibb.co\\qF4NFDTL\\Chakvi-Dreamland-Oasis-sketch-Example-3d90c.jpg",
-                            "description": "Chakvi, Dreamland Oasis:\n\n1. Уютная спальня с двуспальной кроватью.\n2. Стильное постельное белье и декоративные подушки.\n3. Деревянная отделка на стене за изголовьем.\n4. Современное освещение с встраиваемыми светильниками.\n5. Элегантные картины с природными мотивами.\n6. Плотные темные шторы для затемнения.\n7. Прозрачные шторы пропускают мягкий свет.\n8. Комфортное кресло возле окна.\n9. Простор, комфорт и стиль."
-                          },
-                          {
-                            "new_filename": "Chakvi-Dreamland_Oasis-sketch-Example-Изобр_49d2c.jpg",
-                            "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_49d2c.jpg",
-                            "url": "https:\\i.ibb.co\\ymgPgMjh\\Chakvi-Dreamland-Oasis-sketch-Example-49d2c.jpg",
-                            "description": "Chakvi, Dreamland Oasis. Современная ванная комната. Светлый интерьер. Комфортабельная раковина и унитаз. Биде для удобства. Большое зеркало. Стиральная машина интегрирована. Полотенцесушитель на стене. Стильная напольная плитка. Мягкое освещение."
-                          },
-                          {
-                            "new_filename": "Chakvi-Dreamland_Oasis-sketch-Example-Изобр_918e2.jpg",
-                            "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_918e2.jpg",
-                            "url": "https:\\i.ibb.co\\1fr345Yw\\Chakvi-Dreamland-Oasis-sketch-Example-918e2.jpg",
-                            "description": "```  \nChakvi, Dreamland Oasis: Современная спальня с двуспальной кроватью. Дизайнерские картины украшают стены. Телевизор на стене. Просторные окна с плотными шторами. Комфортная мебель и уютная обстановка.\n```"
-                          }
-                        ],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "8427a419",
-                      "floor": 7,
-                      "m2": 50,
-                      "finishing": "Под ключ",
-                      "furnished": true,
-                      "specifications": "Семейный апартамент",
-                      "address": "",
-                      "price_usd": 110000,
-                      "photos": {
-                        "sketch": [],
-                        "example": [],
-                        "specific": [
-                              {
-                                "new_filename": "",
-                                "old_path": "",
-                                "url": "https://avatars.mds.yandex.net/i?id=540fd4896638fde2ae690af52afb2d321e1f772e-5596602-images-thumbs&n=13",
-                                "description": "Пора брать!"
-                              }
-                            ]
-                      }
-                    },
-                    {
-                      "apartment_id": "c3f31191",
-                      "floor": 9,
-                      "m2": 52,
-                      "finishing": "Под ключ",
-                      "furnished": true,
-                      "specifications": "Просторные апартаменты",
-                      "address": "",
-                      "price_usd": 115000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Trinity": {
-          "name": "Trinity",
-          "developer_name": "B.Invest Development",
-          "coords": [41.679842, 41.702123],
-          "description": "Жилой комплекс у моря в Чакви с современными апартаментами, бассейнами и развитой инфраструктурой для комфортного проживания и отдыха.",
+        "Alliance Centropolis": {
+          "name": "Alliance Centropolis",
+          "developer_name": "Alliance Group",
+          "estate_description": "",
+          "coords": [
+            41.644851,
+            41.617844
+          ],
           "photos": {
             "sketch": [],
             "example": [],
             "specific": []
           },
           "blocks": {
-            "Один блок": {
-              "name": "Один блок",
+            "A": {
+              "name": "A",
+              "coords": [
+                41.644851,
+                41.617844
+              ],
+              "block_specifications": "",
               "photos": {
                 "sketch": [],
                 "example": [],
                 "specific": []
               },
               "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
+                "studio": {
+                  "name": "Студия",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -209,75 +56,20 @@
                   },
                   "apartments": [
                     {
-                      "apartment_id": "bb32fc69",
-                      "floor": 5,
-                      "m2": 46,
+                      "apartment_id": "d689ac35",
+                      "floor": 25,
+                      "m2": 33.0,
                       "finishing": "Белый каркас",
                       "furnished": false,
-                      "specifications": "Тихий район",
+                      "ap_specifications": "Вид на море, WTC",
                       "address": "",
-                      "price_usd": 50000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "a24ef572",
-                      "floor": 8,
-                      "m2": 46,
-                      "finishing": "Белый каркас",
-                      "furnished": false,
-                      "specifications": "Близко к морю",
-                      "address": "",
-                      "price_usd": 53000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Госстрой": {
-          "name": "Госстрой",
-          "developer_name": "Правительство Аджарии",
-          "coords": [41.651681, 41.637414],
-          "description": "Новый жилой комплекс в Чакви от правительства Аджарии, предлагающий современные апартаменты с удобствами и развитой инфраструктурой для комфортного проживания.",
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "Один блок": {
-              "name": "Один блок",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "0dccb48a",
-                      "floor": 3,
-                      "m2": 48,
-                      "finishing": "С ремонтом",
-                      "furnished": true,
-                      "specifications": "Вторичный рынок, тихо",
-                      "address": "",
-                      "price_usd": 68000,
+                      "price_usd": 96100,
                       "photos": []
                     }
                   ]
                 },
-                "дом": {
-                  "name": "дом",
+                "2_1": {
+                  "name": "2+1",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -285,14 +77,703 @@
                   },
                   "apartments": [
                     {
-                      "apartment_id": "3fbedd39",
-                      "floor": 2,
-                      "m2": 120,
-                      "finishing": "С ремонтом",
-                      "furnished": true,
-                      "specifications": "Вторичный рынок, участок",
+                      "apartment_id": "b0f7d92b",
+                      "floor": 45,
+                      "m2": 85.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Пентхаус, вид 360",
+                      "address": "",
+                      "price_usd": 300000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "6256eec3",
+                      "floor": 35,
+                      "m2": 58.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Вид на море",
+                      "address": "",
+                      "price_usd": 155000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "B": {
+              "name": "B",
+              "coords": [
+                41.645315,
+                41.618367
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "53e501b7",
+                      "floor": 30,
+                      "m2": 58.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Панорамные окна",
                       "address": "",
                       "price_usd": 150000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "1d9370c0",
+                      "floor": 38,
+                      "m2": 60.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Бизнес-центр",
+                      "address": "",
+                      "price_usd": 162000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Alliance Palace": {
+          "name": "Alliance Palace",
+          "developer_name": "Alliance Group",
+          "estate_description": "",
+          "coords": [
+            41.641567,
+            41.615998
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.641567,
+                41.615998
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "1764b862",
+                      "floor": 26,
+                      "m2": 31.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Высокая доходность",
+                      "address": "",
+                      "price_usd": 90000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "a501cd51",
+                      "floor": 31,
+                      "m2": 31.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Панорамный вид",
+                      "address": "",
+                      "price_usd": 95000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "c98a314f",
+                      "floor": 35,
+                      "m2": 31.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Инвестиционный пакет",
+                      "address": "",
+                      "price_usd": 105000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "de90d756",
+                      "floor": 20,
+                      "m2": 31.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Стабильный доход",
+                      "address": "",
+                      "price_usd": 85000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "933db66c",
+                      "floor": 16,
+                      "m2": 31.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Отель Courtyard Marriott",
+                      "address": "",
+                      "price_usd": 82000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "DAR TOWER": {
+          "name": "DAR TOWER",
+          "developer_name": "DAR BUILDING",
+          "estate_description": "",
+          "coords": [
+            41.639849,
+            41.617195
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.639849,
+                41.617195
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "e353e70a",
+                      "floor": 19,
+                      "m2": 50.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на город",
+                      "address": "",
+                      "price_usd": 88000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "62420e3d",
+                      "floor": 15,
+                      "m2": 50.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на город и горы",
+                      "address": "",
+                      "price_usd": 90000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "f398a8b6",
+                      "floor": 30,
+                      "m2": 50.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Высокий этаж, вид",
+                      "address": "",
+                      "price_usd": 110000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "5c4e75d4",
+                      "floor": 24,
+                      "m2": 70.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Для семьи",
+                      "address": "",
+                      "price_usd": 135000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "0ebc6266",
+                      "floor": 28,
+                      "m2": 70.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Видовая квартира",
+                      "address": "",
+                      "price_usd": 145000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Intourist Residence": {
+          "name": "Intourist Residence",
+          "developer_name": "Intourist",
+          "estate_description": "",
+          "coords": [
+            41.640187,
+            41.617357
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "B": {
+              "name": "B",
+              "coords": [
+                41.640187,
+                41.617357
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "8ef08dbd",
+                      "floor": 15,
+                      "m2": 48.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Престижный район",
+                      "address": "",
+                      "price_usd": 80000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "e23f1981",
+                      "floor": 22,
+                      "m2": 50.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Высокий этаж",
+                      "address": "",
+                      "price_usd": 88000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "A": {
+              "name": "A",
+              "coords": [
+                41.639893,
+                41.617761
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "d57c3557",
+                      "floor": 18,
+                      "m2": 34.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Новый бульвар",
+                      "address": "",
+                      "price_usd": 61000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "03d66b24",
+                      "floor": 25,
+                      "m2": 48.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Панорамный вид",
+                      "address": "",
+                      "price_usd": 85000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "ORBI CITY": {
+          "name": "ORBI CITY",
+          "developer_name": "Orbi Group",
+          "estate_description": "",
+          "coords": [
+            41.639695,
+            41.613459
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "A": {
+              "name": "A",
+              "coords": [
+                41.639695,
+                41.613459
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "15b5ce68",
+                      "floor": 33,
+                      "m2": 30.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Панорамный вид",
+                      "address": "",
+                      "price_usd": 65000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "730ad8eb",
+                      "floor": 19,
+                      "m2": 29.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Стандартный апартамент",
+                      "address": "",
+                      "price_usd": 54000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "6d7b35a0",
+                      "floor": 41,
+                      "m2": 30.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Пентхаус-студия",
+                      "address": "",
+                      "price_usd": 75000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "C": {
+              "name": "C",
+              "coords": [
+                41.638624,
+                41.613436
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "4f69f904",
+                      "floor": 15,
+                      "m2": 30.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на море, первая линия",
+                      "address": "",
+                      "price_usd": 55000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "d764f7ae",
+                      "floor": 40,
+                      "m2": 30.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Высокий этаж, вид",
+                      "address": "",
+                      "price_usd": 70000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "c4d87533",
+                      "floor": 35,
+                      "m2": 32.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Панорамный вид на море",
+                      "address": "",
+                      "price_usd": 68000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "50fb11ae",
+                      "floor": 18,
+                      "m2": 30.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Боковой вид на море",
+                      "address": "",
+                      "price_usd": 54000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "D1": {
+              "name": "D1",
+              "coords": [
+                41.639746,
+                41.614635
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "0423a9fe",
+                      "floor": 21,
+                      "m2": 30.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на город",
+                      "address": "",
+                      "price_usd": 56000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "5c82d886",
+                      "floor": 28,
+                      "m2": 32.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на море, инвестиционная",
+                      "address": "",
+                      "price_usd": 62000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "D2": {
+              "name": "D2",
+              "coords": [
+                41.639249,
+                41.615366
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "a247f6bb",
+                      "floor": 14,
+                      "m2": 29.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "С видом на горы",
+                      "address": "",
+                      "price_usd": 52000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Ramada Residence": {
+          "name": "Ramada Residence",
+          "developer_name": "One Development",
+          "estate_description": "",
+          "coords": [
+            41.639001,
+            41.617219
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.639001,
+                41.617219
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "b6cb8457",
+                      "floor": 9,
+                      "m2": 38.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Отельный сервис",
+                      "address": "",
+                      "price_usd": 80000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "7484a557",
+                      "floor": 12,
+                      "m2": 46.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Отельный сервис",
+                      "address": "",
+                      "price_usd": 100000,
                       "photos": []
                     }
                   ]
@@ -305,203 +786,40 @@
     },
     "Kobuleti": {
       "name": "Kobuleti",
-      "description": "Кобулети — курортный город на побережье Черного моря в Грузии, известный своими пляжами, мягким климатом и развитой туристической инфраструктурой. Расположен в 30 км от Батуми.",
       "coords": [41.820574, 41.775281],
+      "description": "Кобулети — курортный город на побережье Черного моря в Грузии, известный своими пляжами, мягким климатом и развитой туристической инфраструктурой. Расположен в 30 км от Батуми.",
       "photos": {
-        "sketch": [
+        "specific": [
           {
-            "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
-            "description": "Kobuleti sketch"
+            "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766507804/arfxp9qgz00btqih4vbh.jpg",
+            "description": "Кобулети в закате"
           }
         ],
         "example": [],
-        "specific": []
+        "sketch": []
       },
       "estates": {
         "Coastline Kobuleti": {
           "name": "Coastline Kobuleti",
-          "developer_name": "Sea Baby",
-          "coords": [41.796971, 41.770499],
-          "description": "200 метров до моря",
+          "developer_name": "Plyazhniki",
+          "estate_description": "",
+          "coords": [
+            41.821345,
+            41.78921
+          ],
           "photos": {
-            "sketch": [
-              {
-                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
-                "description": "Kobuleti sketch"
-              }
-            ],
+            "sketch": [],
             "example": [],
             "specific": []
           },
           "blocks": {
-            "Один блок": {
-              "name": "Один блок",
-              "specifications": "8 этажей",
-              "year": "2018",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "9d5046e7",
-                      "floor": 7,
-                      "m2": 48,
-                      "finishing": "Белый каркас",
-                      "furnished": false,
-                      "specifications": "Первая линия, вид на море",
-                      "address": "",
-                      "price_usd": 58000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Green Town": {
-          "name": "Green Town",
-          "developer_name": "Nature Fields",
-          "coords": [41.778570, 41.764698],
-          "description": "100м над уровнем моря",
-          "photos": {
-            "sketch": [
-              {
-                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
-                "description": "Kobuleti sketch"
-              }
-            ],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "Один блок": {
-              "name": "Один блок",
-              "specifications": "3 этажа",
-              "year": "2025",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "b9ebc857",
-                      "floor": 3,
-                      "m2": 60,
-                      "finishing": "Черный каркас",
-                      "furnished": false,
-                      "specifications": "Экологически чистый район",
-                      "address": "",
-                      "price_usd": 45000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "da574c36",
-                      "floor": 1,
-                      "m2": 62,
-                      "finishing": "Черный каркас",
-                      "furnished": false,
-                      "specifications": "Тихий район",
-                      "address": "",
-                      "price_usd": 46500,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Petra Palace": {
-          "name": "Petra Palace",
-          "developer_name": "Petra Group",
-          "coords": [41.798299, 41.787617],
-          "description": "100м до моря",
-          "photos": {
-            "sketch": [
-              {
-                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
-                "description": "Kobuleti sketch"
-              }
-            ],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "Один блок": {
-              "name": "Один блок",
-              "specifications": "4 высоких этажа",
-              "year": "2020",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "5a156af5",
-                      "floor": 5,
-                      "m2": 45,
-                      "finishing": "Белый каркас",
-                      "furnished": false,
-                      "specifications": "Свежий ремонт",
-                      "address": "",
-                      "price_usd": 49500,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Coastline Kobuleti": {
-          "name": "Coastline Kobuleti",
-          "developer_name": "Рене Групп",
-          "coords": [41.813068, 41.773143],
-          "description": "20м до моря!",
-          "photos": {
-            "sketch": [
-              {
-                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
-                "description": "Kobuleti sketch"
-              }
-            ],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "Один блок": {
-              "name": "Один блок",
-              "specifications": "7 этажей",
-              "year": "2027",
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.821345,
+                41.78921
+              ],
+              "block_specifications": "",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -519,10 +837,10 @@
                     {
                       "apartment_id": "608290bc",
                       "floor": 10,
-                      "m2": 35,
+                      "m2": 35.0,
                       "finishing": "Белый каркас",
                       "furnished": false,
-                      "specifications": "Первая линия",
+                      "ap_specifications": "Первая линия",
                       "address": "",
                       "price_usd": 42000,
                       "photos": []
@@ -540,12 +858,23 @@
                     {
                       "apartment_id": "f2a78204",
                       "floor": 9,
-                      "m2": 50,
+                      "m2": 50.0,
                       "finishing": "Белый каркас",
                       "furnished": false,
-                      "specifications": "Первая линия",
+                      "ap_specifications": "Первая линия",
                       "address": "",
                       "price_usd": 60000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "9d5046e7",
+                      "floor": 7,
+                      "m2": 48.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Первая линия, вид на море",
+                      "address": "",
+                      "price_usd": 58000,
                       "photos": []
                     }
                   ]
@@ -554,26 +883,27 @@
             }
           }
         },
-        "Госстройка": {
-          "name": "Госстройка",
-          "developer_name": "Правительство Аджарии",
-          "description": "Не хрущевка, новый дом",
-          "coords": [41.811106, 41.788001],
+        "Gosstroi": {
+          "name": "Gosstroi",
+          "developer_name": "Adjaria Gov",
+          "estate_description": "",
+          "coords": [
+            41.819876,
+            41.791453
+          ],
           "photos": {
-            "sketch": [
-              {
-                "url": "https://i.ibb.co/N27C0vH0/Kobuleti-Sh.jpg",
-                "description": "Kobuleti sketch"
-              }
-            ],
+            "sketch": [],
             "example": [],
             "specific": []
           },
           "blocks": {
-            "Один блок": {
-              "name": "Один блок",
-              "specifications": "12 этажей",
-              "year": "2015",
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.819876,
+                41.791453
+              ],
+              "block_specifications": "",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -590,24 +920,22 @@
                   "apartments": [
                     {
                       "apartment_id": "8b256d37",
-                      "coords": [41.811106, 41.788001],
                       "floor": 2,
-                      "m2": 65,
+                      "m2": 65.0,
                       "finishing": "С ремонтом",
                       "furnished": true,
-                      "specifications": "Вторичный рынок",
+                      "ap_specifications": "Вторичный рынок",
                       "address": "",
                       "price_usd": 55000,
                       "photos": []
                     },
                     {
                       "apartment_id": "f0be9ae0",
-                      "coords": [41.809882, 41.779296],
                       "floor": 6,
-                      "m2": 58,
+                      "m2": 58.0,
                       "finishing": "Белый каркас",
                       "furnished": false,
-                      "specifications": "Центр города",
+                      "ap_specifications": "Центр города",
                       "address": "",
                       "price_usd": 52000,
                       "photos": []
@@ -624,12 +952,11 @@
                   "apartments": [
                     {
                       "apartment_id": "d0912593",
-                      "coords": [41.808639, 41.773628],
                       "floor": 4,
-                      "m2": 33,
+                      "m2": 33.0,
                       "finishing": "Белый каркас",
                       "furnished": false,
-                      "specifications": "Недалеко от моря",
+                      "ap_specifications": "Недалеко от моря",
                       "address": "",
                       "price_usd": 33000,
                       "photos": []
@@ -646,12 +973,11 @@
                   "apartments": [
                     {
                       "apartment_id": "53dcf3ef",
-                      "coords": [41.810525, 41.779361],
                       "floor": 5,
-                      "m2": 44,
+                      "m2": 44.0,
                       "finishing": "С ремонтом",
                       "furnished": true,
-                      "specifications": "Вторичка, центр",
+                      "ap_specifications": "Вторичка, центр",
                       "address": "",
                       "price_usd": 48000,
                       "photos": []
@@ -661,43 +987,28 @@
               }
             }
           }
-        }
-      }
-    },
-    "Mahinjauri": {
-      "name": "Mahinjauri",
-      "coords": [41.676608, 41.698684],
-      "description": "Махинджаури — курортный поселок в Грузии, расположенный на побережье Черного моря, известный своими пляжами и природной красотой. Находится в 15 км от Батуми и привлекает туристов своей спокойной атмосферой и живописными пейзажами.",
-      "photos": {
-        "sketch": [
-          {
-            "url": "https://i.ibb.co/twfBkmcW/Mahinjauri-Sh.jpg",
-            "description": "Kobuleti sketch"
-          }
-        ],
-        "example": [],
-        "specific": []
-      },
-      "estates": {
-        "Mziuri Gardens": {
-          "name": "Mziuri Gardens",
-          "developer_name": "Mziuri Invest",
-          "coords": [41.679842, 41.702123],
-          "description": "Mziuri Gardens в Махинджаури - это современный жилой комплекс, предлагающий комфортные апартаменты с видом на море и горы. Комплекс оснащен всеми необходимыми удобствами, включая бассейны, фитнес-центр и зеленые зоны для отдыха. Идеальное место для жизни и инвестиций в недвижимость в живописном уголке Грузии.",
+        },
+        "Green Town": {
+          "name": "Green Town",
+          "developer_name": "Green Cape",
+          "estate_description": "",
+          "coords": [
+            41.77857,
+            41.764698
+          ],
           "photos": {
-            "sketch": [
-              {
-                "url": "https://i.ibb.co/twfBkmcW/Mahinjauri-Sh.jpg",
-                "description": "Kobuleti sketch"
-              }
-            ],
+            "sketch": [],
             "example": [],
             "specific": []
           },
           "blocks": {
-            "Один блок": {
-              "name": "Один блок",
-              "specifications": "5 этажей",
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.77857,
+                41.764698
+              ],
+              "block_specifications": "",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -713,23 +1024,870 @@
                   },
                   "apartments": [
                     {
-                      "apartment_id": "73b60d8e",
-                      "floor": 4,
-                      "m2": 70,
-                      "finishing": "Зеленый каркас",
+                      "apartment_id": "b9ebc857",
+                      "floor": 3,
+                      "m2": 60.0,
+                      "finishing": "Черный каркас",
                       "furnished": false,
-                      "specifications": "Санаторная зона, природа",
+                      "ap_specifications": "Экологически чистый район",
                       "address": "",
-                      "price_usd": 105000,
+                      "price_usd": 45000,
                       "photos": []
                     },
                     {
-                      "apartment_id": "fe791317",
-                      "floor": 6,
-                      "m2": 72,
-                      "finishing": "Зеленый каркас",
+                      "apartment_id": "da574c36",
+                      "floor": 1,
+                      "m2": 62.0,
+                      "finishing": "Черный каркас",
                       "furnished": false,
-                      "specifications": "Для здоровья и отдыха",
+                      "ap_specifications": "Тихий район",
+                      "address": "",
+                      "price_usd": 46500,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Petra Palace": {
+          "name": "Petra Palace",
+          "developer_name": "Petra Sea Resort",
+          "estate_description": "",
+          "coords": [
+            41.798299,
+            41.787617
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.798299,
+                41.787617
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "5a156af5",
+                      "floor": 5,
+                      "m2": 45.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "100м до моря",
+                      "address": "",
+                      "price_usd": 49500,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Chakvi": {
+      "name": "Chakvi",
+      "coords": [41.723, 41.735],
+      "description": "Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. Расположен в 15 км от Батуми. ",
+      "photos": {
+        "sketch": [],
+        "example": [],
+        "specific": [
+              {
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
+                "new_filename": "Chakvi-Dreaml-sketch-cfe02d.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485458/Chakvi-Dreaml-sketch-cfe02d.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\nСовременные жилые здания.  \nПросторные бассейны.  \nУхоженные зелёные зоны.  \nПляжная набережная.  \nРазнообразие зон отдыха.  \nПанорамный вид на море.  \nУтончённый дизайн комплекса."
+              }
+        ]
+      },
+      "estates": {
+        "Dreamland Oasis": {
+          "name": "Dreamland Oasis",
+          "developer_name": "Dreamland",
+          "estate_description": "Современный жилой комплекс на берегу Черного моря в Чакви, предлагающий комфортные апартаменты с видом на море, бассейны, зоны отдыха и развитую инфраструктуру для полноценного курортного образа жизни.",
+          "coords": [
+            41.72053,
+            41.726417
+          ],
+          "photos": {
+            "sketch": [
+              {
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
+                "new_filename": "Chakvi-Dreaml-sketch-cfe02d.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485458/Chakvi-Dreaml-sketch-cfe02d.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\nСовременные жилые здания.  \nПросторные бассейны.  \nУхоженные зелёные зоны.  \nПляжная набережная.  \nРазнообразие зон отдыха.  \nПанорамный вид на море.  \nУтончённый дизайн комплекса."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_28ba4.jpg",
+                "new_filename": "Chakvi-Dreaml-sketch-e8e50b.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485459/Chakvi-Dreaml-sketch-e8e50b.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Современные высотные здания.\n- Прямой доступ к морю.\n- Песчаный пляж с шезлонгами.\n- Зеленые насаждения и парковые зоны.\n- Бассейны и спа-области.\n- Развлекательные и спортивные площадки.\n- Рестораны и кафе на территории.\n- Панорамный вид на природу и море."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_89451.jpg",
+                "new_filename": "Chakvi-Dreaml-sketch-dfefe1.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485461/Chakvi-Dreaml-sketch-dfefe1.jpg",
+                "description": "Dreamland Oasis, Chakvi:\n\n1. Современные многоэтажные здания.\n2. Просторные балконы с видом.\n3. Ухоженные газоны и зелень.\n4. Бассейн с зоной отдыха.\n5. Удобные шезлонги и зонты.\n6. Пальмы создают тропическую атмосферу.\n7. Просторное рекреационное пространство."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_8cba0.jpg",
+                "new_filename": "Chakvi-Dreaml-sketch-b33e3d.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485463/Chakvi-Dreaml-sketch-b33e3d.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n1. Курортная недвижимость у моря.\n2. Современные многоэтажные здания.\n3. Просторные бассейны на территории.\n4. Прямой выход к песчаному пляжу.\n5. Широкий выбор апартаментов.\n6. Удобная инфраструктура для отдыха.\n7. Зелёные насаждения и ландшафтный дизайн.\n8. Доступ к разнообразным развлечениям.\n9. Живописные виды из окон.\n10. Уникальная архитектура в окружении природы."
+              }
+            ],
+            "example": [
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_05d37.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-55b13f.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485399/Chakvi-Dreaml-specific-55b13f.jpg",
+                "description": "Chakvi, Dreamland Oasis. Роскошный вид на море с высоты, закат над спокойной водой, отражение солнца на поверхности. Внизу — просторный бассейн с шезлонгами и зонтами, пальмы и ухоженная аллея к пляжу. Уютная территория с кафе и зонами отдыха. Атмосфера уединения и премиального курорта у моря.\n"
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_08c0b.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-d23bfd.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485401/Chakvi-Dreaml-specific-d23bfd.jpg",
+                "description": "Dreamland Oasis Chakvi. Современный боулинг. Яркая подсветка дорожек. Цифровые табло для подсчета очков. Просторное помещение. Приятная атмосфера для отдыха."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_12fe0.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-4f7d7d.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485404/Chakvi-Dreaml-specific-4f7d7d.jpg",
+                "description": "Dreamland Oasis, Чакви:\n\n1. **Панорамный вид на море** – бескрайние водные просторы подчеркивают уникальное расположение.\n2. **Современный курортный комплекс** – окружен зеленью, предоставляет комфорт и уединение.\n3. **Ухоженные бассейны** – плавно изогнутые формы и островки с пальмами создают атмосферу расслабления.\n4. **Шезлонги у бассейна** – идеально подходят для отдыха и загара.\n5. **Ландшафтный дизайн** – аккуратные дорожки и буйная растительность обеспечивают гармонию с природой.\n6. **Вид на город вдалеке** – добавляет динамику и контраст к природным элементам.\n7. **Пляж в шаговой доступности** – привлекает любителей морского отдыха."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_18cb0.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-02c3b8.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485407/Chakvi-Dreaml-specific-02c3b8.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n1. Яркий бассейн с голубыми шатрами.\n2. Уютные шезлонги по периметру.\n3. Зеленые пальмы создают тропическую атмосферу.\n4. Зона отдыха с деревянным павильоном.\n5. Близость к золотому песчаному пляжу."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_30587.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-c5a467.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485409/Chakvi-Dreaml-specific-c5a467.jpg",
+                "description": "Chakvi, Dreamland Oasis.\n\nРоскошная зона отдыха на открытом воздухе.\nСовременные плетеные диваны с яркими подушками.\nСпокойный бассейн зеркального типа.\nЗелень и деревья, создающие уютную атмосферу.\nЗонты от солнца рядом с лежаками.\nЭстетичное соединение природы и комфорта."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_37c58.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-758e7c.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485411/Chakvi-Dreaml-specific-758e7c.jpg",
+                "description": "Chakvi, Dreamland Oasis: современный жилой комплекс на фоне моря. \n\n- Великолепный вид на просторный пляж и море.\n- Светлое здание с просторными балконами, окруженное зеленью.\n- Большой плавательный бассейн оригинальной формы с лежаками и зонтиками.\n- Элегантная белая беседка у моря.\n- Ухоженные пальмы и зелёные насаждения по всей территории.\n- Идеальное место для отдыха и релаксации."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_4d129.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-bb7ac5.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485413/Chakvi-Dreaml-specific-bb7ac5.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\n- Панорамный вид на море.\n- Просторная терраса с балконом.\n- Благоустроенные сады и деревья.\n- Современная архитектура зданий.\n- Чистое и спокойное окружение.\n- Прозрачные стеклянные ограждения.\n- Уютная обстановка на свежем воздухе."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_582c7.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-bb8ebd.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485415/Chakvi-Dreaml-specific-bb8ebd.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\n- Современные многоквартирные здания.\n- Просторная бассейновая зона.\n- Удобные шезлонги для отдыха.\n- Зеленые ландшафтные насаждения.\n- Уютная и ухоженная территория.\n- Гостеприимная атмосфера для отдыха."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_62328.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-a53970.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485417/Chakvi-Dreaml-specific-a53970.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Уютное и стильное кафе с деревянными элементами декора.\n- Комфортные кожаные кресла и диваны для отдыха.\n- Стеллажи с книгами и украшениями создают атмосферу домашнего уюта.\n- Большие окна обеспечивают естественное освещение.\n- Круглый стол для интерактивного общения.\n- Плиточный каменный пол добавляет элегантности.\n- Оригинальные светильники создают мягкое освещение."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_639e9.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-45ca33.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485419/Chakvi-Dreaml-specific-45ca33.jpg",
+                "description": "Chakvi, Dreamland Oasis. Современное место для отдыха. Уютные лежаки с мягкими подушками. Атмосферное освещение с элегантными лампами. Стильный интерьер с натуральной зеленью. Просторное помещение для релаксации. Elements комфорта и уюта."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_6ff70.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-0b0692.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485421/Chakvi-Dreaml-specific-0b0692.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Живописный вид на море.\n- Роскошный отельный комплекс.\n- Элегантно оформленные здания.\n- Ухоженные зелёные зоны.\n- Современный бассейн.\n- Детская игровая площадка.\n- Центральный фонтан в саду."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_7306a.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-708b6d.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485423/Chakvi-Dreaml-specific-708b6d.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Просторный открытый бассейн\n- Современные шезлонги на террасе\n- Зонты для тени вдоль бассейна\n- Живописный вид на море и природу\n- Стильные здания в окружении зелени"
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_73fbf.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-2c5fe0.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485424/Chakvi-Dreaml-specific-2c5fe0.jpg",
+                "description": "Dreamland Oasis, Chakvi: Ухоженный сад. Пышная растительность. Пальмы и цветущие кустарники. Деревянные скамейки для отдыха. Плитка на дорожках. Спокойная атмосфера."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_7edf8.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-638143.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485426/Chakvi-Dreaml-specific-638143.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\nРоскошный бассейн с каскадными водопадами.  \nКаменные арки и колоны создают элегантный вид.  \nЖелтые зонты и шезлонги для отдыха.  \nЗелень и ухоженные деревья вокруг.  \nИдеально для комфортного отдыха и релаксации.  "
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_86c8d.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-bb7ac5.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485413/Chakvi-Dreaml-specific-bb7ac5.jpg",
+                "description": "Chakvi, Dreamland Oasis. Просторный балкон с видом на море. Современные стеклянные перегородки. Зелень на балконе создаёт уединение. Панорама на побережье и жилые дома. Светло и уютно, идеальное место для отдыха."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_88517.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-1f9fe8.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485429/Chakvi-Dreaml-specific-1f9fe8.jpg",
+                "description": "Chakvi, Dreamland Oasis\n\n- Современная парная.\n- Розовая подсветка.\n- Мозаичная отделка.\n- Удобные скамьи.\n- Встроенный кран."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_93ef8.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-c36b60.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485431/Chakvi-Dreaml-specific-c36b60.jpg",
+                "description": "Chakvi, Dreamland Oasis. Просторная финская сауна. Деревянные полки и стены. Ведро с ковшом для воды. Ароматические веники для пара. Мягкое освещение создает уют. Идеально для расслабления."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_a2647.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-2aba37.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485432/Chakvi-Dreaml-specific-2aba37.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n1. Вид на Черное море.\n2. Современные жилые корпуса.\n3. Ухоженный бассейн с шезлонгами.\n4. Много зелени и пальм.\n5. Близость к пляжу.\n6. Спокойная и уютная атмосфера.\n7. Панорамный вид.\n8. Инфраструктура для отдыха."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_ab554.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-06e5d0.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485434/Chakvi-Dreaml-specific-06e5d0.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\n- Современный интерьер.\n- Уютная гостиная зона.\n- Яркий желтый диван.\n- Стильное кожаное кресло.\n- Деревянные панели на стенах.\n- Настольная игра — шахматы.\n- Темный журнальный столик.\n- Лампа с абажуром.\n- Теплое, приглушенное освещение.\n- Идеально для отдыха и развлечений."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_b1300.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-f8f81b.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485435/Chakvi-Dreaml-specific-f8f81b.jpg",
+                "description": "Chakvi, Dreamland Oasis. Современный бассейн с чистой голубой водой, окружённый ярко-оранжевыми шезлонгами и зонтами. Терраса с плиточным покрытием, зелёные пальмы и вид на море. Стильное здание с волнообразным фасадом, арочными входами и террасами. Атмосфера элитного отдыха и уюта у побережья.\n"
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_b1d3e.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-6a651f.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485437/Chakvi-Dreaml-specific-6a651f.jpg",
+                "description": "Chakvi, Dreamland Oasis:   \nСовременный бассейн.   \nШезлонги в воде.   \nПальмы по периметру.   \nЧистый голубой бассейн.   \nИзумительный вид на море."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_b4d15.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-bd6a1e.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485439/Chakvi-Dreaml-specific-bd6a1e.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n1. Бассейны окружены зеленью.\n2. Шезлонги у воды.\n3. Многоярусные здания.\n4. Вид на море.\n5. Современная архитектура.\n6. Пышные деревья.\n7. Тропические пальмы.\n8. Открытые зоны для отдыха.\n9. Просторная территория.\n10. Ухоженный ландшафт."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_e1d06.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-46b97b.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485440/Chakvi-Dreaml-specific-46b97b.jpg",
+                "description": "Dreamland Oasis, Chakvi:\n\n1. Просторный открытый бассейн.\n2. Комфортабельные шезлонги.\n3. Элегантные зонты от солнца.\n4. Современный архитектурный дизайн здания.\n5. Ухоженная зелёная территория.\n6. Приятная атмосфера для отдыха.\n7. Виды на голубое небо и пальмы."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_e5664.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-9b609b.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485442/Chakvi-Dreaml-specific-9b609b.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Деревянные качели с красным тентом.\n- Просторная плиточная терраса.\n- Зеленые декоративные деревья.\n- Современное здание с горизонтальными линиями.\n- Комфорт и уют в окружении природы."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_ed1f8.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-b7ba4d.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485443/Chakvi-Dreaml-specific-b7ba4d.jpg",
+                "description": "Dreamland Oasis, Chakvi:\n\n- Просторная открытая терраса.\n- Уютные деревянные стулья и столы.\n- Зеленые пальмы на заднем плане.\n- Пышные цветущие кусты.\n- Атмосфера отдыха и комфорта."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_ef156.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-05b6db.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485445/Chakvi-Dreaml-specific-05b6db.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Изящные пальмы на фоне моря\n- Современные шезлонги вокруг бассейна\n- Крытые зоны с белыми занавесками\n- Чистая голубая вода бассейна\n- Легкий морской бриз \n- Идиллическая атмосфера для отдыха"
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_f76c0.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-d9282e.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485446/Chakvi-Dreaml-specific-d9282e.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\nСовременное здание с большими балконами. \n\nТерритория с ухоженными садами и скульптурами. \n\nЖивописный пруд с искусственным водопадом. \n\nЗелёные насаждения и деревья создают уютную атмосферу. \n\nИдеальное место для отдыха и инвестиций. "
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_f7c8f.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-e25ba4.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485448/Chakvi-Dreaml-specific-e25ba4.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Просторный открытый бассейн.\n- Удобные шезлонги с голубыми зонтиками.\n- Прямой вид на море и пляж.\n- Зеленая обильная растительность.\n- Крытая зона отдыха на возвышении.\n- Современная архитектура зданий.\n- Идеально для семейного отдыха.\n\n"
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_f8126.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-a00a0b.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485450/Chakvi-Dreaml-specific-a00a0b.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\nРоскошный бильярдный зал.  \nЭлегантные синие столы.  \nДекор в классическом стиле.  \nДеревянная отделка потолка.  \nУютные диваны для отдыха.  \nБольшие окна с видом.  \nАтмосфера уюта и стиля."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_ff83a.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-0410ac.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485451/Chakvi-Dreaml-specific-0410ac.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n- Просторный бассейн с шезлонгами.\n- Вид на море и песчаный пляж.\n- Зелёные пальмы создают тропическую атмосферу.\n- Жилой корпус с балконами.\n- Комфортабельные зоны для отдыха.\n- Ландшафтный дизайн с дорожками и растительностью."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_3d90c.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-8119f1.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485453/Chakvi-Dreaml-specific-8119f1.jpg",
+                "description": "Chakvi, Dreamland Oasis:\n\n1. Уютная спальня с двуспальной кроватью.\n2. Стильное постельное белье и декоративные подушки.\n3. Деревянная отделка на стене за изголовьем.\n4. Современное освещение с встраиваемыми светильниками.\n5. Элегантные картины с природными мотивами.\n6. Плотные темные шторы для затемнения.\n7. Прозрачные шторы пропускают мягкий свет.\n8. Комфортное кресло возле окна.\n9. Простор, комфорт и стиль."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_49d2c.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-6f1adc.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485454/Chakvi-Dreaml-specific-6f1adc.jpg",
+                "description": "Chakvi, Dreamland Oasis. Современная ванная комната. Светлый интерьер. Комфортабельная раковина и унитаз. Биде для удобства. Большое зеркало. Стиральная машина интегрирована. Полотенцесушитель на стене. Стильная напольная плитка. Мягкое освещение."
+              },
+              {
+                "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch-Example-Изобр_918e2.jpg",
+                "new_filename": "Chakvi-Dreaml-specific-0bcdc9.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485457/Chakvi-Dreaml-specific-0bcdc9.jpg",
+                "description": "```  \nChakvi, Dreamland Oasis: Современная спальня с двуспальной кроватью. Дизайнерские картины украшают стены. Телевизор на стене. Просторные окна с плотными шторами. Комфортная мебель и уютная обстановка.\n```"
+              }
+            ],
+            "specific": []
+          },
+          "blocks": {
+            "14": {
+              "name": "14",
+              "coords": [
+                41.72053,
+                41.726417
+              ],
+              "block_specifications": "10 этажей. Срок сдачи 2027 год.",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "0ca3e94f",
+                      "floor": 4,
+                      "m2": 45.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на море и территорию, готовый бизнес",
+                      "address": "",
+                      "price_usd": 63702,
+                      "photos": []
+                    }
+                  ]
+                },
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "9672b30a",
+                      "floor": 19,
+                      "m2": 58.6,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Панорамный вид на море, высокий этаж",
+                      "address": "",
+                      "price_usd": 174022,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "7": {
+              "name": "7",
+              "coords": [
+                41.72053,
+                41.726417
+              ],
+              "block_specifications": "8 этажей. Сдан.",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "9cf26c76",
+                      "floor": 4,
+                      "m2": 36.5,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на море, полная комплектация",
+                      "address": "",
+                      "price_usd": 83294,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "13": {
+              "name": "13",
+              "coords": [
+                41.72053,
+                41.726418
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "e0ed6853",
+                      "floor": 16,
+                      "m2": 40.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вторичный рынок, вид на море",
+                      "address": "",
+                      "price_usd": 95000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "9202cdb8",
+                      "floor": 10,
+                      "m2": 70.2,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Просторные апартаменты, вид на море",
+                      "address": "",
+                      "price_usd": 166341,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "12": {
+              "name": "12",
+              "coords": [
+                41.72053,
+                41.726419
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "d5a21bf2",
+                      "floor": 7,
+                      "m2": 49.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Выход к бассейну, с ремонтом и мебелью",
+                      "address": "",
+                      "price_usd": 135000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "a9d99944",
+                      "floor": 5,
+                      "m2": 60.1,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Новый корпус, вид на территорию",
+                      "address": "",
+                      "price_usd": 151826,
+                      "photos": []
+                    }
+                  ]
+                },
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "67b4895f",
+                      "floor": 7,
+                      "m2": 73.9,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Новый корпус (сдача в 2026), вид на горы",
+                      "address": "",
+                      "price_usd": 185747,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "10": {
+              "name": "10",
+              "coords": [
+                41.72053,
+                41.72642
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "0a62e04c",
+                      "floor": 6,
+                      "m2": 57.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на море и горы, премиум-класс",
+                      "address": "",
+                      "price_usd": 139000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "c0a9012b",
+                      "floor": 11,
+                      "m2": 38.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Первая линия, вид на море и горы",
+                      "address": "",
+                      "price_usd": 85000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "4": {
+              "name": "4",
+              "coords": [
+                41.72053,
+                41.726422
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "5da71703",
+                      "floor": 19,
+                      "m2": 55.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вторичный рынок, высокий этаж, вид на море",
+                      "address": "",
+                      "price_usd": 179400,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "15": {
+              "name": "15",
+              "coords": [
+                41.72053,
+                41.726426
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "8a107ccd",
+                      "floor": 12,
+                      "m2": 36.1,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Новый корпус (сдача в 2029), стартовая цена",
+                      "address": "",
+                      "price_usd": 92255,
+                      "photos": []
+                    }
+                  ]
+                },
+                "3_1": {
+                  "name": "3+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "d31700cd",
+                      "floor": 2,
+                      "m2": 123.8,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Новый корпус, просторная планировка",
+                      "address": "",
+                      "price_usd": 341235,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "2": {
+              "name": "2",
+              "coords": [
+                41.72053,
+                41.726427
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "619d66f1",
+                      "floor": 11,
+                      "m2": 100.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вторичный рынок, просторная, для семьи",
+                      "address": "",
+                      "price_usd": 290000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            },
+            "9": {
+              "name": "9",
+              "coords": [
+                41.72053,
+                41.72643
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "1d86e0ab",
+                      "floor": 9,
+                      "m2": 33.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вторичный рынок, отельный комплекс",
+                      "address": "",
+                      "price_usd": 105000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Gonio": {
+      "name": "Gonio",
+      "coords": [41.575826, 41.571094],
+      "description": "🌊 Гонио — один из самых перспективных и быстро развивающихся курортных районов Аджарии. Расположен всего в 15–17 км от Батуми, сочетает чистейшие пляжи, историческую крепость Гонио и потрясающие горные виды.",
+      "photos": {
+        "sketch": [],
+        "example": [],
+        "specific": []
+      },
+      "estates": {
+        "Gonio Horizon": {
+          "name": "Gonio Horizon",
+          "developer_name": "Horizon Star",
+          "estate_description": "",
+          "coords": [
+            41.574231,
+            41.569874
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.574231,
+                41.569874
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "38f0c735",
+                      "floor": 4,
+                      "m2": 30.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Бассейн, первая линия",
+                      "address": "",
+                      "price_usd": 65000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "8427a419",
+                      "floor": 7,
+                      "m2": 50.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Семейный апартамент",
+                      "address": "",
+                      "price_usd": 110000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "c3f31191",
+                      "floor": 9,
+                      "m2": 52.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Просторные апартаменты",
                       "address": "",
                       "price_usd": 115000,
                       "photos": []
@@ -740,25 +1898,447 @@
             }
           }
         },
-        "Green Cape Botanico": {
-          "name": "Green Cape Botanico",
-          "developer_name": "Green Cape",
-          "coords": [41.693392, 41.705824],
-          "description": "Green Cape Botanico в Махинджаури - это современный жилой комплекс, предлагающий комфортные апартаменты в окружении природы и ботанического сада. Комплекс оснащен всеми необходимыми удобствами, включая бассейны, фитнес-центр и зеленые зоны для отдыха. Идеальное место для жизни и инвестиций в недвижимость в живописном уголке Грузии.",
+        "Gonio Marina": {
+          "name": "Gonio Marina",
+          "developer_name": "Emaar Group",
+          "estate_description": "",
+          "coords": [
+            41.575106,
+            41.571243
+          ],
           "photos": {
-            "sketch": [
-              {
-                "url": "https://i.ibb.co/twfBkmcW/Mahinjauri-Sh.jpg",
-                "description": "Kobuleti sketch"
-              }
-            ],
+            "sketch": [],
             "example": [],
             "specific": []
           },
           "blocks": {
-            "Один блок": {
-              "name": "Один блок",
-              "specifications": "4 этажа",
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.575106,
+                41.571243
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "e3b677f1",
+                      "floor": 5,
+                      "m2": 50.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Вид на море, яхт-клуб",
+                      "address": "",
+                      "price_usd": 160000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "ae1763c7",
+                      "floor": 8,
+                      "m2": 55.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Инфраструктура мирового класса",
+                      "address": "",
+                      "price_usd": 185000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "171c7e61",
+                      "floor": 10,
+                      "m2": 75.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Элитный комплекс",
+                      "address": "",
+                      "price_usd": 280000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Gosstroi": {
+          "name": "Gosstroi",
+          "developer_name": "Adjaria Gov",
+          "estate_description": "",
+          "coords": [
+            41.573852,
+            41.570567
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.573852,
+                41.570567
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "0dccb48a",
+                      "floor": 3,
+                      "m2": 48.0,
+                      "finishing": "С ремонтом",
+                      "furnished": true,
+                      "ap_specifications": "Вторичный рынок, тихо",
+                      "address": "",
+                      "price_usd": 68000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "дом": {
+                  "name": "дом",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "3fbedd39",
+                      "floor": 2,
+                      "m2": 120.0,
+                      "finishing": "С ремонтом",
+                      "furnished": true,
+                      "ap_specifications": "Вторичный рынок, участок",
+                      "address": "",
+                      "price_usd": 150000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Gumba Gonio": {
+          "name": "Gumba Gonio",
+          "developer_name": "Gumbati",
+          "estate_description": "",
+          "coords": [
+            41.574893,
+            41.571654
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.574893,
+                41.571654
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "c4f0fe6a",
+                      "floor": 6,
+                      "m2": 45.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Близко к пляжу",
+                      "address": "",
+                      "price_usd": 54000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Gumbati in Gonio": {
+          "name": "Gumbati in Gonio",
+          "developer_name": "Gumbati",
+          "estate_description": "",
+          "coords": [
+            41.575419,
+            41.572031
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.575419,
+                41.572031
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "8f818d8a",
+                      "floor": 8,
+                      "m2": 45.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Новый проект",
+                      "address": "",
+                      "price_usd": 56000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Thom Tower": {
+          "name": "Thom Tower",
+          "developer_name": "Petra Sea Resort",
+          "estate_description": "",
+          "coords": [
+            41.573577,
+            41.569426
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.573577,
+                41.569426
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "studio": {
+                  "name": "Студия",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "78db05a3",
+                      "floor": 9,
+                      "m2": 33.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Терраса, вид на море",
+                      "address": "",
+                      "price_usd": 70000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "f9e5c651",
+                      "floor": 12,
+                      "m2": 33.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Терраса, высокий этаж",
+                      "address": "",
+                      "price_usd": 75000,
+                      "photos": []
+                    }
+                  ]
+                },
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "892f44dc",
+                      "floor": 14,
+                      "m2": 55.0,
+                      "finishing": "Под ключ",
+                      "furnished": true,
+                      "ap_specifications": "Терраса с видом на море",
+                      "address": "",
+                      "price_usd": 125000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Trinity": {
+          "name": "Trinity",
+          "developer_name": "B.Invest Development",
+          "estate_description": "",
+          "coords": [
+            41.679842,
+            41.702123
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.679842,
+                41.702123
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "1_1": {
+                  "name": "1+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "bb32fc69",
+                      "floor": 5,
+                      "m2": 46.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Тихий район",
+                      "address": "",
+                      "price_usd": 50000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "a24ef572",
+                      "floor": 8,
+                      "m2": 46.0,
+                      "finishing": "Белый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Близко к морю",
+                      "address": "",
+                      "price_usd": 53000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Mahinjauri": {
+      "name": "Mahinjauri",
+      "coords": [41.676608, 41.698684],
+      "description": "Махинджаури — курортный поселок в Грузии, расположенный на побережье Черного моря, известный своими пляжами и природной красотой. Находится в 15 км от Батуми и привлекает туристов своей спокойной атмосферой и живописными пейзажами.",
+      "photos": {
+        "sketch": [],
+        "example": [],
+        "specific": []
+      },
+      "estates": {
+        "Green Cape Botanico": {
+          "name": "Green Cape Botanico",
+          "developer_name": "Green Cape",
+          "estate_description": "",
+          "coords": [
+            41.693392,
+            41.705824
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.693392,
+                41.705824
+              ],
+              "block_specifications": "",
               "photos": {
                 "sketch": [],
                 "example": [],
@@ -776,12 +2356,75 @@
                     {
                       "apartment_id": "adc45380",
                       "floor": 2,
-                      "m2": 50,
+                      "m2": 50.0,
                       "finishing": "Зеленый каркас",
                       "furnished": false,
-                      "specifications": "Рядом с бот. садом",
+                      "ap_specifications": "Рядом с бот. садом",
                       "address": "",
                       "price_usd": 75000,
+                      "photos": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Green Garden": {
+          "name": "Green Garden",
+          "developer_name": "Green Cape",
+          "estate_description": "",
+          "coords": [
+            41.666804,
+            41.687392
+          ],
+          "photos": {
+            "sketch": [],
+            "example": [],
+            "specific": []
+          },
+          "blocks": {
+            "один блок": {
+              "name": "один блок",
+              "coords": [
+                41.666804,
+                41.687392
+              ],
+              "block_specifications": "",
+              "photos": {
+                "sketch": [],
+                "example": [],
+                "specific": []
+              },
+              "apartment_types": {
+                "2_1": {
+                  "name": "2+1",
+                  "photos": {
+                    "sketch": [],
+                    "example": [],
+                    "specific": []
+                  },
+                  "apartments": [
+                    {
+                      "apartment_id": "73b60d8e",
+                      "floor": 4,
+                      "m2": 70.0,
+                      "finishing": "Зеленый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Санаторная зона, природа",
+                      "address": "",
+                      "price_usd": 105000,
+                      "photos": []
+                    },
+                    {
+                      "apartment_id": "fe791317",
+                      "floor": 6,
+                      "m2": 72.0,
+                      "finishing": "Зеленый каркас",
+                      "furnished": false,
+                      "ap_specifications": "Для здоровья и отдыха",
+                      "address": "",
+                      "price_usd": 115000,
                       "photos": []
                     }
                   ]

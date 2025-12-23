@@ -132,7 +132,7 @@ export default function Districts() {
         </div>
 
         {districts.map(([key, district]) => {
-          // ← Считаем наличие фото ОДИН РАЗ без useMemo (просто обычная функция)
+          // ← Считаем наличие фото (просто обычная функция)
           const hasPhotos = (() => {
             let count = 0;
             const countPhotos = (obj) => {
@@ -155,7 +155,7 @@ export default function Districts() {
             return count > 0;
           })();
 
-          // ← Находим estates точно так же, как у тебя было (ничего не меняем)
+          // ← Находим estates
           const estates = Object.values(district.estates || {})
             .map(e => {
               const minPrice = Math.min(...Object.values(e.blocks || {})
@@ -172,9 +172,9 @@ export default function Districts() {
             .sort((a, b) => a.minPrice - b.minPrice);
 
           return (
-            <section key={key} id={`district-${key}`} className="relative py-12">
+            <section key={key} id={`district-${key}`} className="relative py-4 px-2">
               
-              {/* Разделитель */}
+              {/* Разделитель (линия) */}
               <div className="my-12 h-px bg-gradient-to-r from-rose-200 via-orange-300 to-rose-200" />
 
               {/* Заголовок района */}
@@ -199,7 +199,7 @@ export default function Districts() {
                 {hasPhotos && (
                   <button
                     onClick={() => setModalOpenFor(key)}
-                    className="mt-6 bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition"
+                    className="mt-6 bg-gradient-to-r from-orange-600 to-rose-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition"
                   >
                     Показать все фото района
                   </button>
@@ -207,17 +207,17 @@ export default function Districts() {
               </div>
 
               {/* Карточки объектов */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {estates.map(estate => (
                   <Link
                     key={estate.name}
                     to={`/estate/${district.name}/${estate.name}`}
-                    className="group block bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                    className="group block my-4 bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
                   >
                     <div className="relative h-48 overflow-hidden">
-                      <div className="grid grid-cols-2 h-full">
-                        <img src={estate.photos2[0]} alt="" className="object-cover group-hover:scale-110 transition" />
-                        <img src={estate.photos2[1]} alt="" className="object-cover group-hover:scale-110 transition" />
+                      <div className="grid grid-cols-1 h-full w-full">
+                        <img src={estate.photos2[0]} alt={`Фото объекта ${estate.name}`} className="object-cover group-hover:scale-110 transition h-full w-full" />
+                        <img src={estate.photos2[1]} alt={`Фото объекта ${estate.name}`} className="object-cover group-hover:scale-110 transition h-full w-full" />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -236,17 +236,6 @@ export default function Districts() {
                           от ${estate.minPrice.toLocaleString()}
                         </p>
                       )}
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          window.openGallery(estate, district.name);
-                        }}
-                        className="absolute bottom-4 right-4 bg-white/80 backdrop-blur px-2 py-1 border border-rose-400 rounded-full shadow-lg transition flex items-center gap-1 animate-pulse opacity-95"
-                      >
-                        <span className="text-2xl">📸</span>
-                        {/* <span className="text-xs font-medium text-orange-700">📸 Галерея</span> */}
-                      </button>
                     </div>
                   </Link>
                 ))}
