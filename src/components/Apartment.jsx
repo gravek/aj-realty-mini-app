@@ -39,17 +39,23 @@ export default function Apartment() {
 
 
   useEffect(() => {
-    if (apartment) {
-      logEvent('view_apartment', {
-        apartment_id: id,
-        estate: apartment.estateName,
-        district: apartment.districtName,
-        // можно добавить цену, площадь и т.д., если хочешь больше данных
-        // price: apartment.price_usd,
-        // m2: apartment.m2
-      });
-    }
-  }, [apartment, id]);  // ← apartment — основная зависимость
+    if (!apartment) return;
+
+    // Флаг, чтобы не дублировать в StrictMode
+    const eventSent = localStorage.getItem(`view_apartment_${id}`);
+    if (eventSent) return;
+
+    logEvent('view_apartment', {
+      apartment_id: id,
+      estate: apartment.estateName,
+      district: apartment.districtName,
+    });
+
+    // Запоминаем, что событие уже отправлено (на 5 минут, например)
+    localStorage.setItem(`view_apartment_${id}`, '1');
+    setTimeout(() => localStorage.removeItem(`view_apartment_${id}`), 1 * 60 * 1000);
+
+  }, [apartment, id]);
 
 
 

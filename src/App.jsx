@@ -7,6 +7,26 @@ import MapWithContext from './components/MapWithContext';
 import AppRoutes from './components/AppRoutes';
 import PhotoGalleryModal from './components/PhotoGalleryModal';
 
+
+useEffect(() => {
+  if (window.Telegram?.WebApp) {
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+    tg.expand();
+
+    const user = tg.initDataUnsafe?.user;
+    if (user?.id) {
+      useStore.setState({ userId: user.id.toString() });
+      console.log('User ID from Telegram:', user.id);
+    } else {
+      console.warn('Telegram user not found');
+    }
+  } else {
+    console.log('Not in Telegram WebApp → local mode');
+  }
+}, []);
+
+
 const BottomNav = () => {
   const location = useLocation();
 
