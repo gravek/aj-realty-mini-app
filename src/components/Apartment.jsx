@@ -1,8 +1,9 @@
 // src/components/Apartment.jsx
-import React, { useEffect, useState } from 'react';  // useMemo НЕ нужен
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useStore } from '../store';
-import PhotoGalleryModal from './PhotoGalleryModal';  // ← добавь импорт
+import PhotoGalleryModal from './PhotoGalleryModal';
+import { logEvent } from '../utils/analytics';
 
 export default function Apartment() {
   const { id } = useParams();
@@ -35,6 +36,22 @@ export default function Apartment() {
       }
     }
   }, [data, id]);
+
+
+  useEffect(() => {
+    if (apartment) {
+      logEvent('view_apartment', {
+        apartment_id: id,
+        estate: apartment.estateName,
+        district: apartment.districtName,
+        // можно добавить цену, площадь и т.д., если хочешь больше данных
+        // price: apartment.price_usd,
+        // m2: apartment.m2
+      });
+    }
+  }, [apartment, id]);  // ← apartment — основная зависимость
+
+
 
   if (!apartment) return <div className="p-8 text-center">Апартамент не найден</div>;
 
