@@ -46,15 +46,11 @@ export default function App() {
       const user = tg.initDataUnsafe?.user;
       if (user?.id) {
         useStore.setState({ userId: user.id.toString() });
-        console.log('User ID from Telegram:', user.id);
-      } else {
-        console.warn('Telegram WebApp инициализирован, но user не найден');
       }
+      // Ничего лишнего не логируем — тихо работаем
     } else {
-      // Локальный режим
-      const testId = 'TEST_LOCAL_USER_123456';
-      useStore.setState({ userId: testId });
-      console.log('Локальный режим: установлен тестовый userId →', testId);
+      // Локальный режим — тестовый ID
+      useStore.setState({ userId: 'TEST_LOCAL_USER_123456' });
     }
   }, []);
 
