@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../store';
 import PhotoGalleryModal from './PhotoGalleryModal';
+import { logEvent } from '../utils/analytics';
+
 
 export default function Districts() {
   const { data } = useStore();
@@ -65,6 +67,48 @@ export default function Districts() {
     handleScroll(); // при загрузке
     return () => window.removeEventListener('scroll', handleScroll);
   }, [districts]);
+
+
+  useEffect(() => {
+    const key = 'logged_open_districts';
+
+    // Если уже логировали — выходим
+    if (localStorage.getItem(key)) return;
+
+    logEvent('open_districts', {
+      // timestamp, user_agent и т.д.
+    });
+
+    // Запоминаем
+    localStorage.setItem(key, '1');
+
+    // Чистим через _ минут (чтобы залогировать при повторном заходе)
+    setTimeout(() => localStorage.removeItem(key), 3 * 60 * 1000);
+
+  }, []);
+
+  useEffect(() => {
+    if (!activeDistrict) return; // пропускаем, пока ничего не определено
+
+    // Ключ для предотвращения дублирования в короткий промежуток
+    const logKey = `logged_district_focus_${activeDistrict}`;
+    
+    // Проверяем, логировали ли мы этот район недавно
+    if (localStorage.getItem(logKey)) return;
+
+    logEvent('focus_district', {
+      district_key: activeDistrict,
+      district_name: data?.districts?.[activeDistrict]?.name || 'unknown',
+      // можно добавить: scroll_position: window.scrollY
+    });
+
+    // Запоминаем на _ минут 
+    localStorage.setItem(logKey, '1');
+    setTimeout(() => localStorage.removeItem(logKey), 1 * 60 * 1000);
+
+  }, [activeDistrict, data]);   // ← реагируем именно на смену activeDistrict
+
+
 
   const scrollToDistrict = (key) => {
     document.getElementById(`district-${key}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });

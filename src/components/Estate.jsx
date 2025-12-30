@@ -1,9 +1,12 @@
 // src/components/Estate.jsx
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useStore } from '../store';
 import PhotoGalleryModal from './PhotoGalleryModal';
 import { hasPhotos } from '../utils/hasPhotos';
+import { logEvent } from '../utils/analytics';
+
+
 
 export default function Estate() {
   const { district, estate } = useParams();
@@ -17,7 +20,30 @@ export default function Estate() {
     .flatMap(b => Object.values(b.apartment_types || {}))
     .flatMap(t => t.apartments || []);
 
+
+  useEffect(() => {
+    if (!current) return;  // ждём загрузки данных ЖК
+
+    const key = `logged_open_estate_${current.name || 'unknown'}`;
+
+    if (localStorage.getItem(key)) return;
+
+    logEvent('open_estate', {
+      // district_key: district,                           // "Chakvi", "Kobuleti" и т.д.
+      district_name: data?.districts?.[district]?.name || 'unknown',  // "Чакви" или как в data
+      estate_name: current.name,
+      // developer: current.developer_name || 'unknown',
+      // min_price: current.minPrice,
+    });
+
+    localStorage.setItem(key, '1');
+    setTimeout(() => localStorage.removeItem(key), 30 * 60 * 1000);
+
+  }, [current, district, data]);  // зависимости: current + district + data
+
+
   const estateHasPhotos = useMemo(() => hasPhotos(current, 'estate'), [current]);
+
 
   return (
     <div className="mt-6">

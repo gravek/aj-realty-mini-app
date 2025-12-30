@@ -48,10 +48,13 @@ export default function App() {
         useStore.setState({ userId: user.id.toString() });
         console.log('User ID from Telegram:', user.id);
       } else {
-        console.warn('Telegram user not found');
+        console.warn('Telegram WebApp инициализирован, но user не найден');
       }
     } else {
-      console.log('Not in Telegram WebApp → local mode');
+      // Локальный режим
+      const testId = 'TEST_LOCAL_USER_123456';
+      useStore.setState({ userId: testId });
+      console.log('Локальный режим: установлен тестовый userId →', testId);
     }
   }, []);
 

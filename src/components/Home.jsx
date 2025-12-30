@@ -1,7 +1,9 @@
 // src/components/Home.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../store';
+import { logEvent } from '../utils/analytics';
+
 
 export default function Home() {
   const { data } = useStore();
@@ -36,6 +38,21 @@ export default function Home() {
       }))
     .sort((a, b) => a.minPrice - b.minPrice)
     .slice(0, 6);
+
+  useEffect(() => {
+    const key = 'logged_open_home';
+
+    if (localStorage.getItem(key)) return; // если уже логировали
+
+    logEvent('open_home', {});
+
+    localStorage.setItem(key, '1');
+
+    // чистим через 30 минут (считаем за сессию)
+    setTimeout(() => localStorage.removeItem(key), 30 * 60 * 1000);
+  }, []);
+
+
 
   return (
     <div className="mt-6">

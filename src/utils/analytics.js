@@ -20,7 +20,7 @@ export const logEvent = async (eventType, details = {}) => {
       ...details,
       timestamp: Date.now(),
       source: 'mini_app',
-      env: userId.startsWith('TEST_') ? 'local' : 'production'  // удобно фильтровать потом
+      env: userId.startsWith('TEST_') ? 'local' : 'production'  // фильтровать потом
     }
   };
 

@@ -2,6 +2,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Info } from 'lucide-react';
 import { useStore } from '../store';
+import { logEvent } from '../utils/analytics';
+
 
 const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
   const { data } = useStore();
@@ -102,6 +104,25 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
       setCurrentIndex(0);
     }
   }, [filter]);  // ← Только от filter, без allPhotos.length
+
+
+  // для логирования следов
+  useEffect(() => {
+    if (!isOpen || !entity) return;
+
+    const key = `gallery_${entityType}_${entity.name || entity.estateName || 'no_name'}`;
+    if (localStorage.getItem(key)) return;  // уже логировали
+
+    logEvent('open_gallery', {
+      entity_type: entityType,
+      entity_name: entity.name || entity.estateName,
+      district: entity.districtName,
+    });
+
+    localStorage.setItem(key, '1');
+    setTimeout(() => localStorage.removeItem(key), 5 * 60 * 1000); // 5 мин
+  }, [isOpen, entity, entityType]);
+
 
   // Текущая фото с полной защитой
   const currentPhoto = filteredPhotos.length > 0 && currentIndex < filteredPhotos.length && filteredPhotos[currentIndex]
