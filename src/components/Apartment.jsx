@@ -86,8 +86,8 @@ export default function Apartment() {
       )}
       <div className="bg-white p-6 rounded-2xl shadow">
         <p className="text-4xl font-bold text-cyan-600">${apartment.price_usd.toLocaleString()}</p>
-        <p className="text-xl mt-2">{apartment.m2} м² • {apartment.finishing}</p>
-        <p className="text-gray-600 mt-4">Этаж: {apartment.floor} • {apartment.specifications || ''}</p>
+        <p className="text-xl mt-2">{apartment.m2} м² • {apartment.finishing} • {apartment.furnished}</p>
+        <p className="text-gray-600 mt-4">Этаж: {apartment.floor} • {apartment.ap_specifications || ''}</p>
       </div>
 
       {/* ← Кнопка галереи — только если есть фото */}
@@ -97,7 +97,7 @@ export default function Apartment() {
           onClick={() => setIsModalOpen(true)}
           className="w-full bg-orange-600 bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg transition"
         >
-          📸 Показать фото для апартамента
+          📸 Посмотреть фото для апартамента 👀
         </button>
       )}
 
@@ -111,9 +111,16 @@ export default function Apartment() {
 
       <button 
         onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
+        className="w-full bg-teal-600 text-white py-4 rounded-xl font-bold text-lg"
+      >
+        🤖 Cпросить Эладжа 🪄
+      </button>
+
+      <button 
+        onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
         className="w-full bg-cyan-600 text-white py-4 rounded-xl font-bold text-lg"
       >
-        Написать менеджеру
+        👩🏻‍🦱 Написать менеджеру 📝
       </button>
 
       {/* ← Модалка */}
