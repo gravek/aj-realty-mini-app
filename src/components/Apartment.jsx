@@ -110,7 +110,7 @@ export default function Apartment() {
       />
 
       <button 
-        onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
+        onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot')}
         className="w-full bg-teal-600 text-white py-4 rounded-xl font-bold text-lg"
       >
         🤖 Cпросить Эладжа 🪄
