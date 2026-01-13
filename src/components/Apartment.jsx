@@ -95,7 +95,7 @@ export default function Apartment() {
       {apartment && (
         <button
           onClick={() => setIsModalOpen(true)}
-          className="w-full bg-orange-600 bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg transition"
+          className="w-full bg-orange-700 bg-gradient-to-r from-orange-600 to-rose-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg transition"
         >
           📸 Посмотреть фото для апартамента 👀
         </button>
@@ -110,18 +110,55 @@ export default function Apartment() {
       />
 
       <button 
-        onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot')}
-        className="w-full bg-teal-600 text-white py-4 rounded-xl font-bold text-lg"
+        onClick={() => {
+          const key = `logged_ask_elaj_${id}`;
+          if (localStorage.getItem(key)) return; // уже кликали недавно
+
+          logEvent('click_ask_bot', {
+            apartment_id: id,
+            estate: apartment?.estateName || 'unknown',
+            district: apartment?.districtName || 'unknown'
+          });
+
+          localStorage.setItem(key, '1');
+          setTimeout(() => localStorage.removeItem(key), 60 * 1000); // 1 минута
+
+          window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+        }}
+        className="w-full bg-teal-700 text-white py-4 rounded-xl font-bold text-lg"
       >
         🤖 Cпросить Эладжа 🪄
       </button>
 
+
       <button 
+        onClick={() => {
+          const key = `logged_ask_elaj_${id}`;
+          if (localStorage.getItem(key)) return; // уже кликали недавно
+
+          logEvent('click_ask_manager', {
+            apartment_id: id,
+            estate: apartment?.estateName || 'unknown',
+            district: apartment?.districtName || 'unknown'
+          });
+
+          localStorage.setItem(key, '1');
+          setTimeout(() => localStorage.removeItem(key), 60 * 1000); // 1 минута
+
+          window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6');
+        }}
+        className="w-full bg-cyan-700 text-white py-4 rounded-xl font-bold text-lg"
+      >
+        👩🏻‍🦱 Написать менеджеру 📝
+      </button>
+
+
+      {/* <button 
         onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
         className="w-full bg-cyan-600 text-white py-4 rounded-xl font-bold text-lg"
       >
         👩🏻‍🦱 Написать менеджеру 📝
-      </button>
+      </button> */}
 
       {/* ← Модалка */}
       {/* <PhotoGalleryModal

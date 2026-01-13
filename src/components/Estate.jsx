@@ -30,10 +30,10 @@ export default function Estate() {
 
     logEvent('open_estate', {
       // district_key: district,                           // "Chakvi", "Kobuleti" и т.д.
-      district_name: data?.districts?.[district]?.name || 'unknown',  // "Чакви" или как в data
+      district_name: data?.districts?.[district]?.name || 'Аджария',  // "Чакви" или как в data
       estate_name: current.name,
-      // developer: current.developer_name || 'unknown',
-      // min_price: current.minPrice,
+      developer: current.developer_name || 'неизвестный застройщик',
+      min_price: current.minPrice,
     });
 
     localStorage.setItem(key, '1');
