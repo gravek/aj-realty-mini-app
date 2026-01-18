@@ -13,16 +13,18 @@ export const logEvent = async (eventType, details = {}) => {
     console.log('⚠️ Локальный режим: используем тестовый userId:', userId);
   }
 
+
   const payload = {
     user_id: userId,
     event_type: eventType,
-    details: {
-      ...details,
-      timestamp: Date.now(),
-      source: 'mini_app',
-      env: userId.startsWith('TEST_') ? 'local' : 'production'  // фильтровать потом
+    // timestamp: Date.now(),
+    datetime: new Date().toISOString().replace('T', ' ').slice(0, 23), // YYYY-MM-DD HH:MM:SS.sss
+    env: userId.startsWith('TEST_') ? 'test' : 'prod',
+    details: {                    // специфические параметры события
+      ...details
     }
   };
+
 
   try {
     console.log('Отправляем событие:', payload); // ← для дебага

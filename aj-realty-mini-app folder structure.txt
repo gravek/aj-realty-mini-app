@@ -31,6 +31,7 @@ Directory structure:
     │   ├── main.jsx
     │   ├── store.js
     │   └── utils/
+    │       ├── analytics.js
     │       └── hasPhotos.js
     ├── tailwind.config.js
     ├── vercel.json
