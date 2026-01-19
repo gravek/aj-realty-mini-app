@@ -145,9 +145,8 @@ export default function Calculator() {
                 if (localStorage.getItem(key)) return; // уже кликали недавно
       
                 logEvent('click_ask_bot', {
-                  apartment_id: id,
-                  estate: apartment?.estateName || 'unknown',
-                  district: apartment?.districtName || 'unknown'
+                  price_category: priceCategory.label,
+                  off_season_occupancy: offSeasonOccupancy,
                 });
       
                 localStorage.setItem(key, '1');
@@ -167,9 +166,8 @@ export default function Calculator() {
                 if (localStorage.getItem(key)) return; // уже кликали недавно
       
                 logEvent('click_ask_manager', {
-                  apartment_id: id,
-                  estate: apartment?.estateName || 'unknown',
-                  district: apartment?.districtName || 'unknown'
+                  price_category: priceCategory.label,
+                  off_season_occupancy: offSeasonOccupancy,
                 });
       
                 localStorage.setItem(key, '1');

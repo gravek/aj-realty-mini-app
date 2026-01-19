@@ -18,7 +18,8 @@ export const logEvent = async (eventType, details = {}) => {
     user_id: userId,
     event_type: eventType,
     // timestamp: Date.now(),
-    datetime: new Date().toISOString().replace('T', ' ').slice(0, 23), // YYYY-MM-DD HH:MM:SS.sss
+    // datetime: new Date().toISOString().replace('T', ' ').slice(0, 23), // YYYY-MM-DD HH:MM:SS.sss
+    datetime: new Date().toISOString().slice(0, 23), //  ISO 8601 YYYY-MM-DDThh:mm:ss.sss datetime.fromisoformat()
     env: userId.startsWith('TEST_') ? 'test' : 'prod',
     details: {                    // специфические параметры события
       ...details
