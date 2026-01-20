@@ -41,28 +41,15 @@ export default function Home() {
 
   useEffect(() => {
     const key = 'logged_open_home';
-    if (localStorage.getItem(key)) return;
 
-    const unsubscribe = useStore.subscribe((state) => {
-      if (state.userId) {                      // ← ждём, пока userId появится
-        logEvent('open_home', {
-          // можно добавить детали, если нужно
-        });
-        localStorage.setItem(key, '1');
-        setTimeout(() => localStorage.removeItem(key), 30 * 60 * 1000);
-        unsubscribe();                         // ← сразу отписываемся, чтобы не висеть
-      }
-    });
+    if (localStorage.getItem(key)) return; // если уже логировали
 
-    // Если userId уже есть прямо сейчас — логируем мгновенно
-    if (useStore.getState().userId) {
-      logEvent('open_home', {});
-      localStorage.setItem(key, '1');
-      setTimeout(() => localStorage.removeItem(key), 30 * 60 * 1000);
-    }
+    logEvent('open_home', {});
 
-    // cleanup на всякий случай
-    return () => unsubscribe();
+    localStorage.setItem(key, '1');
+
+    // чистим через 30 минут (считаем за сессию)
+    setTimeout(() => localStorage.removeItem(key), 30 * 60 * 1000);
   }, []);
 
 
