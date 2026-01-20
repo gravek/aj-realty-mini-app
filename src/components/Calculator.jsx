@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { logEvent } from '../utils/analytics';
 
 export default function Calculator() {
@@ -30,24 +30,34 @@ export default function Calculator() {
     return { label: 'Люкс',          color: 'text-purple-600' };
   })();
 
-  // Логирование: факт открытия
+  
+  // Логирование: факт открытия и использование калькулятора (устойчивых значений)
+
+  const hasRealMounted = useRef(false);
+
+  // 1. Открытие — логируем один раз после первого монтирования
   useEffect(() => {
     logEvent('open_calculator');
-  }, []);
+  }, []);   // ← это безопасно, в dev-режиме залогируется дважды → но в production один раз, а в Telegram Mini App обычно один
 
-  // Логирование устойчивых значений: debounce _ секунд после остановки ползунка
+  // 2. Использование — ТОЛЬКО после изменений, пропускаем первый запуск
   useEffect(() => {
+    // Пропускаем абсолютно первый вызов эффекта (при загрузке)
+    if (!hasRealMounted.current) {
+      hasRealMounted.current = true;
+      return; // ← выходим, ничего не делаем
+    }
+
+    // Теперь это уже реакция на изменение price / occupancy
     const timer = setTimeout(() => {
       logEvent('use_calculator', {
         price_category: priceCategory.label,
         off_season_occupancy: offSeasonOccupancy,
-        // estimated_roi: roi.toFixed(1),
-        // estimated_net_profit: Math.round(netYear)
       });
-    }, 5*1000);  // _ секунд паузы
+    }, 5000);
 
     return () => clearTimeout(timer);
-  }, [price, offSeasonOccupancy, roi, netYear]);  // срабатывает при изменениях
+  }, [price, offSeasonOccupancy]);  // на будущее: , roi, netYear
 
   return (
     <div className="space-y-8 pb-20">
@@ -139,46 +149,46 @@ export default function Calculator() {
         </p>
       </div>
       
-            <button 
-              onClick={() => {
-                const key = `logged_ask_elaj_${id}`;
-                if (localStorage.getItem(key)) return; // уже кликали недавно
-      
-                logEvent('click_ask_bot', {
-                  price_category: priceCategory.label,
-                  off_season_occupancy: offSeasonOccupancy,
-                });
-      
-                localStorage.setItem(key, '1');
-                setTimeout(() => localStorage.removeItem(key), 60 * 1000); // 1 минута
-      
-                window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
-              }}
-              className="w-full bg-teal-700 text-white py-4 rounded-xl font-bold text-lg"
-            >
-              🤖 Cпросить Эладжа 🪄
-            </button>
-      
-      
-            <button 
-              onClick={() => {
-                const key = `logged_ask_elaj_${id}`;
-                if (localStorage.getItem(key)) return; // уже кликали недавно
-      
-                logEvent('click_ask_manager', {
-                  price_category: priceCategory.label,
-                  off_season_occupancy: offSeasonOccupancy,
-                });
-      
-                localStorage.setItem(key, '1');
-                setTimeout(() => localStorage.removeItem(key), 60 * 1000); // 1 минута
-      
-                window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6');
-              }}
-              className="w-full bg-cyan-700 text-white py-4 rounded-xl font-bold text-lg"
-            >
-              👩🏻‍🦱 Написать менеджеру 📝
-            </button>
+      <button 
+        onClick={() => {
+          const key = `logged_ask_elaj_${id}`;
+          // if (localStorage.getItem(key)) return; // уже кликали недавно
+
+          logEvent('click_ask_bot', {
+            price_category: priceCategory.label,
+            off_season_occupancy: offSeasonOccupancy,
+          });
+
+          localStorage.setItem(key, '1');
+          setTimeout(() => localStorage.removeItem(key), 60 * 1000); // 1 минута
+
+          window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+        }}
+        className="w-full bg-teal-700 text-white py-4 rounded-xl font-bold text-lg"
+      >
+        🤖 Cпросить Эладжа 🪄
+      </button>
+
+
+      <button 
+        onClick={() => {
+          const key = `logged_ask_elaj_${id}`;
+          // if (localStorage.getItem(key)) return; // уже кликали недавно
+
+          logEvent('click_ask_manager', {
+            price_category: priceCategory.label,
+            off_season_occupancy: offSeasonOccupancy,
+          });
+
+          localStorage.setItem(key, '1');
+          setTimeout(() => localStorage.removeItem(key), 60 * 1000); // 1 минута
+
+          window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6');
+        }}
+        className="w-full bg-cyan-700 text-white py-4 rounded-xl font-bold text-lg"
+      >
+        👩🏻‍🦱 Написать менеджеру 📝
+      </button>
     </div>
   );
 }

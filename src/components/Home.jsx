@@ -64,7 +64,7 @@ export default function Home() {
       </div>
       {/* <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl text-sm font-bold text-gray-900 whitespace-nowrap pointer-events-none z-50 border border-rose-200 min-w-max"> */}
       
-      <div className="max-w-2xl mx-auto px-4 mb-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl tracking-tighter text-left font-bold border border-rose-300 text-orange-900">
+      <div className="max-w-2xl mx-auto px-4 mb-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl tracking-tighter text-left font-bold border border-rose-200 text-orange-900">
         {home_about_text}
       </div>
       

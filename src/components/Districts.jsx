@@ -176,7 +176,7 @@ export default function Districts() {
         </div>
 
         {districts.map(([key, district]) => {
-          // ← Считаем наличие фото (просто обычная функция)
+          // ← Считаем наличие фото
           const hasPhotos = (() => {
             let count = 0;
             const countPhotos = (obj) => {

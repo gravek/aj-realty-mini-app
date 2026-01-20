@@ -1357,7 +1357,14 @@
                 "description": "```  \nChakvi, Dreamland Oasis: Современная спальня с двуспальной кроватью. Дизайнерские картины украшают стены. Телевизор на стене. Просторные окна с плотными шторами. Комфортная мебель и уютная обстановка.\n```"
               }
             ],
-            "specific": []
+            "specific": [
+              {
+                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
+                "new_filename": "Chakvi-Dreaml-sketch-cfe02d.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485458/Chakvi-Dreaml-sketch-cfe02d.jpg",
+                "description": "Chakvi, Dreamland Oasis: \n\nСовременные жилые здания.  \nПросторные бассейны.  \nУхоженные зелёные зоны.  \nПляжная набережная.  \nРазнообразие зон отдыха.  \nПанорамный вид на море.  \nУтончённый дизайн комплекса."
+              }
+        ]
           },
           "blocks": {
             "14": {

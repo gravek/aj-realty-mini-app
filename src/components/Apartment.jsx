@@ -84,7 +84,7 @@ export default function Apartment() {
       {apartment.estatePhoto && (
         <img src={apartment.estatePhoto} alt={apartment.estateName} className="w-full h-64 object-cover rounded-2xl" />
       )}
-      <div className="bg-white p-6 rounded-2xl shadow">
+      <div className="bg-white p-6 rounded-2xl border border-rose-100 shadow">
         <p className="text-4xl font-bold text-cyan-600">${apartment.price_usd.toLocaleString()}</p>
         <p className="text-xl mt-2">{apartment.m2} м² • {apartment.finishing} • {apartment.furnished}</p>
         <p className="text-gray-600 mt-4">Этаж: {apartment.floor} • {apartment.ap_specifications || ''}</p>
@@ -112,7 +112,7 @@ export default function Apartment() {
       <button 
         onClick={() => {
           const key = `logged_ask_elaj_${id}`;
-          if (localStorage.getItem(key)) return; // уже кликали недавно
+          // if (localStorage.getItem(key)) return; // уже кликали недавно
 
           logEvent('click_ask_bot', {
             apartment_id: id,
@@ -134,7 +134,7 @@ export default function Apartment() {
       <button 
         onClick={() => {
           const key = `logged_ask_elaj_${id}`;
-          if (localStorage.getItem(key)) return; // уже кликали недавно
+          // if (localStorage.getItem(key)) return; // уже кликали недавно
 
           logEvent('click_ask_manager', {
             apartment_id: id,

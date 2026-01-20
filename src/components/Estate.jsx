@@ -50,9 +50,17 @@ export default function Estate() {
       <h1 className="text-3xl font-bold mb-2">{current.name}</h1>
       {current.developer_name && <p className="text-lg text-gray-600 mb-6">{current.developer_name}</p>}
 
-      <div className="max-w-2xl font-normal tracking-tighter text-left mx-auto px-3 py-2 mb-2  bg-white/90 backdrop-blur-sm rounded-lg shadow-xl border border-rose-300 text-orange-800">
-        {current.estate_description || 'amazing_estate'}
+      <div className="max-w-2xl font-normal tracking-tighter text-left mx-auto px-3 py-2 mb-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-xl border border-rose-200 text-orange-800">
+        {current.photos?.specific?.[0]?.url && (
+          <img
+            src={current.photos.specific[0].url}
+            alt={current.name || 'Estate image'}
+            className="w-full h-48 object-cover rounded-2xl mt-6 shadow-lg"
+          />
+        )}
+        <p className="mt-4 mb-2">{current.estate_description || 'amazing_estate'}</p>
       </div>
+
 
       {/* Кнопка фото, если есть */}
       {estateHasPhotos && (
@@ -71,7 +79,7 @@ export default function Estate() {
           <Link
             key={ap.apartment_id}
             to={`/apartment/${ap.apartment_id}`}
-            className="block p-5 bg-white rounded-xl shadow hover:shadow-lg transition"
+            className="block p-5 bg-white rounded-xl border border-rose-100 shadow hover:shadow-lg transition"
           >
             <div className="flex justify-between items-center">
               <div>
