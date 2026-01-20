@@ -7,12 +7,22 @@ export const logEvent = async (eventType, details = {}) => {
   // 1. Пробуем взять из Telegram (нормальный сценарий)
   let userId = store.userId;
   
-  // 2. Если userId нет (локальный запуск) — берём тестовый
+  // Ждём userId максимум 3 секунды (Telegram initData обычно приходит быстро)
   if (!userId) {
-    userId = 'TEST_LOCAL_USER_123456';  // ← твой тестовый ID
-    console.log('⚠️ Локальный режим: используем тестовый userId:', userId);
+    console.log('⌛️ Ожидаем Telegram userId...');
+    for (let i = 0; i < 6; i++) {          // 6 × 500 мс = 3 сек
+      await new Promise(r => setTimeout(r, 500));
+      const freshState = useStore.getState();
+      userId = freshState.userId;
+      if (userId) break;
+    }
   }
-
+  
+  // 2. Если userId  нет (локальный запуск) — сохраняем как неизвестного пользователя
+  if (!userId) {
+    userId = 'UNRECOGNISED_USER';  // ← в том числе тестовый/локальный режим
+    console.warn('⚠️ Не удалось получить userId, логируем как:', userId);
+  }
 
   const payload = {
     user_id: userId,
@@ -20,7 +30,7 @@ export const logEvent = async (eventType, details = {}) => {
     // timestamp: Date.now(),
     // datetime: new Date().toISOString().replace('T', ' ').slice(0, 23), // YYYY-MM-DD HH:MM:SS.sss
     datetime: new Date().toISOString().slice(0, 23), //  ISO 8601 YYYY-MM-DDThh:mm:ss.sss datetime.fromisoformat()
-    env: userId.startsWith('TEST_') ? 'test' : 'prod',
+    // env: userId.startsWith('UNRECOGNISED_') ? 'test' : 'prod',
     details: {                    // специфические параметры события
       ...details
     }
