@@ -40,12 +40,12 @@ export default function Home() {
     .slice(0, 6);
 
   useEffect(() => {
-    console.log('!!! logEvent open_home вызывается !!!');
-    logEvent('open_home', { test: 'from home' });
-    
+    // console.log('!!! logEvent open_home вызывается !!!');
+    // logEvent('open_home', { test: 'from home' });
+
     const key = 'logged_open_home';
 
-    if (localStorage.getItem(key)) return; // если уже логировали
+    // if (localStorage.getItem(key)) return; // если уже логировали
 
     logEvent('open_home', {});
 
