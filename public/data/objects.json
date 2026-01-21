@@ -1367,8 +1367,8 @@
         ]
           },
           "blocks": {
-            "14": {
-              "name": "14",
+            "Block 14": {
+              "name": "Block 14",
               "coords": [
                 41.72053,
                 41.726417
@@ -1424,17 +1424,24 @@
                 }
               }
             },
-            "7": {
-              "name": "7",
+            "Block 7": {
+              "name": "Block 7",
               "coords": [
                 41.72053,
                 41.726417
               ],
-              "block_specifications": "8 этажей. Сдан.",
+              "block_specifications": "4 этажа, сдан.",
               "photos": {
                 "sketch": [],
                 "example": [],
-                "specific": []
+                "specific": [
+                  {
+                    "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_8cba0.jpg",
+                    "new_filename": "Chakvi-Dreaml-sketch-b33e3d.jpg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485463/Chakvi-Dreaml-sketch-b33e3d.jpg",
+                    "description": "Скетч-схема расположения блоков "
+                  }
+                ]
               },
               "apartment_types": {
                 "studio": {
@@ -1460,8 +1467,8 @@
                 }
               }
             },
-            "13": {
-              "name": "13",
+            "Block 13": {
+              "name": "Block 13",
               "coords": [
                 41.72053,
                 41.726418
@@ -1517,8 +1524,8 @@
                 }
               }
             },
-            "12": {
-              "name": "12",
+            "Block 12": {
+              "name": "Block 12",
               "coords": [
                 41.72053,
                 41.726419
@@ -1585,8 +1592,8 @@
                 }
               }
             },
-            "10": {
-              "name": "10",
+            "Block 10": {
+              "name": "Block 10",
               "coords": [
                 41.72053,
                 41.72642
@@ -1642,8 +1649,8 @@
                 }
               }
             },
-            "4": {
-              "name": "4",
+            "Block 4": {
+              "name": "Block 4",
               "coords": [
                 41.72053,
                 41.726422
@@ -1678,8 +1685,8 @@
                 }
               }
             },
-            "15": {
-              "name": "15",
+            "Block 15": {
+              "name": "Block 15",
               "coords": [
                 41.72053,
                 41.726426
@@ -1735,8 +1742,8 @@
                 }
               }
             },
-            "2": {
-              "name": "2",
+            "Block 2": {
+              "name": "Block 2",
               "coords": [
                 41.72053,
                 41.726427
@@ -1771,8 +1778,8 @@
                 }
               }
             },
-            "9": {
-              "name": "9",
+            "Block 9": {
+              "name": "Block 9",
               "coords": [
                 41.72053,
                 41.72643
