@@ -51,6 +51,7 @@ export default function Calculator() {
     // Теперь это уже реакция на изменение price / occupancy
     const timer = setTimeout(() => {
       logEvent('use_calculator', {
+        price: price,
         price_category: priceCategory.label,
         off_season_occupancy: offSeasonOccupancy,
       });

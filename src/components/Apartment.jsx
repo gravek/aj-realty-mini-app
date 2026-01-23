@@ -144,7 +144,7 @@ export default function Apartment() {
 
   return (
     <div className="space-y-6 pb-20">
-      {/* Хлебные крошки */}
+      {/* Путь */}
       <div className="flex items-center text-sm text-gray-500 mb-2">
         <Link to="/" className="hover:text-cyan-600 transition">Главная</Link>
         <ChevronLeft size={16} className="mx-1" />
@@ -156,7 +156,7 @@ export default function Apartment() {
       </div>
 
       {/* Заголовок и основная информация */}
-      <div className="bg-gradient-to-r from-rose-50/80 to-cyan-50/60 p-6 rounded-2xl border border-cyan-00">
+      <div className="bg-gradient-to-r from-orange-100/60 to-cyan-100/40 p-6 rounded-2xl border border-cyan-300 shadow-md">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
           <div className="flex-1">
             <h1 className="text-3xl font-bold text-gray-900">{apartment.estateName}</h1>
