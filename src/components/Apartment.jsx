@@ -9,10 +9,14 @@ import {
   Layers, 
   Square, 
   MapPin, 
-  Building,
-  Ruler,
-  Calendar,
-  CheckCircle,
+  Hotel,
+  BrickWall,
+  Columns3Cog,
+  FileDigit,
+  Building2,
+  Camera,
+  BotMessageSquare,
+  UserRoundPen,
   ChevronLeft,
   Notebook
 } from 'lucide-react';
@@ -44,6 +48,7 @@ export default function Apartment() {
                 districtDescription: district.description,
                 estatePhoto: estate.photos?.sketch?.[0]?.url || estate.photos?.specific?.[0]?.url,
                 blockName: block.name || 'один блок',
+                blockCoords: block.coords || 'один блок',
                 blockSpecifications: block.block_specifications,
                 blockPhoto: block.photos?.sketch?.[0]?.url || block.photos?.specific?.[0]?.url,
                 app_type: type.name,
@@ -155,24 +160,62 @@ export default function Apartment() {
         <span className="text-gray-700 font-medium">{apartment.estateName}</span>
       </div>
 
-      {/* Заголовок и основная информация */}
-      <div className="bg-gradient-to-r from-orange-100/60 to-cyan-100/40 p-6 rounded-2xl border border-cyan-300 shadow-md">
+
+      <div className="flex-1">
+        <h1 className="text-4xl font-bold  bg-gradient-to-r from-cyan-700 to-emerald-600 bg-clip-text text-transparent mb-2">{apartment.estateName}</h1>
+        
+        {apartment.estateDeveloper && (
+          <div className="flex items-center gap-2 mt-1">
+            <BrickWall size={18} className="text-gray-400" />
+            <span className="text-gray-600">{apartment.estateDeveloper}</span>
+          </div>
+        )}
+      </div>
+
+
+
+      {/* Апартамент и основная информация */}
+      <div className="bg-gradient-to-r from-teal-100/40 to-cyan-100/60 p-6 rounded-2xl border border-cyan-300 shadow-md">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
           <div className="flex-1">
-            <h1 className="text-3xl font-bold text-gray-900">{apartment.estateName}</h1>
+            <h2 className="text-3xl font-bold text-cyan-700">Апартамент {apartment.apartment_number || ''}</h2>
             
-            {apartment.estateDeveloper && (
-              <div className="flex items-center gap-2 mt-3">
-                <Building size={18} className="text-gray-400" />
-                <span className="text-gray-700">Застройщик: {apartment.estateDeveloper}</span>
+            <div className="flex items-center gap-2">
+              <FileDigit size={16} className="text-gray-400" />
+              <p className="text-md text-gray-400">{apartment.apartment_id}</p>
+            </div>
+
+
+            {/* {apartment.estateDeveloper && (
+              <div className="flex items-center gap-2 mt-1">
+                <BrickWall size={18} className="text-gray-400" />
+                <span className="text-gray-600">{apartment.estateDeveloper}</span>
+              </div>
+            )} */}
+          </div>
+          
+          <div className="flex items-center justify-between gap-2 mt-0">
+            {/* иконка + название блока */}
+            <div className="flex items-center gap-1">
+              <Hotel size={21} className="text-gray-400" />
+              <p className="text-xl text-gray-600">{apartment.blockName}</p>
+            </div>
+
+            {/* координаты блока (если есть) */}
+            {apartment.blockCoords && (
+              <div className="flex items-center gap-2 px-3 py-1 bg-white/95 rounded-full backdrop-blur-sm text-xs">
+                <MapPin className="text-gray-400" size={16} />
+                {/* <div className="w-1 h-1 bg-gray-600 rounded-full"></div> */}
+                <span className="text-gray-600">
+                  {apartment.blockCoords[0].toFixed(4)}, {apartment.blockCoords[1].toFixed(4)}
+                </span>
               </div>
             )}
           </div>
-          
-          <p className="text-xl text-gray-600 mt-1">{apartment.blockName}</p>
-          
+
+          {/* Цена и основные спецификации апартамента */}
           <div className="bg-white p-5 rounded-xl shadow-lg border border-cyan-100 min-w-[250px]">
-            <div className="text-4xl font-bold text-cyan-600 mb-1">
+            <div className="text-2xl font-bold text-cyan-600 mb-1">
               ${apartment.price_usd.toLocaleString()}
             </div>
             <div className="text-sm text-gray-500 mb-3">
@@ -187,8 +230,8 @@ export default function Apartment() {
                 <Square size={20} className="mx-auto text-rose-600 mb-1" />
                 <div className="font-bold text-gray-900">{apartment.m2} м²</div>
               </div>
-              <div className="text-center p-2 bg-cyan-50 rounded-lg">
-                <Layers size={20} className="mx-auto text-cyan-600 mb-1" />
+              <div className="text-center p-2 bg-purple-50 rounded-lg">
+                <Layers size={20} className="mx-auto text-purple-600 mb-1" />
                 <div className="font-bold text-gray-900">{apartment.floor}</div>
               </div>
             </div>
@@ -197,7 +240,7 @@ export default function Apartment() {
       </div>
 
       {/* Главное фото */}
-      {apartment.estatePhoto && (
+      {/* {apartment.estatePhoto && (
         <div className="relative rounded-2xl overflow-hidden shadow-xl">
           <img 
             src={apartment.estatePhoto} 
@@ -208,7 +251,7 @@ export default function Apartment() {
             <p className="text-white text-lg font-semibold">{apartment.estateDescription}</p>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Табы с информацией */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
@@ -251,7 +294,7 @@ export default function Apartment() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                    <Home size={20} className="text-cyan-600" />
+                    <Home size={20} className="text-orange-600" />
                     Основные параметры
                   </h3>
                   <div className="space-y-3">
@@ -276,7 +319,7 @@ export default function Apartment() {
 
                 <div className="space-y-4">
                   <h4 className="font-semibold text-gray-900 flex items-center gap-2">
-                    <Notebook size={18} className="text-purple-600" />
+                    <Notebook size={18} className="text-rose-600" />
                     Дополнительно
                   </h4>
                   <div className="space-y-2">
@@ -297,7 +340,8 @@ export default function Apartment() {
 
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                    <CheckCircle size={20} className="text-green-600" />
+                    {/* <CheckCircle size={20} className="text-green-600" /> */}
+                    <Columns3Cog size={18} className="text-purple-600" />
                     О блоке:
                   </h3>
                   {apartment.blockSpecifications ? (
@@ -382,7 +426,7 @@ export default function Apartment() {
           {activeTab === 'location' && (
             <div className="space-y-4">
               {/* Район - компактно */}
-              <div className="space-y-3">
+              {/* <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <MapPin size={20} className="text-rose-600" />
                   <h3 className="font-semibold text-gray-900">Район: {apartment.districtName}</h3>
@@ -398,7 +442,7 @@ export default function Apartment() {
               {/* ЖК - компактно */}
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Building size={20} className="text-cyan-600" />
+                  <Building2 size={20} className="text-cyan-600" />
                   <h3 className="font-semibold text-gray-900">О комплексе</h3>
                 </div>
                 
@@ -456,7 +500,7 @@ export default function Apartment() {
         <button
           onClick={() => setIsModalOpen(true)}
           disabled={!hasPhotos()}
-          className={`p-5 rounded-xl font-bold text-lg shadow-lg transition flex items-center justify-center gap-3 ${
+          className={`p-2 rounded-xl mb-6 font-bold text-lg shadow-lg transition flex items-center justify-center gap-4 ${
             hasPhotos()
               ? 'bg-gradient-to-r from-orange-600 to-rose-600 text-white hover:shadow-xl'
               : 'bg-gray-100 text-gray-400 cursor-not-allowed'
@@ -464,22 +508,22 @@ export default function Apartment() {
         >
           {hasPhotos() ? (
             <>
-              <span className="text-2xl">📸</span>
+                <Camera size={36} />
               <div className="text-left">
                 <div>Посмотреть фото</div>
                 <div className="text-sm font-normal opacity-90">для этого апртамента</div>
               </div>
             </>
           ) : (
-            'Фото отсутствуют'
+            'Фото скоро появятся'
           )}
         </button>
 
         {/* Кнопка бота */}
         <button 
           onClick={() => {
-            const key = `logged_ask_elaj_${id}`;
-            logEvent('click_ask_bot_about_this_object', {
+            const key = `logged_ask_bot_apartment_${id}`;
+            logEvent('ask_bot_apartment', {
               apartment_id: id,
               estate: apartment?.estateName || 'unknown',
               district: apartment?.districtName || 'unknown'
@@ -488,9 +532,9 @@ export default function Apartment() {
             setTimeout(() => localStorage.removeItem(key), 60 * 1000);
             window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
           }}
-          className="p-5 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition flex items-center justify-center gap-3"
+          className="p-2 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition flex items-center justify-center gap-4"
         >
-          <span className="text-2xl">🤖</span>
+          <BotMessageSquare size={36} />
           <div className="text-left">
             <div>Спросить Эладжа</div>
             <div className="text-sm font-normal opacity-90">об этом объекте</div>
@@ -500,8 +544,8 @@ export default function Apartment() {
         {/* Кнопка менеджера */}
         <button 
           onClick={() => {
-            const key = `logged_wright_manager_${id}`;
-            logEvent('click_ask_manager', {
+            const key = `logged_ask_manager_apartment_${id}`;
+            logEvent('ask_manager_apartment', {
               apartment_id: id,
               estate: apartment?.estateName || 'unknown',
               district: apartment?.districtName || 'unknown'
@@ -510,9 +554,9 @@ export default function Apartment() {
             setTimeout(() => localStorage.removeItem(key), 60 * 1000);
             window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6');
           }}
-          className="p-5 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition flex items-center justify-center gap-3"
+          className="p-2 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition flex items-center justify-center gap-4"
         >
-          <span className="text-2xl">👩🏻‍🦱</span>
+          <UserRoundPen size={30} />
           <div className="text-left">
             <div>Написать менеджеру</div>
             <div className="text-sm font-normal opacity-90">для личной консультации</div>

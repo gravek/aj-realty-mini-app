@@ -5,6 +5,25 @@ import { useStore } from '../store';
 import PhotoGalleryModal from './PhotoGalleryModal';
 import { hasPhotos } from '../utils/hasPhotos';
 import { logEvent } from '../utils/analytics';
+import { 
+  Home, 
+  Layers, 
+  Square, 
+  MapPin, 
+  Hotel,
+  BrickWall,
+  Columns3Cog,
+  Building,
+  Images,
+  Camera,
+  BotMessageSquare,
+  Building2,
+  Ruler,
+  Calendar,
+  CheckCircle,
+  ChevronLeft,
+  Notebook
+} from 'lucide-react';
 
 export default function Estate() {
   const { district, estate } = useParams();
@@ -122,7 +141,7 @@ export default function Estate() {
 
   return (
     <div className="mt-6">
-      <h1 className="text-3xl font-bold mb-2">{current.name}</h1>
+      {/* <h1 className="text-3xl font-bold mb-2">{current.name}</h1>
       {current.developer_name && <p className="text-lg text-gray-600 mb-6">{current.developer_name}</p>}
 
       <div className="max-w-2xl font-normal tracking-tighter text-left mx-auto px-3 py-2 mb-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-xl border border-rose-200 text-orange-800">
@@ -134,19 +153,95 @@ export default function Estate() {
           />
         )}
         <p className="mt-4 mb-2">{current.estate_description || 'удивительный комплекс'}</p>
+      </div> */}
+
+      <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+        {/* <div className="flex-1">
+          <h1 className="text-3xl font-bold text-cyan-700">{current.name}</h1>
+          
+          {current.developer_name && (
+            <div className="flex items-center gap-2 mt-1">
+              <BrickWall size={18} className="text-gray-400" />
+              <span className="text-gray-600">{current.developer_name || 'неизвестный застройщик'}</span>
+            </div>
+          )}
+        </div> */}
+
+        {/* Главное описание ЖК */}
+        <div className="mb-8 bg-gradient-to-r from-teal-100/40 to-cyan-100/60 p-6 rounded-2xl border border-cyan-300 shadow-md">
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+            <div className="flex-1">
+              <h1 className="text-3xl font-bold text-cyan-700">{current.name}</h1>
+              
+              {current.developer_name && (
+                <div className="flex items-center gap-2 mt-1">
+                  <BrickWall size={18} className="text-gray-400" />
+                  <span className="text-gray-600">{current.developer_name || 'неизвестный застройщик'}</span>
+                </div>
+              )}
+            </div>
+          </div>
+          {current.photos?.specific?.[0]?.url && (
+            <div className="relative">
+              <img
+                src={current.photos.specific?.[0]?.url}
+                alt={current.name || 'Estate image'}
+                className="w-full h-64 object-cover rounded-2xl mt-6 shadow-lg"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-gray-600/80 to-transparent p-6">
+                <p className="text-white text-lg font-semibold">
+                  {current.estate_description || 'удивительный комплекс'}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
+
+
 
       {/* Кнопка фото, если есть */}
       {estateHasPhotos && (
         <div className="flex justify-center items-center">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-1/2 mb-8 mx-auto bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-2xl font-bold text-md hover:shadow-xl transition mt-8"
+            // className="w-1/2 mb-8 mx-auto bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-2xl font-bold text-md hover:shadow-xl transition flex items-center gap-2"
+            className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-3 mb-6"
+          
           >
+            <Camera size={20} />
             Показать фото комплекса
+            {/* <Images size={20}  /> */}
           </button>
         </div>
       )}
+
+      {/* Кнопки связи */}
+      <div className="flex gap-4 mb-10">
+        <button 
+          onClick={() => {
+            const key = `logged_ask_bot_estate_${current.name}`;
+            logEvent('ask_bot_estate', {
+              estate: current.name || 'unknown'
+            });
+            localStorage.setItem(key, '1');
+            setTimeout(() => localStorage.removeItem(key), 60 * 1000);
+            window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+          }}
+          className="flex-1 bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
+        >
+          <BotMessageSquare size={22} />
+          <div>Спросить Эладжа </div>
+          <div className="text-sm font-normal opacity-90">об этом районе и объектах</div>
+        </button>
+        {/* <button 
+          onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
+          className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 mb-6"
+        >
+          <User size={24} />
+          <span>Консультация менеджера</span>
+        </button> */}
+      </div>
 
       {/* Панель фильтров и сортировки */}
       <div className="mb-8 p-4 bg-white rounded-xl border border-rose-100 shadow">

@@ -14,7 +14,7 @@ import {
   DollarSign,
   Shield,
   Zap,
-  Bot,
+  BotMessageSquare,
   User,
   Camera,
   Coffee,
@@ -381,10 +381,10 @@ const getPriceCategories = (district) => {
                 >
                   {/* Точка-элипс */}
                   <div
-                    className={`w-1 h-6 rounded-full border-2 transition-all duration-1000 ${
+                    className={`w-1.5 h-6 rounded-full border-2 transition-all duration-1000 ${
                       isActive
                         ? `${colors.bg} ${colors.border} scale-250 shadow-lg shadow-current/50`
-                        : 'bg-white border-gray-400 group-hover:border-gray-500 group-hover:scale-110'
+                        : 'bg-white border-gray-400 e-110'
                     }`}
                   />
 
@@ -401,7 +401,7 @@ const getPriceCategories = (district) => {
 
                   {/* Пульсация при активном */}
                   {isActive && (
-                    <div className="absolute inset-0 w-1 h-6 rounded-full bg-current animate-ping opacity-75" />
+                    <div className="absolute inset-0 w-1.5 h-6 rounded-full bg-current animate-ping opacity-75" />
                   )}
                 </button>
               );
@@ -414,8 +414,8 @@ const getPriceCategories = (district) => {
       <div className="max-w-6xl mx-auto ml-10 px-1">
         {/* Заголовок страницы */}
         <div className="text-center mb-16 pt-8">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-700 to-emerald-600 bg-clip-text text-transparent mb-4">
-            Районы Аджарии
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-700 to-emerald-600 bg-clip-text text-transparent mb-4">
+            Районы и Комплексы
           </h1>
           <p className="text-gray-600 text-xl max-w-2xl mx-auto">
             подберем идеальное место для жизни, отдыха или инвестиций
@@ -623,17 +623,17 @@ const getPriceCategories = (district) => {
               <div className="mb-12">
                 <div className="flex items-center justify-between mb-2">
                   {/* <h3 className="text-xl font-bold text-${colors.text}-900">Почему {district.name}?</h3> */}
-                  <h3 className="text-xl font-bold ${colors.text}">Почему {district.name}?</h3>
+                  <h3 className="text-2xl font-bold ${colors.text}">Почему {district.name}?</h3>
                   <div className="flex gap-1">
                     <button
                       onClick={() => setActiveAdvantageTab('lifestyle')}
-                      className={`px-2 py-1 rounded-lg transition ${activeAdvantageTab === 'lifestyle' ? 'bg-cyan-100 text-cyan-700 font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+                      className={`px-2 py-1 rounded-lg transition ${activeAdvantageTab === 'lifestyle' ? 'bg-blue-100 text-cyan-700 font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
                     >
                       Для жизни
                     </button>
                     <button
                       onClick={() => setActiveAdvantageTab('investment')}
-                      className={`px-2 py-1 rounded-lg transition ${activeAdvantageTab === 'investment' ? 'bg-emerald-100 text-emerald-700 font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+                      className={`px-2 py-1 rounded-lg transition ${activeAdvantageTab === 'investment' ? 'bg-fuchsia-100 text-purple-700 font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
                     >
                       Для инвестиций
                     </button>
@@ -675,9 +675,9 @@ const getPriceCategories = (district) => {
                 <div className="flex justify-center">
                   <button
                     onClick={() => setModalOpenFor(key)}
-                    className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-3 mb-6"
+                    className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-2 mb-6"
                   >
-                    <Camera size={24} />
+                    <Camera size={20} />
                     <span>Смотреть все фото района ({district.name})</span>
                   </button>
                 </div>
@@ -686,16 +686,25 @@ const getPriceCategories = (district) => {
               {/* Кнопки связи */}
               <div className="flex gap-4 mb-10">
                 <button 
-                  onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot')}
-                  className="flex-1 bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-3"
+                  // onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot')}
+                  onClick={() => {
+                    const key = `logged_ask_bot_districts_${district.name}`;
+                    logEvent('ask_bot_districts', {
+                      district: district.name || 'unknown'
+                    });
+                    localStorage.setItem(key, '1');
+                    setTimeout(() => localStorage.removeItem(key), 60 * 1000);
+                    window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+                  }}
+                  className="flex-1 bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
                 >
-                  <Bot size={24} />
+                  <BotMessageSquare size={22} />
                   <div>Спросить Эладжа </div>
                   <div className="text-sm font-normal opacity-90">об этом районе и объектах</div>
                 </button>
                 {/* <button 
                   onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
-                  className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3"
+                  className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 mb-6"
                 >
                   <User size={24} />
                   <span>Консультация менеджера</span>

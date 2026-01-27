@@ -497,8 +497,8 @@
             "specific": []
           },
           "blocks": {
-            "A": {
-              "name": "A",
+            "Block A": {
+              "name": "Block A",
               "coords": [
                 41.639695,
                 41.613459
@@ -555,8 +555,8 @@
                 }
               }
             },
-            "C": {
-              "name": "C",
+            "Block C": {
+              "name": "Block C",
               "coords": [
                 41.638624,
                 41.613436
@@ -624,8 +624,8 @@
                 }
               }
             },
-            "D1": {
-              "name": "D1",
+            "Block D1": {
+              "name": "Block D1",
               "coords": [
                 41.639746,
                 41.614635
@@ -671,8 +671,8 @@
                 }
               }
             },
-            "D2": {
-              "name": "D2",
+            "Block D2": {
+              "name": "Block D2",
               "coords": [
                 41.639249,
                 41.615366
@@ -1390,6 +1390,7 @@
                   "apartments": [
                     {
                       "apartment_id": "0ca3e94f",
+                      "apartment_number": "№403",
                       "floor": 4,
                       "m2": 45.0,
                       "finishing": "Под ключ",
@@ -1411,6 +1412,7 @@
                   "apartments": [
                     {
                       "apartment_id": "9672b30a",
+                      "apartment_number": "№1914",
                       "floor": 19,
                       "m2": 58.6,
                       "finishing": "Под ключ",
