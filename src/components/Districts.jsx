@@ -45,8 +45,8 @@ const getPriceCategories = (district) => {
   
   // Считаем количество объектов в каждой категории
   const categories = {
-    'Бюджетные': { count: 0, max: 80000, color: 'bg-emerald-100 text-emerald-800 border-emerald-200' },
-    'Средние': { count: 0, min: 80001, max: 150000, color: 'bg-blue-100 text-blue-800 border-blue-200' },
+    'Эконом': { count: 0, max: 80000, color: 'bg-emerald-100 text-emerald-800 border-emerald-200' },
+    'Бизнес': { count: 0, min: 80001, max: 150000, color: 'bg-blue-100 text-blue-800 border-blue-200' },
     'Премиум': { count: 0, min: 150001, max: 250000, color: 'bg-orange-100 text-orange-800 border-orange-200' },
     'Люкс': { count: 0, min: 250001, color: 'bg-purple-100 text-purple-800 border-purple-200' }
   };
@@ -54,9 +54,9 @@ const getPriceCategories = (district) => {
   // Распределяем цены по категориям
   allPrices.forEach(price => {
     if (price <= 80000) {
-      categories['Бюджетные'].count++;
+      categories['Эконом'].count++;
     } else if (price <= 150000) {
-      categories['Средние'].count++;
+      categories['Бизнес'].count++;
     } else if (price <= 250000) {
       categories['Премиум'].count++;
     } else {
@@ -67,21 +67,21 @@ const getPriceCategories = (district) => {
   // Фильтруем только категории, в которых есть объекты
   const result = [];
   
-  if (categories['Бюджетные'].count > 0) {
+  if (categories['Эконом'].count > 0) {
     result.push({ 
-      label: 'Бюджетные', 
+      label: 'Эконом', 
       range: 'до $80k', 
-      color: categories['Бюджетные'].color,
-      count: categories['Бюджетные'].count 
+      color: categories['Эконом'].color,
+      count: categories['Эконом'].count 
     });
   }
   
-  if (categories['Средние'].count > 0) {
+  if (categories['Бизнес'].count > 0) {
     result.push({ 
-      label: 'Средние', 
+      label: 'Бизнес', 
       range: '$80k-150k', 
-      color: categories['Средние'].color,
-      count: categories['Средние'].count 
+      color: categories['Бизнес'].color,
+      count: categories['Бизнес'].count 
     });
   }
   
@@ -275,7 +275,7 @@ const getPriceCategories = (district) => {
     return decorations[districtName] || decorations['Chakvi'];
   };
 
-  // Остальные эффекты остаются без изменений
+  // Остальные эффекты 
   useEffect(() => {
     const toggleBtn = () => {
       const btn = document.getElementById('scrollTopBtn');
@@ -423,7 +423,7 @@ const getPriceCategories = (district) => {
         </div>
 
         {/* Вводный блок */}
-        <div className="max-w-3xl mx-auto mb-16 p-8 bg-gradient-to-br from-cyan-50 to-emerald-50 rounded-3xl border border-cyan-100 shadow-xl">
+        <div className="max-w-3xl mx-auto mb-16 p-8 bg-gradient-to-br from-cyan-50 to-emerald-50 rounded-3xl border border-cyan-300 shadow-xl">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-xl flex items-center justify-center">
               <Waves className="text-white" size={24} />
@@ -507,8 +507,8 @@ const getPriceCategories = (district) => {
               // Определяем ценовые категории в ЖК (согласно калькулятору)
               const priceCategories = [];
               if (prices.length > 0) {
-                if (prices.some(p => p <= 80000)) priceCategories.push('Бюджетные');
-                if (prices.some(p => p > 80000 && p <= 150000)) priceCategories.push('Средние');
+                if (prices.some(p => p <= 80000)) priceCategories.push('Эконом');
+                if (prices.some(p => p > 80000 && p <= 150000)) priceCategories.push('Бизнес');
                 if (prices.some(p => p > 150000 && p <= 250000)) priceCategories.push('Премиум');
                 if (prices.some(p => p > 250000)) priceCategories.push('Люкс');
               }
@@ -539,21 +539,15 @@ const getPriceCategories = (district) => {
 
           return (
             <section key={key} id={`district-${key}`} className="relative py-8">
-              {/* Декоративный фон */}
-              {/* <div className={`absolute inset-0 -z-10 rounded-3xl ${decor.pattern}`}></div> */}
               
               {/* Заголовок района с декором */}
               <div className="relative overflow-hidden rounded-3xl mb-12 group">
                 {/* Фон с градиентом и эффектом стекла */}
-                {/* <div className={`absolute inset-0 bg-gradient-to-r ${decor.gradient} rounded-3xl`} /> */}
                 <div className={`absolute inset-0 bg-gradient-to-r ${decor.gradient} blur-sm rounded-3xl`} />
                 
-                {/* Эффект стекла (blur поверх градиента) */}
-                {/* <div className="absolute inset-0 backdrop-blur-xl bg-white/5 rounded-3xl border border-white/20" /> */}
-                
                 {/* Декоративные световые акценты */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-white/30 to-transparent rounded-full -translate-y-32 translate-x-32 blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-white/20 to-transparent rounded-full translate-y-32 -translate-x-32 blur-3xl" />
+                {/* <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-white/30 to-transparent rounded-full -translate-y-32 translate-x-32 blur-3xl" /> */}
+                {/* <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-white/20 to-transparent rounded-full translate-y-32 -translate-x-32 blur-3xl" /> */}
                 
                 {/* Контент */}
                 <div className="relative p-10 text-white z-10">
@@ -614,9 +608,6 @@ const getPriceCategories = (district) => {
                     ))}
                   </div>
                 </div>
-                
-                {/* Блестящий эффект по краям */}
-                <div className="absolute inset-0 rounded-3xl border-3 border-white/40 pointer-events-none" />
               </div>
 
               {/* Секция "Почему этот район" */}
@@ -700,7 +691,7 @@ const getPriceCategories = (district) => {
                 >
                   <BotMessageSquare size={22} />
                   <div>Спросить Эладжа </div>
-                  <div className="text-sm font-normal opacity-90">об этом районе и объектах</div>
+                  <div className="text-sm font-normal opacity-90">о районе и объектах</div>
                 </button>
                 {/* <button 
                   onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
@@ -761,8 +752,8 @@ const getPriceCategories = (district) => {
                                   <span 
                                     key={idx} 
                                     className={`px-3 py-1 rounded-full text-xs font-medium border ${
-                                      cat === 'Бюджетные' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
-                                      cat === 'Средние' ? 'bg-blue-100 text-blue-800 border-blue-200' :
+                                      cat === 'Эконом' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
+                                      cat === 'Бизнес' ? 'bg-blue-100 text-blue-800 border-blue-200' :
                                       cat === 'Премиум' ? 'bg-orange-100 text-orange-800 border-orange-200' :
                                       'bg-purple-100 text-purple-800 border-purple-200'
                                     }`}

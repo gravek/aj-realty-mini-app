@@ -537,7 +537,7 @@ export default function Apartment() {
           <BotMessageSquare size={36} />
           <div className="text-left">
             <div>Спросить Эладжа</div>
-            <div className="text-sm font-normal opacity-90">об этом объекте</div>
+            <div className="text-sm font-normal opacity-90">об этом апартаменте</div>
           </div>
         </button>
 

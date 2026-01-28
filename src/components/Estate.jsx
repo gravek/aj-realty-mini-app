@@ -9,7 +9,8 @@ import {
   Home, 
   Layers, 
   Square, 
-  MapPin, 
+  MapPin,
+  Waves, 
   Hotel,
   BrickWall,
   Columns3Cog,
@@ -178,6 +179,7 @@ export default function Estate() {
                   <BrickWall size={18} className="text-gray-400" />
                   <span className="text-gray-600">{current.developer_name || 'неизвестный застройщик'}</span>
                 </div>
+                
               )}
             </div>
           </div>
@@ -198,7 +200,63 @@ export default function Estate() {
         </div>
       </div>
 
-
+              {/* Заголовок района с декором */}
+              <div className="relative overflow-hidden rounded-3xl mb-12 group">
+                {/* Фон с градиентом и эффектом стекла */}
+                <div className={`absolute inset-0 bg-gradient-to-r from-teal-600 to-cyan-600 blur-sm rounded-3xl`} />
+                
+                {/* Декоративные световые акценты */}
+                {/* <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-white/30 to-transparent rounded-full -translate-y-32 translate-x-32 blur-3xl" /> */}
+                {/* <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-white/20 to-transparent rounded-full translate-y-32 -translate-x-32 blur-3xl" /> */}
+                
+                {/* Контент */}
+                <div className="relative p-10 text-white z-10">
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-6">
+                      {/* Иконка с объемом */}
+                      <div className="relative">
+                        <div className="absolute -inset-2 bg-white/15 rounded-2xl blur-md" />
+                        <div className="relative w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30 flex items-center justify-center shadow-2xl">
+                          <Building2 className="text-white" size={32} />
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h2 className="text-4xl font-bold mb-0 tracking-tight">
+                          {current.name}
+                        </h2>
+                        <div className="flex py-1 items-center text-xs gap-2">
+                          <div className="flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
+                            <span className="font-semibold">Комплекс в {data?.districts?.[district]?.name}</span>
+                            {/* <div className="w-1 h-1 bg-white rounded-full"></div>
+                            <span className="text-white/90">
+                              {current.coords[0].toFixed(4)}, {current.coords[1].toFixed(4)}
+                            </span> */}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  {/* Описание */}
+                  {current.photos?.specific?.[0]?.url && (
+                    <div className="relative overflow-hidden rounded-xl">
+                      <img
+                        src={current.photos.specific?.[0]?.url}
+                        alt={current.name || 'Estate image'}
+                        className="w-full h-64 object-cover blur-xs"
+                      />
+                      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-t from-zinc-800/80 via-zinc-600/60 to-orange-100/10 " />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <p className="text-white text-lg leading-relaxed drop-shadow-md">
+                          {current.estate_description || 'Современный комплекс с отличными апартаментами'}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
 
       {/* Кнопка фото, если есть */}
       {estateHasPhotos && (
@@ -228,11 +286,11 @@ export default function Estate() {
             setTimeout(() => localStorage.removeItem(key), 60 * 1000);
             window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
           }}
-          className="flex-1 bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
+          className="flex-1 bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
         >
           <BotMessageSquare size={22} />
           <div>Спросить Эладжа </div>
-          <div className="text-sm font-normal opacity-90">об этом районе и объектах</div>
+          <div className="text-sm font-normal opacity-90">об этом комплексе</div>
         </button>
         {/* <button 
           onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}

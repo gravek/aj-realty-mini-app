@@ -22,8 +22,8 @@ const Map = ({ estates = [], center = [41.65, 41.63], zoom = 11 }) => {
 
   // Ценовые диапазоны для Аджарии (в долларах)
   const PRICE_LEVELS = [
-    { label: 'Бюджетные', min: 30000, max: 80000, color: 'from-green-400 to-emerald-600', text: 'text-green-600' },
-    { label: 'Средние', min: 80001, max: 150000, color: 'from-cyan-400 to-blue-600', text: 'text-blue-600' },
+    { label: 'Эконом', min: 30000, max: 80000, color: 'from-green-400 to-emerald-600', text: 'text-green-600' },
+    { label: 'Бизнес', min: 80001, max: 150000, color: 'from-cyan-400 to-blue-600', text: 'text-blue-600' },
     { label: 'Премиум', min: 150001, max: 250000, color: 'from-orange-400 to-red-600', text: 'text-orange-600' },
     { label: 'Люкс', min: 250001, max: Infinity, color: 'from-purple-500 to-pink-600', text: 'text-purple-600' }
   ];
