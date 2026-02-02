@@ -19,6 +19,7 @@ import {
   Camera,
   BotMessageSquare,
   Building2,
+  MoveRight,
   Ruler,
   Calendar,
   CheckCircle,
@@ -169,7 +170,7 @@ export default function Estate() {
         </div> */}
 
         {/* Главное описание ЖК */}
-        <div className="mb-8 bg-gradient-to-r from-teal-100/40 to-cyan-100/60 p-6 rounded-2xl border border-cyan-300 shadow-md">
+        {/* <div className="mb-8 bg-gradient-to-r from-teal-100/40 to-cyan-100/60 p-6 rounded-2xl border border-cyan-300 shadow-md">
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
             <div className="flex-1">
               <h1 className="text-3xl font-bold text-cyan-700">{current.name}</h1>
@@ -197,7 +198,7 @@ export default function Estate() {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
 
               {/* Заголовок района с декором */}
@@ -228,7 +229,7 @@ export default function Estate() {
                         <div className="flex py-1 items-center text-xs gap-2">
                           <div className="flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
                             <span className="font-semibold">Комплекс в {data?.districts?.[district]?.name}</span>
-                            {/* <div className="w-1 h-1 bg-white rounded-full"></div>
+                            {/* <div className="w-1 h-1 bg-white/90 rounded-full"></div>
                             <span className="text-white/90">
                               {current.coords[0].toFixed(4)}, {current.coords[1].toFixed(4)}
                             </span> */}
@@ -247,7 +248,7 @@ export default function Estate() {
                         alt={current.name || 'Estate image'}
                         className="w-full h-64 object-cover blur-xs"
                       />
-                      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-t from-zinc-800/80 via-zinc-600/60 to-orange-100/10 " />
+                      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-t from-slate-900/80 via-slate-800/60 to-orange-600/5 " />
                       <div className="absolute bottom-4 left-4 right-4">
                         <p className="text-white text-lg leading-relaxed drop-shadow-md">
                           {current.estate_description || 'Современный комплекс с отличными апартаментами'}
@@ -264,10 +265,10 @@ export default function Estate() {
           <button
             onClick={() => setIsModalOpen(true)}
             // className="w-1/2 mb-8 mx-auto bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-2xl font-bold text-md hover:shadow-xl transition flex items-center gap-2"
-            className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-3 mb-6"
+            className="bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-3 mb-6"
           
           >
-            <Camera size={20} />
+            <Camera size={24} className="animate-gentle-pulse" />
             Показать фото комплекса
             {/* <Images size={20}  /> */}
           </button>
@@ -286,15 +287,15 @@ export default function Estate() {
             setTimeout(() => localStorage.removeItem(key), 60 * 1000);
             window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
           }}
-          className="flex-1 bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
+          className="flex-1 bg-gradient-to-r from-teal-600/90 to-cyan-600/90 text-white py-4 rounded-xl font-bold text-md flex items-center justify-center gap-1"
         >
-          <BotMessageSquare size={22} />
+          <BotMessageSquare size={24} className="animate-gentle-pulse" />
           <div>Спросить Эладжа </div>
-          <div className="text-sm font-normal opacity-90">об этом комплексе</div>
+          <div className="text-md font-normal opacity-90">об этом комплексе</div>
         </button>
         {/* <button 
           onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
-          className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 mb-6"
+          className="flex-1 bg-gradient-to-r from-cyan-600/90 to-blue-600/90 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 mb-6"
         >
           <User size={24} />
           <span>Консультация менеджера</span>
@@ -302,7 +303,7 @@ export default function Estate() {
       </div>
 
       {/* Панель фильтров и сортировки */}
-      <div className="mb-8 p-4 bg-white rounded-xl border border-rose-100 shadow">
+      <div className="mb-8 p-4 bg-white/90 rounded-xl border border-rose-100 shadow">
         <div className="flex flex-wrap gap-4 items-center justify-between mb-4">
           <div>
             <h3 className="font-semibold text-gray-700 mb-2">Тип апартаментов:</h3>
@@ -313,8 +314,8 @@ export default function Estate() {
                   onClick={() => setSelectedType(type.id)}
                   className={`px-2 py-1  rounded-lg transition ${
                     selectedType === type.id
-                      ? 'bg-cyan-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-cyan-600/90 text-white'
+                      : 'bg-gray-100/90 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
                   {type.name}
@@ -330,8 +331,8 @@ export default function Estate() {
                 onClick={() => setSortOrder('asc')}
                 className={`px-2 py-1 rounded-lg transition ${
                   sortOrder === 'asc'
-                    ? 'bg-cyan-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-cyan-600/90 text-white'
+                    : 'bg-gray-100/90 text-gray-700 '
                 }`}
               >
                 По возрастанию
@@ -340,8 +341,8 @@ export default function Estate() {
                 onClick={() => setSortOrder('desc')}
                 className={`px-2 py-1 rounded-lg transition ${
                   sortOrder === 'desc'
-                    ? 'bg-cyan-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-cyan-600/90 text-white'
+                    : 'bg-gray-100/90 text-gray-700 '
                 }`}
               >
                 По убыванию
@@ -356,7 +357,7 @@ export default function Estate() {
           </div>
           <button
             onClick={handleResetFilters}
-            className="px-2 py-1  text-sm bg-rose-100 text-rose-700 rounded-lg hover:bg-rose-200 transition"
+            className="px-2 py-1  text-sm bg-rose-100/90 text-rose-700 rounded-lg hover:bg-rose-200 transition"
           >
             Сбросить фильтры
           </button>
@@ -368,9 +369,9 @@ export default function Estate() {
         {Object.entries(processedBlocks).map(([blockId, blockData]) => (
           <div key={blockId} className="mb-8">
             <div className="flex items-center mb-4">
-              <div className="w-1 h-8 bg-cyan-600 rounded-full mr-3"></div>
+              <div className="w-1 h-8 bg-cyan-600/90 rounded-full mr-3"></div>
               <h2 className="text-2xl font-bold text-gray-800">{blockData.blockName}</h2>
-              <span className="ml-4 px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm">
+              <span className="ml-4 px-3 py-1 bg-cyan-100/90 text-cyan-700 rounded-full text-sm">
                 {blockData.apartments.length} апарт.
               </span>
             </div>
@@ -380,7 +381,7 @@ export default function Estate() {
                 <Link
                   key={ap.apartment_id}
                   to={`/apartment/${ap.apartment_id}`}
-                  className="block p-5 bg-white rounded-xl border border-rose-100 shadow hover:shadow-lg transition"
+                  className="block p-5 bg-white/90 rounded-xl border border-rose-100 shadow hover:shadow-lg transition"
                 >
                   <div className="flex justify-between items-center">
                     <div>
@@ -404,7 +405,8 @@ export default function Estate() {
                       </div>
                       <p className="text-2xl font-bold text-cyan-600">${ap.price_usd.toLocaleString()}</p>
                     </div>
-                    <span className="text-2xl text-cyan-600">→</span>
+                    <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
+
                   </div>
                 </Link>
               ))}

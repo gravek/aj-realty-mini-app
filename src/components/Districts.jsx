@@ -18,6 +18,7 @@ import {
   User,
   Camera,
   Coffee,
+  Sparkles,
   Umbrella,
   Car,
   Train,
@@ -246,29 +247,44 @@ const getPriceCategories = (district) => {
   const getDistrictDecorations = (districtName) => {
     const decorations = {
       'Chakvi': { 
-        gradient: 'from-amber-600 to-orange-600',
+        text: 'text-purple-800',
+        gradient: 'from-fuchsia-600/90 to-purple-600/90',
+        gradientLight: 'from-fuchsia-50/90 to-purple-50/90',
+        border: 'border-purple-300/60',
         icon: <Trees className="text-white/50" size={100} />,
-        pattern: 'bg-gradient-to-br from-amber-100/20 to-orange-100/20'
+        pattern: 'bg-gradient-to-br from-fuchsia-100/20 to-purple-100/20'
       },
-      'Batumi': { 
+      'Batumi': {         
+        text: 'text-cyan-800',
         gradient: 'from-teal-600 to-cyan-600',
+        gradientLight: 'from-teal-100/90 to-cyan-100/90',
+        border: 'border-cyan-300/60',
         icon: <Waves className="text-white/50" size={100} />,
         pattern: 'bg-gradient-to-br from-teal-100/20 to-cyan-100/20'
       },
       'Kobuleti': { 
+        text: 'text-rose-800',
         gradient: 'from-pink-600 to-rose-600',
+        gradientLight: 'from-pink-100/90 to-rose-100/90',
+        border: 'border-rose-300/60',
         icon: <CloudSun className="text-white/50" size={100} />,
         pattern: 'bg-gradient-to-br from-pink-100/20 to-rose-100/20'
       },
       'Gonio': { 
+        text: 'text-purple-800',
         gradient: 'from-fuchsia-600 to-purple-600',
+        gradientLight: 'from-fuchsia-100/90 to-purple-100/90',
+        border: 'border-purple-300/60',
         icon: <Mountain className="text-white/50" size={100} />,
         pattern: 'bg-gradient-to-br from-fuchsia-100/20 to-purple-100/20'
       },
       'Mahinjauri': { 
-        gradient: 'from-indigo-600 to-purple-600',
+        text: 'text-indigo-800',
+        gradient: 'from-blue-600 to-indigo-600',
+        gradientLight: 'from-blue-100/90 to-indigo-100/90',
+        border: 'border-indigo-300/60',
         icon: <Trees className="text-white/50" size={100} />,
-        pattern: 'bg-gradient-to-br from-indigo-100/20 to-purple-100/20'
+        pattern: 'bg-gradient-to-br from-blue-100/20 to-indigo-100/20'
       }
     };
     
@@ -346,7 +362,7 @@ const getPriceCategories = (district) => {
       <div className="fixed left-3 top-1/2 -translate-y-1/2 z-40 pointer-events-none">
         <div className="relative">
           {/* Вертикальная линия-шкала */}
-          <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 opacity-80" />
+          <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-slate-200 via-slate-300 to-slate-200 opacity-80" />
           
           {/* Точки и подписи */}
           <div className="flex flex-col justify-center items-center space-y-24 pointer-events-auto">
@@ -362,7 +378,7 @@ const getPriceCategories = (district) => {
                 //   'Mahinjauri': { bg: 'bg-indigo-500', border: 'border-indigo-600', text: 'text-indigo-700' }
                 // };
                 const colors = {
-                  'Chakvi': { bg: 'bg-orange-500', border: 'border-orange-600', text: 'text-orange-700' },
+                  'Chakvi': { bg: 'bg-purple-500', border: 'border-purple-600', text: 'text-purple-700' },
                   'Batumi': { bg: 'bg-cyan-500', border: 'border-cyan-600', text: 'text-cyan-700' },
                   'Kobuleti': { bg: 'bg-rose-500', border: 'border-rose-600', text: 'text-rose-700' },
                   'Gonio': { bg: 'bg-purple-500', border: 'border-purple-600', text: 'text-purple-700' },
@@ -383,8 +399,8 @@ const getPriceCategories = (district) => {
                   <div
                     className={`w-1.5 h-6 rounded-full border-2 transition-all duration-1000 ${
                       isActive
-                        ? `${colors.bg} ${colors.border} scale-250 shadow-lg shadow-current/50`
-                        : 'bg-white border-gray-400 e-110'
+                        ? `${colors.bg} ${colors.border} scale-250 shadow-lg shadow-${colors.bg}/50`
+                        : 'bg-white border-slate-400 e-110'
                     }`}
                   />
 
@@ -393,7 +409,7 @@ const getPriceCategories = (district) => {
                     className={`absolute top-6 left-5 -rotate-90 origin-left whitespace-nowrap text-sm font-medium transition-all duration-300 ${
                       isActive
                         ? `${colors.text} font-bold opacity-100`
-                        : 'text-gray-600 opacity-70 group-hover:opacity-100 group-hover:text-gray-800'
+                        : 'text-slate-600 opacity-70 group-hover:opacity-100 group-hover:text-slate-800'
                     }`}
                   >
                     {district.name}
@@ -417,7 +433,7 @@ const getPriceCategories = (district) => {
           <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-700 to-emerald-600 bg-clip-text text-transparent mb-4">
             Районы и Комплексы
           </h1>
-          <p className="text-gray-600 text-xl max-w-2xl mx-auto">
+          <p className="text-slate-600 text-xl max-w-2xl mx-auto">
             подберем идеальное место для жизни, отдыха или инвестиций
           </p>
         </div>
@@ -425,41 +441,41 @@ const getPriceCategories = (district) => {
         {/* Вводный блок */}
         <div className="max-w-3xl mx-auto mb-16 p-8 bg-gradient-to-br from-cyan-50 to-emerald-50 rounded-3xl border border-cyan-300 shadow-xl">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/90 to-emerald-500/90 rounded-xl flex items-center justify-center">
               <Waves className="text-white" size={24} />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">Ваше пространство у моря</h2>
-              {/* <p className="text-gray-600">От элитного Мцване Концхи до уютного Махинджаури</p> */}
+              <h2 className="text-2xl font-bold text-slate-900">Ваше пространство у моря</h2>
+              {/* <p className="text-slate-600">От элитного Мцване Концхи до уютного Махинджаури</p> */}
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <p className="text-gray-700 mb-4">
+              <p className="text-slate-700 mb-4">
                 Аджария — это уникальное сочетание морского бриза, горного воздуха и грузинского гостеприимства. 
                 <br/>
                 Каждый район имеет свой характер и преимущества для разных целей.
               </p>
-              <p className="text-gray-700">
+              <p className="text-slate-700">
                 Мы поможем найти именно то, что соответствует вашим ожиданиям и инвестиционным планам.
               </p>
             </div>
             <div className="bg-white p-5 rounded-xl border border-cyan-100">
-              <h4 className="font-bold text-gray-900 mb-3">Ключевые преимущества</h4>
+              <h4 className="font-bold text-slate-900 mb-3">Ключевые преимущества</h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-gray-700">
+                <li className="flex items-center gap-2 text-slate-700">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <span>Безвизовый режим для граждан 95 стран</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-700">
+                <li className="flex items-center gap-2 text-slate-700">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <span>Низкие налоги на недвижимость</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-700">
+                <li className="flex items-center gap-2 text-slate-700">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <span>Стабильный рост рынка 10-15% в год</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-700">
+                <li className="flex items-center gap-2 text-slate-700">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <span>Мягкий субтропический климат круглый год</span>
                 </li>
@@ -611,55 +627,71 @@ const getPriceCategories = (district) => {
               </div>
 
               {/* Секция "Почему этот район" */}
-              <div className="mb-12">
-                <div className="flex items-center justify-between mb-2">
-                  {/* <h3 className="text-xl font-bold text-${colors.text}-900">Почему {district.name}?</h3> */}
-                  <h3 className="text-2xl font-bold ${colors.text}">Почему {district.name}?</h3>
-                  <div className="flex gap-1">
-                    <button
-                      onClick={() => setActiveAdvantageTab('lifestyle')}
-                      className={`px-2 py-1 rounded-lg transition ${activeAdvantageTab === 'lifestyle' ? 'bg-blue-100 text-cyan-700 font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
-                    >
-                      Для жизни
-                    </button>
-                    <button
-                      onClick={() => setActiveAdvantageTab('investment')}
-                      className={`px-2 py-1 rounded-lg transition ${activeAdvantageTab === 'investment' ? 'bg-fuchsia-100 text-purple-700 font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
-                    >
-                      Для инвестиций
-                    </button>
-                    <button
-                      onClick={() => setActiveAdvantageTab('nature')}
-                      className={`px-2 py-1 rounded-lg transition ${activeAdvantageTab === 'nature' ? 'bg-teal-100 text-teal-700 font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
-                    >
-                      Природа
-                    </button>
-                  </div>
-                </div>
+{/* Блок "Почему этот район" */}
+<div className="max-w-4xl mx-auto px-4 py-6 -mt-4 relative z-20">
+  <div className={`bg-gradient-to-br ${decor.gradientLight || 'from-cyan-50 to-emerald-50/80'} rounded-3xl shadow-xl border ${decor.border || 'border-cyan-200/70'} p-6 md:p-8`}>
+    
+    {/* Заголовок */}
+    <h2 className={`text-2xl md:text-3xl font-bold text-center mb-8 ${decor.text || 'text-cyan-800'}`}>
+      Почему стоит выбрать {district.name}
+    </h2>
 
-                <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-lg">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-100 to-cyan-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      {advantages[activeAdvantageTab].icon}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">
-                        {advantages[activeAdvantageTab].title}
-                      </h4>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {advantages[activeAdvantageTab].points.map((point, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                              <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                            </div>
-                            <p className="text-gray-700">{point}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    {/* Квадратные кнопки вкладок */}
+    <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
+      {['lifestyle', 'investment', 'nature'].map((tab) => {
+        const isActive = activeAdvantageTab === tab;
+        const adv = advantages[tab]; // из объекта advantages
+
+        return (
+          <button
+            key={tab}
+            onClick={() => setActiveAdvantageTab(tab)}
+            className={`
+              flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-300 border
+              ${isActive
+                ? `bg-gradient-to-br ${decor.gradient} text-white border-opacity-40 shadow-md scale-[1.03]`
+                : `bg-white/95 ${decor.text || 'text-cyan-800'} border ${decor.border || 'border-cyan-200/60'} hover:border-opacity-70 hover:shadow-sm`
+              }
+            `}
+          >
+            <div className={isActive ? 'text-white' : decor.text || 'text-cyan-600'}>
+              {React.cloneElement(adv.icon, {
+                size: 28,
+                className: isActive ? 'text-white' : (decor.text || 'text-cyan-600'),
+              })}
+            </div>
+            <span className="text-sm md:text-base font-medium text-center leading-tight">
+              {adv.title}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+
+    {/* Контент активной вкладки */}
+    <div className={`bg-white/95 rounded-2xl p-6 border ${decor.border || 'border-cyan-200/50'} transition-all duration-300`}>
+      <div className="space-y-5">
+        {advantages[activeAdvantageTab]?.points.map((point, idx) => (
+          <div key={idx} className="flex items-start gap-4">
+            <Sparkles size={16} className={`${decor.text || 'text-cyan-800'} my-1`} />
+            {/* <div className={`mt-1.5 flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center ${decor.gradientLight || 'bg-cyan-100'}`}>
+              <div className={`w-3 h-3 rounded-full ${decor.gradient ? decor.gradient.replace('to-', 'from-') : 'bg-cyan-500'}`} />
+            </div> */}
+            {/* <p className="text-slate-800 leading-relaxed text-[15px] md:text-base"> */}
+            <p className={`${decor.text || 'text-cyan-800'}  leading-relaxed text-[15px] md:text-base`}>
+              {point}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Нижний намёк / CTA */}
+    <div className={`mt-6 text-center text-sm text-slate-500 ${decor.text || 'text-cyan-800'}/80`}>
+      Подберём объект в {district.name} под ваш бюджет и цели
+    </div>
+  </div>
+</div>
 
               {/* Кнопка галереи */}
               {hasPhotos && (
@@ -668,7 +700,7 @@ const getPriceCategories = (district) => {
                     onClick={() => setModalOpenFor(key)}
                     className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-2 mb-6"
                   >
-                    <Camera size={20} />
+                    <Camera size={20} className="animate-gentle-pulse" />
                     <span>Смотреть все фото района ({district.name})</span>
                   </button>
                 </div>
@@ -689,7 +721,7 @@ const getPriceCategories = (district) => {
                   }}
                   className="flex-1 bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
                 >
-                  <BotMessageSquare size={22} />
+                  <BotMessageSquare size={22} className="animate-gentle-pulse" />
                   <div>Спросить Эладжа </div>
                   <div className="text-sm font-normal opacity-90">о районе и объектах</div>
                 </button>
@@ -710,7 +742,7 @@ const getPriceCategories = (district) => {
                     to={`/estate/${district.name}/${estate.name}`}
                     className="group block"
                   >
-                    <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg transition-transform duration-300">
+                    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg transition-transform duration-300">
                       {/* Фото */}
                       <div className="relative h-56 overflow-hidden">
                         {estate.photos2[0] && (
@@ -732,7 +764,7 @@ const getPriceCategories = (district) => {
                       {/* Контент */}
                       <div className="p-6">
                         {estate.estate_description && (
-                          <p className="text-gray-600 mb-4 line-clamp-2">{estate.estate_description}</p>
+                          <p className="text-slate-600 mb-4 line-clamp-2">{estate.estate_description}</p>
                         )}
                         
                         {/* Ценовая информация */}
@@ -766,18 +798,18 @@ const getPriceCategories = (district) => {
                           </div>
 
                           {/* Статистика */}
-                          <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-100">
+                          <div className="grid grid-cols-3 gap-3 pt-4 border-t border-slate-100">
                             <div className="text-center">
-                              <div className="text-sm text-gray-500">Апартаментов</div>
-                              <div className="text-xl font-bold text-gray-900">{estate.prices?.length || 0}</div>
+                              <div className="text-sm text-slate-500">Апартаментов</div>
+                              <div className="text-xl font-bold text-slate-900">{estate.prices?.length || 0}</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-sm text-gray-500">Средняя цена</div>
-                              <div className="text-xl font-bold text-gray-900">${estate.avgPrice?.toLocaleString() || '0'}</div>
+                              <div className="text-sm text-slate-500">Средняя цена</div>
+                              <div className="text-xl font-bold text-slate-900">${estate.avgPrice?.toLocaleString() || '0'}</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-sm text-gray-500">До моря</div>
-                              <div className="text-xl font-bold text-gray-900">~{Math.round(Math.random() * 5) + 1} мин</div>
+                              <div className="text-sm text-slate-500">До моря</div>
+                              <div className="text-xl font-bold text-slate-900">~{Math.round(Math.random() * 5) + 1} мин</div>
                             </div>
                           </div>
                         </div>
@@ -801,7 +833,7 @@ const getPriceCategories = (district) => {
       {/* Кнопка "Наверх" */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-24 right-6 z-50 bg-white/90 backdrop-blur-md border border-cyan-600 rounded-full p-4 shadow-2xl hover:shadow-cyan-500/30 transition-all opacity-90 invisible translate-y-10"
+        className="fixed bottom-24 right-6 z-50 bg-white/90 backdrop-blur-md border border-cyan-600 rounded-full p-4 shadow-2xl transition-all opacity-90 invisible translate-y-10"
         id="scrollTopBtn"
       >
         <svg className="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

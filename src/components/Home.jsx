@@ -12,7 +12,8 @@ import {
   Shield,
   Speech,
   Flame,
-  ArrowBigDownDash,
+  MoveRight,
+  ArrowDown,
   Sparkles,
   MapPin,
   CloudSun,
@@ -103,6 +104,9 @@ export default function Home() {
 
   return (
     <div className="pb-20">
+      {/* <h1 className="flex-full text-xl md:text-sm leading-relaxed text-center opacity-90 font-bold bg-gradient-to-r from-orange-700 to-rose-600 bg-clip-text text-transparent mb-2">
+        ДОХОДНАЯ НЕДВИЖИМОСТЬ В ГРУЗИИ 
+      </h1> */}
       {/* Hero блок */}
       <div className="relative h-80 md:h-96 overflow-hidden rounded-b-3xl">
         <div className="absolute inset-0 bg-gradient-to-b from-orange-100/20 via-black/40 to-slate-900/90 z-10" />
@@ -137,7 +141,7 @@ export default function Home() {
 
       {/* Вкладки "Почему Аджария" */}
       <div className="max-w-4xl mx-auto px-4 py-0 -mt-16 relative z-30">
-        <div className="bg-gradient-to-br from-cyan-50 to-emerald-50/90  rounded-3xl shadow-xl border border-cyan-300 p-6 md:p-8">
+        <div className="bg-gradient-to-br from-cyan-50 to-emerald-50/90  rounded-3xl shadow-xl border border-cyan-400/80 p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-cyan-700">
             Почему выбирают Аджарию
           </h2>
@@ -152,8 +156,8 @@ export default function Home() {
                   onClick={() => setActiveTab(key)}
                   className={`flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 border ${
                     isActive
-                      ? 'bg-cyan-600/80 text-white border-cyan-400 shadow-md'
-                      : 'bg-white/90 text-slate-700 border-cyan-200 '
+                      ? 'bg-cyan-600/80 text-white border-cyan-400/80 shadow-md'
+                      : 'bg-white/90 text-slate-700 border-cyan-200/80 '
                   }`}
                 >
                   <div className={isActive ? 'text-white' : 'text-cyan-600'}>
@@ -171,11 +175,11 @@ export default function Home() {
           </div>
 
           {/* Содержимое активной вкладки */}
-          <div className="space-y-5 bg-white/90 rounded-2xl p-6 border border-cyan-200">
+          <div className="space-y-5 bg-white/90 rounded-2xl p-6 border border-cyan-200/80 shadow-sm">
             {tabContent[activeTab].points.map((point, idx) => (
               <div key={idx} className="flex items-start gap-3">
                 <div className="mt-4 flex-shrink-0">
-                  <CloudSun size={20} className="text-cyan-600" />
+                  <Sparkles size={20} className="text-cyan-600" />
                 </div>
                 <p className="text-slate-800 leading-relaxed">{point}</p>
               </div>
@@ -184,24 +188,70 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Лучшие предложения — 2 апартамента */}
-      <div className="max-w-4xl mx-auto px-4 mt-24">
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white px-6 py-3 rounded-xl shadow-lg">
-            <Speech size={20} className="text-white" />
-            <h2 className="text-lg md:text-2xl font-semibold tracking-wide">
-              Горячие предложения
-            </h2>
-            <ArrowBigDownDash size={20} className="text-white -mb-1" />
-          </div>
+      {/* Кнопка бота */}
+      <div className="max-w-4xl mx-auto px-4 mt-10 md:mt-12 sticky top-10 z-40 md:static">
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-cyan-200/80 p-2 md:p-4">
+          <button
+            onClick={() => {
+              const key = `logged_ask_bot_home`;
+              if (!localStorage.getItem(key)) {
+                logEvent('ask_bot_home', {});
+                localStorage.setItem(key, '1');
+                setTimeout(() => localStorage.removeItem(key), 60 * 1000);
+              }
+              window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+            }}
+            className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
+          >
+            <BotMessageSquare size={32} className="animate-gentle-pulse" />
+            <div className="flex flex-col items-start">
+              <span className="text-xl">Спросить Эладжа</span>
+              <span className="text-sm font-normal opacity-90 -mt-1">о лучших вариантах и ценах</span>
+            </div>
+          </button>
         </div>
+      </div>
+
+      {/* Лучшие предложения — 2 апартамента */}
+      <div className="max-w-4xl mx-auto px-4 mt-20">
+<div className="relative flex flex-col items-center mb-10">
+  {/* Верхняя "крепёжная" линия */}
+  <div className="w-3/4 md:w-3/4 h-1 mb-4 bg-gradient-to-r from-transparent via-orange-400/60 to-transparent rounded-full shadow-sm animate-gentle-pulse" />
+
+  {/* Плашка + боковые стрелки */}
+  <div className="relative flex items-center justify-center gap-6 md:gap-10">
+    {/* Левая стрелка — "держит" слева */}
+    <ArrowDown
+      size={28}
+      className="text-orange-400 -rotate-90 -mt-8 animate-gentle-pulse absolute -left-10 md:-left-16"
+    />
+
+    {/* Центральная плашка — без изменений */}
+    <div className="inline-flex  items-center gap-4 bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white px-6 py-3 rounded-md shadow-lg z-10">
+      <Speech size={20} className="text-white animate-gentle-pulse" />
+      <h2 className="text-xl md:text-2xl font-semibold tracking-wide">
+        Горячие предложения
+      </h2>
+      <Flame size={20} className="text-white animate-gentle-pulse" />
+    </div>
+
+    {/* Правая стрелка — "держит" справа */}
+    <ArrowDown
+      size={28}
+      className="text-rose-400 rotate-90 -mt-8 animate-gentle-pulse absolute -right-10 md:-right-16"
+    />
+  </div>
+
+  {/* Нижняя линия (опционально — для симметрии) */}
+  {/* <div className="w-1/2 md:w-1/2 h-1 bg-gradient-to-r from-transparent via-orange-400/60 to-transparent rounded-full mt-2 shadow-sm" /> */}
+</div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {featuredApartments.map((apt) => (
             <Link
               key={apt.apartment_id}
               to={`/apartment/${apt.apartment_id}`}
-              className="bg-white/90 rounded-2xl overflow-hidden border border-slate-200 shadow-lg"
+              className="bg-white/90 rounded-2xl overflow-hidden border border-slate-200/80 shadow-lg"
             >
               <div className="h-56 bg-slate-100 relative">
                 <img
@@ -209,21 +259,38 @@ export default function Home() {
                   alt={`${apt.estateName} — ${apt.typeName}`}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="text-xl font-bold">{apt.estateName}</h3>
+                  <h3 className="text-2xl font-bold">{apt.estateName}</h3>
                   <p className="text-white/90">{apt.districtName}</p>
                 </div>
               </div>
               <div className="p-5">
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-sm text-slate-500">{apt.typeName} • {apt.m2} м²</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-1 bg-cyan-50/90 text-cyan-700 text-xs rounded">
+                        {apt.typeName}
+                      </span>
+                      <span className="px-2 py-1 bg-rose-50/90 text-rose-700 text-xs rounded">
+                        {apt.m2} м²
+                      </span>
+                      {apt.finishing && (
+                        <span className="px-2 py-1 bg-green-50/90 text-green-700 text-xs rounded">
+                          {apt.finishing}
+                        </span>
+                      )}
+                      {apt.furnished && (
+                        <span className="px-2 py-1 bg-orange-50/90 text-orange-700 text-xs rounded">
+                          {apt.furnished}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-2xl font-bold text-cyan-600">
                       ${apt.price_usd.toLocaleString()}
                     </p>
                   </div>
-                  <Building size={28} className="text-cyan-600" />
+                  <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
                 </div>
               </div>
             </Link>
@@ -240,20 +307,6 @@ export default function Home() {
             Посмотреть все районы и комплексы
           </Link>
         </div>
-      </div>
-
-      {/* Кнопка бота внизу */}
-      <div className="fixed bottom-20 left-12 right-12 z-50 md:static md:mt-12 md:max-w-md md:mx-auto">
-        <button
-          onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot')}
-          className="w-full bg-gradient-to-r from-teal-600/90 to-cyan-600/90 text-white px-2 py-1 rounded-2xl font-semibold text-md flex items-center justify-center gap-2 shadow-2xl"
-        >
-          <BotMessageSquare size={32} />
-          <div className="flex flex-col items-start ">
-            <span>Спросить Эладжа</span>
-            <span className="text-sm font-normal -mt-1 opacity-90">о лучших вариантах</span>
-          </div>
-        </button>
       </div>
     </div>
   );

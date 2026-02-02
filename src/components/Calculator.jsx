@@ -48,7 +48,7 @@ export default function Calculator() {
       return; // ← выходим, ничего не делаем
     }
 
-    // Теперь это уже реакция на изменение price / occupancy
+    // Реакция на изменение price / occupancy
     const timer = setTimeout(() => {
       logEvent('use_calculator', {
         price: price,
@@ -59,6 +59,40 @@ export default function Calculator() {
 
     return () => clearTimeout(timer);
   }, [price, offSeasonOccupancy]);  // на будущее: , roi, netYear
+
+  const [budgetStats, setBudgetStats] = useState({ min: null, max: null, avg: null, count: 0 });
+
+    useEffect(() => {
+      const currentBudget = price; // или другой показатель, который считаешь бюджетом
+
+      setBudgetStats(prev => {
+        const newMin = prev.min === null ? currentBudget : Math.min(prev.min, currentBudget);
+        const newMax = prev.max === null ? currentBudget : Math.max(prev.max, currentBudget);
+        const newCount = prev.count + 1;
+        const newAvg = ((prev.avg || 0) * prev.count + currentBudget) / newCount;
+
+        return { min: newMin, max: newMax, avg: newAvg, count: newCount };
+      });
+    }, [price]); // или другой триггер, если есть
+
+    // ← А этот useEffect (с debounce) тоже перед return, после предыдущего
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        if (budgetStats.count > 0) {
+          logEvent('calculator_budget_stats', {
+            budget_min: Math.round(budgetStats.min),
+            budget_max: Math.round(budgetStats.max),
+            budget_avg: Math.round(budgetStats.avg),
+            calculations_count: budgetStats.count,
+            price_category: priceCategory.label,
+            off_season_occupancy: offSeasonOccupancy
+          });
+        }
+      }, 1500);
+
+      return () => clearTimeout(timer);
+    }, [budgetStats, priceCategory.label, offSeasonOccupancy]);
+
 
   return (
     <div className="space-y-8 pb-20">
@@ -152,10 +186,11 @@ export default function Calculator() {
       
       <button 
         onClick={() => {
-          const key = `logged_ask_elaj_${id}`;
+          // const key = `logged_ask_elaj_${id}`;
+          const key = `logged_ask_elaj_calc}`;
           // if (localStorage.getItem(key)) return; // уже кликали недавно
 
-          logEvent('click_ask_bot', {
+          logEvent('ask_bot_calc', {
             price_category: priceCategory.label,
             off_season_occupancy: offSeasonOccupancy,
           });
@@ -173,10 +208,11 @@ export default function Calculator() {
 
       <button 
         onClick={() => {
-          const key = `logged_ask_elaj_${id}`;
+          // const key = `logged_ask_elaj_${id}`;
+          const key = `logged_ask_manager_calc`;
           // if (localStorage.getItem(key)) return; // уже кликали недавно
 
-          logEvent('click_ask_manager', {
+          logEvent('ask_manager_calc', {
             price_category: priceCategory.label,
             off_season_occupancy: offSeasonOccupancy,
           });

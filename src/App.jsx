@@ -141,8 +141,10 @@ export default function App() {
               </button>
             )}
           </div>
-          <h1 className="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold text-orange-800 pointer-events-none">
-            • Elad Realty •
+          {/* <h1 className="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold text-orange-800 pointer-events-none"> */}
+          <h1 className="absolute left-1/2 transform -translate-x-1/2 text-md font-bold text-orange-800 pointer-events-none">
+            {/* • Elad Realty • */}
+            • ДОХОДНАЯ НЕДВИЖИМОСТЬ •
           </h1>
           <span className="text-sm font-medium text-amber-800">Грузия</span>
         </div>

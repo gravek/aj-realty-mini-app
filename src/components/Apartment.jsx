@@ -97,7 +97,7 @@ export default function Apartment() {
     const eventSent = localStorage.getItem(`view_apartment_${id}`);
     if (eventSent) return;
 
-    logEvent('view_apartment', {
+    logEvent('open_apartment', {
       apartment_id: id,
       apartment_price_usd: apartment.price_usd,
       apartment_type: apartment.app_type,
