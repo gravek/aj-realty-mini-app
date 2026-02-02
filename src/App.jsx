@@ -142,7 +142,7 @@ export default function App() {
             )}
           </div>
           {/* <h1 className="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold text-orange-800 pointer-events-none"> */}
-          <h1 className="absolute left-1/2 transform -translate-x-1/2 text-md font-bold text-orange-800 pointer-events-none">
+          <h1 className="absolute left-1/2 transform -translate-x-1/2 text-sm font-bold text-orange-800 pointer-events-none">
             {/* • Elad Realty • */}
             • ДОХОДНАЯ НЕДВИЖИМОСТЬ •
           </h1>

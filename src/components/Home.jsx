@@ -243,7 +243,7 @@ export default function Home() {
   </div>
 
   {/* Нижняя линия (опционально — для симметрии) */}
-  {/* <div className="w-1/2 md:w-1/2 h-1 bg-gradient-to-r from-transparent via-orange-400/60 to-transparent rounded-full mt-2 shadow-sm" /> */}
+  {/* <div className="w-1/2 md:w-1/2 h-1 bg-gradient-to-r from-transparent via-orange-400/60 to-transparent rounded-full mt-4 shadow-sm animate-gentle-pulse" /> */}
 </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -299,13 +299,16 @@ export default function Home() {
 
         {/* Призыв к полному каталогу */}
         <div className="text-center mt-10">
-          <Link
-            to="/districts"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white px-4 py-2 rounded-xl font-semibold text-lg shadow-lg"
-          >
-            <MapPin size={20} />
-            Посмотреть все районы и комплексы
-          </Link>
+          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-rose-200/80 p-2">
+
+            <Link
+              to="/districts"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white px-4 py-2 rounded-xl font-semibold text-lg shadow-lg"
+            >
+              <MapPin size={20} />
+              Посмотреть все районы и комплексы
+            </Link>
+          </div>
         </div>
       </div>
     </div>
