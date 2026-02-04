@@ -494,10 +494,108 @@ export default function Apartment() {
         </div>
       </div>
 
+
+      {/* Кнопка фото */}
+      <div className="text-center mt-4">
+        <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-rose-200/80 p-2">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            disabled={!hasPhotos()}
+            className={`p-2 rounded-xl font-semibold text-lg shadow-lg transition flex items-center justify-center gap-4 ${
+              hasPhotos()
+                ? 'bg-gradient-to-r from-orange-600/80 to-rose-600/80 text-white hover:shadow-xl'
+                : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            }`}
+          >
+            {hasPhotos() ? (
+              <>
+                <Camera size={24}  className="animate-gentle-pulse"/>
+                <div className="text-left">
+                  <div>Смотреть фото для этого апртамента</div>
+                  {/* <div className="text-sm font-normal opacity-90">для этого апртамента</div> */}
+                </div>
+              </>
+            ) : (
+              'Фото скоро появятся'
+            )}
+          </button>
+        </div>
+      </div>
+
+
+      {/* Кнопка бота */}
+      <div className="max-w-4xl mx-auto px-4 mt-4 md:mt-4 sticky top-10 z-40 md:static">
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-cyan-200/80 p-2 md:p-4">
+          <button
+            onClick={() => {
+              const key = `logged_ask_bot_apartment_${id}`;
+              if (!localStorage.getItem(key)) {
+                logEvent('ask_bot_apartment', {
+                  apartment_id: id,
+                  estate: apartment?.estateName || 'unknown',
+                  district: apartment?.districtName || 'unknown'
+                });
+                localStorage.setItem(key, '1');
+                setTimeout(() => localStorage.removeItem(key), 60 * 1000);
+              }
+              // window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+              // Формируем текст для вставки в чат
+              const prefilledText = `Расскажи об апартаменте ${id}`;
+              
+              // Кодируем текст и формируем URL, затем открываем бота
+              const botUrl = `https://t.me/AIRealtyTest_bot?text=${encodeURIComponent(prefilledText)}`;
+              window.Telegram?.WebApp?.openTelegramLink(botUrl);
+            }}
+            className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
+          >
+            <BotMessageSquare size={32} className="animate-gentle-pulse" />
+            <div className="flex flex-col items-start">
+              <span className="text-xl">Спросить Эладжа</span>
+              <span className="text-sm font-normal opacity-95 -mt-1">об этом апартаменте</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      {/* Кнопка менеджера */}
+      <div className="max-w-4xl mx-auto px-4 mt-4 md:mt-4 sticky top-10 z-40 md:static">
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-cyan-200/80 p-2 md:p-4">
+          <button
+            onClick={() => {
+              const key = `logged_ask_manager_apartment_${id}`;
+              if (!localStorage.getItem(key)) {
+                logEvent('ask_manager_apartment', {
+                  apartment_id: id,
+                  estate: apartment?.estateName || 'unknown',
+                  district: apartment?.districtName || 'unknown'
+                });
+                localStorage.setItem(key, '1');
+                setTimeout(() => localStorage.removeItem(key), 60 * 1000);
+              }
+              // window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+              // Формируем текст для вставки в чат
+              const prefilledText = `Добрый день! Интересует апартамент id: ${id}. Хотелось бы узнать подробнее. (${apartment?.estateName}, ${apartment.blockName}, этаж ${apartment.floor}, N ${apartment.apartment_number || '-'}, ${apartment.app_type}, ${apartment.m2} м², ${apartment.price_usd.toLocaleString()} USD)`;
+              
+              // Кодируем текст и формируем URL, затем открываем бота
+              const botUrl = `https://t.me/a4k5o6?text=${encodeURIComponent(prefilledText)}`;
+              window.Telegram?.WebApp?.openTelegramLink(botUrl);
+            }}
+            className="w-full bg-gradient-to-r from-fuchsia-600/80 to-purple-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
+          >
+            <UserRoundPen size={32} className="animate-gentle-pulse" />
+            <div className="flex flex-col items-start">
+              <span className="text-xl">Написать менеджеру</span>
+              <span className="text-sm font-normal opacity-95 -mt-1">для личной консультации</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+
       {/* Кнопки действий */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4"> */}
         {/* Кнопка фото */}
-        <button
+        {/* <button
           onClick={() => setIsModalOpen(true)}
           disabled={!hasPhotos()}
           className={`p-2 rounded-xl mb-6 font-bold text-lg shadow-lg transition flex items-center justify-center gap-4 ${
@@ -517,10 +615,10 @@ export default function Apartment() {
           ) : (
             'Фото скоро появятся'
           )}
-        </button>
+        </button> */}
 
         {/* Кнопка бота */}
-        <button 
+        {/* <button 
           onClick={() => {
             const key = `logged_ask_bot_apartment_${id}`;
             logEvent('ask_bot_apartment', {
@@ -539,10 +637,10 @@ export default function Apartment() {
             <div>Спросить Эладжа</div>
             <div className="text-sm font-normal opacity-90">об этом апартаменте</div>
           </div>
-        </button>
+        </button> */}
 
         {/* Кнопка менеджера */}
-        <button 
+        {/* <button 
           onClick={() => {
             const key = `logged_ask_manager_apartment_${id}`;
             logEvent('ask_manager_apartment', {
@@ -562,7 +660,7 @@ export default function Apartment() {
             <div className="text-sm font-normal opacity-90">для личной консультации</div>
           </div>
         </button>
-      </div>
+      </div> */}
 
       {/* Модалка */}
       <PhotoGalleryModal

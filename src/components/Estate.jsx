@@ -202,7 +202,7 @@ export default function Estate() {
       </div>
 
               {/* Заголовок района с декором */}
-              <div className="relative overflow-hidden rounded-3xl mb-12 group">
+              <div className="relative overflow-hidden rounded-3xl mt-8 mb-8 group">
                 {/* Фон с градиентом и эффектом стекла */}
                 <div className={`absolute inset-0 bg-gradient-to-r from-teal-600 to-cyan-600 blur-sm rounded-3xl`} />
                 
@@ -228,7 +228,7 @@ export default function Estate() {
                         </h2>
                         <div className="flex py-1 items-center text-xs gap-2">
                           <div className="flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                            <span className="font-semibold">Комплекс в {data?.districts?.[district]?.name}</span>
+                            <span className="font-normal ">Комплекс в {data?.districts?.[district]?.name}</span>
                             {/* <div className="w-1 h-1 bg-white/90 rounded-full"></div>
                             <span className="text-white/90">
                               {current.coords[0].toFixed(4)}, {current.coords[1].toFixed(4)}
@@ -246,9 +246,9 @@ export default function Estate() {
                       <img
                         src={current.photos.specific?.[0]?.url}
                         alt={current.name || 'Estate image'}
-                        className="w-full h-64 object-cover blur-xs"
+                        className="w-full h-64 object-cover border blur-xs shadow-md"
                       />
-                      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-t from-slate-900/80 via-slate-800/60 to-orange-600/5 " />
+                      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-t from-slate-900/80 via-slate-600/60 to-orange-600/5 " />
                       <div className="absolute bottom-4 left-4 right-4">
                         <p className="text-white text-lg leading-relaxed drop-shadow-md">
                           {current.estate_description || 'Современный комплекс с отличными апартаментами'}
@@ -261,23 +261,58 @@ export default function Estate() {
 
       {/* Кнопка фото, если есть */}
       {estateHasPhotos && (
-        <div className="flex justify-center items-center">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            // className="w-1/2 mb-8 mx-auto bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-2xl font-bold text-md hover:shadow-xl transition flex items-center gap-2"
-            className="bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-3 mb-6"
-          
-          >
-            <Camera size={24} className="animate-gentle-pulse" />
-            Показать фото комплекса
-            {/* <Images size={20}  /> */}
-          </button>
+        // <div className="flex justify-center items-center">
+        <div className="text-center mt-4">
+          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-rose-200/80 p-2">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              // className="w-1/2 mb-8 mx-auto bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-2xl font-bold text-md hover:shadow-xl transition flex items-center gap-2"
+              className="text-lg text-white font-semibold bg-gradient-to-r from-orange-600/80 to-rose-600/80 py-2 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-3"
+            
+            >
+              <Camera size={24} className="animate-gentle-pulse" />
+              Посмотреть фото комплекса
+            </button>
+          </div>
         </div>
       )}
 
+      {/* Кнопка бота */}
+      <div className="max-w-4xl mx-auto px-4 mt-4 md:mt-4 sticky top-10 z-40 md:static">
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-cyan-200/80 p-2 md:p-4">
+          <button
+            onClick={() => {
+              const key = `logged_ask_bot_estate_${current.name}`;
+              if (!localStorage.getItem(key)) {
+                logEvent('ask_bot_estate', {
+                  estate: current.name || 'unknown'
+                });
+                localStorage.setItem(key, '1');
+                setTimeout(() => localStorage.removeItem(key), 60 * 1000);
+              }
+              // window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+              // Формируем текст для вставки в чат
+              const prefilledText = `Расскажи о ${current.name} и апартаментах в нем`;
+              
+              // Кодируем текст и формируем URL, затем открываем бота
+              const botUrl = `https://t.me/AIRealtyTest_bot?text=${encodeURIComponent(prefilledText)}`;
+              window.Telegram?.WebApp?.openTelegramLink(botUrl);
+            }}
+            className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
+          >
+            <BotMessageSquare size={32} className="animate-gentle-pulse" />
+            <div className="flex flex-col items-start">
+              <span className="text-xl">Спросить Эладжа</span>
+              <span className="text-sm font-normal opacity-95 -mt-1">о {current.name} и апартаментах</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+
       {/* Кнопки связи */}
       <div className="flex gap-4 mb-10">
-        <button 
+        {/* <button 
           onClick={() => {
             const key = `logged_ask_bot_estate_${current.name}`;
             logEvent('ask_bot_estate', {
@@ -292,7 +327,7 @@ export default function Estate() {
           <BotMessageSquare size={24} className="animate-gentle-pulse" />
           <div>Спросить Эладжа </div>
           <div className="text-md font-normal opacity-90">об этом комплексе</div>
-        </button>
+        </button> */}
         {/* <button 
           onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
           className="flex-1 bg-gradient-to-r from-cyan-600/90 to-blue-600/90 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 mb-6"
@@ -367,15 +402,16 @@ export default function Estate() {
       {/* Группировка по блокам */}
       <div className="space-y-8">
         {Object.entries(processedBlocks).map(([blockId, blockData]) => (
-          <div key={blockId} className="mb-8">
+          <div key={blockId} className="mt-8">
             <div className="flex items-center mb-4">
-              <div className="w-1 h-8 bg-cyan-600/90 rounded-full mr-3"></div>
+              <div className="w-1 h-8 bg-cyan-600/80 rounded-full mr-2"></div>
               <h2 className="text-2xl font-bold text-gray-800">{blockData.blockName}</h2>
-              <span className="ml-4 px-3 py-1 bg-cyan-100/90 text-cyan-700 rounded-full text-sm">
+              <span className="ml-4 px-2 py-1 bg-cyan-100/80 text-cyan-800 rounded-full text-sm">
                 {blockData.apartments.length} апарт.
               </span>
             </div>
             
+            {/* Карточки апартаментов */}
             <div className="grid gap-4">
               {blockData.apartments.map(ap => (
                 <Link
@@ -405,6 +441,7 @@ export default function Estate() {
                       </div>
                       <p className="text-2xl font-bold text-cyan-600">${ap.price_usd.toLocaleString()}</p>
                     </div>
+                    <span className="text-xs text-slate-600 ml-12 mb-1">к апартаменту</span>
                     <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
 
                   </div>

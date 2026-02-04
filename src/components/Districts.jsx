@@ -19,7 +19,7 @@ import {
   Camera,
   Coffee,
   Sparkles,
-  Umbrella,
+  MoveRight,
   Car,
   Train,
   CloudSun
@@ -695,20 +695,52 @@ const getPriceCategories = (district) => {
 
               {/* Кнопка галереи */}
               {hasPhotos && (
-                <div className="flex justify-center">
-                  <button
-                    onClick={() => setModalOpenFor(key)}
-                    className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-2 mb-6"
-                  >
-                    <Camera size={20} className="animate-gentle-pulse" />
-                    <span>Смотреть все фото района ({district.name})</span>
-                  </button>
+                <div className="text-center mt-4">
+                  <div className="inline-flex items-center gap-4 bg-white/60 backdrop-blur-md rounded-3xl shadow-xl border border-rose-300/40 p-2">
+
+                          <button
+                            onClick={() => setModalOpenFor(key)}
+                            className="bg-gradient-to-r text-lg from-orange-600/80 to-rose-600/80 text-white font-semibold leading-relaxed py-2 px-8 rounded-2xl shadow-lg transition-shadow flex items-center gap-2"
+                          >
+                            <Camera size={24} className="animate-gentle-pulse" />
+                            <span>Смотреть все фото {district.name}</span>
+                          </button>
+                        </div>
                 </div>
               )}
 
-              {/* Кнопки связи */}
+              {/* Кнопка бота */}
+              <div className="max-w-4xl mx-auto px-4 mt-4 md:mt-4 sticky top-10 z-40 md:static">
+                <div className="bg-white/60 backdrop-blur-md rounded-3xl shadow-xl border border-cyan-300/40 p-2 md:p-4">
+                  <button
+                    onClick={() => {
+                      const key = `logged_ask_bot_districts_${district.name}`;
+                      if (!localStorage.getItem(key)) {
+                        logEvent('ask_bot_districts', {});
+                        localStorage.setItem(key, '1');
+                        setTimeout(() => localStorage.removeItem(key), 60 * 1000);
+                      }
+                      // window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+                      // Формируем текст для вставки в чат
+                      const prefilledText = `Расскажи о ${district.name} и объектах в нем`;
+                      
+                      // Кодируем текст и формируем URL, затем открываем бота
+                      const botUrl = `https://t.me/AIRealtyTest_bot?text=${encodeURIComponent(prefilledText)}`;
+                      window.Telegram?.WebApp?.openTelegramLink(botUrl);
+                    }}
+                    className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
+                  >
+                    <BotMessageSquare size={32} className="animate-gentle-pulse" />
+                    <div className="flex flex-col items-start">
+                      <span className="text-xl">Спросить Эладжа</span>
+                      <span className="text-sm font-normal opacity-90 -mt-1">о {district.name} и объектах в нем</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              
               <div className="flex gap-4 mb-10">
-                <button 
+                {/* <button 
                   // onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot')}
                   onClick={() => {
                     const key = `logged_ask_bot_districts_${district.name}`;
@@ -724,7 +756,8 @@ const getPriceCategories = (district) => {
                   <BotMessageSquare size={22} className="animate-gentle-pulse" />
                   <div>Спросить Эладжа </div>
                   <div className="text-sm font-normal opacity-90">о районе и объектах</div>
-                </button>
+                
+                </button> */}
                 {/* <button 
                   onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
                   className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 mb-6"
@@ -779,20 +812,25 @@ const getPriceCategories = (district) => {
                             
                             {/* Ценовые категории */}
                             {estate.priceCategories.length > 0 && (
-                              <div className="flex flex-wrap gap-2 mb-3">
-                                {estate.priceCategories.map((cat, idx) => (
-                                  <span 
-                                    key={idx} 
-                                    className={`px-3 py-1 rounded-full text-xs font-medium border ${
-                                      cat === 'Эконом' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
-                                      cat === 'Бизнес' ? 'bg-blue-100 text-blue-800 border-blue-200' :
-                                      cat === 'Премиум' ? 'bg-orange-100 text-orange-800 border-orange-200' :
-                                      'bg-purple-100 text-purple-800 border-purple-200'
-                                    }`}
-                                  >
-                                    {cat}
-                                  </span>
-                                ))}
+                              
+                              <div className="flex items-center gap-2 mb-3">
+                                <div className="flex flex-wrap gap-2 flex-1">
+                                  {estate.priceCategories.map((cat, idx) => (
+                                    <span 
+                                      key={idx} 
+                                      className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                                        cat === 'Эконом' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
+                                        cat === 'Бизнес' ? 'bg-blue-100 text-blue-800 border-blue-200' :
+                                        cat === 'Премиум' ? 'bg-orange-100 text-orange-800 border-orange-200' :
+                                        'bg-purple-100 text-purple-800 border-purple-200'
+                                      }`}
+                                    >
+                                      {cat}
+                                    </span>
+                                  ))}
+                                </div>
+                                <span className="text-xs text-slate-600 ml-12 mb-1">к комплексу</span>
+                                <MoveRight size={28} className=" flex-shrink-0 text-cyan-600 animate-gentle-pulse" />
                               </div>
                             )}
                           </div>
@@ -833,7 +871,7 @@ const getPriceCategories = (district) => {
       {/* Кнопка "Наверх" */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-24 right-6 z-50 bg-white/90 backdrop-blur-md border border-cyan-600 rounded-full p-4 shadow-2xl transition-all opacity-90 invisible translate-y-10"
+        className="fixed bottom-24 right-6 z-50 bg-white/80 backdrop-blur-md border-2 border-cyan-600/80 rounded-full p-4 shadow-2xl transition-all opacity-90 invisible translate-y-10"
         id="scrollTopBtn"
       >
         <svg className="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

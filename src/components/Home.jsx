@@ -190,7 +190,7 @@ export default function Home() {
 
       {/* Кнопка бота */}
       <div className="max-w-4xl mx-auto px-4 mt-10 md:mt-12 sticky top-10 z-40 md:static">
-        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-cyan-200/80 p-2 md:p-4">
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg border border-cyan-200/80 p-2 md:p-4">
           <button
             onClick={() => {
               const key = `logged_ask_bot_home`;
@@ -199,9 +199,15 @@ export default function Home() {
                 localStorage.setItem(key, '1');
                 setTimeout(() => localStorage.removeItem(key), 60 * 1000);
               }
-              window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+              // window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+              // Формируем текст для вставки
+              const prefilledText = `Эладж, расскажи о лучших предложениях недвижимости в Аджарии!`;
+              
+              // Кодируем текст и формируем URL, затем открываем бота
+              const botUrl = `https://t.me/AIRealtyTest_bot?text=${encodeURIComponent(prefilledText)}`;
+              window.Telegram?.WebApp?.openTelegramLink(botUrl);
             }}
-            className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
+            className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
           >
             <BotMessageSquare size={32} className="animate-gentle-pulse" />
             <div className="flex flex-col items-start">
@@ -214,37 +220,48 @@ export default function Home() {
 
       {/* Лучшие предложения — 2 апартамента */}
       <div className="max-w-4xl mx-auto px-4 mt-20">
-<div className="relative flex flex-col items-center mb-10">
-  {/* Верхняя "крепёжная" линия */}
-  <div className="w-3/4 md:w-3/4 h-1 mb-4 bg-gradient-to-r from-transparent via-orange-400/60 to-transparent rounded-full shadow-sm animate-gentle-pulse" />
+        <div className="relative flex flex-col items-center mb-10">
+          {/* Верхняя "крепёжная" линия */}
+          <div className="w-3/4 md:w-3/4 h-0.5 mb-6 bg-gradient-to-r from-rose-600/80 via-orange-600/60 to-rose-600/80 rounded-full shadow-sm animate-gentle-pulse" />
 
-  {/* Плашка + боковые стрелки */}
-  <div className="relative flex items-center justify-center gap-6 md:gap-10">
-    {/* Левая стрелка — "держит" слева */}
-    <ArrowDown
-      size={28}
-      className="text-orange-400 -rotate-90 -mt-8 animate-gentle-pulse absolute -left-10 md:-left-16"
-    />
+          {/* Плашка + боковые стрелки */}
+          <div className="relative flex items-center justify-center gap-6 md:gap-10">
+            {/* Левая стрелка */}
+            {/* <ArrowDown
+              size={24}
+              className="text-orange-400 -rotate-90 -mb-16 animate-gentle-pulse absolute -left-8 md:-left-12"
+            /> */}
+            {/* Колечки */}
+            <div className="absolute z-20 -top-7 left-1/4 transform -translate-x-1/2 flex flex-col items-center">
+              <div className="w-1 h-2 bg-rose-400"></div>
+              <div className="w-2 h-4 rounded-full border-2 border-rose-400"></div>
+              <div className="w-1 h-2 bg-rose-400"></div>
+            </div>
+            <div className="absolute z-20 -top-7 left-3/4 transform -translate-x-1/2 flex flex-col items-center">
+              <div className="w-1 h-2 bg-rose-400"></div>
+              <div className="w-2 h-4 rounded-full border-2 border-rose-400"></div>
+              <div className="w-1 h-2 bg-rose-400"></div>
+            </div>
 
-    {/* Центральная плашка — без изменений */}
-    <div className="inline-flex  items-center gap-4 bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white px-6 py-3 rounded-md shadow-lg z-10">
-      <Speech size={20} className="text-white animate-gentle-pulse" />
-      <h2 className="text-xl md:text-2xl font-semibold tracking-wide">
-        Горячие предложения
-      </h2>
-      <Flame size={20} className="text-white animate-gentle-pulse" />
-    </div>
+            {/* Плашка о горячих предложениях */}
+            <div className="inline-flex items-center gap-4 bg-white/80  text-white border border-rose-200/60 px-6 py-3 rounded-md shadow-md z-10">
+              <Speech size={32} className="text-rose-600/80 animate-gentle-pulse" />
+              <h2 className="text-2xl text-center md:text-2xl font-semibold bg-gradient-to-r from-orange-600/90 to-rose-600/90 bg-clip-text text-transparent tracking-tight">
+                Горячие предложения апартаментов
+              </h2>
+              <Flame size={32} className="text-orange-600/80 animate-gentle-pulse" />
+            </div>
 
-    {/* Правая стрелка — "держит" справа */}
-    <ArrowDown
-      size={28}
-      className="text-rose-400 rotate-90 -mt-8 animate-gentle-pulse absolute -right-10 md:-right-16"
-    />
-  </div>
+            {/* Правая стрелка */}
+            {/* <ArrowDown
+              size={24}
+              className="text-rose-400 rotate-90 -mb-16 animate-gentle-pulse absolute -right-8 md:-right-12"
+            /> */}
+          </div>
 
-  {/* Нижняя линия (опционально — для симметрии) */}
-  {/* <div className="w-1/2 md:w-1/2 h-1 bg-gradient-to-r from-transparent via-orange-400/60 to-transparent rounded-full mt-4 shadow-sm animate-gentle-pulse" /> */}
-</div>
+          {/* Нижняя линия (опционально — для симметрии) */}
+          {/* <div className="w-1/2 md:w-1/2 h-1 bg-gradient-to-r from-transparent via-orange-400/60 to-transparent rounded-full mt-4 shadow-sm animate-gentle-pulse" /> */}
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {featuredApartments.map((apt) => (
@@ -290,6 +307,7 @@ export default function Home() {
                       ${apt.price_usd.toLocaleString()}
                     </p>
                   </div>
+                  <span className="text-xs text-slate-600 ml-12 mb-1">к апарт.</span>
                   <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
                 </div>
               </div>
@@ -299,11 +317,11 @@ export default function Home() {
 
         {/* Призыв к полному каталогу */}
         <div className="text-center mt-10">
-          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-rose-200/80 p-2">
+          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-rose-200/80 p-2">
 
             <Link
               to="/districts"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white px-4 py-2 rounded-xl font-semibold text-lg shadow-lg"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-600/80 to-rose-600/80 text-white px-4 py-2 rounded-2xl font-semibold text-lg shadow-lg"
             >
               <MapPin size={20} />
               Посмотреть все районы и комплексы
