@@ -39,59 +39,70 @@ export default function Calculator() {
   useEffect(() => {
     logEvent('open_calculator');
   }, []);   // ← это безопасно, в dev-режиме залогируется дважды → но в production один раз, а в Telegram Mini App обычно один
+  // Флаг, что пользователь уже что-то реально менял
+  const hasUserInteracted = useRef(false);
 
-  // 2. Использование — ТОЛЬКО после изменений, пропускаем первый запуск
+  // Статистика бюджета — инициализируем null
+  const [budgetStats, setBudgetStats] = useState({
+    min: null,
+    max: null,
+    avg: null,
+    count: 0
+  });
+
+  // 1. Реакция на изменение price или offSeasonOccupancy
   useEffect(() => {
-    // Пропускаем абсолютно первый вызов эффекта (при загрузке)
-    if (!hasRealMounted.current) {
-      hasRealMounted.current = true;
-      return; // ← выходим, ничего не делаем
+    // Пропускаем дефолтные значения при первой загрузке
+    if (price === 100000 && offSeasonOccupancy === 40) {
+      return;
     }
 
-    // Реакция на изменение price / occupancy
+    hasUserInteracted.current = true;
+
+    // Debounce: ждём 800 мс после последнего изменения
     const timer = setTimeout(() => {
-      logEvent('use_calculator', {
-        price: price,
-        price_category: priceCategory.label,
-        off_season_occupancy: offSeasonOccupancy,
-      });
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, [price, offSeasonOccupancy]);  // на будущее: , roi, netYear
-
-  const [budgetStats, setBudgetStats] = useState({ min: null, max: null, avg: null, count: 0 });
-
-    useEffect(() => {
-      const currentBudget = price; // или другой показатель, который считаешь бюджетом
+      const currentBudget = price; // или другой показатель бюджета
 
       setBudgetStats(prev => {
-        const newMin = prev.min === null ? currentBudget : Math.min(prev.min, currentBudget);
-        const newMax = prev.max === null ? currentBudget : Math.max(prev.max, currentBudget);
+        // Если это первое реальное значение — инициализируем
+        if (prev.count === 0) {
+          return {
+            min: currentBudget,
+            max: currentBudget,
+            avg: currentBudget,
+            count: 1
+          };
+        }
+
+        const newMin = Math.min(prev.min, currentBudget);
+        const newMax = Math.max(prev.max, currentBudget);
         const newCount = prev.count + 1;
-        const newAvg = ((prev.avg || 0) * prev.count + currentBudget) / newCount;
+        const newAvg = ((prev.avg * prev.count) + currentBudget) / newCount;
 
         return { min: newMin, max: newMax, avg: newAvg, count: newCount };
       });
-    }, [price]); // или другой триггер
+    }, 1500); // задержка для обновления только после паузы в движении
 
-    // Логируем статистику бюджетов после 1.5 секунд от последнего изменения
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        if (budgetStats.count > 0) {
-          logEvent('calculator_budget_stats', {
-            budget_min: Math.round(budgetStats.min),
-            budget_max: Math.round(budgetStats.max),
-            budget_avg: Math.round(budgetStats.avg),
-            calculations_count: budgetStats.count,
-            price_category: priceCategory.label,
-            off_season_occupancy: offSeasonOccupancy
-          });
-        }
-      }, 1500);
+    return () => clearTimeout(timer);
+  }, [price, offSeasonOccupancy]);
 
-      return () => clearTimeout(timer);
-    }, [budgetStats, priceCategory.label, offSeasonOccupancy]);
+  // 2. Логируем финальную статистику только после паузы и только если было взаимодействие
+  useEffect(() => {
+    if (budgetStats.count === 0) return; // ещё ничего не считали
+
+    const timer = setTimeout(() => {
+      logEvent('calculator_budget_stats', {
+        budget_min: Math.round(budgetStats.min),
+        budget_max: Math.round(budgetStats.max),
+        budget_avg: Math.round(budgetStats.avg),
+        calculations_count: budgetStats.count,
+        price_category: priceCategory.label,
+        off_season_occupancy: offSeasonOccupancy
+      });
+    }, 3000);   // задержка перед отправкой
+
+    return () => clearTimeout(timer);
+  }, [budgetStats, priceCategory.label, offSeasonOccupancy]);
 
 
   return (
