@@ -143,7 +143,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-4 py-0 -mt-16 relative z-30">
         <div className="bg-gradient-to-br from-cyan-50 to-emerald-50/90  rounded-3xl shadow-xl border border-cyan-400/80 p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-cyan-700">
-            Почему выбирают Аджарию
+            Почему выбирают Грузию
           </h2>
 
           {/* Квадратные вкладки */}

@@ -17,6 +17,17 @@ const BottomNav = () => {
     }
     return location.pathname === paths || location.pathname.startsWith(paths);
   };
+  
+  useEffect(() => {
+    // Сбрасываем только при переходе вперёд (не на history.back)
+    // Простой способ: проверяем, если pathname изменился "вперёд"
+    if (location.pathname.startsWith('/estate/') || location.pathname.startsWith('/apartment/')) {
+      // даём React отрендерить контент, потом скроллим
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }, 50); // или 0–100 мс
+    }
+  }, [location.pathname]); 
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-amber-200 z-50 shadow-2xl">
@@ -86,7 +97,7 @@ export default function App() {
     if (!path) return null;
     if (path === '/') return 'Главная';
     if (path.startsWith('/districts')) return 'Районы';
-    if (path.startsWith('/estate')) return 'ЖК';
+    if (path.startsWith('/estate')) return 'Комплекс';
     if (path.startsWith('/apartment')) return 'Апартаменты';
     if (path.startsWith('/calculator')) return 'Расчёты';
     return path;

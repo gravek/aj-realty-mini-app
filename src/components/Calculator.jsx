@@ -73,9 +73,9 @@ export default function Calculator() {
 
         return { min: newMin, max: newMax, avg: newAvg, count: newCount };
       });
-    }, [price]); // или другой триггер, если есть
+    }, [price]); // или другой триггер
 
-    // ← А этот useEffect (с debounce) тоже перед return, после предыдущего
+    // Логируем статистику бюджетов после 1.5 секунд от последнего изменения
     useEffect(() => {
       const timer = setTimeout(() => {
         if (budgetStats.count > 0) {

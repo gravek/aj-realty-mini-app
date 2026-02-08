@@ -8,6 +8,10 @@ import {
   MapPin, 
   Waves, 
   Mountain, 
+  Gem, 
+  MountainSnow, 
+  SquareDashedMousePointer, 
+  Briefcase, 
   Trees, 
   Building, 
   Heart, 
@@ -33,7 +37,7 @@ export default function Districts() {
 
   const districts = Object.entries(data?.districts || {});
 
-  // Функция для определения ценовых категорий в районе
+
 // Функция для определения ценовых категорий в районе
 const getPriceCategories = (district) => {
   const allPrices = Object.values(district.estates || {})
@@ -328,6 +332,8 @@ const getPriceCategories = (district) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [districts]);
 
+
+  // Логирование событий для аналитики
   useEffect(() => {
     const key = 'logged_open_districts';
     if (localStorage.getItem(key)) return;
@@ -348,6 +354,8 @@ const getPriceCategories = (district) => {
     setTimeout(() => localStorage.removeItem(logKey), 1 * 60 * 1000);
   }, [activeDistrict, data]);
 
+  
+  // Функция плавной прокрутки к району
   const scrollToDistrict = (key) => {
     document.getElementById(`district-${key}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -406,7 +414,7 @@ const getPriceCategories = (district) => {
 
                   {/* Подпись (повёрнута на 90°) */}
                   <span
-                    className={`absolute top-6 left-5 -rotate-90 origin-left whitespace-nowrap text-sm font-medium transition-all duration-300 ${
+                    className={`absolute top-6 left-5 -rotate-90 origin-left whitespace-nowrap text-md font-medium transition-all duration-300 ${
                       isActive
                         ? `${colors.text} font-bold opacity-100`
                         : 'text-slate-600 opacity-70 group-hover:opacity-100 group-hover:text-slate-800'
@@ -430,54 +438,42 @@ const getPriceCategories = (district) => {
       <div className="max-w-6xl mx-auto ml-10 px-1">
         {/* Заголовок страницы */}
         <div className="text-center mb-16 pt-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-700 to-emerald-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent mb-4">
             Районы и Комплексы
           </h1>
-          <p className="text-slate-600 text-xl max-w-2xl mx-auto">
+          {/* <p className="text-slate-600 text-xl max-w-2xl mx-auto">
             подберем идеальное место для жизни, отдыха или инвестиций
-          </p>
+          </p> */}
         </div>
 
         {/* Вводный блок */}
         <div className="max-w-3xl mx-auto mb-16 p-8 bg-gradient-to-br from-cyan-50 to-emerald-50 rounded-3xl border border-cyan-300 shadow-xl">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/90 to-emerald-500/90 rounded-xl flex items-center justify-center">
-              <Waves className="text-white" size={24} />
+            <div className="w-8 h-8 bg-gradient-to-r from-cyan-500/90 to-emerald-500/90 rounded-xl flex items-center justify-center">
+              <Waves className="text-white" size={18} />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-slate-900">Ваше пространство у моря</h2>
-              {/* <p className="text-slate-600">От элитного Мцване Концхи до уютного Махинджаури</p> */}
+              <h2 className="text-2xl font-bold text-cyan-800/90">Ваши преимущества</h2>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <p className="text-slate-700 mb-4">
-                Аджария — это уникальное сочетание морского бриза, горного воздуха и грузинского гостеприимства. 
-                <br/>
-                Каждый район имеет свой характер и преимущества для разных целей.
-              </p>
-              <p className="text-slate-700">
-                Мы поможем найти именно то, что соответствует вашим ожиданиям и инвестиционным планам.
-              </p>
-            </div>
             <div className="bg-white p-5 rounded-xl border border-cyan-100">
-              <h4 className="font-bold text-slate-900 mb-3">Ключевые преимущества</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-slate-700">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>Безвизовый режим для граждан 95 стран</span>
+              <ul className="space-y-2 gap-1 flex flex-col">
+                <li className="flex items-center text-slate-800 gap-4">
+                  <Gem className="shrink-0 text-cyan-600/90" size={20}/>
+                  <span>Аджарская Автономная Республика — это жемчужина Грузии!</span>
                 </li>
-                <li className="flex items-center gap-2 text-slate-700">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>Низкие налоги на недвижимость</span>
+                <li className="flex items-center text-slate-800 gap-4">
+                  <MountainSnow className="shrink-0 text-cyan-600/90" size={20} />
+                  <span>Уникальное сочетание морского бриза, горного воздуха и грузинского гостеприимства. </span>
                 </li>
-                <li className="flex items-center gap-2 text-slate-700">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>Стабильный рост рынка 10-15% в год</span>
+                <li className="flex items-center text-slate-800 gap-4">
+                  <SquareDashedMousePointer className="shrink-0 text-cyan-600/90" size={20} />
+                  <span>Каждый район имеет свой характер и преимущества для разных целей.</span>
                 </li>
-                <li className="flex items-center gap-2 text-slate-700">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>Мягкий субтропический климат круглый год</span>
+                <li className="flex items-center text-slate-800 gap-4">
+                  <Briefcase className="shrink-0 text-cyan-600/90" size={20} />
+                  <span>Мы поможем найти именно то, что соответствует вашим ожиданиям и инвестиционным планам.</span>
                 </li>
               </ul>
             </div>
@@ -806,7 +802,7 @@ const getPriceCategories = (district) => {
                             <div className="flex items-center justify-between mb-2">
                               <span className="text-xl font-bold text-cyan-600">Цены в комплексе:</span>
                               <span className="text-xl font-bold text-cyan-600">
-                                от ${estate.minPrice?.toLocaleString() || '0'}
+                                от ${estate.minPrice?.toLocaleString() || '30000'}
                               </span>
                             </div>
                             

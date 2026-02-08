@@ -23,7 +23,7 @@ import {
   Ruler,
   Calendar,
   CheckCircle,
-  ChevronLeft,
+  ChevronRight,
   Notebook
 } from 'lucide-react';
 
@@ -143,6 +143,23 @@ export default function Estate() {
 
   return (
     <div className="mt-6">
+
+      {/* Навигационная цепочка (путь) */}
+      <div className="flex items-center text-sm text-gray-500 mb-6">
+        <Link to="/districts" className="hover:text-cyan-600 transition-colors">Объекты</Link>
+        <ChevronRight size={14} className="mx-2 text-gray-400" />
+        <Link 
+          to={`/districts#${district?.toLowerCase() || ''}`}
+          className="hover:text-cyan-600 transition-colors"
+        >
+          {district || 'Район'}  {/* district — "Batumi" */}
+        </Link>
+        <ChevronRight size={14} className="mx-2 text-gray-400" />
+        <span className="text-gray-700 font-medium">
+          {current?.name || estate || 'Комплекс'}  {/* current.name или fallback на params.estate */}
+        </span>
+      </div>
+
       {/* <h1 className="text-3xl font-bold mb-2">{current.name}</h1>
       {current.developer_name && <p className="text-lg text-gray-600 mb-6">{current.developer_name}</p>}
 
@@ -441,7 +458,7 @@ export default function Estate() {
                       </div>
                       <p className="text-2xl font-bold text-cyan-600">${ap.price_usd.toLocaleString()}</p>
                     </div>
-                    <span className="text-xs text-slate-600 ml-12 mb-1">к апартаменту</span>
+                    <span className="text-xs text-slate-600 text-right ml-12 mb-1">к апарт.</span>
                     <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
 
                   </div>
