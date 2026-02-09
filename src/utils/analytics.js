@@ -33,8 +33,8 @@ export const sendProfileOnce = async () => {
 
   const tgUser = window.Telegram?.WebApp?.initDataUnsafe?.user || {};
   const userInfo = {
-    first_name: tgUser.first_name || 'UNRECOGNISED',
-    last_name: tgUser.last_name || 'USER',
+    first_name: tgUser.first_name || '',
+    last_name: tgUser.last_name || '',
     username: tgUser.username || 'UNRECOGNISED_USER',
     language_code: tgUser.language_code || 'ru'
   };
