@@ -81,7 +81,7 @@ export default function Calculator() {
 
         return { min: newMin, max: newMax, avg: newAvg, count: newCount };
       });
-    }, 1500); // задержка для обновления только после паузы в движении
+    }, 2000); // задержка для обновления только после паузы в движении
 
     return () => clearTimeout(timer);
   }, [price, offSeasonOccupancy]);

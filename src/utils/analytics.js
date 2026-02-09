@@ -24,6 +24,29 @@ export const logEvent = async (eventType, details = {}) => {
     console.warn('⚠️ Не удалось получить userId, логируем как:', userId);
   }
 
+
+  // Логика для userInfo: отправляем только один раз (можно без  && userId !== 'UNRECOGNISED_USER')
+  if (userId && userId !== 'UNRECOGNISED_USER') {
+    const profileSent = localStorage.getItem('profile_sent');
+    if (!profileSent) {
+      const tgUser = window.Telegram?.WebApp?.initDataUnsafe?.user || {};
+      const userInfo = {
+        first_name: tgUser.first_name || 'UNRECOGNISED',
+        last_name: tgUser.last_name || 'USER',
+        username: tgUser.username || 'UNRECOGNISED_USER',
+        language_code: tgUser.language_code || 'ru'
+      };
+      
+      // Отправляем отдельное событие для профиля
+      await logEvent('create_profile', { user_info: userInfo });
+      
+      // Устанавливаем флаг, чтобы не повторять
+      localStorage.setItem('profile_sent', 'true');
+    }
+  }
+
+
+
   const payload = {
     user_id: userId,
     event_type: eventType,
