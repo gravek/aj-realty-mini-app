@@ -7,6 +7,8 @@ import MapWithContext from './components/MapWithContext';
 import AppRoutes from './components/AppRoutes';
 import PhotoGalleryModal from './components/PhotoGalleryModal';
 
+import { sendProfileOnce } from './utils/analytics';
+
 
 const BottomNav = () => {
   const location = useLocation();
@@ -136,6 +138,12 @@ export default function App() {
       handleRouteChange();
     }
   }, [loadData, location.pathname, navigate]);
+
+  
+  // Один раз при монтировании отправляем профиль пользователя (если есть userId)
+  useEffect(() => {
+    sendProfileOnce();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 via-amber-70 via-orange-80 to-orange-200 text-orange-800 pb-20">
