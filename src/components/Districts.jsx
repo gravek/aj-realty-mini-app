@@ -1,5 +1,5 @@
 // src/components/Districts.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../store';
 import PhotoGalleryModal from './PhotoGalleryModal';
@@ -342,16 +342,46 @@ const getPriceCategories = (district) => {
     setTimeout(() => localStorage.removeItem(key), 3 * 60 * 1000);
   }, []);
 
+  // Логируем фокус на районе если фокус длится не менее 3 секунд (но не чаще 1 раза в минуту для каждого района) 
+  const focusTimerRef = useRef(null);  // Для хранения таймера
+
   useEffect(() => {
     if (!activeDistrict) return;
+
     const logKey = `logged_district_focus_${activeDistrict}`;
+
+    // Если уже залогировано недавно — выходим
     if (localStorage.getItem(logKey)) return;
-    logEvent('focus_district', {
-      district_key: activeDistrict,
-      district_name: data?.districts?.[activeDistrict]?.name || 'unknown',
-    });
-    localStorage.setItem(logKey, '1');
-    setTimeout(() => localStorage.removeItem(logKey), 1 * 60 * 1000);
+
+    // Очищаем предыдущий таймер, если был (на случай быстрой смены района)
+    if (focusTimerRef.current) {
+      clearTimeout(focusTimerRef.current);
+    }
+
+    // Запускаем новый таймер на 3 секунды
+    focusTimerRef.current = setTimeout(() => {
+      // Проверяем: район всё ещё активен? (не изменился за 3 сек)
+      if (activeDistrict === data?.districts?.[activeDistrict]?.name) {  // Или сравни с сохранённым значением, если нужно
+        // Логируем, если да
+        logEvent('focus_district', {
+          district_key: activeDistrict,
+          district_name: data?.districts?.[activeDistrict]?.name || 'unknown',
+        });
+
+        // Устанавливаем флаг в localStorage
+        localStorage.setItem(logKey, '1');
+
+        // Удаляем флаг через 1 минуту
+        setTimeout(() => localStorage.removeItem(logKey), 1 * 60 * 1000);
+      }
+    }, 3000);  // 3 секунды
+
+    // Cleanup: очищаем таймер при размонтировании или смене зависимости
+    return () => {
+      if (focusTimerRef.current) {
+        clearTimeout(focusTimerRef.current);
+      }
+    };
   }, [activeDistrict, data]);
 
   
