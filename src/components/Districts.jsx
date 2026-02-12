@@ -358,10 +358,10 @@ const getPriceCategories = (district) => {
       clearTimeout(focusTimerRef.current);
     }
 
-    // Запускаем новый таймер на 3 секунды
+    // Запускаем новый таймер на _ секунд
     focusTimerRef.current = setTimeout(() => {
       // Проверяем: район всё ещё активен? (не изменился за 3 сек)
-      if (activeDistrict === data?.districts?.[activeDistrict]?.name) {  // Или сравни с сохранённым значением, если нужно
+      if (activeDistrict === data?.districts?.[activeDistrict]?.name) {  // Или сравнить с сохранённым значением
         // Логируем, если да
         logEvent('focus_district', {
           district_key: activeDistrict,
@@ -372,9 +372,9 @@ const getPriceCategories = (district) => {
         localStorage.setItem(logKey, '1');
 
         // Удаляем флаг через 1 минуту
-        setTimeout(() => localStorage.removeItem(logKey), 1 * 60 * 1000);
+        setTimeout(() => localStorage.removeItem(logKey), 1000*60 * 1);
       }
-    }, 3000);  // 3 секунды
+    }, 1000 * 10);  // _ секунд
 
     // Cleanup: очищаем таймер при размонтировании или смене зависимости
     return () => {

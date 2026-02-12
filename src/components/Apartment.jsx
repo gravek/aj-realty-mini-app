@@ -579,7 +579,7 @@ export default function Apartment() {
 
       {/* Кнопка менеджера */}
       <div className="max-w-4xl mx-auto px-4 mt-4 md:mt-4 sticky top-10 z-40 md:static">
-        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-cyan-200/80 p-2 md:p-4">
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-fuchsia-200/80 p-2 md:p-4">
           <button
             onClick={() => {
               const key = `logged_ask_manager_apartment_${id}`;
