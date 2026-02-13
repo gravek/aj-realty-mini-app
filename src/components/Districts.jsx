@@ -158,7 +158,7 @@ const getPriceCategories = (district) => {
           icon: <CloudSun className="text-amber-600" size={20} />
         },
         investment: {
-          title: 'Премиум-инвестиции',
+          title: 'Премиум инвестиции',
           points: [
             'Рост стоимости 15-20% годовых',
             'Эксклюзивные объекты',
@@ -172,7 +172,7 @@ const getPriceCategories = (district) => {
           points: [
             'Мыс Зеленый - природный заповедник',
             'Кристально чистое море',
-            'Сосновый лес на побережье',
+            'Уникальные растения на набережной',
             'Панорамные виды на залив'
           ],
           icon: <Waves className="text-cyan-600" size={20} />
@@ -180,7 +180,7 @@ const getPriceCategories = (district) => {
       },
       'Kobuleti': {
         lifestyle: {
-          title: 'Классический курорт',
+          title: 'Классика курорта',
           points: [
             'Знаменитый галечный пляж',
             'Лечебные магнитные пески',
@@ -190,7 +190,7 @@ const getPriceCategories = (district) => {
           icon: <Coffee className="text-orange-600" size={20} />
         },
         investment: {
-          title: 'Проверенная рентабельность',
+          title: 'Рентабель-ность',
           points: [
             'Стабильная арендная доходность',
             'Высокая ликвидность объектов',
@@ -212,7 +212,7 @@ const getPriceCategories = (district) => {
       },
       'Mahinjauri': {
         lifestyle: {
-          title: 'Баланс спокойствия и доступности',
+          title: 'Баланс покоя и доступности',
           points: [
             '15 минут до центра Батуми',
             'Спокойная курортная атмосфера',
@@ -232,7 +232,7 @@ const getPriceCategories = (district) => {
           icon: <Train className="text-rose-600" size={20} />
         },
         nature: {
-          title: 'Природное разнообразие',
+          title: 'Природное разно-образие',
           points: [
             'Пляж в 5 минутах ходьбы',
             'Зеленые холмы и предгорья',
@@ -255,7 +255,7 @@ const getPriceCategories = (district) => {
         gradient: 'from-fuchsia-600/90 to-purple-600/90',
         gradientLight: 'from-fuchsia-50/90 to-purple-50/90',
         border: 'border-purple-300/60',
-        icon: <Trees className="text-white/50" size={100} />,
+        icon: <Trees className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-fuchsia-100/20 to-purple-100/20'
       },
       'Batumi': {         
@@ -263,7 +263,7 @@ const getPriceCategories = (district) => {
         gradient: 'from-teal-600 to-cyan-600',
         gradientLight: 'from-teal-100/90 to-cyan-100/90',
         border: 'border-cyan-300/60',
-        icon: <Waves className="text-white/50" size={100} />,
+        icon: <Waves className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-teal-100/20 to-cyan-100/20'
       },
       'Kobuleti': { 
@@ -271,7 +271,7 @@ const getPriceCategories = (district) => {
         gradient: 'from-pink-600 to-rose-600',
         gradientLight: 'from-pink-100/90 to-rose-100/90',
         border: 'border-rose-300/60',
-        icon: <CloudSun className="text-white/50" size={100} />,
+        icon: <CloudSun className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-pink-100/20 to-rose-100/20'
       },
       'Gonio': { 
@@ -279,7 +279,7 @@ const getPriceCategories = (district) => {
         gradient: 'from-fuchsia-600 to-purple-600',
         gradientLight: 'from-fuchsia-100/90 to-purple-100/90',
         border: 'border-purple-300/60',
-        icon: <Mountain className="text-white/50" size={100} />,
+        icon: <Mountain className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-fuchsia-100/20 to-purple-100/20'
       },
       'Mahinjauri': { 
@@ -287,7 +287,7 @@ const getPriceCategories = (district) => {
         gradient: 'from-blue-600 to-indigo-600',
         gradientLight: 'from-blue-100/90 to-indigo-100/90',
         border: 'border-indigo-300/60',
-        icon: <Trees className="text-white/50" size={100} />,
+        icon: <Trees className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-blue-100/20 to-indigo-100/20'
       }
     };
@@ -465,7 +465,7 @@ const getPriceCategories = (district) => {
       </div>
 
       {/* Основной контент */}
-      <div className="max-w-6xl mx-auto ml-10 px-1">
+      <div className="max-w-6xl mx-auto ml-10 px-0">
         {/* Заголовок страницы */}
         <div className="text-center mb-16 pt-8">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent mb-4">
@@ -592,7 +592,7 @@ const getPriceCategories = (district) => {
                 {/* <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-white/20 to-transparent rounded-full translate-y-32 -translate-x-32 blur-3xl" /> */}
                 
                 {/* Контент */}
-                <div className="relative p-10 text-white z-10">
+                <div className="relative p-8 text-white z-10">
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-6">
                       {/* Иконка с объемом */}
@@ -604,7 +604,7 @@ const getPriceCategories = (district) => {
                       </div>
                       
                       <div>
-                        <h2 className="text-4xl font-bold mb-1 tracking-tight">
+                        <h2 className="text-3xl font-semibold mb-2 tracking-tight">
                           {district.name}
                         </h2>
                         {district.coords && (
@@ -643,8 +643,8 @@ const getPriceCategories = (district) => {
                     {priceCats.map((cat, idx) => (
                       <div key={idx} className="relative">
                         {/* <div className="absolute -inset-0.5 bg-white/20 rounded-full blur-sm" /> */}
-                        <div className={`relative px-4 py-1 rounded-full text-sm font-semibold ${cat.color} border border-white/30 backdrop-blur-sm`}>
-                          {cat.label}: <span className="font-black">{cat.range}</span>
+                        <div className={`relative px-2 py-1 rounded-full text-sm font-medium ${cat.color} border border-white/40 backdrop-blur-sm shadow-xl`}>
+                          {cat.label}: <span className="font-bold">{cat.range}</span>
                         </div>
                       </div>
                     ))}
@@ -686,7 +686,7 @@ const getPriceCategories = (district) => {
                 className: isActive ? 'text-white' : (decor.text || 'text-cyan-600'),
               })}
             </div>
-            <span className="text-sm md:text-base font-medium text-center leading-tight">
+            <span className="text-sm md:text-base font-normal text-center leading-tight">
               {adv.title}
             </span>
           </button>

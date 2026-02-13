@@ -5,6 +5,7 @@ import {
   BotMessageSquare,
   UserRoundPen,
   DollarSign,
+  ScanFace
 } from 'lucide-react';
 
 export default function Calculator() {
@@ -123,13 +124,13 @@ export default function Calculator() {
         <div className="flex items-center gap-2"><div className="w-4 h-4 rounded-full bg-purple-600"></div> от $250k</div>
       </div> */}
 
-    <h1 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-700 via-teal-600 to-emerald-700 bg-clip-text text-transparent">
+    {/* <h1 className="text-3xl font-bold text-center mb-1 bg-gradient-to-r from-cyan-700 via-teal-600 to-emerald-700 bg-clip-text text-transparent">
       Калькулятор доходности
-    </h1>
+    </h1> */}
 
 
     
-<div className="bg-white/60 backdrop-blur-xl rounded-2xl border border-cyan-200/80 shadow-xl overflow-hidden max-w-3xl mx-auto">
+<div className="bg-cyan-50/60 backdrop-blur-2xl rounded-2xl border border-cyan-200/90 shadow-xl overflow-hidden max-w-3xl mx-auto">
   <div className="p-4 sm:p-2">
     {/* Здесь весь текущий контент: слайдер цены, occupancy, таблица и т.д. */}
 
@@ -156,19 +157,34 @@ export default function Calculator() {
     </div> */}
 
 
+    <h1 className="text-3xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-700 via-teal-600 to-cyan-700 bg-clip-text text-transparent">
+      Калькулятор доходности
+    </h1>
 
 
 
-
-<div className="bg-white/80 backdrop-blur-sm rounded-2xl border shadow-xl overflow-hidden max-w-3xl mx-auto">
-  <div className="p-6 sm:p-8 md:p-10 bg-gradient-to-r from-teal-600/80 to-cyan-600/80">
+<div className="bg-white/80 backdrop-blur-lg rounded-2xl border shadow-xl overflow-hidden max-w-3xl mx-auto">
+  <div className="p-6 sm:p-8 md:p-10 bg-gradient-to-r from-cyan-600/80 to-teal-600/80">
+    
     {/* Заголовок для блока цены */}
-    <div className="flex items-center gap-2 mb-4">
-      <h2 className="text-2xl font-medium text-white">Цена апартаментов</h2>
+    <div className="flex mb-4 items-center gap-4 text-white">
+      {/* Иконка с объемом */}
+      <div className="relative">
+        <div className="absolute -inset-2 bg-white/15 rounded-2xl blur-md" />
+        <div className="relative w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30 flex items-center justify-center shadow-2xl">
+          <DollarSign className="text-white" size={20} />
+        </div>
+      </div>
+      
+      <div>
+        <h3 className="text-2xl font-semibold mb-1 tracking-tight">
+          Цена апартаментов
+        </h3>
+      </div>
     </div>
 
     {/* Блок шкалы и результата цены */}
-    <div className="mb-8 p-4 bg-white/95 backdrop-blur-sm rounded-lg border border-white/30">
+    <div className="mb-4 p-4 bg-white/95 backdrop-blur-sm rounded-lg border border-white/30">
       {/* Диапазон цен */}
       <div className="flex justify-between text-md font-medium text-slate-500  mb-0 mt-0">
         <span>$30 000</span>
@@ -205,9 +221,28 @@ export default function Calculator() {
     </div>
 
     {/* Заголовок для блока загрузки */}
-    <label className="block text-2xl font-medium text-white mb-4">
-      Загрузка вне сезона:
-    </label>
+    {/* <label className="block text-2xl font-medium text-white mb-2">
+      Загрузка вне сезона
+    </label> */}
+
+    {/* Заголовок для блока цены */}
+    <div className="flex mt-8 mb-4 items-center gap-4 text-white">
+      {/* Иконка с объемом */}
+      <div className="relative">
+        <div className="absolute -inset-2 bg-white/15 rounded-2xl blur-md" />
+        <div className="relative w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30 flex items-center justify-center shadow-2xl">
+          <ScanFace className="text-white" size={20} />
+        </div>
+      </div>
+      
+      <div>
+        <h3 className="text-2xl font-semibold mb-1 tracking-tight">
+          Загрузка вне сезона
+        </h3>
+      </div>
+    </div>
+
+
 
     {/* Блок шкалы и результата загрузки */}
     <div className="mb-2 p-4 bg-white/95 backdrop-blur-sm rounded-lg border border-white/30">
@@ -244,7 +279,7 @@ export default function Calculator() {
 
 
         {/* Таблица доходов и расходов */}
-        <div className="overflow-x-auto p-4  bg-cyan-100/10 backdrop-blur-sm rounded-lg border border-cyan-300/80 shadow-inner mt-8 mb-1 max-w-3xl mx-auto">
+        <div className="overflow-x-auto p-4  bg-cyan-200/20 backdrop-blur-lg rounded-lg border border-cyan-300/80 shadow-inner mt-4 mb-1 max-w-3xl mx-auto">
           <table className="w-full text-lg border-collapse text-cyan-600">
             <tbody>
               <tr className="border-b">

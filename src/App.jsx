@@ -146,7 +146,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 via-amber-70 via-orange-80 to-orange-200 text-orange-800 pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 via-amber-70 via-orange-80 to-rose-50 text-orange-800 pb-20">
       {/* Хедер */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-orange-800">
         <div className="max-w-3xl mx-auto relative px-4 py-4 flex items-center justify-between">
