@@ -283,32 +283,40 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-5">
+                {/* Верхняя строка: теги во всю ширину */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-2 py-1 bg-cyan-50/90 text-cyan-700 text-xs rounded">
+                    {apt.typeName}
+                  </span>
+                  <span className="px-2 py-1 bg-rose-50/90 text-rose-700 text-xs rounded">
+                    {apt.m2} м²
+                  </span>
+                  {apt.finishing && (
+                    <span className="px-2 py-1 bg-green-50/90 text-green-700 text-xs rounded">
+                      {apt.finishing}
+                    </span>
+                  )}
+                  {apt.furnished && (
+                    <span className="px-2 py-1 bg-orange-50/90 text-orange-700 text-xs rounded">
+                      {apt.furnished}
+                    </span>
+                  )}
+                </div>
+
+                {/* Нижняя секция: две колонки */}
                 <div className="flex justify-between items-center">
+                  {/* Левая колонка: цена */}
                   <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-1 bg-cyan-50/90 text-cyan-700 text-xs rounded">
-                        {apt.typeName}
-                      </span>
-                      <span className="px-2 py-1 bg-rose-50/90 text-rose-700 text-xs rounded">
-                        {apt.m2} м²
-                      </span>
-                      {apt.finishing && (
-                        <span className="px-2 py-1 bg-green-50/90 text-green-700 text-xs rounded">
-                          {apt.finishing}
-                        </span>
-                      )}
-                      {apt.furnished && (
-                        <span className="px-2 py-1 bg-orange-50/90 text-orange-700 text-xs rounded">
-                          {apt.furnished}
-                        </span>
-                      )}
-                    </div>
                     <p className="text-2xl font-bold text-cyan-600">
                       ${apt.price_usd.toLocaleString()}
                     </p>
                   </div>
-                  <span className="text-xs text-slate-600 ml-12 mb-1">к апарт.</span>
-                  <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
+
+                  {/* Правая колонка: текст и иконка в одной строке */}
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <span className="text-xs text-slate-600">к апарт.</span>
+                    <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
+                  </div>
                 </div>
               </div>
             </Link>

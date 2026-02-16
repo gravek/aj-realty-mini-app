@@ -172,7 +172,8 @@ const getPriceCategories = (district) => {
           points: [
             'Мыс Зеленый - природный заповедник',
             'Кристально чистое море',
-            'Уникальные растения на набережной',
+            'Набережная длинной в 8 км с шикарными пальмами',
+            'Уникальные растения возле набережной',
             'Панорамные виды на залив'
           ],
           icon: <Waves className="text-cyan-600" size={20} />
@@ -643,8 +644,8 @@ const getPriceCategories = (district) => {
                     {priceCats.map((cat, idx) => (
                       <div key={idx} className="relative">
                         {/* <div className="absolute -inset-0.5 bg-white/20 rounded-full blur-sm" /> */}
-                        <div className={`relative px-2 py-1 rounded-full text-sm font-medium ${cat.color} border border-white/40 backdrop-blur-sm shadow-xl`}>
-                          {cat.label}: <span className="font-bold">{cat.range}</span>
+                        <div className={`relative px-2 py-0.5 rounded-full text-sm font-medium ${cat.color} border border-white/40 backdrop-blur-sm shadow-xl`}>
+                          {cat.label}: <span className="font-semibold">{cat.range}</span>
                         </div>
                       </div>
                     ))}
@@ -713,7 +714,7 @@ const getPriceCategories = (district) => {
     </div>
 
     {/* Нижний намёк / CTA */}
-    <div className={`mt-6 text-center text-sm text-slate-500 ${decor.text || 'text-cyan-800'}/80`}>
+    <div className={`mt-6 text-center text-sm  ${decor.text || 'text-cyan-800'}`}>
       Подберём объект в {district.name} под ваш бюджет и цели
     </div>
   </div>
@@ -844,7 +845,7 @@ const getPriceCategories = (district) => {
                                   {estate.priceCategories.map((cat, idx) => (
                                     <span 
                                       key={idx} 
-                                      className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                                      className={`px-2 py-0.5 rounded-full text-xs font-medium border ${
                                         cat === 'Эконом' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
                                         cat === 'Бизнес' ? 'bg-blue-100 text-blue-800 border-blue-200' :
                                         cat === 'Премиум' ? 'bg-orange-100 text-orange-800 border-orange-200' :

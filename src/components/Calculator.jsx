@@ -309,7 +309,10 @@ export default function Calculator() {
             </tbody>
           </table>
         </div>
-
+        {/* Расчет приблизителен и не является оффретой */}
+        <h5 className="text-xs text-center text-slate-500 font-italic mt-4 mb-0 tracking-tight">
+          * Расчет приблизителен и не является офертой *
+        </h5>
     {/* ...  ... */}
   </div>
 </div>

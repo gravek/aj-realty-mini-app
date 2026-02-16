@@ -182,7 +182,7 @@ export default function Apartment() {
 
 
       <div className="flex-1">
-        <h1 className="text-4xl font-bold  bg-gradient-to-r from-cyan-700 to-emerald-600 bg-clip-text text-transparent mb-2">{apartment.estateName}</h1>
+        <h1 className="text-4xl font-bold  bg-gradient-to-r from-cyan-700 to-teal-600 bg-clip-text text-transparent mb-2">{apartment.estateName}</h1>
         
         {apartment.estateDeveloper && (
           <div className="flex items-center gap-2 mt-1">
@@ -194,8 +194,8 @@ export default function Apartment() {
 
 
 
-      {/* Апартамент и основная информация */}
-      <div className="bg-gradient-to-r from-teal-100/40 to-cyan-100/60 p-6 rounded-2xl border border-cyan-300 shadow-md">
+      {/* Апартамент и основная информация from-cyan-600/80 to-teal-600/80 */}
+      <div className="bg-gradient-to-r from-cyan-100/80 to-teal-100/80 p-6 rounded-2xl border border-cyan-300 shadow-md">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
           <div className="flex-1">
             <h2 className="text-3xl font-bold text-cyan-700">Апартамент {apartment.apartment_number || ''}</h2>
@@ -369,7 +369,7 @@ export default function Apartment() {
                       {apartment.blockSpecifications}
                     </p>
                   ) : (
-                    <p className="text-slate-500 italic">Уточните, пожалуйста у менеджера</p>
+                    <p className="text-slate-500 italic">Уточните, пожалуйста, у менеджера</p>
                   )}
                   
                   {apartment.blockPhoto && (
