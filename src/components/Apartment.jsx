@@ -52,7 +52,7 @@ export default function Apartment() {
                 blockSpecifications: block.block_specifications,
                 blockPhoto: block.photos?.sketch?.[0]?.url || block.photos?.specific?.[0]?.url,
                 app_type: type.name,
-                typeDescription: type.description,
+                typeDescription: type.ap_type_descr,
                 amenities: estate.amenities || [],
                 location: estate.location || {},
               };
@@ -148,37 +148,37 @@ export default function Apartment() {
   const pricePerM2 = apartment.price_usd / apartment.m2;
 
   return (
-    <div className="space-y-6 pb-20">
-      {/* Путь */}
-      {/* <div className="flex items-center text-sm text-slate-500 mb-2">
-        <Link to="/" className="hover:text-cyan-600 transition">Главная</Link>
+      <div className="space-y-6 pb-20">
+        {/* Путь */}
+        {/* <div className="flex items-center text-sm text-slate-500 mb-2">
+          <Link to="/" className="hover:text-cyan-600 transition">Главная</Link>
+          <ChevronRight size={16} className="mx-1" />
+          <Link to={`/district/${apartment.districtName}`} className="hover:text-cyan-600 transition">
+            {apartment.districtName}
+          </Link>
+          <ChevronRight size={16} className="mx-1" />
+          <span className="text-slate-700 font-medium">{apartment.estateName}</span>
+        </div> */}
+
+      <div className="flex items-center text-sm text-slate-500 mb-2">
+        <Link to="/" className="hover:text-cyan-600 transition">Объекты</Link>
         <ChevronRight size={16} className="mx-1" />
-        <Link to={`/district/${apartment.districtName}`} className="hover:text-cyan-600 transition">
+        <Link 
+          to={`/districts#${apartment.districtName.toLowerCase().replace(/\s+/g, '-')}`} 
+          className="hover:text-cyan-600 transition"
+        >
           {apartment.districtName}
         </Link>
         <ChevronRight size={16} className="mx-1" />
-        <span className="text-slate-700 font-medium">{apartment.estateName}</span>
-      </div> */}
-
-    <div className="flex items-center text-sm text-slate-500 mb-2">
-      <Link to="/" className="hover:text-cyan-600 transition">Главная</Link>
-      <ChevronRight size={16} className="mx-1" />
-      <Link 
-        to={`/districts#${apartment.districtName.toLowerCase().replace(/\s+/g, '-')}`} 
-        className="hover:text-cyan-600 transition"
-      >
-        {apartment.districtName}
-      </Link>
-      <ChevronRight size={16} className="mx-1" />
-      <Link 
-        to={`/estate/${apartment.districtName}/${apartment.estateName}`} 
-        className="hover:text-cyan-600 transition"
-      >
-        {apartment.estateName}
-      </Link>
-      <ChevronRight size={16} className="mx-1" />
-      <span className="text-slate-700 font-medium">{apartment.apartmentType} Apartment (ID: {apartment.apartment_id})</span> {/* Добавил для полноты, если нужно */}
-    </div>
+        <Link 
+          to={`/estate/${apartment.districtName}/${apartment.estateName}`} 
+          className="hover:text-cyan-600 transition"
+        >
+          {apartment.estateName}
+        </Link>
+        <ChevronRight size={16} className="mx-1" />
+        <span className="text-slate-700 font-medium">{apartment.apartmentType} Апартамент</span> {/* Добавил для полноты, если нужно */}
+      </div>
 
 
       <div className="flex-1">
@@ -202,7 +202,7 @@ export default function Apartment() {
             
             <div className="flex items-center gap-2">
               <FileDigit size={16} className="text-slate-400" />
-              <p className="text-md text-slate-500">{apartment.apartment_id}</p>
+              <p className="text-md text-slate-500">ID: {apartment.apartment_id}</p>
             </div>
 
 
@@ -323,7 +323,7 @@ export default function Apartment() {
                       <span className="font-semibold">{apartment.app_type}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
-                      <span className="text-slate-600">Блок</span>
+                      <span className="text-slate-600">Корпус</span>
                       <span className="font-semibold">{apartment.blockName}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
@@ -333,6 +333,10 @@ export default function Apartment() {
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
                       <span className="text-slate-600">Меблировка</span>
                       <span className="font-semibold">{apartment.furnished || 'Не указана'}</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
+                      <span className="text-slate-600">Не использовался</span>
+                      <span className="font-semibold">{apartment.not_used}</span>
                     </div>
                   </div>
                 </div>
@@ -345,13 +349,13 @@ export default function Apartment() {
                   <div className="space-y-2">
                     {apartment.ap_specifications && (
                       <div className="p-3 bg-purple-50 rounded-lg">
-                        <div className="text-sm text-slate-600">Особенности апартамента</div>
+                        <div className="text-sm text-slate-600 bg-white/80 inline-block border border-slate-010 py-1 px-2 mb-2 rounded-md">Особенности апартамента</div>
                         <div className="text-slate-800">{apartment.ap_specifications}</div>
                       </div>
                     )}
                     {apartment.typeDescription && (
                       <div className="p-3 bg-indigo-50 rounded-lg">
-                        <div className="text-sm text-slate-600">Описание типа</div>
+                        <div className="text-sm text-slate-600 bg-white/80 inline-block border border-slate-010 py-1 px-2 mb-2 rounded-md">О типе апартамента</div>
                         <div className="text-slate-800">{apartment.typeDescription}</div>
                       </div>
                     )}
@@ -362,7 +366,7 @@ export default function Apartment() {
                   <h3 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
                     {/* <CheckCircle size={20} className="text-green-600" /> */}
                     <Columns3Cog size={18} className="text-purple-600" />
-                    О блоке:
+                    О корпусе (блоке):
                   </h3>
                   {apartment.blockSpecifications ? (
                     <p className="text-slate-700 bg-green-50 p-4 rounded-lg border border-green-100">

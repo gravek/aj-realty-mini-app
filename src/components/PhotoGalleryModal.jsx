@@ -95,15 +95,28 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
     setCurrentIndex((prev) => (prev - 1 + filteredPhotos.length) % filteredPhotos.length);
   };
 
+  
+  // Корректировка индекса при открытии галереи
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentIndex(0);
+      setFilter('all');
+      setCaptionOpen({});
+    }
+  }, [isOpen]);
+  
+  
   // Корректировка индекса при смене фильтра
   useEffect(() => {
     if (!Array.isArray(filteredPhotos)) return;
     if (filteredPhotos.length === 0) {
       setCurrentIndex(0);
-    } else if (currentIndex >= filteredPhotos.length || currentIndex < 0) {
+      return;
+    }
+    if (currentIndex >= filteredPhotos.length || currentIndex < 0) {
       setCurrentIndex(0);
     }
-  }, [filter]);  // ← Только от filter, без allPhotos.length
+  }, [filter, filteredPhotos.length, currentIndex]); 
 
 
   // для логирования следов
@@ -132,21 +145,12 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
   // Ранние выходы
   if (!isOpen || !entity) return null;
 
-  if (filteredPhotos.length === 0 || !currentPhoto) {
-    return (
-      <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center" onClick={onClose}>
-        <div className="text-white text-center">
-          <p className="text-2xl">Фотографии отсутствуют</p>
-          <button onClick={onClose} className="mt-6 text-5xl text-white/80">×</button>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
-    <div className="fixed inset-0 bg-black z-50 flex flex-col" onClick={onClose}>
+    <div className="fixed inset-0 bg-slate-800/90 z-50 flex flex-col" onClick={onClose}>
       {/* Header */}
-      <div className="bg-gradient-to-b from-black/80 to-transparent p-4 flex justify-between items-center text-white z-10" onClick={e => e.stopPropagation()}>
+      <div className="bg-gradient-to-b from-slate-800/80 to-transparent p-4 flex justify-between items-center text-white z-10" onClick={e => e.stopPropagation()}>
         <div>
           <h2 className="text-xl font-bold">{entity.name || entity.estateName}</h2>
           <p className="text-sm opacity-90">{entity.districtName || entityType}</p>
@@ -160,7 +164,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
       </div>
 
       {/* Фильтры */}
-      <div className="flex gap-3 px-6 py-3 bg-black/50 backdrop-blur border-y border-white/40 overflow-x-auto">
+      <div className="flex gap-3 px-6 py-3 bg-slate-800/50 backdrop-blur border-y border-white/40 overflow-x-auto">
         {['all', 'sketch', 'example', 'specific'].map(key => (
           <button
             key={key}
@@ -168,7 +172,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
             className={`px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap transition ${
               filter === key
                 ? 'bg-orange-600 text-white'
-                : 'bg-white/20 text-white hover:bg-white/30'
+                : 'bg-white/10 border border-white/20 text-white hover:bg-white/30'
             }`}
           >
             {key === 'all' ? 'Все фото' : 
@@ -182,72 +186,88 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
       </div>
 
       {/* Основное фото */}
-      
-      <div className="flex-1 relative flex items-center justify-center px-4" onClick={e => e.stopPropagation()}>
-        <img 
-          src={currentPhoto.url} 
-          alt="" 
-          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-        />
+      <div className="flex-1 relative flex items-center justify-center px-4 py-2 overflow-hidden" onClick={e => e.stopPropagation()}>
+        {currentPhoto ? (
+          <>
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-lg shadow-2xl">
+              <img
+                src={currentPhoto.url}
+                alt=""
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
 
-        {/* Навигация */}
-        <button 
-          onClick={e => { e.stopPropagation(); prev(); }}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 hover:bg-black/70 text-white rounded-full backdrop-blur"
-        >
-          <ChevronLeft size={32} />
-        </button>
-        <button 
-          onClick={e => { e.stopPropagation(); next(); }}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 hover:bg-black/70 text-white rounded-full backdrop-blur"
-        >
-          <ChevronRight size={32} />
-        </button>
-
-        {/* Кнопка Info */}
-        {currentPhoto.description && (
-          <button
-            onClick={e => {
-              e.stopPropagation();
-              setCaptionOpen(prev => ({ ...prev, [currentIndex]: !prev[currentIndex] }));
-            }}
-            className="absolute bottom-6 right-6 p-3 bg-cyan-700 hover:bg-cyan-800 text-white rounded-full shadow-xl transition"
-          >
-            <Info size={24} />
-          </button>
-        )}
-      </div>
-
-
-      {/* Описание */}
-      {currentPhoto.description && showCaptionOpen[currentIndex] && (
-        <div
-          className="fixed inset-0 z-40 flex items-end pb-24 px-4"
-          onClick={() => setShowDescription(false)}
-        >
-          <div
-            className="w-full max-w-3xl mx-auto bg-white/80 backdrop-blur rounded-2xl p-6 shadow-2xl"
-            onClick={e => e.stopPropagation()}
-          >
-            <p className="text-xs opacity-80 mt-3 mb-3">{currentPhoto.label}</p>
-            <p className="text-sm leading-relaxed text-zinc-900">{currentPhoto.description}</p>
+            {/* Навигация и Info — только если есть фото */}
             <button
-              onClick={e => {
-                e.stopPropagation();
-                setCaptionOpen(prev => ({ ...prev, [currentIndex]: false }));
-              }}
-              className="mt-4 text-sm text-orange-800 font-medium border border-rose-400 rounded-full px-2 py-1"
+              onClick={e => { e.stopPropagation(); prev(); }}
+              className="absolute left-8 top-1/2 -translate-y-1/2 p-2 bg-slate-800/50 hover:bg-slate-800/70 text-white rounded-full backdrop-blur"
             >
-              ✅ Закрыть описание
+              <ChevronLeft size={32} />
             </button>
+            <button
+              onClick={e => { e.stopPropagation(); next(); }}
+              className="absolute right-8 top-1/2 -translate-y-1/2 p-2 bg-slate-800/50 hover:bg-slate-800/70 text-white rounded-full backdrop-blur"
+            >
+              <ChevronRight size={32} />
+            </button>
+
+            {currentPhoto.description && (
+              <button
+                onClick={e => {
+                  e.stopPropagation();
+                  setCaptionOpen(prev => ({ ...prev, [currentIndex]: !prev[currentIndex] }));
+                }}
+                className="absolute bottom-6 right-8 p-3 bg-cyan-700 hover:bg-cyan-800 text-white rounded-full shadow-xl transition"
+              >
+                <Info size={24} />
+              </button>
+            )}
+          </>
+        ) : (
+          <div className="text-white text-center bg-white/10 border border-white/20 rounded-2xl text-md font-medium px-4 py-4">
+            Фото по этому фильтру отсутствуют<br />
+            <span className="text-sm opacity-80 mt-2 block ">
+              (попробуйте другой тип фото)
+            </span>
           </div>
-        </div>
-      )}
+        )}
+
+        {currentPhoto?.description && showCaptionOpen[currentIndex] && (
+          <div
+            className="fixed inset-0 z-40 flex items-end pb-24 px-4"
+            onClick={() => setCaptionOpen(prev => {
+              const newState = { ...prev };
+              newState[currentIndex] = false;
+              return newState;
+            })}
+          >
+            <div
+              className="w-full max-w-3xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-white/20"
+              onClick={e => e.stopPropagation()}
+            >
+              <p className="flex justify-center items-center text-xs text-orange-600 bg-orange-100/80 border border-orange-400 px-2 py-1 rounded-full mb-4">{currentPhoto.label}</p>
+              <p className="text-sm leading-relaxed text-slate-900">{currentPhoto.description}</p>
+              
+              <button
+                onClick={() => setCaptionOpen(prev => {
+                  const newState = { ...prev };
+                  newState[currentIndex] = false;
+                  return newState;
+                })}
+                className="mt-4 px-2 py-1 bg-slate-600/40 text-white rounded-full text-xs font-normal border border-slate-400 transition"
+              >
+                ЗАКРЫТЬ
+              </button>
+            </div>
+          </div>
+        )}
+
+      </div>
 
 
 
       {/* Миниатюры */}
-      <div className="p-4 pb-24 bg-black/80 backdrop-blur border-t border-white/50 overflow-x-auto" onClick={e => e.stopPropagation()}>
+      <div className="p-4 pb-24 bg-slate-800/80 backdrop-blur border-t border-white/50 overflow-x-auto" onClick={e => e.stopPropagation()}>
         <div className="flex gap-2 justify-center flex-nowrap">
           {filteredPhotos.map((photo, i) => (
             <button

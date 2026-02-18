@@ -1,495 +1,20 @@
 {
   "districts": {
-    "Batumi": {
-      "name": "Batumi",
-      "coords": [41.651685, 41.637411],
-      "description": "🌊 Батуми — динамичный курортный город Грузии, столица Аджарии на побережье Черного моря. Сочетает современную архитектуру, ухоженные пляжи и богатую историю. Идеальное место для жизни и инвестиций с высоким туристическим потоком и доходностью.",
+    "Сахалвашо": {
+      "name": "Сахалвашо",
       "photos": {
         "sketch": [],
-        "example": [
-              {
-                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766514389/jbq69geubsaesghjyajz.jpg",
-                "description": "Батуми: поздний закат"
-              }
-        ],
-        "specific": [
-              {
-                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766511805/oomc63zhlhmtzfydqhpy.jpg",
-                "description": "Батуми вечером: набережная, китайские фонарики"
-              }
-        ]
+        "example": [],
+        "specific": []
       },
       "estates": {
-        "Alliance Centropolis": {
-          "name": "Alliance Centropolis",
-          "developer_name": "Alliance Group",
-          "estate_description": "",
+        "LUXURIOUS VILLAS": {
+          "name": "LUXURIOUS VILLAS",
+          "developer_name": "",
+          "estate_description": "🌿 LUXURIOUS VILLAS — премиум-комплекс из 14 приватных вилл рядом с Ботаническим садом Батуми.\n\nСобственный двор, терраса, отличная шумоизоляция, материалы топ-уровня.\n\nИнфраструктура 5*: \n- инфинити-бассейн с подогревом, \n- SPA, фитнес с видом на море и горы, \n- подземный паркинг, \n- зоны отдыха.\n\nИдеально для роскошной жизни и роста стоимости.",
           "coords": [
-            41.644851,
-            41.617844
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "A": {
-              "name": "A",
-              "coords": [
-                41.644851,
-                41.617844
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "d689ac35",
-                      "floor": 25,
-                      "m2": 33.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Вид на море, WTC",
-                      "address": "",
-                      "price_usd": 96100,
-                      "photos": []
-                    }
-                  ]
-                },
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "b0f7d92b",
-                      "floor": 45,
-                      "m2": 85.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Пентхаус, вид 360",
-                      "address": "",
-                      "price_usd": 300000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "6256eec3",
-                      "floor": 35,
-                      "m2": 58.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Вид на море",
-                      "address": "",
-                      "price_usd": 155000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "B": {
-              "name": "B",
-              "coords": [
-                41.645315,
-                41.618367
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "53e501b7",
-                      "floor": 30,
-                      "m2": 58.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Панорамные окна",
-                      "address": "",
-                      "price_usd": 150000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "1d9370c0",
-                      "floor": 38,
-                      "m2": 60.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Бизнес-центр",
-                      "address": "",
-                      "price_usd": 162000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Alliance Palace": {
-          "name": "Alliance Palace",
-          "developer_name": "Alliance Group",
-          "estate_description": "",
-          "coords": [
-            41.641567,
-            41.615998
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.641567,
-                41.615998
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "1764b862",
-                      "floor": 26,
-                      "m2": 31.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Высокая доходность",
-                      "address": "",
-                      "price_usd": 90000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "a501cd51",
-                      "floor": 31,
-                      "m2": 31.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Панорамный вид",
-                      "address": "",
-                      "price_usd": 95000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "c98a314f",
-                      "floor": 35,
-                      "m2": 31.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Инвестиционный пакет",
-                      "address": "",
-                      "price_usd": 105000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "de90d756",
-                      "floor": 20,
-                      "m2": 31.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Стабильный доход",
-                      "address": "",
-                      "price_usd": 85000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "933db66c",
-                      "floor": 16,
-                      "m2": 31.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Отель Courtyard Marriott",
-                      "address": "",
-                      "price_usd": 82000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "DAR TOWER": {
-          "name": "DAR TOWER",
-          "developer_name": "DAR BUILDING",
-          "estate_description": "",
-          "coords": [
-            41.639849,
-            41.617195
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.639849,
-                41.617195
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "e353e70a",
-                      "floor": 19,
-                      "m2": 50.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вид на город",
-                      "address": "",
-                      "price_usd": 88000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "62420e3d",
-                      "floor": 15,
-                      "m2": 50.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вид на город и горы",
-                      "address": "",
-                      "price_usd": 90000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "f398a8b6",
-                      "floor": 30,
-                      "m2": 50.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Высокий этаж, вид",
-                      "address": "",
-                      "price_usd": 110000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "5c4e75d4",
-                      "floor": 24,
-                      "m2": 70.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Для семьи",
-                      "address": "",
-                      "price_usd": 135000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "0ebc6266",
-                      "floor": 28,
-                      "m2": 70.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Видовая квартира",
-                      "address": "",
-                      "price_usd": 145000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Intourist Residence": {
-          "name": "Intourist Residence",
-          "developer_name": "Intourist",
-          "estate_description": "",
-          "coords": [
-            41.640187,
-            41.617357
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "B": {
-              "name": "B",
-              "coords": [
-                41.640187,
-                41.617357
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "8ef08dbd",
-                      "floor": 15,
-                      "m2": 48.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Престижный район",
-                      "address": "",
-                      "price_usd": 80000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "e23f1981",
-                      "floor": 22,
-                      "m2": 50.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Высокий этаж",
-                      "address": "",
-                      "price_usd": 88000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "A": {
-              "name": "A",
-              "coords": [
-                41.639893,
-                41.617761
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "d57c3557",
-                      "floor": 18,
-                      "m2": 34.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Новый бульвар",
-                      "address": "",
-                      "price_usd": 61000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "03d66b24",
-                      "floor": 25,
-                      "m2": 48.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Панорамный вид",
-                      "address": "",
-                      "price_usd": 85000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "ORBI CITY": {
-          "name": "ORBI CITY",
-          "developer_name": "Orbi Group",
-          "estate_description": "🌆 ORBI City — один из самых известных и успешных жилых комплексов Батуми. Расположен в самом сердце города, всего в 200 метрах от моря. Идеален как для жизни, так и для стабильной аренды туристам. Высокий спрос на аренду обеспечивает владельцам отличную доходность.",
-          "coords": [
-            41.639695,
-            41.613459
+            41.6869,
+            41.7222
           ],
           "photos": {
             "sketch": [],
@@ -500,18 +25,19 @@
             "Block A": {
               "name": "Block A",
               "coords": [
-                41.639695,
-                41.613459
+                41.6869,
+                41.7222
               ],
-              "block_specifications": "",
+              "block_specifications": "Блок A состоит из шести 3-этажных апартаментов, расположенных на одном уровне.",
               "photos": {
                 "sketch": [],
                 "example": [],
                 "specific": []
               },
               "apartment_types": {
-                "studio": {
-                  "name": "Студия",
+                "3-этажный": {
+                  "name": "3-этажный",
+                  "ap_type_descr": "Распределение общей площади апартамента (200 кв.м.) по этажам:\n55 + 70 + 75.",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -519,57 +45,38 @@
                   },
                   "apartments": [
                     {
-                      "apartment_id": "15b5ce68",
-                      "floor": 33,
-                      "m2": 30.0,
+                      "apartment_id": "0ebc6266",
+                      "floor": "1",
+                      "ap_number": "A03",
+                      "not_used": "да",
+                      "m2": 200.0,
                       "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Панорамный вид",
+                      "furnished": "С мебелью и техникой",
+                      "ap_specifications": "Стоимость включает ремонт «под ключ», одно парковочное \nместо площадью 15 кв.м в подземном \nпаркинге и собственный двор. \n\nРаспределение общей площади апартамента (200 кв.м.) по этажам:\n55 + 70 + 75.",
                       "address": "",
-                      "price_usd": 65000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "730ad8eb",
-                      "floor": 19,
-                      "m2": 29.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Стандартный апартамент",
-                      "address": "",
-                      "price_usd": 54000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "6d7b35a0",
-                      "floor": 41,
-                      "m2": 30.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Пентхаус-студия",
-                      "address": "",
-                      "price_usd": 75000,
+                      "price_usd": 145000,
                       "photos": []
                     }
                   ]
                 }
               }
             },
-            "Block C": {
-              "name": "Block C",
+            "Block B": {
+              "name": "Block B",
               "coords": [
-                41.638624,
-                41.613436
+                41.6869,
+                41.7223
               ],
-              "block_specifications": "",
+              "block_specifications": "Блок B состоит из восьми 3-этажных апартаментов, расположенных один за другим на небольшом уклоне горы.",
               "photos": {
                 "sketch": [],
                 "example": [],
                 "specific": []
               },
               "apartment_types": {
-                "studio": {
-                  "name": "Студия",
+                "3-этажный": {
+                  "name": "3-этажный",
+                  "ap_type_descr": "Распределение общей площади апартамента (145 кв.м.) по этажам:\n45 + 60 + 60.",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -577,524 +84,16 @@
                   },
                   "apartments": [
                     {
-                      "apartment_id": "4f69f904",
-                      "floor": 15,
-                      "m2": 30.0,
+                      "apartment_id": "f398a8b6",
+                      "floor": "1",
+                      "ap_number": "B05",
+                      "not_used": "да",
+                      "m2": 145.0,
                       "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вид на море, первая линия",
+                      "furnished": "С мебелью и техникой",
+                      "ap_specifications": "Стоимость включает ремонт «под ключ», одно парковочное \nместо площадью 15 кв.м в подземном \nпаркинге и собственный двор. \n\nРаспределение общей площади апартамента (145 кв.м.) по этажам:\n45 + 60 + 60.",
                       "address": "",
-                      "price_usd": 55000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "d764f7ae",
-                      "floor": 40,
-                      "m2": 30.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Высокий этаж, вид",
-                      "address": "",
-                      "price_usd": 70000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "c4d87533",
-                      "floor": 35,
-                      "m2": 32.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Панорамный вид на море",
-                      "address": "",
-                      "price_usd": 68000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "50fb11ae",
-                      "floor": 18,
-                      "m2": 30.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Боковой вид на море",
-                      "address": "",
-                      "price_usd": 54000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "Block D1": {
-              "name": "Block D1",
-              "coords": [
-                41.639746,
-                41.614635
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "0423a9fe",
-                      "floor": 21,
-                      "m2": 30.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вид на город",
-                      "address": "",
-                      "price_usd": 56000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "5c82d886",
-                      "floor": 28,
-                      "m2": 32.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вид на море, инвестиционная",
-                      "address": "",
-                      "price_usd": 62000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "Block D2": {
-              "name": "Block D2",
-              "coords": [
-                41.639249,
-                41.615366
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "a247f6bb",
-                      "floor": 14,
-                      "m2": 29.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "С видом на горы",
-                      "address": "",
-                      "price_usd": 52000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Ramada Residence": {
-          "name": "Ramada Residence",
-          "developer_name": "One Development",
-          "estate_description": "",
-          "coords": [
-            41.639001,
-            41.617219
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.639001,
-                41.617219
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "b6cb8457",
-                      "floor": 9,
-                      "m2": 38.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Отельный сервис",
-                      "address": "",
-                      "price_usd": 80000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "7484a557",
-                      "floor": 12,
-                      "m2": 46.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Отельный сервис",
-                      "address": "",
-                      "price_usd": 100000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "Kobuleti": {
-      "name": "Kobuleti",
-      "coords": [41.820574, 41.775281],
-      "description": "Кобулети — курортный город на побережье Черного моря в Грузии, известный своими пляжами, мягким климатом и развитой туристической инфраструктурой. Расположен в 30 км от Батуми.",
-      "photos": {
-        "specific": [
-          {
-            "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766507804/arfxp9qgz00btqih4vbh.jpg",
-            "description": "Кобулети в закате"
-          }
-        ],
-        "example": [],
-        "sketch": []
-      },
-      "estates": {
-        "Coastline Kobuleti": {
-          "name": "Coastline Kobuleti",
-          "developer_name": "Plyazhniki",
-          "estate_description": "",
-          "coords": [
-            41.821345,
-            41.78921
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.821345,
-                41.78921
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "608290bc",
-                      "floor": 10,
-                      "m2": 35.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Первая линия",
-                      "address": "",
-                      "price_usd": 42000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "f2a78204",
-                      "floor": 9,
-                      "m2": 50.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Первая линия",
-                      "address": "",
-                      "price_usd": 60000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "9d5046e7",
-                      "floor": 7,
-                      "m2": 48.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Первая линия, вид на море",
-                      "address": "",
-                      "price_usd": 58000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Gosstroi": {
-          "name": "Gosstroi",
-          "developer_name": "Adjaria Gov",
-          "estate_description": "",
-          "coords": [
-            41.819876,
-            41.791453
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.819876,
-                41.791453
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "8b256d37",
-                      "floor": 2,
-                      "m2": 65.0,
-                      "finishing": "С ремонтом",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вторичный рынок",
-                      "address": "",
-                      "price_usd": 55000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "f0be9ae0",
-                      "floor": 6,
-                      "m2": 58.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Центр города",
-                      "address": "",
-                      "price_usd": 52000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "d0912593",
-                      "floor": 4,
-                      "m2": 33.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Недалеко от моря",
-                      "address": "",
-                      "price_usd": 33000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "53dcf3ef",
-                      "floor": 5,
-                      "m2": 44.0,
-                      "finishing": "С ремонтом",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вторичка, центр",
-                      "address": "",
-                      "price_usd": 48000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Green Town": {
-          "name": "Green Town",
-          "developer_name": "Green Cape",
-          "estate_description": "",
-          "coords": [
-            41.77857,
-            41.764698
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.77857,
-                41.764698
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "b9ebc857",
-                      "floor": 3,
-                      "m2": 60.0,
-                      "finishing": "Черный каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Экологически чистый район",
-                      "address": "",
-                      "price_usd": 45000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "da574c36",
-                      "floor": 1,
-                      "m2": 62.0,
-                      "finishing": "Черный каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Тихий район",
-                      "address": "",
-                      "price_usd": 46500,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Petra Palace": {
-          "name": "Petra Palace",
-          "developer_name": "Petra Sea Resort",
-          "estate_description": "",
-          "coords": [
-            41.798299,
-            41.787617
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.798299,
-                41.787617
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "5a156af5",
-                      "floor": 5,
-                      "m2": 45.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "100м до моря",
-                      "address": "",
-                      "price_usd": 49500,
+                      "price_usd": 110000,
                       "photos": []
                     }
                   ]
@@ -1107,25 +106,23 @@
     },
     "Chakvi": {
       "name": "Chakvi",
-      "coords": [41.723, 41.735],
-      "description": "Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. Расположен в 15 км от Батуми. ",
       "photos": {
         "sketch": [],
         "example": [],
         "specific": [
-              {
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
-                "new_filename": "Chakvi-Dreaml-sketch-cfe02d.jpg",
-                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485458/Chakvi-Dreaml-sketch-cfe02d.jpg",
-                "description": "Chakvi, Dreamland Oasis: \n\nСовременные жилые здания.  \nПросторные бассейны.  \nУхоженные зелёные зоны.  \nПляжная набережная.  \nРазнообразие зон отдыха.  \nПанорамный вид на море.  \nУтончённый дизайн комплекса."
-              }
+          {
+            "old_path": "Chakvi/specific/Chakvi-Dreamland_Oasis-----Chakv_атуми.jpg",
+            "new_filename": "Chakvi-specific-0e96e0.jpg",
+            "url": "",
+            "description": ""
+          }
         ]
       },
       "estates": {
         "Dreamland Oasis": {
           "name": "Dreamland Oasis",
           "developer_name": "Dreamland",
-          "estate_description": "Современный гостиничный комплекс на берегу Черного моря в Чакви, предлагающий комфортные апартаменты с видом на море, бассейны, зоны отдыха и развитую инфраструктуру для полноценного курортного образа жизни.",
+          "estate_description": "Современный жилой комплекс на берегу Черного моря в Чакви, предлагающий комфортные апартаменты с видом на море, бассейны, зоны отдыха и развитую инфраструктуру для полноценного курортного образа жизни.",
           "coords": [
             41.72053,
             41.726417
@@ -1154,7 +151,7 @@
                 "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_8cba0.jpg",
                 "new_filename": "Chakvi-Dreaml-sketch-b33e3d.jpg",
                 "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485463/Chakvi-Dreaml-sketch-b33e3d.jpg",
-                "description": "Chakvi, Dreamland Oasis:\n\n1. Курортная недвижимость у моря.\n2. Современные многоэтажные здания.\n3. Просторные бассейны на территории.\n4. Прямой выход к песчаному пляжу.\n5. Широкий выбор апартаментов.\n6. Удобная инфраструктура для отдыха.\n7. Зелёные насаждения и ландшафтный дизайн.\n8. Доступ к разнообразным развлечениям.\n9. Живописные виды из окон.\n10. Уникальная архитектура в окружении природы."
+                "description": "Скетч-схема расположения блоков "
               }
             ],
             "example": [
@@ -1198,7 +195,7 @@
                 "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_4d129.jpg",
                 "new_filename": "Chakvi-Dreaml-specific-bb7ac5.jpg",
                 "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485413/Chakvi-Dreaml-specific-bb7ac5.jpg",
-                "description": "Chakvi, Dreamland Oasis: \n\n- Панорамный вид на море.\n- Просторная терраса с балконом.\n- Благоустроенные сады и деревья.\n- Современная архитектура зданий.\n- Чистое и спокойное окружение.\n- Прозрачные стеклянные ограждения.\n- Уютная обстановка на свежем воздухе."
+                "description": "Chakvi, Dreamland Oasis. Просторный балкон с видом на море. Современные стеклянные перегородки. Зелень на балконе создаёт уединение. Панорама на побережье и жилые дома. Светло и уютно, идеальное место для отдыха."
               },
               {
                 "old_path": "Chakvi/Dreamland Oasis/example/Chakvi-Dreamland_Oasis-sketch---Изобр_582c7.jpg",
@@ -1357,31 +354,25 @@
                 "description": "```  \nChakvi, Dreamland Oasis: Современная спальня с двуспальной кроватью. Дизайнерские картины украшают стены. Телевизор на стене. Просторные окна с плотными шторами. Комфортная мебель и уютная обстановка.\n```"
               }
             ],
-            "specific": [
-              {
-                "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_232f5.jpg",
-                "new_filename": "Chakvi-Dreaml-sketch-cfe02d.jpg",
-                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485458/Chakvi-Dreaml-sketch-cfe02d.jpg",
-                "description": "Chakvi, Dreamland Oasis: \n\nСовременные жилые здания.  \nПросторные бассейны.  \nУхоженные зелёные зоны.  \nПляжная набережная.  \nРазнообразие зон отдыха.  \nПанорамный вид на море.  \nУтончённый дизайн комплекса."
-              }
-        ]
+            "specific": []
           },
           "blocks": {
-            "Block 14": {
-              "name": "Block 14",
+            "14": {
+              "name": "14",
               "coords": [
                 41.72053,
                 41.726417
               ],
-              "block_specifications": "10 этажей. Срок сдачи 2027 год.",
+              "block_specifications": "",
               "photos": {
                 "sketch": [],
                 "example": [],
                 "specific": []
               },
               "apartment_types": {
-                "studio": {
+                "студия": {
                   "name": "Студия",
+                  "ap_type_descr": "nan",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -1390,9 +381,10 @@
                   "apartments": [
                     {
                       "apartment_id": "0ca3e94f",
-                      "apartment_number": "№403",
-                      "floor": 4,
-                      "m2": 45.0,
+                      "floor": "4",
+                      "ap_number": "415",
+                      "not_used": "",
+                      "m2": "",
                       "finishing": "Под ключ",
                       "furnished": "С мебелью",
                       "ap_specifications": "Вид на море и территорию, готовый бизнес",
@@ -1401,53 +393,25 @@
                       "photos": []
                     }
                   ]
-                },
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "9672b30a",
-                      "apartment_number": "№1914",
-                      "floor": 19,
-                      "m2": 58.6,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Панорамный вид на море, высокий этаж",
-                      "address": "",
-                      "price_usd": 174022,
-                      "photos": []
-                    }
-                  ]
                 }
               }
             },
-            "Block 7": {
-              "name": "Block 7",
+            "7": {
+              "name": "7",
               "coords": [
                 41.72053,
                 41.726417
               ],
-              "block_specifications": "4 этажа, сдан.",
+              "block_specifications": "",
               "photos": {
                 "sketch": [],
                 "example": [],
-                "specific": [
-                  {
-                    "old_path": "Chakvi/Dreamland Oasis/sketch/Chakvi-Dreamland_Oasis-sketch---Изобр_8cba0.jpg",
-                    "new_filename": "Chakvi-Dreaml-sketch-b33e3d.jpg",
-                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485463/Chakvi-Dreaml-sketch-b33e3d.jpg",
-                    "description": "Скетч-схема расположения блоков "
-                  }
-                ]
+                "specific": []
               },
               "apartment_types": {
-                "studio": {
+                "студия": {
                   "name": "Студия",
+                  "ap_type_descr": "nan",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -1456,8 +420,10 @@
                   "apartments": [
                     {
                       "apartment_id": "9cf26c76",
-                      "floor": 4,
-                      "m2": 36.5,
+                      "floor": "4",
+                      "ap_number": "423",
+                      "not_used": "",
+                      "m2": "",
                       "finishing": "Под ключ",
                       "furnished": "С мебелью",
                       "ap_specifications": "Вид на море, полная комплектация",
@@ -1469,8 +435,8 @@
                 }
               }
             },
-            "Block 13": {
-              "name": "Block 13",
+            "13": {
+              "name": "13",
               "coords": [
                 41.72053,
                 41.726418
@@ -1482,8 +448,9 @@
                 "specific": []
               },
               "apartment_types": {
-                "studio": {
+                "студия": {
                   "name": "Студия",
+                  "ap_type_descr": "nan",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -1492,8 +459,10 @@
                   "apartments": [
                     {
                       "apartment_id": "e0ed6853",
-                      "floor": 16,
-                      "m2": 40.0,
+                      "floor": "16",
+                      "ap_number": "1603",
+                      "not_used": "",
+                      "m2": "",
                       "finishing": "Под ключ",
                       "furnished": "С мебелью",
                       "ap_specifications": "Вторичный рынок, вид на море",
@@ -1502,32 +471,11 @@
                       "photos": []
                     }
                   ]
-                },
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "9202cdb8",
-                      "floor": 10,
-                      "m2": 70.2,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Просторные апартаменты, вид на море",
-                      "address": "",
-                      "price_usd": 166341,
-                      "photos": []
-                    }
-                  ]
                 }
               }
             },
-            "Block 12": {
-              "name": "Block 12",
+            "12": {
+              "name": "12",
               "coords": [
                 41.72053,
                 41.726419
@@ -1541,6 +489,7 @@
               "apartment_types": {
                 "1_1": {
                   "name": "1+1",
+                  "ap_type_descr": "nan",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -1549,267 +498,15 @@
                   "apartments": [
                     {
                       "apartment_id": "d5a21bf2",
-                      "floor": 7,
-                      "m2": 49.0,
+                      "floor": "7",
+                      "ap_number": "",
+                      "not_used": "",
+                      "m2": "",
                       "finishing": "Под ключ",
                       "furnished": "С мебелью",
                       "ap_specifications": "Выход к бассейну, с ремонтом и мебелью",
                       "address": "",
                       "price_usd": 135000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "a9d99944",
-                      "floor": 5,
-                      "m2": 60.1,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Новый корпус, вид на территорию",
-                      "address": "",
-                      "price_usd": 151826,
-                      "photos": []
-                    }
-                  ]
-                },
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "67b4895f",
-                      "floor": 7,
-                      "m2": 73.9,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Новый корпус (сдача в 2026), вид на горы",
-                      "address": "",
-                      "price_usd": 185747,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "Block 10": {
-              "name": "Block 10",
-              "coords": [
-                41.72053,
-                41.72642
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "0a62e04c",
-                      "floor": 6,
-                      "m2": 57.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вид на море и горы, премиум-класс",
-                      "address": "",
-                      "price_usd": 139000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "c0a9012b",
-                      "floor": 11,
-                      "m2": 38.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Первая линия, вид на море и горы",
-                      "address": "",
-                      "price_usd": 85000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "Block 4": {
-              "name": "Block 4",
-              "coords": [
-                41.72053,
-                41.726422
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "5da71703",
-                      "floor": 19,
-                      "m2": 55.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вторичный рынок, высокий этаж, вид на море",
-                      "address": "",
-                      "price_usd": 179400,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "Block 15": {
-              "name": "Block 15",
-              "coords": [
-                41.72053,
-                41.726426
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "8a107ccd",
-                      "floor": 12,
-                      "m2": 36.1,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Новый корпус (сдача в 2029), стартовая цена",
-                      "address": "",
-                      "price_usd": 92255,
-                      "photos": []
-                    }
-                  ]
-                },
-                "3_1": {
-                  "name": "3+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "d31700cd",
-                      "floor": 2,
-                      "m2": 123.8,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Новый корпус, просторная планировка",
-                      "address": "",
-                      "price_usd": 341235,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "Block 2": {
-              "name": "Block 2",
-              "coords": [
-                41.72053,
-                41.726427
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "619d66f1",
-                      "floor": 11,
-                      "m2": 100.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вторичный рынок, просторная, для семьи",
-                      "address": "",
-                      "price_usd": 290000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            },
-            "Block 9": {
-              "name": "Block 9",
-              "coords": [
-                41.72053,
-                41.72643
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "1d86e0ab",
-                      "floor": 9,
-                      "m2": 33.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вторичный рынок, отельный комплекс",
-                      "address": "",
-                      "price_usd": 105000,
                       "photos": []
                     }
                   ]
@@ -1820,23 +517,21 @@
         }
       }
     },
-    "Gonio": {
-      "name": "Gonio",
-      "coords": [41.575826, 41.571094],
-      "description": "🌊 Гонио — один из самых перспективных и быстро развивающихся курортных районов Аджарии. Расположен всего в 15–17 км от Батуми, сочетает чистейшие пляжи, историческую крепость Гонио и потрясающие горные виды.",
+    "Batumi": {
+      "name": "Batumi",
       "photos": {
         "sketch": [],
         "example": [],
         "specific": []
       },
       "estates": {
-        "Gonio Horizon": {
-          "name": "Gonio Horizon",
-          "developer_name": "Horizon Star",
+        "ORBI CITY": {
+          "name": "ORBI CITY",
+          "developer_name": "Orbi Group",
           "estate_description": "",
           "coords": [
-            41.574231,
-            41.569874
+            41.639695,
+            41.613459
           ],
           "photos": {
             "sketch": [],
@@ -1844,11 +539,11 @@
             "specific": []
           },
           "blocks": {
-            "один блок": {
-              "name": "один блок",
+            "A": {
+              "name": "A",
               "coords": [
-                41.574231,
-                41.569874
+                41.639695,
+                41.613459
               ],
               "block_specifications": "",
               "photos": {
@@ -1857,8 +552,9 @@
                 "specific": []
               },
               "apartment_types": {
-                "studio": {
+                "студия": {
                   "name": "Студия",
+                  "ap_type_descr": "nan",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -1866,73 +562,27 @@
                   },
                   "apartments": [
                     {
-                      "apartment_id": "38f0c735",
-                      "floor": 4,
-                      "m2": 30.0,
+                      "apartment_id": "15b5ce68",
+                      "floor": "33",
+                      "ap_number": "",
+                      "not_used": "",
+                      "m2": "",
                       "finishing": "Под ключ",
                       "furnished": "С мебелью",
-                      "ap_specifications": "Бассейн, первая линия",
+                      "ap_specifications": "Панорамный вид",
                       "address": "",
                       "price_usd": 65000,
                       "photos": []
                     }
                   ]
-                },
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "8427a419",
-                      "floor": 7,
-                      "m2": 50.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Семейный апартамент",
-                      "address": "",
-                      "price_usd": 110000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "c3f31191",
-                      "floor": 9,
-                      "m2": 52.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Просторные апартаменты",
-                      "address": "",
-                      "price_usd": 115000,
-                      "photos": []
-                    }
-                  ]
                 }
               }
-            }
-          }
-        },
-        "Gonio Marina": {
-          "name": "Gonio Marina",
-          "developer_name": "Emaar Group",
-          "estate_description": "",
-          "coords": [
-            41.575106,
-            41.571243
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
+            },
+            "C": {
+              "name": "C",
               "coords": [
-                41.575106,
-                41.571243
+                41.638624,
+                41.613439
               ],
               "block_specifications": "",
               "photos": {
@@ -1941,8 +591,9 @@
                 "specific": []
               },
               "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
+                "студия": {
+                  "name": "Студия",
+                  "ap_type_descr": "nan",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -1950,169 +601,14 @@
                   },
                   "apartments": [
                     {
-                      "apartment_id": "e3b677f1",
-                      "floor": 5,
-                      "m2": 50.0,
+                      "apartment_id": "50fb11ae",
+                      "floor": "18",
+                      "ap_number": "",
+                      "not_used": "",
+                      "m2": "",
                       "finishing": "Под ключ",
                       "furnished": "С мебелью",
-                      "ap_specifications": "Вид на море, яхт-клуб",
-                      "address": "",
-                      "price_usd": 160000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "ae1763c7",
-                      "floor": 8,
-                      "m2": 55.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Инфраструктура мирового класса",
-                      "address": "",
-                      "price_usd": 185000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "171c7e61",
-                      "floor": 10,
-                      "m2": 75.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Элитный комплекс",
-                      "address": "",
-                      "price_usd": 280000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Gosstroi": {
-          "name": "Gosstroi",
-          "developer_name": "Adjaria Gov",
-          "estate_description": "",
-          "coords": [
-            41.573852,
-            41.570567
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.573852,
-                41.570567
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "0dccb48a",
-                      "floor": 3,
-                      "m2": 48.0,
-                      "finishing": "С ремонтом",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вторичный рынок, тихо",
-                      "address": "",
-                      "price_usd": 68000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "дом": {
-                  "name": "дом",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "3fbedd39",
-                      "floor": 2,
-                      "m2": 120.0,
-                      "finishing": "С ремонтом",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Вторичный рынок, участок",
-                      "address": "",
-                      "price_usd": 150000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Gumba Gonio": {
-          "name": "Gumba Gonio",
-          "developer_name": "Gumbati",
-          "estate_description": "",
-          "coords": [
-            41.574893,
-            41.571654
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.574893,
-                41.571654
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "c4f0fe6a",
-                      "floor": 6,
-                      "m2": 45.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Близко к пляжу",
+                      "ap_specifications": "Боковой вид на море",
                       "address": "",
                       "price_usd": 54000,
                       "photos": []
@@ -2120,28 +616,12 @@
                   ]
                 }
               }
-            }
-          }
-        },
-        "Gumbati in Gonio": {
-          "name": "Gumbati in Gonio",
-          "developer_name": "Gumbati",
-          "estate_description": "",
-          "coords": [
-            41.575419,
-            41.572031
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
+            },
+            "D1": {
+              "name": "D1",
               "coords": [
-                41.575419,
-                41.572031
+                41.639746,
+                41.614635
               ],
               "block_specifications": "",
               "photos": {
@@ -2150,8 +630,9 @@
                 "specific": []
               },
               "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
+                "студия": {
+                  "name": "Студия",
+                  "ap_type_descr": "nan",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -2159,288 +640,16 @@
                   },
                   "apartments": [
                     {
-                      "apartment_id": "8f818d8a",
-                      "floor": 8,
-                      "m2": 45.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Новый проект",
+                      "apartment_id": "0423a9fe",
+                      "floor": "21",
+                      "ap_number": "",
+                      "not_used": "",
+                      "m2": "",
+                      "finishing": "Под ключ",
+                      "furnished": "С мебелью",
+                      "ap_specifications": "Вид на город",
                       "address": "",
                       "price_usd": 56000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Thom Tower": {
-          "name": "Thom Tower",
-          "developer_name": "Petra Sea Resort",
-          "estate_description": "",
-          "coords": [
-            41.573577,
-            41.569426
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.573577,
-                41.569426
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "studio": {
-                  "name": "Студия",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "78db05a3",
-                      "floor": 9,
-                      "m2": 33.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Терраса, вид на море",
-                      "address": "",
-                      "price_usd": 70000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "f9e5c651",
-                      "floor": 12,
-                      "m2": 33.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Терраса, высокий этаж",
-                      "address": "",
-                      "price_usd": 75000,
-                      "photos": []
-                    }
-                  ]
-                },
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "892f44dc",
-                      "floor": 14,
-                      "m2": 55.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
-                      "ap_specifications": "Терраса с видом на море",
-                      "address": "",
-                      "price_usd": 125000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Trinity": {
-          "name": "Trinity",
-          "developer_name": "B.Invest Development",
-          "estate_description": "",
-          "coords": [
-            41.679842,
-            41.702123
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.679842,
-                41.702123
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "bb32fc69",
-                      "floor": 5,
-                      "m2": 46.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Тихий район",
-                      "address": "",
-                      "price_usd": 50000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "a24ef572",
-                      "floor": 8,
-                      "m2": 46.0,
-                      "finishing": "Белый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Близко к морю",
-                      "address": "",
-                      "price_usd": 53000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "Mahinjauri": {
-      "name": "Mahinjauri",
-      "coords": [41.676608, 41.698684],
-      "description": "Махинджаури — курортный поселок в Грузии, расположенный на побережье Черного моря, известный своими пляжами и природной красотой. Находится в 15 км от Батуми и привлекает туристов своей спокойной атмосферой и живописными пейзажами.",
-      "photos": {
-        "sketch": [],
-        "example": [],
-        "specific": []
-      },
-      "estates": {
-        "Green Cape Botanico": {
-          "name": "Green Cape Botanico",
-          "developer_name": "Green Cape",
-          "estate_description": "",
-          "coords": [
-            41.693392,
-            41.705824
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.693392,
-                41.705824
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "1_1": {
-                  "name": "1+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "adc45380",
-                      "floor": 2,
-                      "m2": 50.0,
-                      "finishing": "Зеленый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Рядом с бот. садом",
-                      "address": "",
-                      "price_usd": 75000,
-                      "photos": []
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "Green Garden": {
-          "name": "Green Garden",
-          "developer_name": "Green Cape",
-          "estate_description": "",
-          "coords": [
-            41.666804,
-            41.687392
-          ],
-          "photos": {
-            "sketch": [],
-            "example": [],
-            "specific": []
-          },
-          "blocks": {
-            "один блок": {
-              "name": "один блок",
-              "coords": [
-                41.666804,
-                41.687392
-              ],
-              "block_specifications": "",
-              "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
-              },
-              "apartment_types": {
-                "2_1": {
-                  "name": "2+1",
-                  "photos": {
-                    "sketch": [],
-                    "example": [],
-                    "specific": []
-                  },
-                  "apartments": [
-                    {
-                      "apartment_id": "73b60d8e",
-                      "floor": 4,
-                      "m2": 70.0,
-                      "finishing": "Зеленый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Санаторная зона, природа",
-                      "address": "",
-                      "price_usd": 105000,
-                      "photos": []
-                    },
-                    {
-                      "apartment_id": "fe791317",
-                      "floor": 6,
-                      "m2": 72.0,
-                      "finishing": "Зеленый каркас",
-                      "furnished": "Без мебели",
-                      "ap_specifications": "Для здоровья и отдыха",
-                      "address": "",
-                      "price_usd": 115000,
                       "photos": []
                     }
                   ]

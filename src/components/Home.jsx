@@ -27,8 +27,8 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('lifestyle');
 
 
-  // Выбранные 2 апартамента (по apartment_id)
-  const featuredApartmentIds = ['0ca3e94f', '5c82d886']; // пример: 1+1 в Alliance Centropolis и 1+1 в другом ЖК
+  // Выбранные 2-3 апартамента (по apartment_id)
+  const featuredApartmentIds = ['f398a8b6', '0ca3e94f', ]; // пример: 1+1 в Alliance Centropolis и 1+1 в другом ЖК
 
   const featuredApartments = featuredApartmentIds
     .map((id) => {
@@ -314,7 +314,7 @@ export default function Home() {
 
                   {/* Правая колонка: текст и иконка в одной строке */}
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    <span className="text-xs text-slate-600">к апарт.</span>
+                    <span className="text-xs text-slate-600">к апартаментам</span>
                     <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
                   </div>
                 </div>

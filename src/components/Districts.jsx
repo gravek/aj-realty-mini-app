@@ -7,19 +7,21 @@ import { logEvent } from '../utils/analytics';
 import { 
   MapPin, 
   Waves, 
-  Mountain, 
+  Mountain,
+  Sun,
   Gem, 
   MountainSnow, 
   SquareDashedMousePointer, 
   Briefcase, 
   Trees, 
-  Building, 
+  TrendingUp, 
   Heart, 
   DollarSign,
   Shield,
   Zap,
   BotMessageSquare,
-  User,
+  Bird,
+  Church,
   Camera,
   Coffee,
   Sparkles,
@@ -115,6 +117,8 @@ const getPriceCategories = (district) => {
   const getDistrictAdvantages = (districtName) => {
     const advantages = {
       'Chakvi': {
+        description: 'Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. Расположен в нескольких километрах от Батуми.',
+        coords: [41.723, 41.735],
         lifestyle: {
           title: 'Идеально для семейного отдыха',
           points: [
@@ -147,10 +151,12 @@ const getPriceCategories = (district) => {
         }
       },
       'Batumi': {
+        description: '🌊 Батуми — динамичный курортный город Грузии, столица Аджарии на побережье Черного моря. Сочетает современную архитектуру, ухоженные пляжи и богатую историю. Идеальное место для жизни и инвестиций с высоким туристическим потоком и доходностью.',
+        coords: [41.651685, 41.637411],
         lifestyle: {
           title: 'Элитный отдых у моря',
           points: [
-            'Эксклюзивные приватные пляжи',
+            'Открытые и ухоженные пляжи',
             'Рестораны высокой кухни',
             'SPA и wellness центры',
             'Яхтенная марина рядом'
@@ -180,6 +186,8 @@ const getPriceCategories = (district) => {
         }
       },
       'Kobuleti': {
+        description: 'Кобулети — курортный город на побережье Черного моря в Грузии, известный своими пляжами, мягким климатом и развитой туристической инфраструктурой. Расположен в 30 км от Батуми.',
+        coords: [41.820574, 41.775281],
         lifestyle: {
           title: 'Классика курорта',
           points: [
@@ -211,13 +219,49 @@ const getPriceCategories = (district) => {
           icon: <CloudSun className="text-sky-600" size={20} />
         }
       },
+      'Сахалвашо': {
+        description: '🌿 Сахалвашо — тихое горное село в Аджарии с захватывающими видами на море и горы. Всего 6 км от Батуми — идеальное место для тех, кто ищет чистый воздух и  уединение рядом с Крестовоздвиженским мужским монастырём.',
+        coords: [41.6801, 41.7327],  
+        lifestyle: {
+          title: 'Тишина гор и духа',
+          points: [
+            'всего 6 км до Батуми и 2 км до моря',
+            'Полная тишина и чистый горный воздух',
+            'Духовная атмосфера монастыря',
+            'Идеально для спокойной жизни и ретритов'
+          ],
+          icon: <Mountain className="text-teal-600" size={20} />
+        },
+        investment: {
+          title: 'Инвести-ционный потенциал',
+          points: [
+            'Низкая цена входа по сравнению с побережьем',
+            'Быстрый рост интереса к экотуризму',
+            'Высокий спрос на дома и виллы с видом',
+            'Перспектива удорожания в 3–5 лет'
+          ],
+          icon: <TrendingUp className="text-emerald-600" size={20} />
+        },
+        nature: {
+          title: 'Богатство природы',
+          points: [
+            'Виды на знаменитый Ботанический сад и море',
+            'Холмы и леса вокруг села',
+            'Лучшее место для наблюдения за миграцией птиц',
+            'Фруктовые сады и родники'
+          ],
+          icon: <Bird className="text-amber-600" size={20} />
+        }
+      },
       'Mahinjauri': {
+        description: 'Махинджаури — курортный поселок в Грузии, расположенный на побережье Черного моря, известный своими пляжами и природной красотой. Находится в 45 км от Батуми и привлекает туристов своей спокойной атмосферой и живописными пейзажами.',
+        coords: [41.676608, 41.698684],
         lifestyle: {
           title: 'Баланс покоя и доступности',
           points: [
             '15 минут до центра Батуми',
             'Спокойная курортная атмосфера',
-            'Все необходимое в шаговой доступности',
+            'Все необходимое — в доступности',
             'Идеально для ПМЖ'
           ],
           icon: <Car className="text-indigo-600" size={20} />
@@ -251,7 +295,7 @@ const getPriceCategories = (district) => {
   // Декоративные элементы для районов
   const getDistrictDecorations = (districtName) => {
     const decorations = {
-      'Chakvi': { 
+      'Gonio': { 
         text: 'text-purple-800',
         gradient: 'from-fuchsia-600/90 to-purple-600/90',
         gradientLight: 'from-fuchsia-50/90 to-purple-50/90',
@@ -259,13 +303,21 @@ const getPriceCategories = (district) => {
         icon: <Trees className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-fuchsia-100/20 to-purple-100/20'
       },
-      'Batumi': {         
+      'Chakvi': {         
         text: 'text-cyan-800',
         gradient: 'from-teal-600 to-cyan-600',
         gradientLight: 'from-teal-100/90 to-cyan-100/90',
         border: 'border-cyan-300/60',
         icon: <Waves className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-teal-100/20 to-cyan-100/20'
+      },
+      'Batumi': { 
+        text: 'text-amber-800',
+        gradient: 'from-amber-600 to-orange-600',
+        gradientLight: 'from-yellow-100/90 to-amber-100/90',
+        border: 'border-amber-300/60',
+        icon: <Sun className="text-white/50" size={64} />,
+        pattern: 'bg-gradient-to-br from-amber-100/20 to-orange-100/20'
       },
       'Kobuleti': { 
         text: 'text-rose-800',
@@ -275,12 +327,12 @@ const getPriceCategories = (district) => {
         icon: <CloudSun className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-pink-100/20 to-rose-100/20'
       },
-      'Gonio': { 
+      'Сахалвашо': { 
         text: 'text-purple-800',
         gradient: 'from-fuchsia-600 to-purple-600',
         gradientLight: 'from-fuchsia-100/90 to-purple-100/90',
         border: 'border-purple-300/60',
-        icon: <Mountain className="text-white/50" size={64} />,
+        icon: <Trees className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-fuchsia-100/20 to-purple-100/20'
       },
       'Mahinjauri': { 
@@ -417,10 +469,11 @@ const getPriceCategories = (district) => {
                 //   'Mahinjauri': { bg: 'bg-indigo-500', border: 'border-indigo-600', text: 'text-indigo-700' }
                 // };
                 const colors = {
-                  'Chakvi': { bg: 'bg-purple-500', border: 'border-purple-600', text: 'text-purple-700' },
-                  'Batumi': { bg: 'bg-cyan-500', border: 'border-cyan-600', text: 'text-cyan-700' },
-                  'Kobuleti': { bg: 'bg-rose-500', border: 'border-rose-600', text: 'text-rose-700' },
                   'Gonio': { bg: 'bg-purple-500', border: 'border-purple-600', text: 'text-purple-700' },
+                  'Chakvi': { bg: 'bg-cyan-500', border: 'border-cyan-600', text: 'text-cyan-700' },
+                  'Kobuleti': { bg: 'bg-rose-500', border: 'border-rose-600', text: 'text-rose-700' },
+                  'Сахалвашо': { bg: 'bg-purple-500', border: 'border-purple-600', text: 'text-purple-700' },
+                  'Batumi': { bg: 'bg-amber-500', border: 'border-amber-600', text: 'text-amber-700' },
                   'Mahinjauri': { bg: 'bg-indigo-500', border: 'border-indigo-600', text: 'text-indigo-700' }
                 };
                 return colors[district.name] || { bg: 'bg-orange-500', border: 'border-orange-600', text: 'text-orange-700' };
@@ -613,7 +666,8 @@ const getPriceCategories = (district) => {
                             <div className="flex items-center gap-2 px-3 py-1 bg-white/15 rounded-full backdrop-blur-sm">
                               <div className="w-1 h-1 bg-white rounded-full"></div>
                               <span className="text-white/90">
-                                {district.coords[0].toFixed(4)}, {district.coords[1].toFixed(4)}
+                                {/* {district.coords[0].toFixed(4)}, {district.coords[1].toFixed(4)} */}
+                                {advantages.coords && ` ${advantages.coords[0].toFixed(4)}, ${advantages.coords[1].toFixed(4)}`}
                               </span>
                             </div>
                           </div>
@@ -628,13 +682,15 @@ const getPriceCategories = (district) => {
                   </div>
                   
                   {/* Описание */}
-                  {district.description && (
+                  {/* {district.description && ( */}
+                  {advantages.description && (
                     <div className="mb-8">
                       {/* <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 border border-white/20">
                         <span className="text-white/80 font-medium">О районе</span>
                       </div> */}
                       <p className="text-white/99 text-lg leading-relaxed max-w-3xl bg-white/20 rounded-2xl p-6 border border-white/20">
-                        {district.description}
+                        {/* {district.description} */}
+                        {advantages.description}
                       </p>
                     </div>
                   )}
@@ -653,72 +709,71 @@ const getPriceCategories = (district) => {
                 </div>
               </div>
 
-              {/* Секция "Почему этот район" */}
-{/* Блок "Почему этот район" */}
-<div className="max-w-4xl mx-auto px-4 py-6 -mt-4 relative z-20">
-  <div className={`bg-gradient-to-br ${decor.gradientLight || 'from-cyan-50 to-emerald-50/80'} rounded-3xl shadow-xl border ${decor.border || 'border-cyan-200/70'} p-6 md:p-8`}>
-    
-    {/* Заголовок */}
-    <h2 className={`text-2xl md:text-3xl font-bold text-center mb-8 ${decor.text || 'text-cyan-800'}`}>
-      Почему стоит выбрать {district.name}
-    </h2>
+              {/* Блок "Почему этот район" */}
+              <div className="max-w-4xl mx-auto px-4 py-6 -mt-4 relative z-20">
+                <div className={`bg-gradient-to-br ${decor.gradientLight || 'from-cyan-50 to-emerald-50/80'} rounded-3xl shadow-xl border ${decor.border || 'border-cyan-200/70'} p-6 md:p-8`}>
+                  
+                  {/* Заголовок */}
+                  <h2 className={`text-2xl md:text-3xl font-bold text-center mb-8 ${decor.text || 'text-cyan-800'}`}>
+                    Почему стоит выбрать {district.name}
+                  </h2>
 
-    {/* Квадратные кнопки вкладок */}
-    <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
-      {['lifestyle', 'investment', 'nature'].map((tab) => {
-        const isActive = activeAdvantageTab === tab;
-        const adv = advantages[tab]; // из объекта advantages
+                  {/* Квадратные кнопки вкладок */}
+                  <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
+                    {['lifestyle', 'investment', 'nature'].map((tab) => {
+                      const isActive = activeAdvantageTab === tab;
+                      const adv = advantages[tab]; // из объекта advantages
 
-        return (
-          <button
-            key={tab}
-            onClick={() => setActiveAdvantageTab(tab)}
-            className={`
-              flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-300 border
-              ${isActive
-                ? `bg-gradient-to-br ${decor.gradient} text-white border-opacity-40 shadow-md scale-[1.03]`
-                : `bg-white/95 ${decor.text || 'text-cyan-800'} border ${decor.border || 'border-cyan-200/60'} hover:border-opacity-70 hover:shadow-sm`
-              }
-            `}
-          >
-            <div className={isActive ? 'text-white' : decor.text || 'text-cyan-600'}>
-              {React.cloneElement(adv.icon, {
-                size: 28,
-                className: isActive ? 'text-white' : (decor.text || 'text-cyan-600'),
-              })}
-            </div>
-            <span className="text-sm md:text-base font-normal text-center leading-tight">
-              {adv.title}
-            </span>
-          </button>
-        );
-      })}
-    </div>
+                      return (
+                        <button
+                          key={tab}
+                          onClick={() => setActiveAdvantageTab(tab)}
+                          className={`
+                            flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-300 border
+                            ${isActive
+                              ? `bg-gradient-to-br ${decor.gradient} text-white border-opacity-40 shadow-md scale-[1.03]`
+                              : `bg-white/95 ${decor.text || 'text-cyan-800'} border ${decor.border || 'border-cyan-200/60'} hover:border-opacity-70 hover:shadow-sm`
+                            }
+                          `}
+                        >
+                          <div className={isActive ? 'text-white' : decor.text || 'text-cyan-600'}>
+                            {React.cloneElement(adv.icon, {
+                              size: 28,
+                              className: isActive ? 'text-white' : (decor.text || 'text-cyan-600'),
+                            })}
+                          </div>
+                          <span className="text-sm md:text-base font-normal text-center leading-tight">
+                            {adv.title}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
 
-    {/* Контент активной вкладки */}
-    <div className={`bg-white/95 rounded-2xl p-6 border ${decor.border || 'border-cyan-200/50'} transition-all duration-300`}>
-      <div className="space-y-5">
-        {advantages[activeAdvantageTab]?.points.map((point, idx) => (
-          <div key={idx} className="flex items-start gap-4">
-            <Sparkles size={16} className={`${decor.text || 'text-cyan-800'} my-1`} />
-            {/* <div className={`mt-1.5 flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center ${decor.gradientLight || 'bg-cyan-100'}`}>
-              <div className={`w-3 h-3 rounded-full ${decor.gradient ? decor.gradient.replace('to-', 'from-') : 'bg-cyan-500'}`} />
-            </div> */}
-            {/* <p className="text-slate-800 leading-relaxed text-[15px] md:text-base"> */}
-            <p className={`${decor.text || 'text-cyan-800'}  leading-relaxed text-[15px] md:text-base`}>
-              {point}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
+                  {/* Контент активной вкладки */}
+                  <div className={`bg-white/95 rounded-2xl p-6 border ${decor.border || 'border-cyan-200/50'} transition-all duration-300`}>
+                    <div className="space-y-5">
+                      {advantages[activeAdvantageTab]?.points.map((point, idx) => (
+                        <div key={idx} className="flex items-start gap-4">
+                          <Sparkles size={16} className={`${decor.text || 'text-cyan-800'} my-1`} />
+                          {/* <div className={`mt-1.5 flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center ${decor.gradientLight || 'bg-cyan-100'}`}>
+                            <div className={`w-3 h-3 rounded-full ${decor.gradient ? decor.gradient.replace('to-', 'from-') : 'bg-cyan-500'}`} />
+                          </div> */}
+                          {/* <p className="text-slate-800 leading-relaxed text-[15px] md:text-base"> */}
+                          <p className={`${decor.text || 'text-cyan-800'}  leading-relaxed text-[15px] md:text-base`}>
+                            {point}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
-    {/* Нижний намёк / CTA */}
-    <div className={`mt-6 text-center text-sm  ${decor.text || 'text-cyan-800'}`}>
-      Подберём объект в {district.name} под ваш бюджет и цели
-    </div>
-  </div>
-</div>
+                  {/* Нижний намёк / CTA */}
+                  <div className={`mt-6 text-center text-sm  ${decor.text || 'text-cyan-800'}`}>
+                    Подберём объект в {district.name} под ваш бюджет и цели
+                  </div>
+                </div>
+              </div>
 
               {/* Кнопка галереи */}
               {hasPhotos && (
