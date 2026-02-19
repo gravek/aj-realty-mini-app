@@ -148,7 +148,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
 
 
   return (
-    <div className="fixed inset-0 bg-slate-800/90 z-50 flex flex-col" onClick={onClose}>
+    <div className="fixed inset-0 bg-slate-800/95 z-50 flex flex-col" onClick={onClose}>
       {/* Header */}
       <div className="bg-gradient-to-b from-slate-800/80 to-transparent p-4 flex justify-between items-center text-white z-10" onClick={e => e.stopPropagation()}>
         <div>
@@ -172,7 +172,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
             className={`px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap transition ${
               filter === key
                 ? 'bg-orange-600 text-white'
-                : 'bg-white/10 border border-white/20 text-white hover:bg-white/30'
+                : 'bg-white/15 border border-white/20 text-white hover:bg-white/30'
             }`}
           >
             {key === 'all' ? 'Все фото' : 
@@ -217,9 +217,9 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
                   e.stopPropagation();
                   setCaptionOpen(prev => ({ ...prev, [currentIndex]: !prev[currentIndex] }));
                 }}
-                className="absolute bottom-6 right-8 p-3 bg-cyan-700 hover:bg-cyan-800 text-white rounded-full shadow-xl transition"
+                className="absolute bottom-6 right-8 p-2 bg-cyan-600 text-white rounded-full shadow-xl shadow-white/10 transition"
               >
-                <Info size={24} />
+                <Info size={30} />
               </button>
             )}
           </>

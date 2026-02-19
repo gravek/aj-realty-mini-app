@@ -152,7 +152,8 @@ export default function Estate() {
           to={`/districts#${district?.toLowerCase() || ''}`}
           className="hover:text-cyan-600 transition-colors"
         >
-          {district || 'Район'}  {/* district — "Batumi" */}
+          {/* {district || 'Район'} */}
+          {data.districts[district]?.name || district}
         </Link>
         <ChevronRight size={14} className="mx-2 text-gray-400" />
         <span className="text-gray-700 font-medium">
@@ -174,51 +175,9 @@ export default function Estate() {
         <p className="mt-4 mb-2">{current.estate_description || 'удивительный комплекс'}</p>
       </div> */}
 
-      <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-        {/* <div className="flex-1">
-          <h1 className="text-3xl font-bold text-cyan-700">{current.name}</h1>
-          
-          {current.developer_name && (
-            <div className="flex items-center gap-2 mt-1">
-              <BrickWall size={18} className="text-gray-400" />
-              <span className="text-gray-600">{current.developer_name || 'неизвестный застройщик'}</span>
-            </div>
-          )}
-        </div> */}
 
-        {/* Главное описание ЖК */}
-        {/* <div className="mb-8 bg-gradient-to-r from-teal-100/40 to-cyan-100/60 p-6 rounded-2xl border border-cyan-300 shadow-md">
-          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-            <div className="flex-1">
-              <h1 className="text-3xl font-bold text-cyan-700">{current.name}</h1>
-              
-              {current.developer_name && (
-                <div className="flex items-center gap-2 mt-1">
-                  <BrickWall size={18} className="text-gray-400" />
-                  <span className="text-gray-600">{current.developer_name || 'неизвестный застройщик'}</span>
-                </div>
-                
-              )}
-            </div>
-          </div>
-          {current.photos?.specific?.[0]?.url && (
-            <div className="relative">
-              <img
-                src={current.photos.specific?.[0]?.url}
-                alt={current.name || 'Estate image'}
-                className="w-full h-64 object-cover rounded-2xl mt-6 shadow-lg"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-gray-600/80 to-transparent p-6">
-                <p className="text-white text-lg font-semibold">
-                  {current.estate_description || 'удивительный комплекс'}
-                </p>
-              </div>
-            </div>
-          )}
-        </div> */}
-      </div>
 
-              {/* Заголовок района с декором */}
+              {/* Заголовок района с фото и описанием */}
               <div className="relative overflow-hidden rounded-3xl mt-8 mb-8 group">
                 {/* Фон с градиентом и эффектом стекла */}
                 <div className={`absolute inset-0 bg-gradient-to-r from-teal-600 to-cyan-600 blur-sm rounded-3xl`} />
@@ -265,9 +224,15 @@ export default function Estate() {
                         alt={current.name || 'Estate image'}
                         className="w-full h-64 object-cover border blur-xs shadow-md"
                       />
-                      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-t from-slate-900/80 via-slate-600/60 to-orange-600/5 " />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <p className="text-white text-lg leading-relaxed drop-shadow-md">
+                      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-t from-slate-900/80 via-slate-600/80 to-orange-600/10 " />
+                      <div className="absolute bottom-4 left-4 right-4 max-h-[180px] overflow-y-auto 
+                        [&::-webkit-scrollbar]:w-1
+                        [&::-webkit-scrollbar-track]:bg-white/20
+                        [&::-webkit-scrollbar-track]:rounded-full
+                        [&::-webkit-scrollbar-thumb]:bg-white/40
+                        [&::-webkit-scrollbar-thumb]:rounded-full
+                        [&::-webkit-scrollbar-thumb]:hover:bg-white/60">
+                        <p className="text-white text-md whitespace-pre-wrap leading-relaxed drop-shadow-md">
                           {current.estate_description || 'Современный комплекс с отличными апартаментами'}
                         </p>
                       </div>
