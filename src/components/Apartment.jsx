@@ -376,7 +376,7 @@ export default function Apartment() {
                     О корпусе (блоке):
                   </h3>
                   {apartment.blockSpecifications ? (
-                    <p className="text-slate-700 bg-green-50 p-4 rounded-lg border border-green-100">
+                    <p className="whitespace-pre-wrap text-slate-700 bg-green-50 p-4 rounded-lg border border-green-100">
                       {apartment.blockSpecifications}
                     </p>
                   ) : (
@@ -422,7 +422,7 @@ export default function Apartment() {
                 </div>
                 
                 {apartment.estateDescription && (
-                  <p className="text-slate-700 bg-cyan-50 p-3 rounded-lg text-sm">
+                  <p className="text-sm whitespace-pre-wrap text-slate-700 bg-cyan-50 p-3 rounded-lg">
                     {apartment.estateDescription}
                   </p>
                 )}

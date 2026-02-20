@@ -928,7 +928,7 @@
     },
     "Batumi": {
       "id": "Batumi",
-      "name": "Чакви",
+      "name": "Батуми",
       "photos": {
         "sketch": [],
         "example": [],
@@ -962,8 +962,8 @@
                 "specific": []
               },
               "apartment_types": {
-                "студия": {
-                  "name": "студия",
+                "PANORAMA ": {
+                  "name": "PANORAMA",
                   "ap_type_descr": "",
                   "photos": {
                     "sketch": [],

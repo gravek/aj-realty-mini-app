@@ -116,7 +116,7 @@ const getPriceCategories = (district) => {
   // Маркетинговые описания для районов
   const getDistrictAdvantages = (districtName) => {
     const advantages = {
-      'Chakvi': {
+      'Зеленый мыс': {
         description: 'Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. \nРасположен в нескольких километрах от Батуми.',
         coords: [41.723, 41.735],
         lifestyle: {
@@ -150,7 +150,7 @@ const getPriceCategories = (district) => {
           icon: <Trees className="text-emerald-600" size={20} />
         }
       },
-      'Batumi': {
+      'Батуми': {
         description: '🌊 Батуми — динамичный курортный город Грузии, столица Аджарии на побережье Черного моря. Сочетает современную архитектуру, ухоженные пляжи и богатую историю. Идеальное место для жизни и инвестиций с высоким туристическим потоком и доходностью.',
         coords: [41.651685, 41.637411],
         lifestyle: {
@@ -219,8 +219,8 @@ const getPriceCategories = (district) => {
           icon: <CloudSun className="text-sky-600" size={20} />
         }
       },
-      'Sahalvasho': {
-        description: '🌿 Сахалвашо — тихое горное село в с захватывающими видами на Ботанический сад, море и горы. \n\nРасположено всего в 6 км от Батуми и в 2 км от моря. \n\nИдеальное место для тех, кто ищет чистый воздух и  уединение рядом с Крестовоздвиженским мужским монастырём.',
+      'Зеленый мыс': {
+        description: '🌿 Зеленый мыс — тихое горное село в с захватывающими видами на Ботанический сад, море и горы. \n\nРасположено всего в 6 км от Батуми и в 2 км от моря. \n\nИдеальное место для тех, кто ищет чистый воздух и  уединение рядом с Крестовоздвиженским мужским монастырём.',
         coords: [41.6801, 41.7327],  
         lifestyle: {
           title: 'Тишина гор и духа',
@@ -289,7 +289,7 @@ const getPriceCategories = (district) => {
       }
     };
 
-    return advantages[districtName] || advantages['Chakvi']; // дефолтные преимущества
+    return advantages[districtName] || advantages['Зеленый мыс']; // дефолтные преимущества
   };
 
   // Декоративные элементы для районов
@@ -303,7 +303,7 @@ const getPriceCategories = (district) => {
         icon: <Trees className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-fuchsia-100/20 to-purple-100/20'
       },
-      'Chakvi': {         
+      'Зеленый мыс': {         
         text: 'text-cyan-800',
         gradient: 'from-teal-600 to-cyan-600',
         gradientLight: 'from-teal-100/90 to-cyan-100/90',
@@ -311,7 +311,7 @@ const getPriceCategories = (district) => {
         icon: <Waves className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-teal-100/20 to-cyan-100/20'
       },
-      'Batumi': { 
+      'Батуми': { 
         text: 'text-amber-800',
         gradient: 'from-amber-600 to-orange-600',
         gradientLight: 'from-yellow-100/90 to-amber-100/90',
@@ -327,7 +327,7 @@ const getPriceCategories = (district) => {
         icon: <CloudSun className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-pink-100/20 to-rose-100/20'
       },
-      'Сахалвашо': { 
+      'Чакви': { 
         text: 'text-purple-800',
         gradient: 'from-fuchsia-600 to-purple-600',
         gradientLight: 'from-fuchsia-100/90 to-purple-100/90',
@@ -345,7 +345,7 @@ const getPriceCategories = (district) => {
       }
     };
     
-    return decorations[districtName] || decorations['Chakvi'];
+    return decorations[districtName] || decorations['Зеленый мыс'];
   };
 
   // Остальные эффекты 
@@ -463,17 +463,17 @@ const getPriceCategories = (district) => {
               // Цвета для каждого района
               const getDistrictColor = () => {
                 // const colors = {
-                //   'Chakvi': { bg: 'bg-cyan-500', border: 'border-cyan-600', text: 'text-cyan-700' },
-                //   'Batumi': { bg: 'bg-emerald-500', border: 'border-emerald-600', text: 'text-emerald-700' },
+                //   'Зеленый мыс': { bg: 'bg-cyan-500', border: 'border-cyan-600', text: 'text-cyan-700' },
+                //   'Батуми': { bg: 'bg-emerald-500', border: 'border-emerald-600', text: 'text-emerald-700' },
                 //   'Kobuleti': { bg: 'bg-amber-500', border: 'border-amber-600', text: 'text-amber-700' },
                 //   'Mahinjauri': { bg: 'bg-indigo-500', border: 'border-indigo-600', text: 'text-indigo-700' }
                 // };
                 const colors = {
                   'Gonio': { bg: 'bg-purple-500', border: 'border-purple-600', text: 'text-purple-700' },
-                  'Chakvi': { bg: 'bg-cyan-500', border: 'border-cyan-600', text: 'text-cyan-700' },
+                  'Зеленый мыс': { bg: 'bg-cyan-500', border: 'border-cyan-600', text: 'text-cyan-700' },
                   'Kobuleti': { bg: 'bg-rose-500', border: 'border-rose-600', text: 'text-rose-700' },
-                  'Сахалвашо': { bg: 'bg-purple-500', border: 'border-purple-600', text: 'text-purple-700' },
-                  'Batumi': { bg: 'bg-amber-500', border: 'border-amber-600', text: 'text-amber-700' },
+                  'Чакви': { bg: 'bg-purple-500', border: 'border-purple-600', text: 'text-purple-700' },
+                  'Батуми': { bg: 'bg-amber-500', border: 'border-amber-600', text: 'text-amber-700' },
                   'Mahinjauri': { bg: 'bg-indigo-500', border: 'border-indigo-600', text: 'text-indigo-700' }
                 };
                 return colors[district.name] || { bg: 'bg-orange-500', border: 'border-orange-600', text: 'text-orange-700' };
