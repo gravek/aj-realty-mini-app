@@ -164,6 +164,7 @@ export default function Apartment() {
           <span className="text-slate-700 font-medium">{apartment.estateName}</span>
         </div> */}
 
+      {/* Путь */}
       <div className="flex items-center text-sm text-slate-500 mb-2">
         <Link to="/" className="hover:text-cyan-600 transition">Объекты</Link>
         <ChevronRight size={16} className="mx-1" />
@@ -185,8 +186,8 @@ export default function Apartment() {
       </div>
 
 
-      <div className="flex-1">
-        <h1 className="text-4xl font-bold  bg-gradient-to-r from-cyan-700 to-teal-600 bg-clip-text text-transparent mb-2">{apartment.estateName}</h1>
+      <div className="flex-1 pb-4">
+        <h1 className="text-3xl font-bold  bg-gradient-to-r from-cyan-700 to-teal-600 bg-clip-text text-transparent mb-2">{apartment.estateName}</h1>
         
         {apartment.estateDeveloper && (
           <div className="flex items-center gap-2 mt-1">
@@ -356,13 +357,13 @@ export default function Apartment() {
                     {apartment.ap_specifications && (
                       <div className="p-3 bg-purple-50 rounded-lg">
                         <div className="text-sm text-slate-600 bg-white/80 inline-block border border-slate-010 py-1 px-2 mb-2 rounded-md">Особенности апартамента</div>
-                        <div className="text-slate-800">{apartment.ap_specifications}</div>
+                        <div className="text-slate-800 whitespace-pre-wrap">{apartment.ap_specifications}</div>
                       </div>
                     )}
                     {apartment.typeDescription && (
                       <div className="p-3 bg-indigo-50 rounded-lg">
                         <div className="text-sm text-slate-600 bg-white/80 inline-block border border-slate-010 py-1 px-2 mb-2 rounded-md">О типе апартамента</div>
-                        <div className="text-slate-800">{apartment.typeDescription}</div>
+                        <div className="text-slate-800 whitespace-pre-wrap">{apartment.typeDescription}</div>
                       </div>
                     )}
                   </div>
@@ -485,7 +486,7 @@ export default function Apartment() {
               <>
                 <Camera size={24}  className="animate-gentle-pulse"/>
                 <div className="text-left">
-                  <div>Смотреть фото для этого апртамента</div>
+                  <div>Смотреть фото для апртамента</div>
                   {/* <div className="text-sm font-normal opacity-90">для этого апртамента</div> */}
                 </div>
               </>
@@ -499,23 +500,23 @@ export default function Apartment() {
 
 
         {/* К другим апартаментам комплекса */}
-        <div className="text-center mt-10">
+        <div className="text-center p-4">
           <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-rose-200/80 p-2">
 
             <Link
               to={`/estate/${apartment.districtID}/${apartment.estateName}`} 
               className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-600/80 to-blue-600/80 text-white px-4 py-2 rounded-lg font-semibold text-lg shadow-lg"
             >
-              <Building2 size={20} />
+              <Building2 size={32} />
               К другим апартаментам комплекса
-              <MoveRight size={28} className="text-white animate-gentle-pulse" />
+              <MoveRight size={32} className="text-white animate-gentle-pulse" />
             </Link>
           </div>
         </div>
 
 
       {/* Кнопка бота */}
-      <div className="max-w-4xl mx-auto px-4 mt-4 md:mt-4 sticky top-10 z-40 md:static">
+      <div className="max-w-4xl mx-auto px-4 pb-0 sticky top-10 z-40 md:static">
         <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-cyan-200/80 p-2 md:p-4">
           <button
             onClick={() => {
@@ -549,7 +550,7 @@ export default function Apartment() {
       </div>
 
       {/* Кнопка менеджера */}
-      <div className="max-w-4xl mx-auto px-4 mt-4 md:mt-4 sticky top-10 z-40 md:static">
+      <div className="max-w-4xl mx-auto px-4 pb-0 sticky top-10 z-40 md:static">
         <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-fuchsia-200/80 p-2 md:p-4">
           <button
             onClick={() => {

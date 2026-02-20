@@ -299,17 +299,17 @@
                 ],
                 "specific": [
                   {
-                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/specific/VILLA-main.jpg",
-                    "new_filename": "Sahalv-LUXURI-specific-da241b.jpg",
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/specific/VILLA-main.jpg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-da241b.jpg",
                     "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771496543/%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B2-LUXURI-sketch-da241b.jpg",
                     "description": ""
                   }
                 ]
               },
               "apartment_types": {
-                "3-floor": {
-                  "name": "3-floor",
-                  "ap_type_descr": "Распределение общей площади апартамента (200 кв.м.) по этажам:\n55 + 70 + 75.",
+                "3-этажный": {
+                  "name": "3-этажный",
+                  "ap_type_descr": "1 этаж (55 кв.м.): \n- гостиная с кухней \n- санузел\n- выход в собственный двор\n\n2 этаж (70 кв.м.):\n- 2 спальни \n- 2 балкона\n- 2 санузла\n\n3 этаж (75 кв.м.): \n- 1 спальня, санузел \n- декоративная ванна, вид на море и горы\n- терраса",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -324,7 +324,7 @@
                       "m2": 198.0,
                       "finishing": "под ключ",
                       "furnished": "с мебелью и техникой",
-                      "ap_specifications": "Стоимость включает ремонт «под ключ», одно парковочное \nместо площадью 15 кв.м в подземном \nпаркинге и собственный двор. \n\nРаспределение общей площади апартамента (200 кв.м.) по этажам:\n55 + 70 + 75.",
+                      "ap_specifications": "Стоимость включает: \n- ремонт «под ключ» \n- парковочное место 15 кв.м.\n- собственный двор",
                       "address": "Батуми, Зеленый мыс, 10-я улица",
                       "price_usd": 396000,
                       "photos": []
@@ -467,17 +467,17 @@
                 ],
                 "specific": [
                   {
-                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/specific/VILLA-main.jpg",
-                    "new_filename": "Sahalv-LUXURI-specific-da241b.jpg",
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/specific/VILLA-main.jpg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-da241b.jpg",
                     "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771496543/%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B2-LUXURI-sketch-da241b.jpg",
                     "description": ""
                   }
                 ]
               },
               "apartment_types": {
-                "3-floor": {
-                  "name": "3-floor",
-                  "ap_type_descr": "Распределение общей площади апартамента (145 кв.м.) по этажам:\n45 + 60 + 60.",
+                "3-этажный": {
+                  "name": "3-этажный",
+                  "ap_type_descr": "1 этаж (45 кв.м.): \n- гостиная с кухней\n- санузел\n- выход в собственный двор\n\n2 этаж (60 кв.м.):\n- 2 спальни\n- 2 балкона\n- 2 санузла\n\n3 этаж (60 кв.м.): \n- закрытая терраса",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -492,7 +492,7 @@
                       "m2": 165.0,
                       "finishing": "под ключ",
                       "furnished": "с мебелью и техникой",
-                      "ap_specifications": "Стоимость включает ремонт «под ключ», одно парковочное \nместо площадью 15 кв.м в подземном \nпаркинге и собственный двор. \n\nРаспределение общей площади апартамента (145 кв.м.) по этажам:\n45 + 60 + 60.",
+                      "ap_specifications": "Стоимость включает: \n- ремонт «под ключ» \n- парковочное место 15 кв.м.\n- собственный двор",
                       "address": "Батуми, Зеленый мыс, 10-я улица",
                       "price_usd": 350000,
                       "photos": []
