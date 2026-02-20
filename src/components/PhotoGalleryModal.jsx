@@ -28,7 +28,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
               type,
               label:
                 type === 'sketch' ? 'Визуализация' :
-                type === 'example' ? 'Примеры' :
+                type === 'example' ? 'Реальные' :
                 'Особые фото',
             });
           }
@@ -177,7 +177,7 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
           >
             {key === 'all' ? 'Все фото' : 
              key === 'sketch' ? 'Визуализации' :
-             key === 'example' ? 'Примеры' : 'Особые фото'} 
+             key === 'example' ? 'Реальные' : 'Особые фото'} 
             <span className="ml-2 opacity-70">
               ({key === 'all' ? allPhotos.length : allPhotos.filter(p => p.type === key).length})
             </span>

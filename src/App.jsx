@@ -99,8 +99,8 @@ export default function App() {
     if (!path) return null;
     if (path === '/') return 'Главная';
     if (path.startsWith('/districts')) return 'Районы';
-    if (path.startsWith('/estate')) return 'Комплекс';
-    if (path.startsWith('/apartment')) return 'Апартаменты';
+    if (path.startsWith('/estate')) return 'Компл.';
+    if (path.startsWith('/apartment')) return 'Апарт.';
     if (path.startsWith('/calculator')) return 'Расчёты';
     return path;
   };

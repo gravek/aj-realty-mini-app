@@ -117,7 +117,7 @@ const getPriceCategories = (district) => {
   const getDistrictAdvantages = (districtName) => {
     const advantages = {
       'Chakvi': {
-        description: 'Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. Расположен в нескольких километрах от Батуми.',
+        description: 'Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. \nРасположен в нескольких километрах от Батуми.',
         coords: [41.723, 41.735],
         lifestyle: {
           title: 'Идеально для семейного отдыха',
@@ -219,8 +219,8 @@ const getPriceCategories = (district) => {
           icon: <CloudSun className="text-sky-600" size={20} />
         }
       },
-      'Сахалвашо': {
-        description: '🌿 Сахалвашо — тихое горное село в Аджарии с захватывающими видами на море и горы. Всего 6 км от Батуми — идеальное место для тех, кто ищет чистый воздух и  уединение рядом с Крестовоздвиженским мужским монастырём.',
+      'Sahalvasho': {
+        description: '🌿 Сахалвашо — тихое горное село в с захватывающими видами на Ботанический сад, море и горы. \n\nРасположено всего в 6 км от Батуми и в 2 км от моря. \n\nИдеальное место для тех, кто ищет чистый воздух и  уединение рядом с Крестовоздвиженским мужским монастырём.',
         coords: [41.6801, 41.7327],  
         lifestyle: {
           title: 'Тишина гор и духа',
@@ -688,7 +688,7 @@ const getPriceCategories = (district) => {
                       {/* <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 border border-white/20">
                         <span className="text-white/80 font-medium">О районе</span>
                       </div> */}
-                      <p className="text-white/99 text-lg leading-relaxed max-w-3xl bg-white/20 rounded-2xl p-6 border border-white/20">
+                      <p className="text-white/99 text-lg whitespace-pre-wrap leading-relaxed max-w-3xl bg-white/20 rounded-2xl p-6 border border-white/20">
                         {/* {district.description} */}
                         {advantages.description}
                       </p>
@@ -854,7 +854,7 @@ const getPriceCategories = (district) => {
                 {estates.map(estate => (
                   <Link
                     key={estate.name}
-                    to={`/estate/${district.name}/${estate.name}`}
+                    to={`/estate/${district.id}/${estate.name}`}
                     className="group block"
                   >
                     <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg transition-transform duration-300">

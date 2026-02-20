@@ -325,14 +325,15 @@ export default function Home() {
 
         {/* Призыв к полному каталогу */}
         <div className="text-center mt-10">
-          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-rose-200/80 p-2">
+          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-rose-200/80 p-2">
 
             <Link
               to="/districts"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-600/80 to-rose-600/80 text-white px-4 py-2 rounded-2xl font-semibold text-lg shadow-lg"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-600/80 to-blue-600/80 text-white px-4 py-2 rounded-lg font-semibold text-lg shadow-lg"
             >
               <MapPin size={20} />
-              Посмотреть все районы и комплексы
+              Посмотреть все предложения
+              <MoveRight size={28} className="text-white animate-gentle-pulse" />
             </Link>
           </div>
         </div>

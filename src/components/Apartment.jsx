@@ -11,6 +11,7 @@ import {
   MapPin, 
   Hotel,
   BrickWall,
+  Blocks,
   Columns3Cog,
   FileDigit,
   Building2,
@@ -18,7 +19,8 @@ import {
   BotMessageSquare,
   UserRoundPen,
   ChevronRight,
-  Notebook
+  Notebook,
+  MoveRight
 } from 'lucide-react';
 
 export default function Apartment() {
@@ -44,6 +46,7 @@ export default function Apartment() {
                 estateName: estate.name,
                 estateDeveloper: estate.developer_name,
                 estateDescription: estate.estate_description,
+                districtID: district.id,
                 districtName: district.name,
                 districtDescription: district.description,
                 estatePhoto: estate.photos?.sketch?.[0]?.url || estate.photos?.specific?.[0]?.url,
@@ -59,7 +62,7 @@ export default function Apartment() {
               
               setApartment(apartmentData);
               
-              // Создаем специальный объект для модалки с фото только из блока и типа
+              // Создаем специальный объект для модалки с фото только из блока и типа апартамента
               const modalEntity = {
                 ...found, // Базовые данные апартамента
                 name: apartmentData.estateName,
@@ -99,6 +102,7 @@ export default function Apartment() {
 
     logEvent('open_apartment', {
       apartment_id: id,
+      apartment_number: apartment.apartment_number,
       apartment_price_usd: apartment.price_usd,
       apartment_type: apartment.app_type,
       apartment_m2: apartment.m2,
@@ -171,7 +175,7 @@ export default function Apartment() {
         </Link>
         <ChevronRight size={16} className="mx-1" />
         <Link 
-          to={`/estate/${apartment.districtName}/${apartment.estateName}`} 
+          to={`/estate/${apartment.districtID}/${apartment.estateName}`} 
           className="hover:text-cyan-600 transition"
         >
           {apartment.estateName}
@@ -243,7 +247,7 @@ export default function Apartment() {
             </div>
             <div className="grid grid-cols-3 gap-3">
               <div className="text-center p-2 bg-orange-50 rounded-lg">
-                <Home size={20} className="mx-auto text-orange-600 mb-1" />
+                <Blocks size={20} className="mx-auto text-orange-600 mb-1" />
                 <div className="font-bold text-slate-900 text-sm truncate">{apartment.app_type}</div>
               </div>
               <div className="text-center p-2 bg-rose-50 rounded-lg">
@@ -320,24 +324,26 @@ export default function Apartment() {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
                       <span className="text-slate-600">Тип апартамента</span>
-                      <span className="font-semibold">{apartment.app_type}</span>
+                      <span className="text-cyan-600 font-semibold">{apartment.app_type}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
                       <span className="text-slate-600">Корпус</span>
-                      <span className="font-semibold">{apartment.blockName}</span>
+                      <span className="text-cyan-600 font-semibold">{apartment.blockName}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
                       <span className="text-slate-600">Отделка</span>
-                      <span className="font-semibold">{apartment.finishing || 'Не указана'}</span>
+                      <span className="text-cyan-600 font-semibold">{apartment.finishing || 'Не указана'}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
                       <span className="text-slate-600">Меблировка</span>
-                      <span className="font-semibold">{apartment.furnished || 'Не указана'}</span>
+                      <span className="text-cyan-600 font-semibold">{apartment.furnished || 'Не указана'}</span>
                     </div>
-                    <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
-                      <span className="text-slate-600">Не использовался</span>
-                      <span className="font-semibold">{apartment.not_used}</span>
-                    </div>
+                    {apartment.not_used && (
+                      <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
+                        <span className="text-slate-600">Не использовался</span>
+                        <span className="text-cyan-600 font-semibold">{apartment.not_used || 'нет'}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -390,62 +396,6 @@ export default function Apartment() {
             </div>
           )}
 
-          {/* {activeTab === 'specs' && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="space-y-4">
-                <h4 className="font-semibold text-slate-900 flex items-center gap-2">
-                  <Ruler size={18} className="text-cyan-600" />
-                  Площадь и цена
-                </h4>
-                <div className="space-y-3">
-                  <div className="p-3 bg-cyan-50 rounded-lg">
-                    <div className="text-sm text-slate-600">Общая площадь</div>
-                    <div className="text-xl font-bold text-cyan-700">{apartment.m2} м²</div>
-                  </div>
-                  <div className="p-3 bg-rose-50 rounded-lg">
-                    <div className="text-sm text-slate-600">Цена за м²</div>
-                    <div className="text-xl font-bold text-rose-700">
-                      {pricePerM2.toLocaleString('ru-RU', { maximumFractionDigits: 0 })} $
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="font-semibold text-slate-900 flex items-center gap-2">
-                  <Layers size={18} className="text-orange-600" />
-                  Этаж
-                </h4>
-                <div className="p-4 bg-orange-50 rounded-lg">
-                  <div className="text-3xl font-bold text-orange-600 text-center">
-                    {apartment.floor}
-                  </div>
-                  <div className="text-center text-slate-600 mt-2">этаж</div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="font-semibold text-slate-900 flex items-center gap-2">
-                  <Calendar size={18} className="text-purple-600" />
-                  Дополнительно
-                </h4>
-                <div className="space-y-2">
-                  {apartment.ap_specifications && (
-                    <div className="p-3 bg-purple-50 rounded-lg">
-                      <div className="text-sm text-slate-600">Спецификации апартамента</div>
-                      <div className="text-slate-800">{apartment.ap_specifications}</div>
-                    </div>
-                  )}
-                  {apartment.typeDescription && (
-                    <div className="p-3 bg-indigo-50 rounded-lg">
-                      <div className="text-sm text-slate-600">Описание типа</div>
-                      <div className="text-slate-800">{apartment.typeDescription}</div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          )} */}
 
           {activeTab === 'location' && (
             <div className="space-y-4">
@@ -545,6 +495,23 @@ export default function Apartment() {
           </button>
         </div>
       </div>
+
+
+
+        {/* К другим апартаментам комплекса */}
+        <div className="text-center mt-10">
+          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-rose-200/80 p-2">
+
+            <Link
+              to={`/estate/${apartment.districtID}/${apartment.estateName}`} 
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-600/80 to-blue-600/80 text-white px-4 py-2 rounded-lg font-semibold text-lg shadow-lg"
+            >
+              <Building2 size={20} />
+              К другим апартаментам комплекса
+              <MoveRight size={28} className="text-white animate-gentle-pulse" />
+            </Link>
+          </div>
+        </div>
 
 
       {/* Кнопка бота */}

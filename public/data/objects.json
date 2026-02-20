@@ -1,6 +1,7 @@
 {
   "districts": {
-    "Сахалвашо": {
+    "Sahalvasho": {
+      "id": "Sahalvasho",
       "name": "Сахалвашо",
       "photos": {
         "sketch": [],
@@ -119,7 +120,8 @@
       }
     },
     "Chakvi": {
-      "name": "Chakvi",
+      "id": "Chakvi",
+      "name": "Чакви",
       "photos": {
         "sketch": [],
         "example": [],
@@ -393,7 +395,7 @@
               "apartment_types": {
                 "студия": {
                   "name": "Студия",
-                  "ap_type_descr": "nan",
+                  "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -432,7 +434,7 @@
               "apartment_types": {
                 "студия": {
                   "name": "Студия",
-                  "ap_type_descr": "nan",
+                  "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -444,7 +446,7 @@
                       "floor": "4",
                       "ap_number": "423",
                       "not_used": "",
-                      "m2": "",
+                      "m2": "50",
                       "finishing": "Под ключ",
                       "furnished": "С мебелью",
                       "ap_specifications": "Вид на море, полная комплектация",
@@ -471,7 +473,7 @@
               "apartment_types": {
                 "студия": {
                   "name": "Студия",
-                  "ap_type_descr": "nan",
+                  "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -510,7 +512,7 @@
               "apartment_types": {
                 "1_1": {
                   "name": "1+1",
-                  "ap_type_descr": "nan",
+                  "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -539,7 +541,8 @@
       }
     },
     "Batumi": {
-      "name": "Batumi",
+      "id": "Batumi",
+      "name": "Батуми",
       "photos": {
         "sketch": [],
         "example": [],
@@ -575,7 +578,7 @@
               "apartment_types": {
                 "студия": {
                   "name": "Студия",
-                  "ap_type_descr": "nan",
+                  "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -614,7 +617,7 @@
               "apartment_types": {
                 "студия": {
                   "name": "Студия",
-                  "ap_type_descr": "nan",
+                  "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
                     "example": [],
@@ -653,7 +656,7 @@
               "apartment_types": {
                 "студия": {
                   "name": "Студия",
-                  "ap_type_descr": "nan",
+                  "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
                     "example": [],

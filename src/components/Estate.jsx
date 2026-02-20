@@ -6,25 +6,11 @@ import PhotoGalleryModal from './PhotoGalleryModal';
 import { hasPhotos } from '../utils/hasPhotos';
 import { logEvent } from '../utils/analytics';
 import { 
-  Home, 
-  Layers, 
-  Square, 
-  MapPin,
-  Waves, 
-  Hotel,
-  BrickWall,
-  Columns3Cog,
-  Building,
-  Images,
   Camera,
   BotMessageSquare,
   Building2,
   MoveRight,
-  Ruler,
-  Calendar,
-  CheckCircle,
   ChevronRight,
-  Notebook
 } from 'lucide-react';
 
 export default function Estate() {
@@ -34,6 +20,7 @@ export default function Estate() {
   const [selectedType, setSelectedType] = useState('all'); // Фильтр по типу апартаментов
   const [sortOrder, setSortOrder] = useState('asc'); // Сортировка: asc - по возрастанию, desc - по убыванию
 
+  
   const current = data?.districts?.[district]?.estates?.[estate];
   if (!current) return <div>Комплекс не найден</div>;
 
@@ -149,7 +136,7 @@ export default function Estate() {
         <Link to="/districts" className="hover:text-cyan-600 transition-colors">Объекты</Link>
         <ChevronRight size={14} className="mx-2 text-gray-400" />
         <Link 
-          to={`/districts#${district?.toLowerCase() || ''}`}
+          to={`/districts#${district?.name?.toLowerCase() || ''}`}
           className="hover:text-cyan-600 transition-colors"
         >
           {/* {district || 'Район'} */}
@@ -199,7 +186,7 @@ export default function Estate() {
                       </div>
                       
                       <div>
-                        <h2 className="text-4xl font-bold mb-0 tracking-tight">
+                        <h2 className="text-3xl font-bold mb-0 tracking-tight">
                           {current.name}
                         </h2>
                         <div className="flex py-1 items-center text-xs gap-2">
@@ -224,15 +211,15 @@ export default function Estate() {
                         alt={current.name || 'Estate image'}
                         className="w-full h-64 object-cover border blur-xs shadow-md"
                       />
-                      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-t from-slate-900/80 via-slate-600/80 to-orange-600/10 " />
-                      <div className="absolute bottom-4 left-4 right-4 max-h-[180px] overflow-y-auto 
-                        [&::-webkit-scrollbar]:w-1
+                      <div style={{ backdropFilter: 'blur(2px)' }} className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-600/80 to-orange-600/10 " />
+                      <div className="absolute bottom-4 left-4 right-4 max-h-[220px] overflow-y-auto 
+                        [&::-webkit-scrollbar]:w-1.5
                         [&::-webkit-scrollbar-track]:bg-white/20
                         [&::-webkit-scrollbar-track]:rounded-full
                         [&::-webkit-scrollbar-thumb]:bg-white/40
                         [&::-webkit-scrollbar-thumb]:rounded-full
                         [&::-webkit-scrollbar-thumb]:hover:bg-white/60">
-                        <p className="text-white text-md whitespace-pre-wrap leading-relaxed drop-shadow-md">
+                        <p className="text-white text-lg whitespace-pre-wrap leading-relaxed drop-shadow-md">
                           {current.estate_description || 'Современный комплекс с отличными апартаментами'}
                         </p>
                       </div>
@@ -370,7 +357,7 @@ export default function Estate() {
         
         <div className="flex justify-between items-center">
           <div className="text-sm text-gray-500">
-            Найдено апартаментов: {Object.values(processedBlocks).reduce((total, block) => total + block.apartments.length, 0)}
+            Найдено вариантов: {Object.values(processedBlocks).reduce((total, block) => total + block.apartments.length, 0)}
           </div>
           <button
             onClick={handleResetFilters}
@@ -389,7 +376,7 @@ export default function Estate() {
               <div className="w-1 h-8 bg-cyan-600/80 rounded-full mr-2"></div>
               <h2 className="text-2xl font-bold text-gray-800">{blockData.blockName}</h2>
               <span className="ml-4 px-2 py-1 bg-cyan-100/80 text-cyan-800 rounded-full text-sm">
-                {blockData.apartments.length} апарт.
+                {blockData.apartments.length} вар.
               </span>
             </div>
             
