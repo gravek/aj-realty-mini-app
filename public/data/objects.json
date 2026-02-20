@@ -2,17 +2,24 @@
   "districts": {
     "Sahalvasho": {
       "id": "Sahalvasho",
-      "name": "Сахалвашо",
+      "name": "Зеленый мыс",
       "photos": {
         "sketch": [],
         "example": [],
-        "specific": []
+        "specific": [
+          {
+            "old_path": "Sahalvasho/specific/VILLA-main.jpg",
+            "new_filename": "Sahalv-specific-da241b.jpg",
+            "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771496543/%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B2-LUXURI-sketch-da241b.jpg",
+            "description": ""
+          }
+        ]
       },
       "estates": {
         "LUXURIOUS VILLAS": {
           "name": "LUXURIOUS VILLAS",
           "developer_name": "",
-          "estate_description": "🌿 LUXURIOUS VILLAS — премиум-комплекс из 14 приватных вилл рядом с Ботаническим садом Батуми.\n\nСобственный двор, терраса, отличная шумоизоляция, материалы топ-уровня.\n\nИнфраструктура 5*: \n- инфинити-бассейн с подогревом, \n- SPA, фитнес с видом на море и горы, \n- подземный паркинг, \n- зоны отдыха.\n\nИдеально для роскошной жизни и роста стоимости.",
+          "estate_description": "🌿 LUXURIOUS VILLAS — премиум-комплекс из 14 приватных вилл рядом с Ботаническим садом.\n\nСобственный двор, терраса, отличная шумоизоляция, материалы топ-уровня.\n\nИнфраструктура 5*: \n- инфинити-бассейн с подогревом, \n- SPA, фитнес с видом на море и горы, \n- подземный паркинг, \n- зоны отдыха.\n\nИдеально для роскошной жизни и роста стоимости.",
           "coords": [
             41.6869,
             41.7222
@@ -20,19 +27,128 @@
           "photos": {
             "sketch": [
               {
-                "old_path": "Сахалвашо/LUXURIOUS VILLAS/sketch/VILLA-main.jpg",
-                "new_filename": "Сахалв-LUXURI-sketch-da241b.jpg",
-                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771496543/%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B2-LUXURI-sketch-da241b.jpg",
-                "description": "1. **Собственный вид**: Уникальный панорамный вид на горы и море, создающий впечатление безмятежности и гармонии с природой.\n\n2. **Современная архитектура**: Элегантный и стильный дизайн здания, сочетающий в себе элементы традиционной грузинской архитектуры и современные эстетические решения.\n\n3. **Развитая инфраструктура**: Удобное расположение в зоне с развитой инфраструктурой, включающей магазины, рестораны и развлечения, что обеспечивает комфортный образ жизни.\n\n4. **Спокойная атмосфера**: Уютная и спокойная атмосфера, идеально подходящая для отдыха и наслаждения природой, что делает это место идеальным для проживания или отпуска.\n\n5. **Близость к памятникам культуры**: Наличие рядом исторических и культурных достопримечательностей, позволяющих насладиться богатой культурой Аджарии."
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/11-overview.jpeg",
+                "new_filename": "Sahalv-LUXURI-sketch-e38c3b.jpeg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591464/Sahalv-LUXURI-sketch-e38c3b.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/12-overview.jpeg",
+                "new_filename": "Sahalv-LUXURI-sketch-c834d7.jpeg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591471/Sahalv-LUXURI-sketch-c834d7.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/13-overview.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-d4ddcd.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591477/Sahalv-LUXURI-sketch-d4ddcd.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/15-overview-plan.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-f9e172.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591483/Sahalv-LUXURI-sketch-f9e172.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/21-courtyard.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-1e0c96.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591487/Sahalv-LUXURI-sketch-1e0c96.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/22-courtyard.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-244fe7.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591492/Sahalv-LUXURI-sketch-244fe7.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/31-brands.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-bcb6d9.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591495/Sahalv-LUXURI-sketch-bcb6d9.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/32-brands.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-096016.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591498/Sahalv-LUXURI-sketch-096016.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/41-services.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-2be1ce.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591504/Sahalv-LUXURI-sketch-2be1ce.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/42-services.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-b2cbae.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591512/Sahalv-LUXURI-sketch-b2cbae.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/43-services.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-e07d43.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591519/Sahalv-LUXURI-sketch-e07d43.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/51-services.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-298804.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591525/Sahalv-LUXURI-sketch-298804.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/61-nearby.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-f96b7c.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591529/Sahalv-LUXURI-sketch-f96b7c.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/63-nearby.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-a99827.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591536/Sahalv-LUXURI-sketch-a99827.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/65-nearby-map.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-8fdc27.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591544/Sahalv-LUXURI-sketch-8fdc27.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/81-invest.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-546bce.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591552/Sahalv-LUXURI-sketch-546bce.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/83-invest.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-8e987a.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591559/Sahalv-LUXURI-sketch-8e987a.jpg",
+                "description": ""
+              },
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/sketch/85-invest.jpg",
+                "new_filename": "Sahalv-LUXURI-sketch-5e8049.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591563/Sahalv-LUXURI-sketch-5e8049.jpg",
+                "description": ""
               }
             ],
-            "example": [],
+            "example": [
+              {
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/example/17-rising.jpg",
+                "new_filename": "Sahalv-LUXURI-specific-85466e.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591458/Sahalv-LUXURI-specific-85466e.jpg",
+                "description": ""
+              }
+            ],
             "specific": [
               {
-                "old_path": "Сахалвашо/specific/VILLA-main.jpg",
-                "new_filename": "Сахалв-specific-da241b.jpg",
-                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771496551/%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B2-specific-da241b.jpg",
-                "description": "1. **Роскошные виллы**: Комплекс состоит из 14 эксклюзивных вилл, каждая из которых предлагает приватность и комфорт на высшем уровне.\n\n2. **Премиальные материалы**: Использование высококачественных материалов в отделке и строительстве обеспечивает долговечность и эстетическое удовольствие от проживания.\n\n3. **Уникальный дизайн**: Архитектурный стиль, сочетающий современность и традиционные грузинские элементы, создает неповторимую атмосферу уюта и элегантности.\n\n4. **Приватные пространства**: Каждая вилла имеет собственный двор и террасу, что обеспечивает максимальную приватность и возможность наслаждаться природой в уединении.\n\n5. **Идеальное расположение**: Комплекс расположен в живописной зоне рядом с Ботаническим садом Батуми, что позволяет наслаждаться красотой природы и удобством городской инфраструктуры одновременно."
+                "old_path": "Sahalvasho/LUXURIOUS VILLAS/specific/VILLA-main.jpg",
+                "new_filename": "Sahalv-LUXURI-specific-da241b.jpg",
+                "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771496543/%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B2-LUXURI-sketch-da241b.jpg",
+                "description": ""
               }
             ]
           },
@@ -45,13 +161,154 @@
               ],
               "block_specifications": "Блок A состоит из шести 3-этажных апартаментов, расположенных на одном уровне.",
               "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
+                "sketch": [
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/sketch/51-Block-A-plan-viz.jpg",
+                    "new_filename": "Sahalv-LUXURI-Block -sketch-4e714e.jpg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591334/Sahalv-LUXURI-Block%20-sketch-4e714e.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/sketch/52-Block-A-plan.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -sketch-80fbd6.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591341/Sahalv-LUXURI-Block%20-sketch-80fbd6.jpg",
+                    "description": ""
+                  }
+                ],
+                "example": [
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/11-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-2c5741.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591206/Sahalv-LUXURI-Block%20-specific-2c5741.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/12-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-f9c399.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591217/Sahalv-LUXURI-Block%20-specific-f9c399.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/13-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-56fbf3.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591227/Sahalv-LUXURI-Block%20-specific-56fbf3.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/15-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-8aedc7.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591232/Sahalv-LUXURI-Block%20-specific-8aedc7.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/21-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-c9bddd.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591241/Sahalv-LUXURI-Block%20-specific-c9bddd.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/23-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-9c11c8.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591245/Sahalv-LUXURI-Block%20-specific-9c11c8.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/24-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-7a780a.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591254/Sahalv-LUXURI-Block%20-specific-7a780a.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/26-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-6815ec.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591259/Sahalv-LUXURI-Block%20-specific-6815ec.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/27-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-d4a9f3.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591266/Sahalv-LUXURI-Block%20-specific-d4a9f3.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/28-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-c86c58.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591274/Sahalv-LUXURI-Block%20-specific-c86c58.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/29-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-13cba7.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591280/Sahalv-LUXURI-Block%20-specific-13cba7.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/31-terr.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-e6a6f1.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591284/Sahalv-LUXURI-Block%20-specific-e6a6f1.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/33-terr.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-7d3a1d.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591287/Sahalv-LUXURI-Block%20-specific-7d3a1d.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/41-san.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-b52a9c.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591294/Sahalv-LUXURI-Block%20-specific-b52a9c.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/42-san.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-34b516.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591301/Sahalv-LUXURI-Block%20-specific-34b516.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/43-san.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-59a051.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591305/Sahalv-LUXURI-Block%20-specific-59a051.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/44-san.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-ae8046.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591309/Sahalv-LUXURI-Block%20-specific-ae8046.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/45-san.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-292197.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591316/Sahalv-LUXURI-Block%20-specific-292197.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/46-san.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-17eeb2.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591320/Sahalv-LUXURI-Block%20-specific-17eeb2.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block A/example/47-san.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-f36c16.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591327/Sahalv-LUXURI-Block%20-specific-f36c16.jpg",
+                    "description": ""
+                  }
+                ],
+                "specific": [
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/specific/VILLA-main.jpg",
+                    "new_filename": "Sahalv-LUXURI-specific-da241b.jpg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771496543/%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B2-LUXURI-sketch-da241b.jpg",
+                    "description": ""
+                  }
+                ]
               },
               "apartment_types": {
-                "3-этажный": {
-                  "name": "3-этажный",
+                "3-floor": {
+                  "name": "3-floor",
                   "ap_type_descr": "Распределение общей площади апартамента (200 кв.м.) по этажам:\n55 + 70 + 75.",
                   "photos": {
                     "sketch": [],
@@ -64,12 +321,12 @@
                       "floor": "1",
                       "ap_number": "A03",
                       "not_used": "да",
-                      "m2": 200.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью и техникой",
+                      "m2": 198.0,
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью и техникой",
                       "ap_specifications": "Стоимость включает ремонт «под ключ», одно парковочное \nместо площадью 15 кв.м в подземном \nпаркинге и собственный двор. \n\nРаспределение общей площади апартамента (200 кв.м.) по этажам:\n55 + 70 + 75.",
-                      "address": "",
-                      "price_usd": 145000,
+                      "address": "Батуми, Зеленый мыс, 10-я улица",
+                      "price_usd": 396000,
                       "photos": []
                     }
                   ]
@@ -84,13 +341,142 @@
               ],
               "block_specifications": "Блок B состоит из восьми 3-этажных апартаментов, расположенных один за другим на небольшом уклоне горы.",
               "photos": {
-                "sketch": [],
-                "example": [],
-                "specific": []
+                "sketch": [
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/sketch/51-Block-B-plan-viz.jpg",
+                    "new_filename": "Sahalv-LUXURI-Block -sketch-4d641c.jpg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591455/Sahalv-LUXURI-Block%20-sketch-4d641c.jpg",
+                    "description": ""
+                  }
+                ],
+                "example": [
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/11-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-ccb654.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591354/Sahalv-LUXURI-Block%20-specific-ccb654.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/12-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-f95559.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591361/Sahalv-LUXURI-Block%20-specific-f95559.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/13-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-078c69.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591368/Sahalv-LUXURI-Block%20-specific-078c69.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/16-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-c07184.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591372/Sahalv-LUXURI-Block%20-specific-c07184.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/17-living.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-ce2249.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591379/Sahalv-LUXURI-Block%20-specific-ce2249.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/21-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-d06f10.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591382/Sahalv-LUXURI-Block%20-specific-d06f10.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/22-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-28fbb1.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591391/Sahalv-LUXURI-Block%20-specific-28fbb1.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/23-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-24df60.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591398/Sahalv-LUXURI-Block%20-specific-24df60.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/26-bed.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-5a28c8.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591402/Sahalv-LUXURI-Block%20-specific-5a28c8.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/31-terr.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-e68cbc.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591405/Sahalv-LUXURI-Block%20-specific-e68cbc.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/32-terr.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-56fa6b.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591409/Sahalv-LUXURI-Block%20-specific-56fa6b.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/33-terr.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-b0a6d8.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591415/Sahalv-LUXURI-Block%20-specific-b0a6d8.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/34-terr.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-9858db.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591421/Sahalv-LUXURI-Block%20-specific-9858db.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/35-terr.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-f2c749.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591425/Sahalv-LUXURI-Block%20-specific-f2c749.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/36-terr.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-2e4c04.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591428/Sahalv-LUXURI-Block%20-specific-2e4c04.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/41-san.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-968f06.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591432/Sahalv-LUXURI-Block%20-specific-968f06.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/51-hallway.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-6cca29.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591440/Sahalv-LUXURI-Block%20-specific-6cca29.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/56-hallway.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-6efe9e.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591445/Sahalv-LUXURI-Block%20-specific-6efe9e.jpg",
+                    "description": ""
+                  },
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/Block B/example/57-hallway.jpeg",
+                    "new_filename": "Sahalv-LUXURI-Block -specific-780e59.jpeg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771591449/Sahalv-LUXURI-Block%20-specific-780e59.jpg",
+                    "description": ""
+                  }
+                ],
+                "specific": [
+                  {
+                    "old_path": "Sahalvasho/LUXURIOUS VILLAS/specific/VILLA-main.jpg",
+                    "new_filename": "Sahalv-LUXURI-specific-da241b.jpg",
+                    "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1771496543/%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B2-LUXURI-sketch-da241b.jpg",
+                    "description": ""
+                  }
+                ]
               },
               "apartment_types": {
-                "3-этажный": {
-                  "name": "3-этажный",
+                "3-floor": {
+                  "name": "3-floor",
                   "ap_type_descr": "Распределение общей площади апартамента (145 кв.м.) по этажам:\n45 + 60 + 60.",
                   "photos": {
                     "sketch": [],
@@ -103,12 +489,12 @@
                       "floor": "1",
                       "ap_number": "B05",
                       "not_used": "да",
-                      "m2": 145.0,
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью и техникой",
+                      "m2": 165.0,
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью и техникой",
                       "ap_specifications": "Стоимость включает ремонт «под ключ», одно парковочное \nместо площадью 15 кв.м в подземном \nпаркинге и собственный двор. \n\nРаспределение общей площади апартамента (145 кв.м.) по этажам:\n45 + 60 + 60.",
-                      "address": "",
-                      "price_usd": 110000,
+                      "address": "Батуми, Зеленый мыс, 10-я улица",
+                      "price_usd": 350000,
                       "photos": []
                     }
                   ]
@@ -130,7 +516,7 @@
             "old_path": "Chakvi/specific/Chakvi-Батуми- карта.jpg",
             "new_filename": "Chakvi-specific-0e96e0.jpg",
             "url": "https://res.cloudinary.com/dpmxeg2un/image/upload/v1766485464/Chakvi-specific-0e96e0.jpg",
-            "description": "К сожалению, я не могу просмотреть изображение по предоставленной ссылке, но могу предложить, как описать недвижимость в Грузии, основываясь на стандартных характеристиках. Вот пример описания:\n\n1. **Привлекательный вид**: Недвижимость предлагает захватывающий панорамный вид на Черное море и величественные горы Аджарии, создавая идеальное сочетание природы и комфорта.\n\n2. **Развита инфраструктура**: В непосредственной близости находятся магазины, рестораны и кафе, а также спортивные и развлекательные заведения, что делает повседневную жизнь удобной и насыщенной.\n\n3. **Уютная атмосфера**: Уникальная атмосфера региона, объединяющая умиротворение природы и возможность активного отдыха, создаёт идеальные условия для жизни и отдыха.\n\n4. **Качественные материалы**: Использование современных и высококачественных строительных материалов обеспечит долговечность и комфорт жилья.\n\n5. **Близость к природе**: Расположение в окружении зелёных лесов и великолепных пляжей позволяет наслаждаться свежим воздухом и красотой природы в любое время года.\n\nЕсли у вас есть конкретные детали о фото, я смогу более точно адаптировать описание."
+            "description": ""
           }
         ]
       },
@@ -138,7 +524,7 @@
         "Dreamland Oasis": {
           "name": "Dreamland Oasis",
           "developer_name": "Dreamland",
-          "estate_description": "💎 Dreamland Oasis — премиум-курортный комплекс у моря в Чакви, всего 9 км от Батуми, рядом с Ботаническим садом. \n\nАпартаменты с готовой отделкой, мебелью и техникой — заезжай и живи. \n\nИнфраструктура 5*: \n- 4 бассейна, аквапарк, частный пляж, \n- рестораны, спа, спортплощадки, \n- ухоженная территория 130 т. м². \n\nИдеально для отдыха, жизни у моря и стабильной аренды с высокой доходностью.",
+          "estate_description": "💎 Dreamland Oasis — премиум-курортный комплекс у моря в Чакви, всего 9 км от Батуми, рядом с Ботаническим садом. \n\nАпартаменты с готовой отделкой, мебелью и техникой — заезжай и живи. \n\nИнфраструктура 5*: \n- 4 бассейна, аквапарк, частный пляж, \n- рестораны, спа, спортплощадки, \n- ухоженная территория 130 т. м². \nИдеально для отдыха, жизни у моря и стабильной аренды с высокой доходностью.",
           "coords": [
             41.72053,
             41.726417
@@ -394,7 +780,7 @@
               },
               "apartment_types": {
                 "студия": {
-                  "name": "Студия",
+                  "name": "студия",
                   "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
@@ -408,8 +794,8 @@
                       "ap_number": "415",
                       "not_used": "",
                       "m2": "",
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью",
                       "ap_specifications": "Вид на море и территорию, готовый бизнес",
                       "address": "",
                       "price_usd": 63702,
@@ -433,7 +819,7 @@
               },
               "apartment_types": {
                 "студия": {
-                  "name": "Студия",
+                  "name": "студия",
                   "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
@@ -446,9 +832,9 @@
                       "floor": "4",
                       "ap_number": "423",
                       "not_used": "",
-                      "m2": "50",
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
+                      "m2": "",
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью",
                       "ap_specifications": "Вид на море, полная комплектация",
                       "address": "",
                       "price_usd": 83294,
@@ -472,7 +858,7 @@
               },
               "apartment_types": {
                 "студия": {
-                  "name": "Студия",
+                  "name": "студия",
                   "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
@@ -486,8 +872,8 @@
                       "ap_number": "1603",
                       "not_used": "",
                       "m2": "",
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью",
                       "ap_specifications": "Вторичный рынок, вид на море",
                       "address": "",
                       "price_usd": 95000,
@@ -525,8 +911,8 @@
                       "ap_number": "",
                       "not_used": "",
                       "m2": "",
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью",
                       "ap_specifications": "Выход к бассейну, с ремонтом и мебелью",
                       "address": "",
                       "price_usd": 135000,
@@ -542,7 +928,7 @@
     },
     "Batumi": {
       "id": "Batumi",
-      "name": "Батуми",
+      "name": "Чакви",
       "photos": {
         "sketch": [],
         "example": [],
@@ -577,7 +963,7 @@
               },
               "apartment_types": {
                 "студия": {
-                  "name": "Студия",
+                  "name": "студия",
                   "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
@@ -591,8 +977,8 @@
                       "ap_number": "",
                       "not_used": "",
                       "m2": "",
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью",
                       "ap_specifications": "Панорамный вид",
                       "address": "",
                       "price_usd": 65000,
@@ -616,7 +1002,7 @@
               },
               "apartment_types": {
                 "студия": {
-                  "name": "Студия",
+                  "name": "студия",
                   "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
@@ -630,8 +1016,8 @@
                       "ap_number": "",
                       "not_used": "",
                       "m2": "",
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью",
                       "ap_specifications": "Боковой вид на море",
                       "address": "",
                       "price_usd": 54000,
@@ -655,7 +1041,7 @@
               },
               "apartment_types": {
                 "студия": {
-                  "name": "Студия",
+                  "name": "студия",
                   "ap_type_descr": "",
                   "photos": {
                     "sketch": [],
@@ -669,8 +1055,8 @@
                       "ap_number": "",
                       "not_used": "",
                       "m2": "",
-                      "finishing": "Под ключ",
-                      "furnished": "С мебелью",
+                      "finishing": "под ключ",
+                      "furnished": "с мебелью",
                       "ap_specifications": "Вид на город",
                       "address": "",
                       "price_usd": 56000,

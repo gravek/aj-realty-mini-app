@@ -661,7 +661,7 @@ const getPriceCategories = (district) => {
                         <h2 className="text-3xl font-semibold mb-2 tracking-tight">
                           {district.name}
                         </h2>
-                        {district.coords && (
+                        {advantages.coords && (
                           <div className="flex items-center text-xs gap-2">
                             <div className="flex items-center gap-2 px-3 py-1 bg-white/15 rounded-full backdrop-blur-sm">
                               <div className="w-1 h-1 bg-white rounded-full"></div>
