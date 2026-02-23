@@ -132,9 +132,9 @@ export default function Estate() {
     <div className="mt-6">
 
       {/* Навигационная цепочка (путь) */}
-      <div className="flex items-center text-sm text-gray-500 mb-6">
+      <div className="flex items-center text-sm text-slate-500 mb-6">
         <Link to="/districts" className="hover:text-cyan-600 transition-colors">Объекты</Link>
-        <ChevronRight size={14} className="mx-2 text-gray-400" />
+        <ChevronRight size={14} className="mx-2 text-slate-400" />
         <Link 
           to={`/districts#${district?.name?.toLowerCase() || ''}`}
           className="hover:text-cyan-600 transition-colors"
@@ -142,14 +142,14 @@ export default function Estate() {
           {/* {district || 'Район'} */}
           {data.districts[district]?.name || district}
         </Link>
-        <ChevronRight size={14} className="mx-2 text-gray-400" />
-        <span className="text-gray-700 font-medium">
+        <ChevronRight size={14} className="mx-2 text-slate-400" />
+        <span className="text-slate-700 font-medium">
           {current?.name || estate || 'Комплекс'}  {/* current.name или fallback на params.estate */}
         </span>
       </div>
 
       {/* <h1 className="text-3xl font-bold mb-2">{current.name}</h1>
-      {current.developer_name && <p className="text-lg text-gray-600 mb-6">{current.developer_name}</p>}
+      {current.developer_name && <p className="text-lg text-slate-600 mb-6">{current.developer_name}</p>}
 
       <div className="max-w-2xl font-normal tracking-tighter text-left mx-auto px-3 py-2 mb-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-xl border border-rose-200 text-orange-800">
         {current.photos?.specific?.[0]?.url && (
@@ -236,11 +236,14 @@ export default function Estate() {
             <button
               onClick={() => setIsModalOpen(true)}
               // className="w-1/2 mb-8 mx-auto bg-gradient-to-r from-orange-600 to-rose-600 text-white py-4 rounded-2xl font-bold text-md hover:shadow-xl transition flex items-center gap-2"
-              className="text-lg text-white font-semibold bg-gradient-to-r from-orange-600/80 to-rose-600/80 py-2 px-8 rounded-xl shadow-lg transition-shadow flex items-center gap-3"
+              className="text-lg text-white font-semibold bg-gradient-to-r from-orange-600/80 to-rose-600/80 py-2 px-8 rounded-2xl shadow-lg transition-shadow flex items-center gap-3"
             
             >
-              <Camera size={24} className="animate-gentle-pulse" />
-              Посмотреть фото комплекса
+                      <Camera size={32} className="animate-gentle-pulse" />
+                      <div className="flex flex-col items-start mr-2 ml-2">
+                        <div>Все фото</div>
+                        <div className="text-sm font-normal">{current.name}</div>
+                      </div>
             </button>
           </div>
         </div>
@@ -272,7 +275,7 @@ export default function Estate() {
             <BotMessageSquare size={32} className="animate-gentle-pulse" />
             <div className="flex flex-col items-start">
               <span className="text-xl">Спросить Эладжа</span>
-              <span className="text-sm font-normal opacity-95 -mt-1">о {current.name} и апартаментах</span>
+              <span className="text-sm font-normal mt-0">об апартаментах комплекса</span>
             </div>
           </button>
         </div>
@@ -310,7 +313,7 @@ export default function Estate() {
       <div className="mb-8 p-4 bg-white/90 rounded-xl border border-rose-100 shadow">
         <div className="flex flex-wrap gap-4 items-center justify-between mb-4">
           <div>
-            <h3 className="font-semibold text-gray-700 mb-2">Тип апартаментов:</h3>
+            <h3 className="font-semibold text-slate-700 mb-2">Тип апартаментов:</h3>
             <div className="flex flex-wrap gap-2">
               {apartmentTypes.map(type => (
                 <button
@@ -319,7 +322,7 @@ export default function Estate() {
                   className={`px-2 py-1  rounded-lg transition ${
                     selectedType === type.id
                       ? 'bg-cyan-600/90 text-white'
-                      : 'bg-gray-100/90 text-gray-700 hover:bg-gray-200'
+                      : 'bg-slate-100/90 text-slate-700 hover:bg-slate-200'
                   }`}
                 >
                   {type.name}
@@ -329,14 +332,14 @@ export default function Estate() {
           </div>
           
           <div>
-            <h3 className="font-semibold text-gray-700 mb-2">Сортировка по цене внутри блока:</h3>
+            <h3 className="font-semibold text-slate-700 mb-2">Сортировка по цене внутри блока:</h3>
             <div className="flex gap-2">
               <button
                 onClick={() => setSortOrder('asc')}
                 className={`px-2 py-1 rounded-lg transition ${
                   sortOrder === 'asc'
                     ? 'bg-cyan-600/90 text-white'
-                    : 'bg-gray-100/90 text-gray-700 '
+                    : 'bg-slate-100/90 text-slate-700 '
                 }`}
               >
                 По возрастанию
@@ -346,7 +349,7 @@ export default function Estate() {
                 className={`px-2 py-1 rounded-lg transition ${
                   sortOrder === 'desc'
                     ? 'bg-cyan-600/90 text-white'
-                    : 'bg-gray-100/90 text-gray-700 '
+                    : 'bg-slate-100/90 text-slate-700 '
                 }`}
               >
                 По убыванию
@@ -356,7 +359,7 @@ export default function Estate() {
         </div>
         
         <div className="flex justify-between items-center">
-          <div className="text-sm text-gray-500">
+          <div className="text-sm text-slate-600">
             Найдено вариантов: {Object.values(processedBlocks).reduce((total, block) => total + block.apartments.length, 0)}
           </div>
           <button
@@ -374,23 +377,23 @@ export default function Estate() {
           <div key={blockId} className="mt-8">
             <div className="flex items-center mb-4">
               <div className="w-1 h-8 bg-cyan-600/80 rounded-full mr-2"></div>
-              <h2 className="text-2xl font-bold text-gray-800">{blockData.blockName}</h2>
+              <h2 className="text-2xl font-semibold text-slate-800">{blockData.blockName}</h2>
               <span className="ml-4 px-2 py-1 bg-cyan-100/80 text-cyan-800 rounded-full text-sm">
                 {blockData.apartments.length} вар.
               </span>
             </div>
             
-            {/* Карточки апартаментов */}
+            {/* Карточки блоков и апартаментов */}
             <div className="grid gap-4">
               {blockData.apartments.map(ap => (
                 <Link
                   key={ap.apartment_id}
                   to={`/apartment/${ap.apartment_id}`}
-                  className="block p-5 bg-white/90 rounded-xl border border-rose-100 shadow hover:shadow-lg transition"
+                  className="block p-4 pb-1 pt-4 bg-white/90 rounded-xl border border-rose-100 shadow hover:shadow-lg transition"
                 >
                   <div className="flex flex-col">
                     {/* Верхняя строка: теги во всю ширину */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-2">
                       <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs rounded">
                         {ap.typeName}
                       </span>
@@ -410,7 +413,7 @@ export default function Estate() {
                     </div>
 
                     {/* Нижняя секция: две колонки (цена слева, текст+иконка справа) */}
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-center mb-2">
                       {/* Левая колонка: цена */}
                       <div>
                         <p className="text-2xl font-bold text-cyan-600">
@@ -421,7 +424,7 @@ export default function Estate() {
                       {/* Правая колонка: текст и иконка в одной строке */}
                       <div className="flex items-center gap-2 flex-shrink-0">
                         <span className="text-xs text-slate-600">к апартаментам</span>
-                        <MoveRight size={28} className="text-cyan-600 animate-gentle-pulse" />
+                        <MoveRight size={32} className="text-cyan-600 animate-gentle-pulse" />
                       </div>
                     </div>
                   </div>
@@ -436,7 +439,7 @@ export default function Estate() {
       {/* Сообщение, если ничего не найдено */}
       {Object.keys(processedBlocks).length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg mb-4">По выбранным фильтрам апартаменты не найдены</p>
+          <p className="text-slate-500 text-lg mb-4">По выбранным фильтрам апартаменты не найдены</p>
           <button
             onClick={handleResetFilters}
             className="px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition"

@@ -116,7 +116,7 @@ const getPriceCategories = (district) => {
   // Маркетинговые описания для районов
   const getDistrictAdvantages = (districtName) => {
     const advantages = {
-      'Зеленый мыс': {
+      'Чакви': {
         description: 'Чакви — курортный посёлок в Грузии, одно из быстрорастущих туристических направлений. \nРасположен в нескольких километрах от Батуми.',
         coords: [41.723, 41.735],
         lifestyle: {
@@ -221,7 +221,7 @@ const getPriceCategories = (district) => {
       },
       'Зеленый мыс': {
         description: '🌿 Зеленый мыс — тихое горное село в с захватывающими видами на Ботанический сад, море и горы. \n\nРасположено всего в 6 км от Батуми и в 2 км от моря. \n\nИдеальное место для тех, кто ищет чистый воздух и  уединение рядом с Крестовоздвиженским мужским монастырём.',
-        coords: [41.6801, 41.7327],  
+        // coords: [41.6801, 41.7327],  
         lifestyle: {
           title: 'Тишина гор и духа',
           points: [
@@ -308,7 +308,7 @@ const getPriceCategories = (district) => {
         gradient: 'from-teal-600 to-cyan-600',
         gradientLight: 'from-teal-100/90 to-cyan-100/90',
         border: 'border-cyan-300/60',
-        icon: <Waves className="text-white/50" size={64} />,
+        icon: <Trees className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-teal-100/20 to-cyan-100/20'
       },
       'Батуми': { 
@@ -332,7 +332,7 @@ const getPriceCategories = (district) => {
         gradient: 'from-fuchsia-600 to-purple-600',
         gradientLight: 'from-fuchsia-100/90 to-purple-100/90',
         border: 'border-purple-300/60',
-        icon: <Trees className="text-white/50" size={64} />,
+        icon: <Waves className="text-white/50" size={64} />,
         pattern: 'bg-gradient-to-br from-fuchsia-100/20 to-purple-100/20'
       },
       'Mahinjauri': { 
@@ -777,19 +777,22 @@ const getPriceCategories = (district) => {
 
               {/* Кнопка галереи */}
               {hasPhotos && (
-                <div className="text-center mt-4">
-                  <div className="inline-flex items-center gap-4 bg-white/60 backdrop-blur-md rounded-3xl shadow-xl border border-rose-300/40 p-2">
-
-                          <button
-                            onClick={() => setModalOpenFor(key)}
-                            className="bg-gradient-to-r text-lg from-orange-600/80 to-rose-600/80 text-white font-semibold leading-relaxed py-2 px-8 rounded-2xl shadow-lg transition-shadow flex items-center gap-2"
-                          >
-                            <Camera size={24} className="animate-gentle-pulse" />
-                            <span>Смотреть все фото {district.name}</span>
-                          </button>
-                        </div>
+                <div className="text-center items-center mt-4">
+                  <div className="inline-flex bg-white/60 backdrop-blur-md rounded-3xl shadow-xl border border-rose-300/40 p-2">
+                    <button
+                      onClick={() => setModalOpenFor(key)}
+                      className="bg-gradient-to-r text-lg text-white font-semibold from-orange-600/80 to-rose-600/80 leading-relaxed py-2 px-4 rounded-2xl shadow-lg transition-shadow flex items-center gap-2"
+                    >
+                      <Camera size={32} className="animate-gentle-pulse" />
+                      <div className="flex flex-col items-start mr-2 ml-2">
+                        <div>Все фото</div>
+                        <div className="text-sm -mt-1 font-normal">{district.name}</div>
+                      </div>
+                    </button>
+                  </div>
                 </div>
               )}
+              
 
               {/* Кнопка бота */}
               <div className="max-w-4xl mx-auto px-4 mt-4 md:mt-4 sticky top-10 z-40 md:static">
@@ -814,8 +817,8 @@ const getPriceCategories = (district) => {
                   >
                     <BotMessageSquare size={32} className="animate-gentle-pulse" />
                     <div className="flex flex-col items-start">
-                      <span className="text-xl">Спросить Эладжа</span>
-                      <span className="text-sm font-normal opacity-90 -mt-1">о {district.name} и объектах в нем</span>
+                      <span className="text-xl">Спросить Эладжа о</span>
+                      <span className="text-sm font-normal opacity-90 -mt-0">{district.name} и объектах в нем</span>
                     </div>
                   </button>
                 </div>

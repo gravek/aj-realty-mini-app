@@ -32,15 +32,15 @@ const BottomNav = () => {
   }, [location.pathname]); 
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-amber-200 z-50 shadow-2xl">
-      <div className="flex justify-around items-center max-w-md mx-auto py-4">
-        <a href="/" className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${isActive(['/']) ? 'text-orange-800 font-bold border-y-2 border-rose-600 -mb-1' : 'text-amber-600 font-medium'}`}>
+    <div className="fixed bottom-0 left-0 right-0 bg-white/60 backdrop-blur-xl border-t border-rose-200 z-50 shadow-2xl">
+      <div className="flex justify-around items-center max-w-md mx-auto py-2.5">
+        <a href="/" className={`flex flex-col items-center px-2 py-0 rounded-sm transition-all ${isActive(['/']) ? 'text-orange-800 font-bold border-y-2 border-rose-600/80 -mb-0' : 'text-amber-600 font-medium'}`}>
           <span className="text-md">Главная</span>
         </a>
-        <a href="/districts" className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${isActive(['/districts', '/estate', '/apartment']) ? 'text-orange-800 font-bold border-y-2 border-cyan-600 -mb-1' : 'text-amber-600 font-medium'}`}>
+        <a href="/districts" className={`flex flex-col items-center px-2 py-0 rounded-sm transition-all ${isActive(['/districts', '/estate', '/apartment']) ? 'text-orange-800 font-bold border-y-2 border-cyan-600/80 -mb-0' : 'text-amber-600 font-medium'}`}>
           <span className="text-md">Объекты</span>
         </a>
-        <a href="/calculator" className={`flex flex-col items-center px-2 py-1 rounded-sm transition-all ${isActive('/calculator') ? 'text-orange-800 font-bold border-y-2 border-cyan-600 -mb-1' : 'text-amber-600 font-medium'}`}>
+        <a href="/calculator" className={`flex flex-col items-center px-2 py-0 rounded-sm transition-all ${isActive('/calculator') ? 'text-orange-800 font-bold border-y-2 border-cyan-600/80 -mb-0' : 'text-amber-600 font-medium'}`}>
           <span className="text-md">Расчеты</span>
         </a>
       </div>
@@ -146,13 +146,38 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 via-amber-70 via-orange-80 to-rose-50 text-orange-800 pb-20">
+    // <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-white text-rose-800 pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-white text-rose-800 pb-20 relative">
+
+      {/* Горизонтальные линии */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'repeating-linear-gradient(180deg, transparent, transparent 8px, #b87a6a 2px, #b87a6a 10px)',
+          opacity: '0.06',
+          maskImage: 'linear-gradient(to bottom, transparent 10%, slate 20%,  slate 60%, transparent 85%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 10%, slate 20%, slate 60%, transparent 85%)'
+        }}
+      />
+      
+      
+      {/* Второй слой линий под углом */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'repeating-linear-gradient(106deg, transparent, transparent 10px, #b55a4a 10px, #b55a4a 12px)',
+          opacity: '0.02',
+          maskImage: 'linear-gradient(to right, slate 60%, transparent 20%, slate 60%)',
+          WebkitMaskImage: 'linear-gradient(to right, slate 60%, transparent 20%, slate 60%)'
+        }}
+      />
+
       {/* Хедер */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-orange-800">
-        <div className="max-w-3xl mx-auto relative px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+      <header className="sticky top-0 z-40 bg-white/60 backdrop-blur-md border-b border-rose-200">
+        <div className="max-w-3xl mx-auto relative px-4 py-2.5 flex items-center justify-between">
+          <div className="flex items-center gap-2">
             {location.pathname !== '/' && (
-              <button onClick={() => navigate(-1)} className="p-2.5 rounded-full bg-orange-100 hover:bg-orange-200 transition active:scale-95 flex items-center">
+              <button onClick={() => navigate(-1)} className="p-1.5 rounded-full bg-orange-100/60  transition active:scale-95 flex items-center">
                 <svg className="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>

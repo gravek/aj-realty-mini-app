@@ -16,7 +16,7 @@ import {
   ArrowDown,
   Sparkles,
   MapPin,
-  CloudSun,
+  UserRoundPen,
   Building,
   Coffee,
   BotMessageSquare,
@@ -244,7 +244,7 @@ export default function Home() {
             </div>
 
             {/* Плашка о горячих предложениях */}
-            <div className="inline-flex items-center gap-4 bg-white/80  text-white border border-rose-200/60 px-6 py-3 rounded-md shadow-md z-10">
+            <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md  text-white border border-rose-200/60 px-6 py-3 rounded-md shadow-md z-10">
               <Speech size={32} className="text-rose-600/80 animate-gentle-pulse" />
               <h2 className="text-2xl text-center md:text-2xl font-semibold bg-gradient-to-r from-orange-600/90 to-rose-600/90 bg-clip-text text-transparent tracking-tight">
                 Горячие предложения апартаментов
@@ -324,7 +324,7 @@ export default function Home() {
         </div>
 
         {/* Призыв к полному каталогу */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-16">
           <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-rose-200/80 p-2">
 
             <Link
@@ -337,6 +337,42 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+
+        {/* Кнопка менеджера */}
+        <div className="max-w-4xl mx-auto px-4 pt-4 sticky top-10 z-40 md:static">
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-fuchsia-200/80 p-2 md:p-4">
+            <button
+              onClick={() => {
+                const key = `logged_ask_manager_apartment_${id}`;
+                if (!localStorage.getItem(key)) {
+                  logEvent('ask_manager_apartment', {
+                    apartment_id: id,
+                    estate: apartment?.estateName || 'unknown',
+                    district: apartment?.districtName || 'unknown'
+                  });
+                  localStorage.setItem(key, '1');
+                  setTimeout(() => localStorage.removeItem(key), 60 * 1000);
+                }
+                // window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
+                // Формируем текст для вставки в чат
+                const prefilledText = `Добрый день! Интересует апартамент id: ${id}. Хотелось бы узнать подробнее. (${apartment?.estateName}, ${apartment.blockName}, этаж ${apartment.floor}, N ${apartment.apartment_number || '-'}, ${apartment.app_type}, ${apartment.m2} м², ${apartment.price_usd.toLocaleString()} USD)`;
+                
+                // Кодируем текст и формируем URL, затем открываем бота
+                const botUrl = `https://t.me/a4k5o6?text=${encodeURIComponent(prefilledText)}`;
+                window.Telegram?.WebApp?.openTelegramLink(botUrl);
+              }}
+              className="w-full bg-gradient-to-r from-fuchsia-600/80 to-purple-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
+            >
+              <UserRoundPen size={32} className="animate-gentle-pulse" />
+              <div className="flex flex-col items-start">
+                <span className="text-xl">Написать менеджеру</span>
+                <span className="text-sm font-normal opacity-95 -mt-1">для личной консультации</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   );
