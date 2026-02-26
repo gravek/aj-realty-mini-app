@@ -13,7 +13,7 @@ import {
   Speech,
   Flame,
   MoveRight,
-  ArrowDown,
+  HandCoins,
   Sparkles,
   MapPin,
   UserRoundPen,
@@ -309,8 +309,17 @@ export default function Home() {
                   <div>
                     <p className="text-2xl font-bold text-cyan-600">
                       ${apt.price_usd.toLocaleString()}
+                      {/* {apt.credit ? <HandCoins size={20} className="ml-4 inline-block text-rose-500" /> : ''} */}
                     </p>
                   </div>
+
+                  {/* Средняя колонка: если етсь предложение о кредите */}
+                  {apt.credit && (
+                    <span className="flex items-center justify-end translate-y-1 gap-1 text-rose-500 font-medium bg-rose-200/20 px-2 py-1 rounded-full text-xs">
+                      <HandCoins size={18} className="translate-y-0.8 scale-x-[-1]" />
+                      кредит
+                    </span>
+                  )}
 
                   {/* Правая колонка: текст и иконка в одной строке */}
                   <div className="flex items-center gap-2 flex-shrink-0">
@@ -325,7 +334,7 @@ export default function Home() {
 
         {/* Призыв к полному каталогу */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-rose-200/80 p-2">
+          <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-sky-200/80 p-2">
 
             <Link
               to="/districts"

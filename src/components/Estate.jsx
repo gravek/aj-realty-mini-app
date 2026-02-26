@@ -7,6 +7,7 @@ import { hasPhotos } from '../utils/hasPhotos';
 import { logEvent } from '../utils/analytics';
 import { 
   Camera,
+  HandCoins,
   BotMessageSquare,
   Building2,
   MoveRight,
@@ -413,14 +414,20 @@ export default function Estate() {
                     </div>
 
                     {/* Нижняя секция: две колонки (цена слева, текст+иконка справа) */}
-                    <div className="flex justify-between items-center mb-2">
+                    <div className="flex justify-between items-center mt-1.5 mb-2">
                       {/* Левая колонка: цена */}
                       <div>
                         <p className="text-2xl font-bold text-cyan-600">
                           ${ap.price_usd.toLocaleString()}
                         </p>
                       </div>
-
+                      {/* Средняя колонка: если етсь предложение о кредите */}
+                      {ap.credit && (
+                        <span className="flex items-center justify-end translate-y-0.8 gap-1 text-rose-500 font-medium bg-rose-200/20 px-2 py-1 rounded-full text-xs">
+                          <HandCoins size={18} className="scale-x-[-1]" />
+                          кредит
+                        </span>
+                      )}
                       {/* Правая колонка: текст и иконка в одной строке */}
                       <div className="flex items-center gap-2 flex-shrink-0">
                         <span className="text-xs text-slate-600">к апартаментам</span>

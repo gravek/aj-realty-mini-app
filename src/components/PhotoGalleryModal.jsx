@@ -19,7 +19,8 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
 
     const addPhotos = (photosObj) => {
       if (!photosObj) return;
-      ['sketch', 'example', 'specific'].forEach(type => {
+      // ['sketch', 'example', 'specific'].forEach(type => {
+      ['sketch', 'example'].forEach(type => {
         photosObj[type]?.forEach(photo => {
           if (photo.url) {
             photos.push({
@@ -165,7 +166,8 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
 
       {/* Фильтры */}
       <div className="flex gap-3 px-6 py-3 bg-slate-800/50 backdrop-blur border-y border-white/40 overflow-x-auto">
-        {['all', 'sketch', 'example', 'specific'].map(key => (
+        {/* {['all', 'sketch', 'example', 'specific'].map(key => ( */}
+        {['all', 'sketch', 'example'].map(key => (
           <button
             key={key}
             onClick={e => { e.stopPropagation(); setFilter(key); setCurrentIndex(0); }}
@@ -242,11 +244,17 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
             })}
           >
             <div
-              className="w-full max-w-3xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-white/20"
+              className="w-full max-w-3xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/20"
               onClick={e => e.stopPropagation()}
             >
               <p className="flex justify-center items-center text-xs text-orange-600 bg-orange-100/80 border border-orange-400 px-2 py-1 rounded-full mb-4">{currentPhoto.label}</p>
-              <p className="text-sm leading-relaxed text-slate-900">{currentPhoto.description}</p>
+              <p className="text-sm text-slate-900 leading-tight whitespace-pre-wrap max-h-[300px] overflow-y-auto 
+                        [&::-webkit-scrollbar]:w-1.5
+                        [&::-webkit-scrollbar-track]:bg-slate-400/60
+                        [&::-webkit-scrollbar-track]:rounded-full
+                        [&::-webkit-scrollbar-thumb]:bg-slate-500/80
+                        [&::-webkit-scrollbar-thumb]:rounded-full
+                        ">{currentPhoto.description}</p>
               
               <button
                 onClick={() => setCaptionOpen(prev => {
@@ -254,9 +262,9 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
                   newState[currentIndex] = false;
                   return newState;
                 })}
-                className="mt-4 px-2 py-1 bg-slate-600/40 text-white rounded-full text-xs font-normal border border-slate-400 transition"
+                className="mt-2 px-2 py-1 bg-slate-600/60 text-white rounded-full text-xs font-normal border border-slate-400 transition"
               >
-                ЗАКРЫТЬ
+                ЗАКРЫТЬ ОПИСАНИЕ
               </button>
             </div>
           </div>

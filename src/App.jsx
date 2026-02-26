@@ -147,14 +147,14 @@ export default function App() {
 
   return (
     // <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-white text-rose-800 pb-20">
-    <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-white text-rose-800 pb-20 relative">
+    <div className="min-h-screen bg-gradient-to-br from-white to-orange-50 text-rose-700 pb-20 relative">
 
       {/* Горизонтальные линии */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
           background: 'repeating-linear-gradient(180deg, transparent, transparent 8px, #b87a6a 2px, #b87a6a 10px)',
-          opacity: '0.06',
+          opacity: '0.03',
           maskImage: 'linear-gradient(to bottom, transparent 10%, slate 20%,  slate 60%, transparent 85%)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 10%, slate 20%, slate 60%, transparent 85%)'
         }}

@@ -9,6 +9,7 @@ import {
   Layers, 
   Square, 
   MapPin, 
+  HandCoins,
   Hotel,
   BrickWall,
   Blocks,
@@ -188,7 +189,7 @@ export default function Apartment() {
 
 
       <div className="flex-1 pb-4">
-        <h1 className="text-3xl font-bold  bg-gradient-to-r from-cyan-700 to-teal-600 bg-clip-text text-transparent mb-2">{apartment.estateName}</h1>
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-700 to-teal-600 bg-clip-text text-transparent mb-2">{apartment.estateName}</h1>
         
         {apartment.estateDeveloper && (
           <div className="flex items-center gap-2 mt-1">
@@ -201,7 +202,7 @@ export default function Apartment() {
 
 
       {/* Апартамент и основная информация from-cyan-600/80 to-teal-600/80 */}
-      <div className="bg-gradient-to-r from-cyan-50/90 to-teal-50/90 p-6 rounded-2xl border border-cyan-300 shadow-md">
+      <div className="bg-gradient-to-r from-cyan-50/90 to-teal-50/90 p-6 rounded-2xl border border-cyan-300 shadow-xl">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
           <div className="flex-1">
             <h2 className="text-3xl font-bold text-cyan-700">Апартамент {apartment.apartment_number || ''}</h2>
@@ -229,9 +230,8 @@ export default function Apartment() {
 
             {/* координаты блока (если есть) */}
             {apartment.blockCoords && (
-              <div className="flex items-center gap-2 px-3 py-1 bg-white/95 rounded-full backdrop-blur-sm text-xs">
+              <div className="flex items-center gap-2 px-3 py-1 text-xs bg-white/95 border border-slate-200/80 rounded-full">
                 <MapPin className="text-slate-400" size={16} />
-                {/* <div className="w-1 h-1 bg-slate-600 rounded-full"></div> */}
                 <span className="text-slate-600">
                   {apartment.blockCoords[0].toFixed(4)}, {apartment.blockCoords[1].toFixed(4)}
                 </span>
@@ -241,8 +241,16 @@ export default function Apartment() {
 
           {/* Цена и основные спецификации апартамента */}
           <div className="bg-white p-5 rounded-xl shadow-lg border border-cyan-100 min-w-[250px]">
-            <div className="text-2xl font-bold text-cyan-600 mb-1">
-              ${apartment.price_usd.toLocaleString()}
+            <div className="flex items-center justify-between gap-2 mt-0">
+              <div className="text-2xl font-bold text-cyan-600 mb-1">
+                ${apartment.price_usd.toLocaleString()}
+              </div>
+              {apartment.credit && (
+                <div className="text-sm font-semibold text-rose-500 bg-rose-200/20 px-3 py-1 rounded-full mb-1 items-center gap-2 flex">
+                  <HandCoins size={20} className="scale-x-[-1]" />
+                  кредит {apartment.credit.toLocaleString()}%
+                </div>
+              )}
             </div>
             <div className="text-sm text-slate-500 mb-3">
               {pricePerM2.toLocaleString('ru-RU', { maximumFractionDigits: 0 })} $/м²
@@ -280,7 +288,7 @@ export default function Apartment() {
       )} */}
 
       {/* Табы с информацией */}
-      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-xl overflow-hidden">
         <div className="flex border-b border-slate-100">
           <button
             onClick={() => setActiveTab('details')}
@@ -329,8 +337,12 @@ export default function Apartment() {
                       <span className="text-cyan-600 font-semibold">{apartment.app_type}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
-                      <span className="text-slate-600">Корпус</span>
-                      <span className="text-cyan-600 font-semibold">{apartment.blockName}</span>
+                      <span className="text-slate-600">Метраж общий</span>
+                      <span className="text-cyan-600 font-semibold">{apartment.m2} м²</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
+                      <span className="text-slate-600">Этаж</span>
+                      <span className="text-cyan-600 font-semibold">{apartment.floor}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
                       <span className="text-slate-600">Отделка</span>
@@ -355,29 +367,28 @@ export default function Apartment() {
                     Дополнительно
                   </h4>
                   <div className="space-y-2">
-                    {apartment.ap_specifications && (
-                      <div className="p-3 bg-purple-50 rounded-lg">
-                        <div className="text-sm text-slate-600 bg-white/80 inline-block border border-slate-010 py-1 px-2 mb-2 rounded-md">Важные подробности</div>
-                        <div className="text-slate-800 whitespace-pre-wrap">{apartment.ap_specifications}</div>
-                      </div>
-                    )}
                     {apartment.typeDescription && (
-                      <div className="p-3 bg-indigo-50 rounded-lg">
-                        <div className="text-sm text-slate-600 bg-white/80 inline-block border border-slate-010 py-1 px-2 mb-2 rounded-md">О типе апартамента</div>
+                      <div className="p-4 bg-rose-100/20 rounded-lg">
+                        <div className="font-semibold text-sm text-slate-600 bg-white/80 backdrop-blur-md inline-block border border-slate-200 py-1 px-2 mb-2 rounded-md">О типе апартамента</div>
                         <div className="text-slate-800 whitespace-pre-wrap">{apartment.typeDescription}</div>
                       </div>
                     )}
                   </div>
+                    {apartment.ap_specifications && (
+                      <div className="p-4 bg-rose-100/20 rounded-lg">
+                        <div className="font-semibold text-sm text-slate-600 bg-white/80 backdrop-blur-md inline-block border border-slate-200 py-1 px-2 mb-2 rounded-md">Важные подробности</div>
+                        <div className="text-slate-800 whitespace-pre-wrap">{apartment.ap_specifications}</div>
+                      </div>
+                    )}
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-                    {/* <CheckCircle size={20} className="text-green-600" /> */}
+                  <h3 className="text-lg font-semibold text-slate-900 backdrop-blur-md flex items-center gap-2">
                     <Columns3Cog size={18} className="text-purple-600" />
-                    О корпусе (блоке):
+                    О корпусе {apartment.blockName}:
                   </h3>
                   {apartment.blockSpecifications ? (
-                    <p className="whitespace-pre-wrap text-slate-700 bg-green-50 p-4 rounded-lg border border-green-100">
+                    <p className="whitespace-pre-wrap text-slate-700 bg-purple-100/20 p-4 rounded-lg border border-green-100">
                       {apartment.blockSpecifications}
                     </p>
                   ) : (
@@ -389,7 +400,7 @@ export default function Apartment() {
                       <img 
                         src={apartment.blockPhoto} 
                         alt={`Блок ${apartment.blockName}`} 
-                        className="w-full h-48 object-cover rounded-xl shadow"
+                        className="w-full h-full object-cover rounded-xl shadow"
                       />
                     </div>
                   )}
@@ -477,7 +488,7 @@ export default function Apartment() {
           <button
             onClick={() => setIsModalOpen(true)}
             disabled={!hasPhotos()}
-            className={`px-4 py-2 font-semibold text-lg shadow-lg rounded-2xl transition flex items-center justify-center gap-4 ${
+            className={`px-4 py-2 font-semibold text-lg rounded-2xl transition flex items-center justify-center gap-4 ${
               hasPhotos()
                 ? 'bg-gradient-to-r from-orange-600/80 to-rose-600/80 text-white'
                 : 'bg-slate-600/30 text-slate-50 cursor-not-allowed'
@@ -488,7 +499,7 @@ export default function Apartment() {
                 <Camera size={32}  className="animate-gentle-pulse"/>
                 <div className="text-left">
                   <div>Смотреть фото</div>
-                  <div className="text-sm font-normal">для этого апртамента</div>
+                  <div className="text-sm font-normal">для апртамента</div>
                 </div>
               </>
             ) : (
@@ -524,7 +535,7 @@ export default function Apartment() {
               const botUrl = `https://t.me/AIRealtyTest_bot?text=${encodeURIComponent(prefilledText)}`;
               window.Telegram?.WebApp?.openTelegramLink(botUrl);
             }}
-            className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl transition-all"
+            className="w-full bg-gradient-to-r from-teal-600/80 to-cyan-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 transition-all"
           >
             <BotMessageSquare size={32} className="animate-gentle-pulse" />
             <div className="flex flex-col items-start">
@@ -537,32 +548,32 @@ export default function Apartment() {
 
 
       {/* Целевое действие */}
-      <div className="bg-gradient-to-r from-white/60 to-white/60 backdrop-blur-md pl-6 pr-6 pt-4 pb-4 rounded-2xl border border-white/95 shadow-md">
+      <div className="bg-gradient-to-b from-rose-100/60 via-rose-50/80 via-pink-100/80 to-pink-200/80 backdrop-blur-md pl-6 pr-6 pt-4 pb-4 rounded-2xl border border-purple-200/60 shadow-xl">
         <div className="relative flex flex-col items-center mb-6">
           {/* Верхняя "крепёжная" линия */}
-          <div className="w-3/4 md:w-3/4 h-0.5 mt-2 mb-6 bg-gradient-to-r from-rose-600/80 via-orange-600/60 to-rose-600/80 rounded-full shadow-sm" />
+          <div className="w-3/4 md:w-3/4 h-0.5 mt-2 mb-6 bg-gradient-to-r from-pink-600/80 via-rose-600/60 to-pink-600/80 rounded-full" />
 
           {/* Плашка + боковые стрелки */}
-          <div className="relative flex items-center justify-center gap-6">
+          <div className="relative flex items-center justify-center gap-6 shadow-sm">
             {/* Колечки */}
             <div className="absolute z-20 -top-7 left-1/4 transform -translate-x-1/2 flex flex-col items-center">
-              <div className="w-1 h-2 bg-rose-400"></div>
+              <div className="w-1 h-2 bg-pink-400"></div>
               <div className="w-2 h-4 rounded-full border-2 border-rose-400"></div>
-              <div className="w-1 h-2 bg-rose-400"></div>
+              <div className="w-1 h-2 bg-pink-400"></div>
             </div>
             <div className="absolute z-20 -top-7 left-3/4 transform -translate-x-1/2 flex flex-col items-center">
-              <div className="w-1 h-2 bg-rose-400"></div>
+              <div className="w-1 h-2 bg-pink-400"></div>
               <div className="w-2 h-4 rounded-full border-2 border-rose-400"></div>
-              <div className="w-1 h-2 bg-rose-400"></div>
+              <div className="w-1 h-2 bg-pink-400"></div>
             </div>
 
             {/* Плашка о горячих предложениях */}
-            <div className="inline-flex items-center gap-2 bg-white/95 backdrop-blur-md border border-rose-200/80 px-8 py-4 rounded-md shadow-md z-10">
-              <MoveDown size={36} className="text-rose-600/80 animate-gentle-pulse" />
-              <h2 className="text-xl text-center md:text-2xl font-semibold bg-gradient-to-r from-orange-600/90 to-rose-600/90 bg-clip-text text-transparent tracking-tight">
+            <div className="inline-flex items-center gap-2 bg-white border border-rose-200/80 px-8 py-4 rounded-md z-10">
+              <MoveDown size={36} className="text-pink-600/80 animate-gentle-pulse" />
+              <h2 className="text-xl text-center md:text-2xl font-semibold bg-gradient-to-r from-pink-600/90 to-pink-600/90 bg-clip-text text-transparent tracking-tight">
                 Пожалуйста, уточните все параметры у менеджера
               </h2>
-              <MoveDown size={36} className="text-orange-600/80 animate-gentle-pulse" />
+              <MoveDown size={36} className="text-pink-600/80 animate-gentle-pulse" />
             </div>
 
           </div>
@@ -571,7 +582,7 @@ export default function Apartment() {
 
         {/* Кнопка менеджера */}
         <div className="max-w-4xl mx-auto px-8 pb-2 sticky top-10 z-40 md:static">
-          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-fuchsia-200/80 p-2 md:p-4">
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-md border border-fuchsia-200/80 p-2 md:p-4">
             <button
               onClick={() => {
                 const key = `logged_ask_manager_apartment_${id}`;
