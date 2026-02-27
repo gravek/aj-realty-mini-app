@@ -38,7 +38,8 @@ export default function Home() {
         Object.values(district.estates || {}).forEach((estate) => {
           Object.values(estate.blocks || {}).forEach((block) => {
             Object.values(block.apartment_types || {}).forEach((type) => {
-              const apt = type.apartments?.find((a) => a.apartment_id === id);
+              // const apt = type.apartments?.find((a) => a.apartment_id === id);
+              const apt = type.apartments?.[id];
               if (apt) {
                 found = {
                   ...apt,

@@ -29,7 +29,8 @@ export default function Estate() {
   const allApartments = Object.values(current.blocks || {})
     .flatMap((block) =>
       Object.values(block.apartment_types || {}).flatMap((type) =>
-        (type.apartments || []).map((ap) => ({
+        // (type.apartments || []).map((ap) => ({
+        Object.values(type.apartments || {}).map((ap) => ({
           ...ap,
           blockId: block.id || block.name,
           blockName: block.name,

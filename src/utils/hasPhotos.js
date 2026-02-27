@@ -17,7 +17,8 @@ export const hasPhotos = (entity, entityType) => {
         countPhotos(block.photos);
         Object.values(block.apartment_types || {}).forEach(type => {
           countPhotos(type.photos);
-          (type.apartments || []).forEach(ap => countPhotos(ap.photos));
+          // (type.apartments || []).forEach(ap => countPhotos(ap.photos));
+          Object.values(type.apartments || {}).forEach(ap => countPhotos(ap.photos));
         });
       });
     });
@@ -27,7 +28,8 @@ export const hasPhotos = (entity, entityType) => {
       countPhotos(block.photos);
       Object.values(block.apartment_types || {}).forEach(type => {
         countPhotos(type.photos);
-        (type.apartments || []).forEach(ap => countPhotos(ap.photos));
+        // (type.apartments || []).forEach(ap => countPhotos(ap.photos));
+        Object.values(type.apartments || {}).forEach(ap => countPhotos(ap.photos));
       });
     });
   } else if (entityType === 'apartment') {

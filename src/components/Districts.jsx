@@ -45,7 +45,8 @@ const getPriceCategories = (district) => {
   const allPrices = Object.values(district.estates || {})
     .flatMap(e => Object.values(e.blocks || {}))
     .flatMap(b => Object.values(b.apartment_types || {}))
-    .flatMap(t => t.apartments.map(a => a.price_usd))
+    // .flatMap(t => t.apartments.map(a => a.price_usd))
+    .flatMap(t => Object.values(t.apartments || {}).map(a => a.price_usd))
     .filter(price => price > 0);
   
   if (allPrices.length === 0) return [];
@@ -581,7 +582,11 @@ const getPriceCategories = (district) => {
                 countPhotos(b.photos);
                 Object.values(b.apartment_types || {}).forEach(t => {
                   countPhotos(t.photos);
-                  (t.apartments || []).forEach(a => countPhotos(a.photos));
+
+                  // Теперь apartments — объект → берём значения
+                  Object.values(t.apartments || {}).forEach(a => {
+                    countPhotos(a.photos);
+                  });
                 });
               });
             });
@@ -593,7 +598,8 @@ const getPriceCategories = (district) => {
               // Собираем все цены в ЖК
               const prices = Object.values(e.blocks || {})
                 .flatMap(b => Object.values(b.apartment_types || {}))
-                .flatMap(t => t.apartments.map(a => a.price_usd))
+                // .flatMap(t => t.apartments.map(a => a.price_usd))
+                .flatMap(t => Object.values(t.apartments || {}).map(a => a.price_usd))
                 .filter(price => price > 0);
               
               const minPrice = prices.length > 0 ? Math.min(...prices) : 0;
@@ -696,7 +702,7 @@ const getPriceCategories = (district) => {
                   )}
                   
                   {/* Ценовые категории */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap justify-center w-full gap-3">
                     {priceCats.map((cat, idx) => (
                       <div key={idx} className="relative">
                         {/* <div className="absolute -inset-0.5 bg-white/20 rounded-full blur-sm" /> */}
