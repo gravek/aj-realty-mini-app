@@ -45,7 +45,8 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
           addPhotos(block.photos);
           Object.values(block.apartment_types || {}).forEach(type => {
             addPhotos(type.photos);
-            (type.apartments || []).forEach(ap => addPhotos(ap.photos));
+            // (type.apartments || []).forEach(ap => addPhotos(ap.photos));
+            Object.values(type.apartments ?? {}).forEach(ap => addPhotos(ap.photos));
           });
         });
       });
@@ -55,7 +56,8 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
         addPhotos(block.photos);
         Object.values(block.apartment_types || {}).forEach(type => {
           addPhotos(type.photos);
-          (type.apartments || []).forEach(ap => addPhotos(ap.photos));
+          // (type.apartments || []).forEach(ap => addPhotos(ap.photos));
+          Object.values(type.apartments ?? {}).forEach(ap => addPhotos(ap.photos));
         });
       });
     } else if (entityType === 'apartment') {
@@ -64,7 +66,8 @@ const PhotoGalleryModal = ({ isOpen, onClose, entity, entityType }) => {
         for (const estate of Object.values(district.estates || {})) {
           for (const block of Object.values(estate.blocks || {})) {
             for (const type of Object.values(block.apartment_types || {})) {
-              if (type.apartments?.some(ap => ap.apartment_id === entity.apartment_id)) {
+              // if (type.apartments?.some(ap => ap.apartment_id === entity.apartment_id)) {
+              if (Object.values(type.apartments || {}).some(ap => ap.apartment_id === entity.apartment_id)) {
                 addPhotos(type.photos);
                 addPhotos(block.photos);
                 addPhotos(estate.photos);

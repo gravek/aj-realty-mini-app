@@ -24,7 +24,7 @@ const MapWithContext = () => {
         district: d.name,
         minPrice: Math.min(...Object.values(e.blocks || {})
           .flatMap(b => Object.values(b.apartment_types || {}))
-          .flatMap(t => t.apartments?.map(a => a.price_usd) || [Infinity]))
+          .flatMap(t => Object.values(t.apartments || {}).map(a => a.price_usd || Infinity)))
       }))
     );
     center = [41.70, 41.72];
@@ -41,7 +41,7 @@ const MapWithContext = () => {
         district: district.name,
         minPrice: Math.min(...Object.values(e.blocks || {})
           .flatMap(b => Object.values(b.apartment_types || {}))
-          .flatMap(t => t.apartments?.map(a => a.price_usd) || [Infinity]))
+          .flatMap(t => Object.values(t.apartments || {}).map(a => a.price_usd || Infinity)))
       }));
       center = district.coords || center;
       zoom = 14;
@@ -59,7 +59,8 @@ const MapWithContext = () => {
         district: districtName,
         minPrice: Math.min(...Object.values(estate.blocks || {})
           .flatMap(b => Object.values(b.apartment_types || {}))
-          .flatMap(t => t.apartments?.map(a => a.price_usd) || [Infinity]))
+          // .flatMap(t => t.apartments?.map(a => a.price_usd) || [Infinity]))
+          .flatMap(t => Object.values(t.apartments || {}).map(a => a.price_usd || Infinity)))
       }];
       center = estate.coords || center;
       zoom = 17;
@@ -79,7 +80,8 @@ const MapWithContext = () => {
           const block = estate.blocks[blockKey];
           for (const typeKey of Object.keys(block?.apartment_types || {})) {
             const type = block.apartment_types[typeKey];
-            const apartment = type.apartments?.find(a => a.apartment_id === apartmentId);
+            // const apartment = type.apartments?.find(a => a.apartment_id === apartmentId);
+            const apartment = type.apartments?.[apartmentId];
             
             if (apartment) {
               // console.log('Found apartment:', apartment);

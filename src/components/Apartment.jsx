@@ -40,7 +40,8 @@ export default function Apartment() {
       for (const estate of Object.values(district.estates || {})) {
         for (const block of Object.values(estate.blocks || {})) {
           for (const type of Object.values(block.apartment_types || {})) {
-            const found = type.apartments.find(a => a.apartment_id === id);
+            // const found = type.apartments.find(a => a.apartment_id === id);
+            const found = Object.values(type.apartments || {}).find(a => a.apartment_id === id);
             if (found) {
               // Создаем объект апартамента с дополнительными данными
               const apartmentData = {
@@ -388,7 +389,7 @@ export default function Apartment() {
                     О корпусе {apartment.blockName}:
                   </h3>
                   {apartment.blockSpecifications ? (
-                    <p className="whitespace-pre-wrap text-slate-700 bg-purple-100/20 p-4 rounded-lg border border-green-100">
+                    <p className="whitespace-pre-wrap text-slate-700 bg-purple-100/40 p-4 rounded-lg border border-green-100">
                       {apartment.blockSpecifications}
                     </p>
                   ) : (
@@ -434,7 +435,7 @@ export default function Apartment() {
                 </div>
                 
                 {apartment.estateDescription && (
-                  <p className="text-sm whitespace-pre-wrap text-slate-700 bg-cyan-50 p-3 rounded-lg">
+                  <p className="text-sm whitespace-pre-wrap text-slate-700 bg-cyan-100/20 p-3 rounded-lg">
                     {apartment.estateDescription}
                   </p>
                 )}

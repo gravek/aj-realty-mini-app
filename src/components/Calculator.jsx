@@ -164,7 +164,7 @@ export default function Calculator() {
 
 
 <div className="bg-white/80 backdrop-blur-lg rounded-2xl border shadow-xl overflow-hidden max-w-3xl mx-auto">
-  <div className="p-6 sm:p-8 md:p-10 bg-gradient-to-r from-cyan-00/80 to-teal-600/80">
+  <div className="p-6 sm:p-8 md:p-10 bg-gradient-to-r from-cyan-600/80 to-teal-600/80">
     
     {/* Заголовок для блока цены */}
     <div className="flex mb-4 items-center gap-4 text-white">
