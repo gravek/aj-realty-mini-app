@@ -616,9 +616,9 @@ const getPriceCategories = (district) => {
               }
               
               const allPhotos = [
+                ...(e.photos?.specific || []).map(p => p.url).filter(Boolean),
                 ...(e.photos?.sketch || []).map(p => p.url).filter(Boolean),
                 ...(e.photos?.example || []).map(p => p.url).filter(Boolean),
-                ...(e.photos?.specific || []).map(p => p.url).filter(Boolean)
               ];
               while (allPhotos.length < 2) allPhotos.push('/placeholder.jpg');
               const photos2 = allPhotos.slice(0, 2);

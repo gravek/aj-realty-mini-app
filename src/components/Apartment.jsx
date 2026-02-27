@@ -25,6 +25,8 @@ import {
   MoveDown
 } from 'lucide-react';
 
+// import { hasPhotos } from '../utils/hasPhotos';
+
 export default function Apartment() {
   const { id } = useParams();
   const { data } = useStore();
@@ -81,7 +83,13 @@ export default function Apartment() {
                       [type.name || 'default']: {
                         name: type.name,
                         photos: type.photos || {}, // Фото типа апартамента
-                        apartments: []
+                        // apartments: []
+                        apartments: {
+                          [found.apartment_id]: {
+                            name: found.apartment_id,
+                            photos: found.photos || {}, // Фото апартамента
+                          }
+                        }
                       }
                     }
                   }
@@ -124,32 +132,76 @@ export default function Apartment() {
   if (!apartment) return <div className="p-8 text-center">Апартамент не найден</div>;
 
   // Проверяем наличие фото в parentEntity
-  const hasPhotos = () => {
-    if (!parentEntity) return false;
+  // const hasPhotos = () => {
+  //   if (!parentEntity) return false;
     
-    let count = 0;
-    const countPhotos = (obj) => {
-      if (!obj) return;
-      ['sketch', 'example', 'specific'].forEach(t => {
-        count += (obj[t] || []).filter(p => p && p.url).length;
-      });
-    };
+  //   let count = 0;
+  //   const countPhotos = (obj) => {
+  //     if (!obj) return;
+  //     // ['sketch', 'example', 'specific'].forEach(t => {
+  //     ['sketch', 'example'].forEach(t => {
+  //       count += (obj[t] || []).filter(p => p && p.url).length;
+  //     });
+  //   };
     
-    // Проверяем фото апартамента
-    countPhotos(parentEntity.photos);
+  //   // Проверяем фото апартамента
+  //   countPhotos(parentEntity.photos);
     
-    // Проверяем фото блока
-    Object.values(parentEntity.blocks || {}).forEach(block => {
-      countPhotos(block.photos);
+  //   // Проверяем фото блока
+  //   Object.values(parentEntity.blocks || {}).forEach(block => {
+  //     countPhotos(block.photos);
       
-      // Проверяем фото типа
-      Object.values(block.apartment_types || {}).forEach(type => {
-        countPhotos(type.photos);
+  //     // Проверяем фото типа
+  //     Object.values(block.apartment_types || {}).forEach(type => {
+  //       countPhotos(type.photos);
+  //     });
+
+
+  //     // выводим в консоль для проверки, что есть в apartment.photos
+  //     // console.log(apartment.photos);
+
+  //     // Проверяем фото апартамента
+  //     (type.apartments || []).forEach(ap => countPhotos(ap.photos));
+  //     // Object.values(app_type.apartments || {}).forEach(apartment => countPhotos(apartment.photos));
+
+  //   });
+    
+  //   return count > 0;
+  // };
+
+// Проверяем наличие фото в parentEntity
+const hasPhotos = () => {
+  if (!parentEntity) return false;
+  
+  let count = 0;
+  const countPhotos = (obj) => {
+    if (!obj) return;
+    ['sketch', 'example'].forEach(t => {           // specific пока не используем
+      count += (obj[t] || []).filter(p => p && p.url).length;
+    });
+  };
+  
+  // Фото самого апартамента (top-level в parentEntity)
+  countPhotos(parentEntity.photos);
+  
+  // Проходим по блокам и типам
+  Object.values(parentEntity.blocks || {}).forEach(block => {
+    countPhotos(block.photos);
+    
+    Object.values(block.apartment_types || {}).forEach(type => {
+      countPhotos(type.photos);
+      
+      // ←←← ГЛАВНОЕ ИСПРАВЛЕНИЕ: теперь считаем фото именно апартамента
+      Object.values(type.apartments || {}).forEach(apartment => {
+        countPhotos(apartment.photos);
       });
     });
-    
-    return count > 0;
-  };
+  });
+  
+  return count > 0;
+};
+
+
 
   // Рассчитываем цену за м²
   const pricePerM2 = apartment.price_usd / apartment.m2;
@@ -641,7 +693,8 @@ export default function Apartment() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         entity={parentEntity}
-        entityType="estate" // Используем "estate" для совместимости с модалкой
+        entityType="estate" // Используем "estate" для уровня фото
+        // entityType="apartment" // 
       />
     </div>
   );

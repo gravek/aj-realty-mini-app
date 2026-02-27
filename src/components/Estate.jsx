@@ -166,7 +166,7 @@ export default function Estate() {
 
 
 
-              {/* Заголовок района с фото и описанием */}
+              {/* Заголовок комплекса с фото и описанием */}
               <div className="relative overflow-hidden rounded-3xl mt-8 mb-8 group">
                 {/* Фон с градиентом и эффектом стекла */}
                 <div className={`absolute inset-0 bg-gradient-to-r from-teal-600 to-cyan-600 blur-sm rounded-3xl`} />
@@ -209,7 +209,7 @@ export default function Estate() {
                   {current.photos?.specific?.[0]?.url && (
                     <div className="relative overflow-hidden rounded-xl">
                       <img
-                        src={current.photos.specific?.[0]?.url}
+                        src={current.photos.specific?.[1]?.url || current.photos.specific[0].url}
                         alt={current.name || 'Estate image'}
                         className="w-full h-64 object-cover border blur-xs shadow-md"
                       />
