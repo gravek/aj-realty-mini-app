@@ -354,19 +354,17 @@ export default function Home() {
           <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-fuchsia-200/80 p-2 md:p-4">
             <button
               onClick={() => {
-                const key = `logged_ask_manager_apartment_${id}`;
+                const key = `logged_ask_manager_home`;
                 if (!localStorage.getItem(key)) {
-                  logEvent('ask_manager_apartment', {
-                    apartment_id: id,
-                    estate: apartment?.estateName || 'unknown',
-                    district: apartment?.districtName || 'unknown'
+                  logEvent('ask_manager_home', {
+                    page: 'home'
                   });
                   localStorage.setItem(key, '1');
                   setTimeout(() => localStorage.removeItem(key), 60 * 1000);
                 }
                 // window.Telegram?.WebApp?.openTelegramLink('https://t.me/AIRealtyTest_bot');
                 // Формируем текст для вставки в чат
-                const prefilledText = `Добрый день! Интересует апартамент id: ${id}. Хотелось бы узнать подробнее. (${apartment?.estateName}, ${apartment.blockName}, этаж ${apartment.floor}, N ${apartment.apartment_number || '-'}, ${apartment.app_type}, ${apartment.m2} м², ${apartment.price_usd.toLocaleString()} USD)`;
+                const prefilledText = `Добрый день! Хотелось бы узнать ...`;
                 
                 // Кодируем текст и формируем URL, затем открываем бота
                 const botUrl = `https://t.me/a4k5o6?text=${encodeURIComponent(prefilledText)}`;
