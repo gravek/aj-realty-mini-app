@@ -393,7 +393,7 @@ export default function Calculator() {
               const prefilledText = `Добрый день! Интересуюсь предложениями в категории ${priceCategory.label}...`;
               
               // Кодируем текст и формируем URL, затем открываем бота
-              const botUrl = `https://t.me/a4k5o6?text=${encodeURIComponent(prefilledText)}`;
+              const botUrl = `https://t.me/ninaabramia97?text=${encodeURIComponent(prefilledText)}`;
               window.Telegram?.WebApp?.openTelegramLink(botUrl);
             }}
             className="w-full border bg-gradient-to-r from-fuchsia-600/80 to-purple-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"
@@ -406,28 +406,6 @@ export default function Calculator() {
           </button>
         </div>
       </div>
-
-
-      {/* <button 
-        onClick={() => {
-          // const key = `logged_ask_elaj_${id}`;
-          const key = `logged_ask_manager_calc`;
-          // if (localStorage.getItem(key)) return; // уже кликали недавно
-
-          logEvent('ask_manager_calc', {
-            price_category: priceCategory.label,
-            off_season_occupancy: offSeasonOccupancy,
-          });
-
-          localStorage.setItem(key, '1');
-          setTimeout(() => localStorage.removeItem(key), 60 * 1000); // 1 минута
-
-          window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6');
-        }}
-        className="w-full bg-cyan-700 text-white py-4 rounded-xl font-bold text-lg"
-      >
-        👩🏻‍🦱 Написать менеджеру 📝
-      </button> */}
     </div>
   );
 }

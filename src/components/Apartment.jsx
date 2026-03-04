@@ -653,7 +653,7 @@ const hasPhotos = () => {
                 const prefilledText = `Добрый день! Интересует апартамент id: ${id}. Хотелось бы узнать подробнее. (${apartment?.estateName}, ${apartment.blockName}, этаж ${apartment.floor}, N ${apartment.apartment_number || '-'}, ${apartment.app_type}, ${apartment.m2} м², ${apartment.price_usd.toLocaleString()} USD)`;
                 
                 // Кодируем текст и формируем URL, затем открываем бота
-                const botUrl = `https://t.me/a4k5o6?text=${encodeURIComponent(prefilledText)}`;
+                const botUrl = `https://t.me/ninaabramia97?text=${encodeURIComponent(prefilledText)}`;
                 window.Telegram?.WebApp?.openTelegramLink(botUrl);
               }}
               className="w-full bg-gradient-to-r from-fuchsia-600/80 to-purple-600/80 text-white py-2 rounded-2xl font-semibold text-md flex items-center justify-center gap-4 shadow-2xl hover:brightness-110 transition-all"

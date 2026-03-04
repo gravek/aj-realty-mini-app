@@ -850,7 +850,7 @@ const getPriceCategories = (district) => {
                 
                 </button> */}
                 {/* <button 
-                  onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
+                  onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/ninaabramia97')}
                   className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 mb-6"
                 >
                   <User size={24} />

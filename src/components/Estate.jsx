@@ -303,7 +303,7 @@ export default function Estate() {
           <div className="text-md font-normal opacity-90">об этом комплексе</div>
         </button> */}
         {/* <button 
-          onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/a4k5o6')}
+          onClick={() => window.Telegram?.WebApp?.openTelegramLink('https://t.me/ninaabramia97')}
           className="flex-1 bg-gradient-to-r from-cyan-600/90 to-blue-600/90 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 mb-6"
         >
           <User size={24} />
