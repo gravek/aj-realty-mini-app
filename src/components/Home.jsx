@@ -28,7 +28,7 @@ export default function Home() {
 
 
   // Выбранные 2-3 апартамента (по apartment_id)
-  const featuredApartmentIds = ['f398a8b6', '0ca3e94f', ]; // пример: 1+1 в Alliance Centropolis и 1+1 в другом ЖК
+  const featuredApartmentIds = ['OCD208a01', '0ca3e94f', 'f398a8b6', ]; // пример: 1+1 в Alliance Centropolis и 1+1 в другом ЖК
 
   const featuredApartments = featuredApartmentIds
     .map((id) => {
